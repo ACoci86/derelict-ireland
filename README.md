@@ -1,43 +1,23 @@
-# Astro Starter Kit: Minimal
+# Derelict Ireland
+
+An interactive map of derelict sites in Ireland, built from public council registers.
+
+> Work in progress. Only a couple of councils are covered so far, and things may change.
+
+Irish councils must keep a register of derelict sites. This project pulls those registers together and puts every site on a map. Click a pin to see the address, council, and register reference.
+
+## How it works
+
+- **Pipeline** (`pipeline/`): downloads each council's register, cleans it into one common format, looks up map coordinates, and writes `public/sites.geojson`.
+- **Website** (`src/pages/index.astro`): an Astro page that loads that file and draws the sites on a MapLibre map.
+
+Each council has an adapter in `pipeline/adapters/` (currently Dún Laoghaire-Rathdown and South Dublin). Geocoding uses OpenStreetMap's Nominatim and is cached in `data/cache/`. Adding a council means one new adapter file plus one line in `run.ts`.
+
+## Commands
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install        # install dependencies
+npm run pipeline   # rebuild public/sites.geojson from the registers
+npm run dev        # start the local site at localhost:4321
+npm run build      # build the production site to ./dist/
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

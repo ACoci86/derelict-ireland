@@ -1,0 +1,44 @@
+import { writeFileSync, mkdirSync } from "node:fs";
+import { toFeature, type Site } from "./schema";
+import { load as loadDlr } from "./adapters/dlr";
+import { load as loadSouthDublin } from "./adapters/south_dublin";
+import { geocodeAll } from "./geocode";
+
+// Rough bounding box around the island of Ireland.
+const LAT_MIN = 51.3, LAT_MAX = 55.5;
+const LON_MIN = -10.7, LON_MAX = -5.3;
+
+const ADAPTERS = [loadDlr, loadSouthDublin];   // every new council adds one entry here
+
+function inIreland(s: Site): boolean {
+  return (
+    s.lat !== null && s.lon !== null &&
+    s.lat >= LAT_MIN && s.lat <= LAT_MAX &&
+    s.lon >= LON_MIN && s.lon <= LON_MAX
+  );
+}
+
+async function main() {
+  const all: Site[] = [];
+  for (const load of ADAPTERS) {
+    const sites = await load();
+    console.log(`${sites.length} sites loaded`);
+    all.push(...sites);
+  }
+
+  await geocodeAll(all);          // fill in coordinates for sites that lack them
+
+  const good = all.filter(inIreland);
+  const review = all.filter((s) => !inIreland(s));
+
+  mkdirSync("public", { recursive: true });
+  writeFileSync(
+    "public/sites.geojson",
+    JSON.stringify({ type: "FeatureCollection", features: good.map(toFeature) })
+  );
+
+  console.log(`wrote ${good.length} sites to public/sites.geojson, ${review.length} held for review`);
+  for (const s of review) console.log(`  review: ${s.id} ${s.address}`);
+}
+
+main();
