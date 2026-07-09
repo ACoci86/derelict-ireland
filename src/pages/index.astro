@@ -7,6 +7,11 @@ const geojson = JSON.parse(readFileSync("public/sites.geojson", "utf8"));
 const siteCount = geojson.features.length;
 const councils = [...new Set(geojson.features.map((f) => f.properties.council))];
 const councilCount = councils.length;
+
+// stats.json (written by the pipeline) holds counts the geojson can't, like the
+// number of sites we couldn't place on the map.
+const stats = JSON.parse(readFileSync("public/stats.json", "utf8"));
+const reviewCount = stats.review;
 ---
 
 <!DOCTYPE html>
@@ -63,11 +68,18 @@ const councilCount = councils.length;
       letter-spacing: .05em;
       color: var(--muted);
     }
+    .map-box {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
     #map {
-      height: 65vh;
+      height: 60vh;
       min-height: 420px;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
     }
     footer {
       max-width: 820px;
@@ -96,10 +108,16 @@ const councilCount = councils.length;
         <div class="num">{councilCount}</div>
         <div class="label">Councils</div>
       </div>
+      <div class="stat">
+        <div class="num">{reviewCount}</div>
+        <div class="label">Not yet mapped</div>
+      </div>
     </div>
   </header>
 
-  <div id="map"></div>
+  <div class="map-box">
+    <div id="map"></div>
+  </div>
 
   <footer>
     Work in progress. Currently covering {councils.join(", ")}. Data comes from

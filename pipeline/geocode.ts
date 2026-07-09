@@ -8,6 +8,18 @@ const NOMINATIM_URL = "https://nominatim.openstreetmap.org/search";
 // https://operations.osmfoundation.org/policies/nominatim/
 const USER_AGENT = "derelict-ireland/0.1 (https://github.com/ACoci86/derelict-ireland)";
 
+// A locality hint per council, added to the query so ambiguous street names
+// (there's a "North Main Street" in both Cork and Wexford) resolve to the right
+// place. Keep these short — "Cork", not "Cork City", which over-specifies and
+// returns nothing.
+const AREA_HINT: Record<string, string> = {
+  "Cork City": "Cork",
+  "Dublin City": "Dublin",
+  "South Dublin": "Dublin",
+  "Fingal": "Dublin",
+  "Dún Laoghaire-Rathdown": "Dublin",
+};
+
 // Nominatim's result "type" -> our honest confidence level.
 const CONFIDENCE: Record<string, Site["geocode_confidence"]> = {
   house: "exact", building: "exact", residential: "street",
@@ -59,7 +71,10 @@ export async function geocodeAll(sites: Site[]): Promise<void> {
   for (const site of sites) {
     if (site.lat !== null) continue;            // tier 0: already has coordinates
 
-    const query = `${site.address}, Ireland`;
+    const hint = AREA_HINT[site.council];
+    const query = hint
+      ? `${site.address}, ${hint}, Ireland`
+      : `${site.address}, Ireland`;
 
     let hit: NominatimHit | null;
     if (query in cache) {
