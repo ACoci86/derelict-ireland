@@ -2,13 +2,15 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { toFeature, type Site } from "./schema";
 import { load as loadDlr } from "./adapters/dlr";
 import { load as loadSouthDublin } from "./adapters/south_dublin";
+import { load as loadFingal } from "./adapters/fingal";
+import { load as loadDublinCity } from "./adapters/dublin_city";
 import { geocodeAll } from "./geocode";
 
 // Rough bounding box around the island of Ireland.
 const LAT_MIN = 51.3, LAT_MAX = 55.5;
 const LON_MIN = -10.7, LON_MAX = -5.3;
 
-const ADAPTERS = [loadDlr, loadSouthDublin];   // every new council adds one entry here
+const ADAPTERS = [loadDlr, loadSouthDublin, loadFingal, loadDublinCity];   // every new council adds one entry here
 
 function inIreland(s: Site): boolean {
   return (

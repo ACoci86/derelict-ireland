@@ -1,5 +1,12 @@
 ---
-// This top section runs at build time. We don't need it yet, so it's empty.
+// Runs at build time. Read the finished dataset so the headline numbers
+// on the page always match what's actually on the map.
+import { readFileSync } from "node:fs";
+
+const geojson = JSON.parse(readFileSync("public/sites.geojson", "utf8"));
+const siteCount = geojson.features.length;
+const councils = [...new Set(geojson.features.map((f) => f.properties.council))];
+const councilCount = councils.length;
 ---
 
 <!DOCTYPE html>
@@ -11,17 +18,101 @@
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
   <style>
-    body { margin: 0; }
-    #map { height: 100vh; }
+    :root {
+      --ink: #1a1a1a;
+      --muted: #666;
+      --accent: #c0392b;
+      --line: #e5e5e5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    header {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 1.5rem;
+    }
+    h1 {
+      margin: 0 0 .5rem;
+      font-size: 2.25rem;
+      letter-spacing: -0.02em;
+    }
+    .lede {
+      margin: 0 0 1.5rem;
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+    .stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .stat .num {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .stat .label {
+      font-size: .85rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--muted);
+    }
+    #map {
+      height: 65vh;
+      min-height: 420px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    footer {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--accent); }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Derelict Ireland</h1>
+    <p class="lede">
+      A map of derelict sites across Ireland, built from the registers councils
+      are legally required to keep. Click any pin to see the address and
+      register reference.
+    </p>
+    <div class="stats">
+      <div class="stat">
+        <div class="num">{siteCount}</div>
+        <div class="label">Sites mapped</div>
+      </div>
+      <div class="stat">
+        <div class="num">{councilCount}</div>
+        <div class="label">Councils</div>
+      </div>
+    </div>
+  </header>
+
   <div id="map"></div>
+
+  <footer>
+    Work in progress. Currently covering {councils.join(", ")}. Data comes from
+    each council's public derelict sites register. Not an official source.
+    <br />
+    <a href="https://github.com/ACoci86/derelict-ireland">View the code on GitHub</a>
+  </footer>
+
   <script>
     const map = new maplibregl.Map({
       container: "map",
-      style: "https://demotiles.maplibre.org/style.json",  // free demo basemap
-      center: [-6.15, 53.28],                              // Dún Laoghaire, lon/lat
+      style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",  // clean light basemap (CARTO Positron, no API key)
+      center: [-6.26, 53.35],                              // Dublin city, lon/lat
       zoom: 11,
     });
 
