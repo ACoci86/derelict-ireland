@@ -14,6 +14,7 @@ const USER_AGENT = "derelict-ireland/0.1 (https://github.com/ACoci86/derelict-ir
 // returns nothing.
 const AREA_HINT: Record<string, string> = {
   "Cork City": "Cork",
+  "Cork County": "County Cork",
   "Dublin City": "Dublin",
   "South Dublin": "Dublin",
   "Fingal": "Dublin",

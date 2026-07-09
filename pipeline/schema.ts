@@ -8,6 +8,7 @@ export interface Site {
   eircode: string | null;
   description: string | null;
   date_entered: string | null;     // ISO format: "2023-04-01"
+  valuation: number | null;        // market value in euro, when the council lists it
   lat: number | null;
   lon: number | null;
   geocode_confidence: GeocodeConfidence;
@@ -24,6 +25,7 @@ export function makeSite(fields: RequiredFields & Partial<Site>): Site {
     eircode: null,
     description: null,
     date_entered: null,
+    valuation: null,
     lat: null,
     lon: null,
     geocode_confidence: "none",
