@@ -2,7 +2,7 @@
 
 An interactive map of derelict sites in Ireland, built from public council registers.
 
-![Screenshot of the Derelict Ireland map](docs/screenshot.png)
+![Screenshot of the Derelict Ireland map](docs/map.png)
 
 > Work in progress. The four Dublin councils are covered so far, and things may change.
 
