@@ -51,7 +51,7 @@ export async function load(): Promise<Site[]> {
       council: COUNCIL,
       // Address is best-effort; fall back to the register reference when the PDF
       // layout didn't give us a clean, owner-free address.
-      address: row.address?.trim() || `Galway — register ref ${ref}`,
+      address: row.address?.trim() || `Galway, register ref ${ref}`,
       eircode: row.eircode?.trim() || null,
       register_ref: ref,
       date_entered: row.date_entered?.trim() || null,

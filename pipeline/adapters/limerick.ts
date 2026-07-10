@@ -7,7 +7,7 @@ import { makeSite, type Site } from "../schema";
 // coordinate (ds_x/ds_y) on most records. pipeline/manual/limerick_convert.ts
 // scrapes it into this CSV; here we convert the grid coordinates to lat/lon,
 // exactly like the Galway and DLR adapters. The ~20 newest sites carry no
-// coordinate yet — those keep lat/lon null and geocode.ts fills them from the
+// coordinate yet, those keep lat/lon null and geocode.ts fills them from the
 // address.
 const CSV_PATH = "data/manual/limerick.csv";
 const SOURCE_URL =
@@ -56,7 +56,7 @@ export async function load(): Promise<Site[]> {
       council: COUNCIL,
       // Address is best-effort; a handful of rows carry none, so fall back to
       // the register reference to keep the pin labelled.
-      address: row.address?.trim() || `Limerick — register ref ${ref}`,
+      address: row.address?.trim() || `Limerick, register ref ${ref}`,
       eircode: row.eircode?.trim() || null,
       register_ref: ref,
       valuation: Number.isFinite(valuation) && valuation > 0 ? valuation : null,

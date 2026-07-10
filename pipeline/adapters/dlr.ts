@@ -12,7 +12,7 @@ const CSV_URL =
 const RAW_DIR = "data/raw/dlr";
 const COUNCIL = "Dún Laoghaire-Rathdown";
 
-// Irish Transverse Mercator, EPSG:2157 — used by DLR for X_CORD / Y_CORD.
+// Irish Transverse Mercator, EPSG:2157, used by DLR for X_CORD / Y_CORD.
 proj4.defs(
   "EPSG:2157",
   "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=0.99982 +x_0=600000 +y_0=750000 " +
@@ -32,7 +32,7 @@ export async function load(): Promise<Site[]> {
   mkdirSync(RAW_DIR, { recursive: true });
   writeFileSync(`${RAW_DIR}/${today}.csv`, text);
 
-  // 3. Parse the CSV — a real parser, so quoted commas can't break rows.
+  // 3. Parse the CSV, a real parser, so quoted commas can't break rows.
   const rows = parse(text, {
     columns: (headers: string[]) => headers.map((h) => h.trim()),
     skip_empty_lines: true,

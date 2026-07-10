@@ -10,7 +10,7 @@ const USER_AGENT = "derelict-ireland/0.1 (https://github.com/ACoci86/derelict-ir
 
 // A locality hint per council, added to the query so ambiguous street names
 // (there's a "North Main Street" in both Cork and Wexford) resolve to the right
-// place. Keep these short — "Cork", not "Cork City", which over-specifies and
+// place. Keep these short, "Cork", not "Cork City", which over-specifies and
 // returns nothing.
 const AREA_HINT: Record<string, string> = {
   "Cork City": "Cork",
@@ -22,6 +22,7 @@ const AREA_HINT: Record<string, string> = {
   "Limerick City and County": "County Limerick",
   "Wicklow": "County Wicklow",
   "Roscommon": "County Roscommon",
+  "Meath": "County Meath",
 };
 
 // Nominatim's result "type" -> our honest confidence level.

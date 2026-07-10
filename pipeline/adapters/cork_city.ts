@@ -11,7 +11,7 @@ const COUNCIL = "Cork City";
 const RETRIEVED = "2026-07-09";
 
 export async function load(): Promise<Site[]> {
-  // 1. Read the committed CSV (not downloaded — it's our source of record).
+  // 1. Read the committed CSV (not downloaded, it's our source of record).
   const text = readFileSync(CSV_PATH, "utf8");
 
   // 2. Parse it. Columns: ref, address, date_entered.

@@ -10,13 +10,14 @@ import { load as loadGalway } from "./adapters/galway";
 import { load as loadLimerick } from "./adapters/limerick";
 import { load as loadWicklow } from "./adapters/wicklow";
 import { load as loadRoscommon } from "./adapters/roscommon";
+import { load as loadMeath } from "./adapters/meath";
 import { geocodeAll } from "./geocode";
 
 // Rough bounding box around the island of Ireland.
 const LAT_MIN = 51.3, LAT_MAX = 55.5;
 const LON_MIN = -10.7, LON_MAX = -5.3;
 
-const ADAPTERS = [loadDlr, loadSouthDublin, loadFingal, loadDublinCity, loadCorkCity, loadCorkCounty, loadGalway, loadLimerick, loadWicklow, loadRoscommon];   // every new council adds one entry here
+const ADAPTERS = [loadDlr, loadSouthDublin, loadFingal, loadDublinCity, loadCorkCity, loadCorkCounty, loadGalway, loadLimerick, loadWicklow, loadRoscommon, loadMeath];   // every new council adds one entry here
 
 function inIreland(s: Site): boolean {
   return (
@@ -46,14 +47,45 @@ async function main() {
   );
 
   // Small stats file so the landing page can show counts the geojson can't,
-  // e.g. how many sites we couldn't place on the map (held for review).
+  // e.g. how many sites we couldn't place on the map (held for review), and a
+  // per-council breakdown for the coverage table.
+  const byCouncil = new Map<string, { mapped: number; review: number }>();
+  const bump = (council: string, key: "mapped" | "review") => {
+    const e = byCouncil.get(council) ?? { mapped: 0, review: 0 };
+    e[key]++;
+    byCouncil.set(council, e);
+  };
+  for (const s of good) bump(s.council, "mapped");
+  for (const s of review) bump(s.council, "review");
+
+  const councils = [...byCouncil.entries()]
+    .map(([council, c]) => ({ council, ...c }))
+    .sort((a, b) => b.mapped + b.review - (a.mapped + a.review) || a.council.localeCompare(b.council));
+
   writeFileSync(
     "public/stats.json",
-    JSON.stringify({ mapped: good.length, review: review.length })
+    JSON.stringify({ mapped: good.length, review: review.length, councils })
   );
 
+  // Human-readable list of everything held for review, grouped by council, so
+  // the docs stay in step with the data on every pipeline run.
+  const today = new Date().toISOString().slice(0, 10);
+  const reviewByCouncil = new Map<string, Site[]>();
+  for (const s of review) {
+    if (!reviewByCouncil.has(s.council)) reviewByCouncil.set(s.council, []);
+    reviewByCouncil.get(s.council)!.push(s);
+  }
+  let md = `# Sites not yet mapped (held for review)\n\n`;
+  md += `${review.length} sites the geocoder could not place. Generated ${today}.\n`;
+  for (const [council, sites] of reviewByCouncil) {
+    md += `\n## ${council} (${sites.length})\n\n`;
+    for (const s of sites) md += `- \`${s.id}\`: ${s.address}\n`;
+  }
+  mkdirSync("docs", { recursive: true });
+  writeFileSync("docs/not-yet-mapped.md", md);
+
   console.log(`wrote ${good.length} sites to public/sites.geojson, ${review.length} held for review`);
-  for (const s of review) console.log(`  review: ${s.id} ${s.address}`);
+  console.log(`wrote docs/not-yet-mapped.md (${reviewByCouncil.size} councils)`);
 }
 
 main();

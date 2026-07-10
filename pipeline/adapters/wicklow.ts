@@ -24,7 +24,7 @@ const RETRIEVED = "2026-07-10";    // date we downloaded the register PDF
 const normRef = (r: string): string => r.replace(/[^A-Z0-9]/gi, "").toUpperCase();
 const round6 = (n: number): number => Math.round(n * 1e6) / 1e6;
 
-// Average of a polygon's outer-ring vertices — good enough to drop a pin on.
+// Average of a polygon's outer-ring vertices, good enough to drop a pin on.
 function centroid(ring: [number, number][]): [number, number] {
   const n = ring.length;
   const [sx, sy] = ring.reduce(([x, y], [px, py]) => [x + px, y + py], [0, 0]);
@@ -80,7 +80,7 @@ export async function load(): Promise<Site[]> {
     return makeSite({
       id: ref ? `wicklow-${normRef(ref)}` : `wicklow-row`,
       council: COUNCIL,
-      address: row.address?.trim() || `Wicklow — register ref ${ref}`,
+      address: row.address?.trim() || `Wicklow, register ref ${ref}`,
       register_ref: ref,
       date_entered: row.date_entered?.trim() || null,
       valuation: Number.isFinite(valuation) && valuation > 0 ? valuation : null,

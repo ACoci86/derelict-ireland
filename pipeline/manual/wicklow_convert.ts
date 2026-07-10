@@ -1,6 +1,6 @@
 // One-time converter: Wicklow County Council publishes its Derelict Sites
 // Register as a PDF (currently just two sites, both in Baltinglass). The PDF
-// carries no coordinates — those come separately from the council's ArcGIS
+// carries no coordinates, those come separately from the council's ArcGIS
 // layer and are joined in the adapter on the reference number. This scrapes
 // ref + address + date + valuation into a committed CSV.
 //
@@ -37,7 +37,7 @@ function main() {
 
     // In every line the address is column index 1: on the first line index 0 is
     // the ref, on wrapped lines index 0 is the empty lead from the indent. The
-    // OWNER column is index 2+, which we never read — owner names are personal
+    // OWNER column is index 2+, which we never read, owner names are personal
     // data and are deliberately left out.
     const address = block
       .map((ln) => ln.split(/\s{2,}/)[1])

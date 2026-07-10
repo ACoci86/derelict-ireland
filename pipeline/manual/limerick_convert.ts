@@ -46,7 +46,7 @@ async function main() {
     const ref = ln.match(/DS-\d{3}-\d{2}/)![0];
 
     // Fields are separated by runs of 2+ spaces. The address is the field right
-    // after the site id — unless that field is an electoral area, which means
+    // after the site id, unless that field is an electoral area, which means
     // the row carried no address (left blank; the geocoder can't help either).
     const parts = ln.trim().split(/\s{2,}/).filter(Boolean);
     const refIdx = parts.findIndex((p) => p === ref);
