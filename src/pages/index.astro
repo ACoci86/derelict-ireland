@@ -1,7 +1,7 @@
 ---
 // Runs at build time. Read the finished dataset so the headline numbers
 // on the page always match what's actually on the map.
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 
 const geojson = JSON.parse(readFileSync("public/sites.geojson", "utf8"));
 const siteCount = geojson.features.length;
@@ -17,6 +17,18 @@ const councilStats: { council: string; mapped: number; review: number; source: s
 // Short, human-readable host for a source URL, e.g. "corkcity.ie".
 const sourceHost = (u: string): string => {
   try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; }
+};
+
+// Council logos live in public/logos/<slug>.<ext> (scraped from each council's
+// own site). Match by an accent-stripped slug so extensions can vary.
+const slugify = (s: string): string =>
+  s.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const logoFiles = readdirSync("public/logos");
+const logoFor = (council: string): string | null => {
+  const s = slugify(council);
+  const f = logoFiles.find((x) => x.slice(0, x.lastIndexOf(".")) === s);
+  return f ? `/logos/${f}` : null;
 };
 ---
 
@@ -132,6 +144,14 @@ const sourceHost = (u: string): string => {
     }
     tbody tr:hover td { background: #faf6f5; }
     td.council { font-weight: 500; white-space: nowrap; }
+    .council-cell { display: flex; align-items: center; gap: .55rem; }
+    img.logo {
+      height: 22px;
+      width: auto;
+      max-width: 34px;
+      object-fit: contain;
+      flex: none;
+    }
     td.mapped { color: var(--accent); font-weight: 600; }
     td.dim { color: var(--muted); }
     td.upd { white-space: nowrap; color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
@@ -233,7 +253,12 @@ const sourceHost = (u: string): string => {
               const pct = total ? Math.round((c.mapped / total) * 100) : 0;
               return (
                 <tr>
-                  <td class="council">{c.council}</td>
+                  <td class="council">
+                    <span class="council-cell">
+                      {logoFor(c.council) && <img class="logo" src={logoFor(c.council)} alt="" loading="lazy" />}
+                      {c.council}
+                    </span>
+                  </td>
                   <td class="n mapped">{c.mapped}</td>
                   <td class="n dim">{c.review || "0"}</td>
                   <td class="n">{total}</td>
