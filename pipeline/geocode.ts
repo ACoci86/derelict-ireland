@@ -23,6 +23,10 @@ const AREA_HINT: Record<string, string> = {
   "Wicklow": "County Wicklow",
   "Roscommon": "County Roscommon",
   "Meath": "County Meath",
+  "Kilkenny": "County Kilkenny",
+  "Offaly": "County Offaly",
+  "Waterford": "County Waterford",
+  "Kildare": "County Kildare",
 };
 
 // Nominatim's result "type" -> our honest confidence level.

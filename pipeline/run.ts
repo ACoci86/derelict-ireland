@@ -11,13 +11,17 @@ import { load as loadLimerick } from "./adapters/limerick";
 import { load as loadWicklow } from "./adapters/wicklow";
 import { load as loadRoscommon } from "./adapters/roscommon";
 import { load as loadMeath } from "./adapters/meath";
+import { load as loadKilkenny } from "./adapters/kilkenny";
+import { load as loadOffaly } from "./adapters/offaly";
+import { load as loadWaterford } from "./adapters/waterford";
+import { load as loadKildare } from "./adapters/kildare";
 import { geocodeAll } from "./geocode";
 
 // Rough bounding box around the island of Ireland.
 const LAT_MIN = 51.3, LAT_MAX = 55.5;
 const LON_MIN = -10.7, LON_MAX = -5.3;
 
-const ADAPTERS = [loadDlr, loadSouthDublin, loadFingal, loadDublinCity, loadCorkCity, loadCorkCounty, loadGalway, loadLimerick, loadWicklow, loadRoscommon, loadMeath];   // every new council adds one entry here
+const ADAPTERS = [loadDlr, loadSouthDublin, loadFingal, loadDublinCity, loadCorkCity, loadCorkCounty, loadGalway, loadLimerick, loadWicklow, loadRoscommon, loadMeath, loadKilkenny, loadOffaly, loadWaterford, loadKildare];   // every new council adds one entry here
 
 function inIreland(s: Site): boolean {
   return (
