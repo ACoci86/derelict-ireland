@@ -8,7 +8,7 @@ import { makeSite, type Site } from "../schema";
 // here we convert the grid coordinates to lat/lon, exactly like the DLR adapter.
 const CSV_PATH = "data/manual/galway.csv";
 const SOURCE_URL =
-  "https://www.galwaycity.ie/derelict-and-vacant-sites";
+  "https://www.galwaycity.ie/services/housing/housing-services/vacant-and-derelict-properties/derelict-sites";
 const COUNCIL = "Galway City";
 const RETRIEVED = "2026-07-09";    // date we downloaded the PDF
 

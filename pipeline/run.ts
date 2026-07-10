@@ -15,13 +15,14 @@ import { load as loadKilkenny } from "./adapters/kilkenny";
 import { load as loadOffaly } from "./adapters/offaly";
 import { load as loadWaterford } from "./adapters/waterford";
 import { load as loadKildare } from "./adapters/kildare";
+import { load as loadMayo } from "./adapters/mayo";
 import { geocodeAll } from "./geocode";
 
 // Rough bounding box around the island of Ireland.
 const LAT_MIN = 51.3, LAT_MAX = 55.5;
 const LON_MIN = -10.7, LON_MAX = -5.3;
 
-const ADAPTERS = [loadDlr, loadSouthDublin, loadFingal, loadDublinCity, loadCorkCity, loadCorkCounty, loadGalway, loadLimerick, loadWicklow, loadRoscommon, loadMeath, loadKilkenny, loadOffaly, loadWaterford, loadKildare];   // every new council adds one entry here
+const ADAPTERS = [loadDlr, loadSouthDublin, loadFingal, loadDublinCity, loadCorkCity, loadCorkCounty, loadGalway, loadLimerick, loadWicklow, loadRoscommon, loadMeath, loadKilkenny, loadOffaly, loadWaterford, loadKildare, loadMayo];   // every new council adds one entry here
 
 function inIreland(s: Site): boolean {
   return (
@@ -62,8 +63,42 @@ async function main() {
   for (const s of good) bump(s.council, "mapped");
   for (const s of review) bump(s.council, "review");
 
+  // Where each council's data comes from, for the coverage table's Source link.
+  const sourceByCouncil = new Map<string, string>();
+  for (const s of all) {
+    if (s.source_url && !sourceByCouncil.has(s.council)) sourceByCouncil.set(s.council, s.source_url);
+  }
+
+  // When each council last updated its OWN register at source (best-effort, not
+  // when we fetched it). ArcGIS layers: editingInfo.lastEditDate; smartdublin:
+  // dataset modified date; PDF/portal councils: the date stated on the register.
+  // Limerick is a publication month only (register PDF under a /2026-03/ path).
+  // Refresh these when you re-pull the sources.
+  const SOURCE_UPDATED: Record<string, string> = {
+    "Dún Laoghaire-Rathdown": "2025-06-19",
+    "South Dublin": "2026-05-28",
+    "Fingal": "2026-01-05",
+    "Dublin City": "2026-06-24",
+    "Cork City": "2026-07-08",
+    "Cork County": "2026-06-18",
+    "Galway City": "2026-07-08",
+    "Limerick City and County": "2026-03-01",
+    "Wicklow": "2025-08-19",
+    "Roscommon": "2026-07-10",
+    "Meath": "2026-03-30",
+    "Kilkenny": "2026-03-27",
+    "Offaly": "2025-10-15",
+    "Waterford": "2026-07-09",
+    "Kildare": "2026-03-20",
+    "Mayo": "2026-03-06",
+  };
+
   const councils = [...byCouncil.entries()]
-    .map(([council, c]) => ({ council, ...c }))
+    .map(([council, c]) => ({
+      council, ...c,
+      source: sourceByCouncil.get(council) ?? "",
+      updated: SOURCE_UPDATED[council] ?? null,
+    }))
     .sort((a, b) => b.mapped + b.review - (a.mapped + a.review) || a.council.localeCompare(b.council));
 
   writeFileSync(

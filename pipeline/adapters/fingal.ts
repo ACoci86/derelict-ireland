@@ -8,6 +8,8 @@ import { makeSite, type Site } from "../schema";
 const CSV_URL =
   "https://www.arcgis.com/sharing/rest/content/items/" +
   "1393e90e46f1415dae47133c4bc8595a/data";
+// Human-facing dataset page (the CSV_URL above is a raw data download).
+const SOURCE_URL = "https://hub.arcgis.com/datasets/1393e90e46f1415dae47133c4bc8595a_0";
 
 const RAW_DIR = "data/raw/fingal";
 const COUNCIL = "Fingal";
@@ -58,7 +60,7 @@ export async function load(): Promise<Site[]> {
       address,
       register_ref: ref,
       // No coordinates in the source -> left for the geocoder.
-      source_url: CSV_URL,
+      source_url: SOURCE_URL,
       retrieved: today,
     });
   });

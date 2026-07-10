@@ -1,6 +1,6 @@
 # Sites not yet mapped (held for review)
 
-168 sites the geocoder could not place. Generated 2026-07-10.
+359 sites the geocoder could not place. Generated 2026-07-10.
 
 ## South Dublin (6)
 
@@ -187,3 +187,197 @@
 - `kildare-DS-2024-06`: 4 Plewmans Terrace, Athy, Co. Kildare
 - `kildare-DS-2026-06`: 479 Skenagun, Castledermot, Co. Kildare
 - `kildare-DS-2025-23`: Pine Vale, Killeenmore, Sallins, Naas, Co. Kildare
+
+## Mayo (191)
+
+- `mayo-ds2024-17`: Lidl House, Bohernasup, Ballina, Co Mayo F26 X5P9
+- `mayo-ds40-108`: "Stephanie's Hair Salon", Abbey Street, Abbeyhalfquarter, Ardnaree South, Ballina, Co Mayo F26XT63
+- `mayo-ds40-114`: 26 Roche's Terrace, Ballina, Co Mayo
+- `mayo-ds40-121`: Lower Bunree Road, Ballina, Co Mayo
+- `mayo-ds40-122`: Lower Bunree Road, Ballina, Co Mayo
+- `mayo-ds40-126`: Abbey Street, Abbeyhalfquater, Ardnaree South, Ballina, F26 R6D2, Co. Mayo
+- `mayo-ds40-128`: 2 Nally Street, Ballina, Co Mayo
+- `mayo-ds40-133`: 27 Roche's Terrace, Ballina, Co Mayo
+- `mayo-ds40-141`: "Pinocchio's", O'Rahilly Street, Ballina, Co Mayo
+- `mayo-ds40-142`: James Connolly Street, Ballina, Co MayoF26 VPP3, Co. Mayo
+- `mayo-ds40-143`: 27 Corcoran's Terrace, Ballina, Co Mayo F26 W889
+- `mayo-ds40-145`: "Manse", Walsh Street, Ballina, Co Mayo
+- `mayo-ds40-150`: 12 Convent Terrace, McDermott Street, Ballina, Co Mayo F26 R2Y1
+- `mayo-ds40-160`: Becket' s Saw Mill, Barret Street, Ballina, Co Mayo
+- `mayo-ds40-164`: The Brook, Ballina, Co Mayo F26 H9K8
+- `mayo-ds40-165`: The Brook, Ballina, Co Mayo F26 F6P6
+- `mayo-ds40-166`: The Brook, Ballina, Co Mayo F26 H9K8
+- `mayo-ds40-174`: 20 Healy Terrace, Ballina, Co Mayo
+- `mayo-ds40-175`: 16 Healy Terrace, Ballina, Co Mayo
+- `mayo-ds40-180`: Clare Street, Ballina, Co Mayo
+- `mayo-ds40-184`: Un-Used Land, Castlefield Manor, Kilmoremoy, Ballina, Co Mayo
+- `mayo-ds40-191`: No. (9) St. Enda's Villa's Ballina, Co Mayo F26 Y9P0.
+- `mayo-ds40-195`: Property 1 Barrett Street, Ballina, Co Mayo F26 C3W2
+- `mayo-ds40-196`: Property 100 Barrett Street, Ballina, Co Mayo F26 C3W2, adjoining, (Old Forge Building)
+- `mayo-ds40-57`: O'Rahilly Street, Ballina, F26 K803 (Garveys Bakery), Co. Mayo
+- `mayo-ds40-68`: Old Mill, Bunree Road, Ballina, Co. Mayo
+- `mayo-ds40-76`: Entrance to "The Hawthorns", Killala Road, Ballina, Co. Mayo
+- `mayo-ds40-83`: Old Mill,Knocknalyre, Sligo Road, Ballina, Co. Mayo
+- `mayo-ds40-91`: "Pet Stop Discount Warehouse", Kevin Barry St., Ballina,Co Mayo F26 A073
+- `mayo-ds40-94`: "Diamond Memorials", Teeling St., Ballina, Co. Mayo
+- `mayo-ds2024-03`: 6 Rath Glas, Rehinsfort, Ballina, Co Mayo F26 DTR2
+- `mayo-ds2024-06`: Foxford Road, Ballina, Co Mayo F26 K4D&
+- `mayo-ds2024-23`: Tyrawley House, McDermott Street, Ballina, Co Mayo F26 R5P3
+- `mayo-ds2025-02`: No. 8 Convent Hill Grove, Ballina, Co Mayo F26 X9N9
+- `mayo-ds2025-03`: 2 Oaklawn, Killala Road, Ballina, F26 P6P2, Co. Mayo
+- `mayo-ds2025-04`: 3 Oaklawn, Killala Road, Ballina, F26 D6C7, Co. Mayo
+- `mayo-ds2026-23`: The Brook, Abbeyhalfquarter, Ballina, Co Mayo
+- `mayo-ds01-20`: Main Street, Ballycastle, Co Mayo
+- `mayo-ds01-23`: Main Street, Ballycastle, Co Mayo
+- `mayo-ds16-29`: Kilmurrymore, Rake St., Crossmolina, Co Mayo
+- `mayo-ds16-31`: "Corcoran's", Ballina Street, Crossmolina, Co Mayo
+- `mayo-ds16-38`: Erris Street, Crossmolina, Co Mayo
+- `mayo-ds16-39`: Erris Street, Crossmolina, Co Mayo
+- `mayo-ds16-40`: "Boys National School", Chapel Street, Crossmolina, Co. Mayo
+- `mayo-ds10-37`: Georges Street, Killala, Co Mayo
+- `mayo-ds10-45`: "Warehouse/Grainstore", Courthosue Street, Killala, Co Mayo
+- `mayo-ds10-47`: The Acres, Killala, Co Mayo
+- `mayo-ds10-48`: Barrack Street, Killala, Co Mayo F26 NW64
+- `mayo-ds10-52`: R314, Gore Street, Killala, Co Mayo F26 CR94
+- `mayo-ds2024-16`: 43 Woodview Court, Killala, Co Mayo F26 FV32
+- `mayo-ds30-01`: Steelaun, Rathfran, Carrowmore Lacken, Ballina, Co Mayo
+- `mayo-ds42-03`: "Woodside Motors", Claremorris Road, Balla, Co Mayo
+- `mayo-ds42-04`: Main Street, Balla, Co Mayo
+- `mayo-ds42-06`: Main Street, Balla, Co Mayo F23 H429
+- `mayo-ds42-08`: Main Street, Balla, Co Mayo F23 YH30
+- `mayo-ds2024-19`: Semi-detached structure adjacent to former Garda Station, Ballyglass, Claremorris, Co Mayo
+- `mayo-ds43-01`: "Ballyvary House", Main Street, Ballyvary, Castlebar, Co Mayo F23 CH64
+- `mayo-ds39-03`: "Heneghan's", Belcarra, Castlebar, Co Mayo
+- `mayo-ds41-17`: Saleen Property Site 2F, Co. Mayo
+- `mayo-ds41-18`: Quinns, Mountain View, Co Mayo
+- `mayo-ds41-21`: Gavin and Brennan Buildings, Knockthomas, Castlebar, Co Mayo F23 YW65
+- `mayo-ds41-23`: Site H: Brennan's Yard, Knockthomas, Castlebar, Co Mayo
+- `mayo-ds41-24`: Former Commercial Premises, Newport Road, Castlebar, Co Mayo F23E297
+- `mayo-ds41-32`: Hanley's Shop, Rock Square, Castlebar, Co Mayo
+- `mayo-ds41-34`: Davitt's Terrace, Castlebar, Co Mayo F23 PW30
+- `mayo-ds41-40`: "Ellison Street House", Ellison Street, Castlebar, Co Mayo F23 HY10
+- `mayo-ds41-41`: "Terraced House", Tucker Street, Castlebar, Co Mayo
+- `mayo-ds41-42`: "Unfinished House", Station Road, Castlebar, Co Mayo
+- `mayo-ds41-45`: Saleen Site (beside Cushlough), Saleen, Castlebar, Co Mayo
+- `mayo-ds41-48`: Timlin House, Newport Road, Castlebar, Co Mayo
+- `mayo-ds2025-16`: Hill House, Mountain View, Castlebar, Co Mayo, F23 WE16
+- `mayo-ds2025-51`: 12 Belvedere Court, Newtown, Castlebar, Co Mayo F23 CX29
+- `mayo-ds2025-63`: Ashton, Spencer Park, Castlebar, Co Mayo F23 E261
+- `mayo-ds2025-27`: Devanney's Bar, Lahardane, Co Mayo F26 CK77
+- `mayo-ds2025-66`: Lahardane, Ballina, Co Mayo F26 P5X5
+- `mayo-ds25-02`: 27 Ard Lugalisheen, Ballindine, Co Mayo
+- `mayo-ds25-03`: 26 Ard Lugalisheen, Ballindine, Co Mayo
+- `mayo-ds25-04`: 25 Ard Lugalisheen, Ballindine, Co Mayo
+- `mayo-ds25-05`: 24 Ard Lugalisheen, Ballindine, Co Mayo
+- `mayo-ds2025-28`: 4 Ard Lugalisheen, Ballindine, Co Mayo F12 K660
+- `mayo-ds17-08`: High Street, Ballinrobe, Co Mayo
+- `mayo-ds17-09`: High Street, Ballinrobe, Co Mayo
+- `mayo-ds17-10`: High Street, Ballinrobe, Co Mayo
+- `mayo-ds17-38`: Old Rugby Club, High St., Ballinrobe, Co Mayo
+- `mayo-ds17-46`: Cornmarket, Ballinrobe, Co Mayo
+- `mayo-ds17-52`: Glebe Street, Ballinrobe, Co Mayo "Farraghers Shop"
+- `mayo-ds17-54`: "Old Garage", Castlebar Road, Ballinrobe, Co Mayo
+- `mayo-ds17-65`: "Mooneys", Bridge Street, Ballinrobe, Co Mayo F31 AK54
+- `mayo-ds17-77`: Bowgate Street, Ballinrobe, Co Mayo F31 H322
+- `mayo-ds2025-13`: 88 New Street, Ballinrobe, Co Mayo F31 X337
+- `mayo-ds2025-26`: Cloonnagashel, Ballinrobe, Co Mayo F31 KX73
+- `mayo-ds2025-14`: 87 New Street, Ballinrobe, Co Mayo
+- `mayo-ds2025-25`: Glenview, 49 Abbey Street, Ballinrobe, Co Mayo F31 T671
+- `mayo-ds2025-56`: 11 Hazel Court, Convent Road, Ballinrobe, Co Mayo F31 YK83
+- `mayo-ds2025-57`: Apartment Buildings & Shop Units at Hazel Court, Convent Road, Ballinrobe, Co Mayo F31 K461
+- `mayo-ds2025-58`: Apartment Buildings & Shop Units at Hazel Court, Convent Road, Ballinrobe, Co Mayo F31 XF34
+- `mayo-ds2025-59`: Apartment Buildings & Shop Units at Hazel Court, Convent Road, Ballinrobe, Co Mayo F31 R981
+- `mayo-ds2025-60`: Apartment Buildings & Shop Units at Hazel Court, Convent Road, Ballinrobe, Co Mayo F31 H562
+- `mayo-ds2025-61`: Apartment Buildings & Shop Units at Hazel Court, Convent Road, Ballinrobe, Co Mayo F31 T025
+- `mayo-ds2025-62`: Apartment Buildings & Shop Units at Hazel Court, Convent Road, Ballinrobe, Co Mayo F31 AN81
+- `mayo-ds18-26`: Clare Road, Ballyhaunis, Co Mayo
+- `mayo-ds18-50`: "Dillon's", Main Street & Knox Stret, Ballyhaunis, Co Mayo F25XP63
+- `mayo-ds18-61`: Old Larganboy School, Larganboy East, Co Mayo
+- `mayo-ds18-65`: "McCabe House", Abbey Street, Ballyhaunis, Co Mayo
+- `mayo-ds18-67`: Old Shed/Garage, Carrownluggan, Ballyhaunis, Co Mayo
+- `mayo-ds2025-08`: 37 Barley Hill Court, Bohola, Co Mayo F12 NN88
+- `mayo-ds20-04`: Ballagh Street - Dwelling House, Charlestown, Co Mayo
+- `mayo-ds20-06`: Mark C. Henry Lane - Dwelling House, Charlestown, Co Mayo
+- `mayo-ds20-09`: Chapel Street, Charlestown, Co Mayo
+- `mayo-ds20-12`: JF Mechanical Engineering, Lowpark, Charlestown, Co Mayo F12 K235
+- `mayo-ds20-13`: Ballagh Street, Charlestown, Co Mayo F12 KN66
+- `mayo-ds19-33`: Adjacent to Town Hall, Claremorris, Co Mayo
+- `mayo-ds19-42`: Cash For Clothes, The Square, Claremorris, Co Mayo
+- `mayo-ds19-43`: O Brien Flats Knock Road Claremorris Co Mayo F12Y1T9, F12Y314
+- `mayo-ds19-59`: Town Hall Road, Claremorris, Co Mayo
+- `mayo-ds19-63`: James Street, Claremorris, Co Mayo (beside bank on corner F12 VF95).
+- `mayo-ds19-73`: Old Convent, Claremount, Claremorris, Co Mayo F12WP03
+- `mayo-ds2025-22`: 16 Ard Rua, Claremorris, Co Mayo F12 P6K5
+- `mayo-ds2025-44`: 37 Grattan Manor, Grattan Park, Claremorris, Co Mayo F12 R7P3
+- `mayo-ds02-01`: Dispensary Road, Foxford, Co Mayo
+- `mayo-ds02-04`: Davitt St, Foxford, Co Mayo F26 DY61
+- `mayo-ds2024-21`: House without a roof, Irishtown, Foxford, Co Mayo
+- `mayo-ds2024-26`: Derelict Estate, Barrack Road, Foxford, Co Mayo
+- `mayo-ds2024-22`: Irishtown, Foxford, Co Mayo F26 EY90
+- `mayo-ds04-07`: Old Petrol Station, N17, Kilkelly, Co Mayo
+- `mayo-ds04-08`: Bridge Street. Kilkelly, Co Mayo F35 V840
+- `mayo-ds04-14`: High Street, Kilkelly, Co Mayo F35 AP92
+- `mayo-ds04-16`: Ballaghaderreen Road, Kilkelly, Co Mayo
+- `mayo-ds12-34`: Thomas Street, Kiltimagh, Co Mayo
+- `mayo-ds12-47`: "Raftery Room", Main Street, Kiltimagh, Co Mayo
+- `mayo-ds12-51`: Ballinamore, Kiltimagh, Co Mayo F12RK72
+- `mayo-ds12-52`: Former Commercial Unit, Main Street, Kiltimagh, Co Mayo F12EK84.
+- `mayo-ds12-56`: A. Cleary & Sons Limited, George's Street, Kiltimagh, Co Mayo
+- `mayo-ds2024-20`: Former N17 Night-Club, Main Street, Kiltimagh, Co Mayo F12 ND32
+- `mayo-ds2025-35`: James Street, Kiltimagh, Co Mayo F12 KV00
+- `mayo-ds06-01`: Belmont Hotel, Churchfield, Knock, Co Mayo F12 XF64
+- `mayo-ds31-01`: Roundfort Stores, Roundfort, Hollymount, Co Mayo F12 R2E1
+- `mayo-ds05-06`: Main St., Shrule, Co Mayo
+- `mayo-ds15-25`: Old Dwelling House, Pound Lane, Swinford, Co Mayo F12 R1X9
+- `mayo-ds15-35`: Station Road, Swinford, Co Mayo F 12 D8660
+- `mayo-ds15-36`: St. Ita's Terrace, Swinford, Co Mayo
+- `mayo-ds15-37`: Brookville Ave. Swinford, Co Mayo
+- `mayo-ds15-38`: Brookville Ave. Swinford, Co Mayo
+- `mayo-ds15-47`: Pound Lane, Swinford, Co Mayo
+- `mayo-ds15-48`: Pound Lane, Swinford, Co Mayo
+- `mayo-ds15-49`: Bridge Street, Brookville Avenue, Swinford, Co Mayo
+- `mayo-ds15-50`: Brookville Avenue, Swinford, Co Mayo
+- `mayo-ds15-51`: Brookville Avenue, Swinford, Co Mayo
+- `mayo-ds15-54`: Davitt Place, Swinford, Co Mayo F12 VY82
+- `mayo-ds15-55`: Station Road, Swinford, Co Mayo F 12 D8660
+- `mayo-ds15-60`: No. 3 Chapel Row, Swinford, Co Mayo F12 P522.
+- `mayo-ds15-61`: No (12) Gleann Darach, Swinford, Co Mayo F12 K318
+- `mayo-ds15-62`: No (13) Gleann Darach, Swinford, Co Mayo F12 WF64.
+- `mayo-ds15-63`: No (14) Gleann Darach, Swinford, Co Mayo F12X722
+- `mayo-ds2024-14`: Ballina Road, Swinford, Co Mayo F12 T289
+- `mayo-ds2025-36`: Carrowneden (House 1), Killasser, Swinford, Co Mayo
+- `mayo-ds2025-37`: Carrowneden (House 2), Killasser, Swinford, Co Mayo
+- `mayo-ds30-01-a`: Kilmaine Road, The Neale, Ballinrobe, Co Mayo
+- `mayo-ds09-53`: Pollagh, Keel, Achill, Co Mayo
+- `mayo-ds09-54`: Pollagh, Keel, Achill, Co Mayo F28 NX43
+- `mayo-ds09-59`: Keel West, Dooagh, Achill, Co Mayo
+- `mayo-ds09-61`: Keel West, Dooagh, Achill, Co Mayo F28 TW10
+- `mayo-ds09-66`: Polranny, Achill Sound, Co Mayo
+- `mayo-ds09-67`: "The Railway Hostel", Polranny, Achill Sound, Westport, Co Mayo F28 W6DO
+- `mayo-ds09-68`: Polranny, Achill Sound, Co Mayo F28 F102
+- `mayo-ds09-72`: Polranny, Achill Sound, Co Mayo
+- `mayo-ds09-82`: Slievemore, Dooagh, Achill, Co Mayo F28 VW13
+- `mayo-ds09-85`: Pollagh, Keel, Achill. Co Mayo
+- `mayo-ds24-01`: The Old Terminal Building, Achill Sound, Co. Mayo
+- `mayo-ds2026-14`: Bangor Erris, Ballina, Co Mayo F26 F9T3
+- `mayo-ds2026-16`: An Eachléim, An Fód Dubh, Béal an Átha, Contae Maigh Eo (Teach 1), Co. Mayo
+- `mayo-ds2026-17`: An Eachléim, An Fód Dubh, Béal an Átha, Contae Maigh Eo (Teach 2), Co. Mayo
+- `mayo-ds2026-18`: An Eachléim, An Fód Dubh, Béal an Átha, Contae Maigh Eo (Teach 3), Co. Mayo
+- `mayo-ds2026-19`: An Eachléim, An Fód Dubh, Béal an Átha, Contae Maigh Eo (Teach 4), Co. Mayo
+- `mayo-ds2026-20`: An Eachléim, An Fód Dubh, Béal an Átha, Contae Maigh Eo (Suíomh), Co. Mayo
+- `mayo-ds13-50`: "Tallagh House", Tallagh, Belmullet, Co Mayo
+- `mayo-ds2025-70`: 8 Shráid na Beairice, Íochtarach, Béal an Mhuirthead, Co Mhaigh Eo F26 PQ23, Co. Mayo
+- `mayo-ds2025-69`: Shráid na Beairice, Íochtarach, Béal an Mhuirthead, Co Mhaigh Eo F26 P272, Co. Mayo
+- `mayo-ds07-03`: Long Street, Louisburgh, Co Mayo F28 Y567
+- `mayo-ds07-04`: Long Street, Louisburgh, Co Mayo F28 N660
+- `mayo-ds08-32`: "Carrowbaun House", Medlicott Street, Newport, Co Mayo F28 PD62
+- `mayo-ds08-37`: Quay Road, Newport, Co Mayo Townland of KnocknageehaF28 FX04
+- `mayo-ds08-43`: George's Street, Newport, Co Mayo
+- `mayo-ds08-52`: Newport Youth Café, Castlebar Street, Newport, Co Mayo F28 HF79
+- `mayo-ds10-01`: Fairgreens Lower, Westport,F28 ND68, Co. Mayo
+- `mayo-ds10-07`: Quay Road Lower, Westport, Co Mayo
+- `mayo-ds10-12`: Quay Road Lower, Westport, F28 Y096, Co. Mayo
+- `mayo-ds10-13-a`: Quay Road Lower, Westport, Co .Mayo, F28 V963
+- `mayo-ds10-24`: Altamount Street, Westport, Co Mayo F28 H292.
+- `mayo-ds10-25`: 5 Hillcrest, High Street, Westport, Co Mayo F28 WT25
+- `mayo-ds10-27`: Altamount Street, Westport, Co Mayo F28 RK12

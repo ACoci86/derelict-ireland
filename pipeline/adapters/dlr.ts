@@ -8,6 +8,8 @@ const CSV_URL =
   "https://data.smartdublin.ie/dataset/" +
   "f991ba64-ab1f-47c4-af28-d1c0bc1be4a5/resource/" +
   "969d35e5-e686-49e2-babc-3b66457d54e5/download/derelict-sites-register-dlr.csv";
+// Human-facing dataset page (the CSV_URL above is a direct file download).
+const SOURCE_URL = "https://data.smartdublin.ie/dataset/f991ba64-ab1f-47c4-af28-d1c0bc1be4a5";
 
 const RAW_DIR = "data/raw/dlr";
 const COUNCIL = "Dún Laoghaire-Rathdown";
@@ -72,7 +74,7 @@ export async function load(): Promise<Site[]> {
       lat,
       lon,
       geocode_confidence: confidence,
-      source_url: CSV_URL,
+      source_url: SOURCE_URL,
       retrieved: today,
     });
   });

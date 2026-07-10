@@ -12,7 +12,12 @@ const councilCount = councils.length;
 // number of sites we couldn't place on the map.
 const stats = JSON.parse(readFileSync("public/stats.json", "utf8"));
 const reviewCount = stats.review;
-const councilStats: { council: string; mapped: number; review: number }[] = stats.councils ?? [];
+const councilStats: { council: string; mapped: number; review: number; source: string; updated: string | null }[] = stats.councils ?? [];
+
+// Short, human-readable host for a source URL, e.g. "corkcity.ie".
+const sourceHost = (u: string): string => {
+  try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; }
+};
 ---
 
 <!DOCTYPE html>
@@ -85,7 +90,7 @@ const councilStats: { council: string; mapped: number; review: number }[] = stat
       box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
     }
     .coverage {
-      max-width: 820px;
+      max-width: 1150px;
       margin: 2.5rem auto 0;
       padding: 0 1.25rem;
     }
@@ -129,6 +134,21 @@ const councilStats: { council: string; mapped: number; review: number }[] = stat
     td.council { font-weight: 500; white-space: nowrap; }
     td.mapped { color: var(--accent); font-weight: 600; }
     td.dim { color: var(--muted); }
+    td.upd { white-space: nowrap; color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
+    td.src { max-width: 150px; }
+    td.src a {
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      vertical-align: bottom;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: .85rem;
+    }
+    td.src a:hover { text-decoration: underline; }
+    .maplibregl-popup-content a { color: var(--accent); }
     .cov { display: flex; align-items: center; gap: .6rem; min-width: 130px; }
     .cov-track {
       flex: 1;
@@ -203,6 +223,8 @@ const councilStats: { council: string; mapped: number; review: number }[] = stat
               <th class="n">Not yet mapped</th>
               <th class="n">Total</th>
               <th>Coverage</th>
+              <th>Source</th>
+              <th>Updated</th>
             </tr>
           </thead>
           <tbody>
@@ -221,6 +243,12 @@ const councilStats: { council: string; mapped: number; review: number }[] = stat
                       <span class="cov-pct">{pct}%</span>
                     </div>
                   </td>
+                  <td class="src">
+                    {c.source && (
+                      <a href={c.source} target="_blank" rel="noopener" title={c.source}>{sourceHost(c.source)}</a>
+                    )}
+                  </td>
+                  <td class="upd">{c.updated ?? ""}</td>
                 </tr>
               );
             })}
@@ -237,6 +265,8 @@ const councilStats: { council: string; mapped: number; review: number }[] = stat
                   <span class="cov-pct">{Math.round((siteCount / (siteCount + reviewCount)) * 100)}%</span>
                 </div>
               </td>
+              <td></td>
+              <td></td>
             </tr>
           </tfoot>
         </table>
@@ -263,23 +293,49 @@ const councilStats: { council: string; mapped: number; review: number }[] = stat
       // public/sites.geojson is served at the site root, so fetch "/sites.geojson".
       const geojson = await (await fetch("/sites.geojson")).json();
 
-      map.addSource("sites", { type: "geojson", data: geojson });
+      // Cluster the points. With ~1,400 sites, a plain point layer overwhelms
+      // the low-zoom tiles (points get dropped when zoomed out); clustering
+      // renders reliably at every zoom and reads better than overlapping dots.
+      map.addSource("sites", {
+        type: "geojson",
+        data: geojson,
+        cluster: true,
+        clusterRadius: 45,
+        clusterMaxZoom: 12,
+      });
 
-      // Frame the whole dataset (i.e. the island) rather than a fixed city.
-      const lons = geojson.features.map((f: any) => f.geometry.coordinates[0]);
-      const lats = geojson.features.map((f: any) => f.geometry.coordinates[1]);
-      if (lons.length) {
-        map.fitBounds(
-          [[Math.min(...lons), Math.min(...lats)], [Math.max(...lons), Math.max(...lats)]],
-          { padding: 40, duration: 0 }
-        );
-        map.setZoom(map.getZoom() - 1);       // pull back one scroll step
-      }
-
+      // Cluster bubbles, sized by how many sites they contain.
+      map.addLayer({
+        id: "clusters",
+        type: "circle",
+        source: "sites",
+        filter: ["has", "point_count"],
+        paint: {
+          "circle-color": "#c0392b",
+          "circle-opacity": 0.85,
+          "circle-radius": ["step", ["get", "point_count"], 14, 10, 18, 50, 24, 200, 32],
+          "circle-stroke-width": 2,
+          "circle-stroke-color": "#fff",
+        },
+      });
+      map.addLayer({
+        id: "cluster-count",
+        type: "symbol",
+        source: "sites",
+        filter: ["has", "point_count"],
+        layout: {
+          "text-field": ["get", "point_count_abbreviated"],
+          "text-font": ["Open Sans Semibold"],
+          "text-size": 12,
+        },
+        paint: { "text-color": "#fff" },
+      });
+      // Individual sites (shown once a cluster is broken open by zooming in).
       map.addLayer({
         id: "site",
         type: "circle",
         source: "sites",
+        filter: ["!", ["has", "point_count"]],
         paint: {
           "circle-color": "#c0392b",
           "circle-radius": 7,
@@ -288,15 +344,39 @@ const councilStats: { council: string; mapped: number; review: number }[] = stat
         },
       });
 
-      map.on("click", "site", (e) => {
+      // Frame the whole dataset (i.e. the island) rather than a fixed city.
+      const coords = geojson.features.map((f: any) => f.geometry.coordinates);
+      if (coords.length) {
+        const bounds = coords.reduce(
+          (b: any, c: any) => b.extend(c),
+          new maplibregl.LngLatBounds(coords[0], coords[0])
+        );
+        map.fitBounds(bounds, { padding: 40, maxZoom: 13, duration: 0 });
+      }
+
+      // Click a cluster to zoom in until it splits apart.
+      map.on("click", "clusters", async (e: any) => {
+        const f = map.queryRenderedFeatures(e.point, { layers: ["clusters"] })[0];
+        const zoom = await map.getSource("sites").getClusterExpansionZoom(f.properties.cluster_id);
+        map.easeTo({ center: f.geometry.coordinates, zoom });
+      });
+
+      // Click an individual site for its details.
+      map.on("click", "site", (e: any) => {
         const p = e.features[0].properties;
+        const ref = p.register_ref ? `ref: ${p.register_ref}` : "";
+        const src = p.source_url
+          ? `<br><a href="${p.source_url}" target="_blank" rel="noopener">View source</a>`
+          : "";
         new maplibregl.Popup()
           .setLngLat(e.features[0].geometry.coordinates)
-          .setHTML(`<strong>${p.address}</strong><br>${p.council}<br>ref: ${p.register_ref}`)
+          .setHTML(`<strong>${p.address}</strong><br>${p.council}<br>${ref}${src}`)
           .addTo(map);
       });
-      map.on("mouseenter", "site", () => (map.getCanvas().style.cursor = "pointer"));
-      map.on("mouseleave", "site", () => (map.getCanvas().style.cursor = ""));
+      for (const id of ["clusters", "site"]) {
+        map.on("mouseenter", id, () => (map.getCanvas().style.cursor = "pointer"));
+        map.on("mouseleave", id, () => (map.getCanvas().style.cursor = ""));
+      }
     });
   </script>
 </body>

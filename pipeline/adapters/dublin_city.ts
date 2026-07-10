@@ -8,6 +8,8 @@ const GEOJSON_URL =
   "83b08920-50c6-45b0-b562-8f68940cadf4/resource/" +
   "7bdcf921-e0ed-4219-a4ac-2172e6b32dd9/download/" +
   "dublin_city_council_derelict_sites_register_260427.geojson";
+// Human-facing dataset page (the GEOJSON_URL above is a direct file download).
+const SOURCE_URL = "https://data.smartdublin.ie/dataset/83b08920-50c6-45b0-b562-8f68940cadf4";
 
 const RAW_DIR = "data/raw/dublin_city";
 const COUNCIL = "Dublin City";
@@ -63,7 +65,7 @@ export async function load(): Promise<Site[]> {
         lat,
         lon,
         geocode_confidence: confidence,
-        source_url: GEOJSON_URL,
+        source_url: SOURCE_URL,
         retrieved: today,
       });
     });

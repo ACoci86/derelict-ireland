@@ -7,6 +7,8 @@ const GEOJSON_URL =
   "https://hub.arcgis.com/api/v3/datasets/" +
   "8ff1b797804145b1ae236d0a6ae98076_0/downloads/data" +
   "?format=geojson&spatialRefId=4326&where=1%3D1";
+// Human-facing dataset page (the GEOJSON_URL above is a direct download API).
+const SOURCE_URL = "https://hub.arcgis.com/datasets/8ff1b797804145b1ae236d0a6ae98076_0";
 
 const RAW_DIR = "data/raw/south_dublin";
 const COUNCIL = "South Dublin";
@@ -59,7 +61,7 @@ export async function load(): Promise<Site[]> {
       lat,
       lon,
       geocode_confidence: confidence,
-      source_url: GEOJSON_URL,
+      source_url: SOURCE_URL,
       retrieved: today,
     });
   });
