@@ -4928,5 +4928,145 @@
       "-7.8490932",
       "-7.8489932"
     ]
-  }
+  },
+  "Sunglen, Old Pallas, Pallasgreen, Co. Limerick, County Limerick, Ireland": null,
+  "Main Street, Bruff, Co. Limerick, County Limerick, Ireland": {
+    "place_id": 283500185,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 992566327,
+    "lat": "52.4762013",
+    "lon": "-8.5477030",
+    "class": "tourism",
+    "type": "guest_house",
+    "place_rank": 30,
+    "importance": 0.00006136186770423465,
+    "addresstype": "tourism",
+    "name": "The Old Bank B&B",
+    "display_name": "The Old Bank B&B, R512, Bruff, The Municipal District of Cappamore — Kilmallock, County Limerick, Munster, V35 H744, Éire / Ireland",
+    "boundingbox": [
+      "52.4761406",
+      "52.4763235",
+      "-8.5478656",
+      "-8.5475376"
+    ]
+  },
+  "8 Nicker Street, Pallasgreen, Co. Limerick, County Limerick, Ireland": null,
+  "72 Abbey Vale, Corbally, Limerick, County Limerick, Ireland": null,
+  "16 Pinewood, Caherdavin, Limerick, County Limerick, Ireland": {
+    "place_id": 285161999,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 6685156087,
+    "lat": "52.6768258",
+    "lon": "-8.6575640",
+    "class": "place",
+    "type": "house",
+    "place_rank": 30,
+    "importance": 0.00006589532310974315,
+    "addresstype": "place",
+    "name": "",
+    "display_name": "16, Pinewood Avenue, Caherdavin, Limerick North Rural, The Metropolitan District of Limerick City, Limerick, County Limerick, Munster, Éire / Ireland",
+    "boundingbox": [
+      "52.6767758",
+      "52.6768758",
+      "-8.6576140",
+      "-8.6575140"
+    ]
+  },
+  "Limerick — register ref DS-050-25, County Limerick, Ireland": null,
+  "Hassetts Cross, Limerick, County Limerick, Ireland": null,
+  "Upper Main Street, Rathkeale, Co. Limerick, County Limerick, Ireland": null,
+  "Main Street, Rathkeale, Co. Limerick, County Limerick, Ireland": {
+    "place_id": 285290531,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 408071126,
+    "lat": "52.6471684",
+    "lon": "-8.8664276",
+    "class": "highway",
+    "type": "tertiary",
+    "place_rank": 26,
+    "importance": 0.05339469520103758,
+    "addresstype": "road",
+    "name": "Main Street",
+    "display_name": "Main Street, Pallaskenry, The Municipal District of Adare — Rathkeale, County Limerick, Munster, Éire / Ireland",
+    "boundingbox": [
+      "52.6394776",
+      "52.6484923",
+      "-8.8677157",
+      "-8.8578022"
+    ]
+  },
+  "Church Street, Dromcollogher, Co. Limerick, County Limerick, Ireland": {
+    "place_id": 286673478,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 1217582744,
+    "lat": "52.3387051",
+    "lon": "-8.9120114",
+    "class": "highway",
+    "type": "secondary",
+    "place_rank": 26,
+    "importance": 0.05339469520103758,
+    "addresstype": "road",
+    "name": "Church Street",
+    "display_name": "Church Street, Dromcolliher, The Municipal District of Newcastle West, County Limerick, Munster, Éire / Ireland",
+    "boundingbox": [
+      "52.3386998",
+      "52.3387103",
+      "-8.9120987",
+      "-8.9119242"
+    ]
+  },
+  "Old Road, Oolahills West, Oola, Co. Limerick, County Limerick, Ireland": null,
+  "Ballycormack, Shanagolden, Co. Limerick, County Limerick, Ireland": null,
+  "Dublin Road/Hillcroft Site, Limerick, County Limerick, Ireland": null,
+  "Tierney's, Roxboro Stores, Roxboro Road, Priors Land, Limerick, County Limerick, Ireland": null,
+  "Cuirt na hAbhainn, Clarina, Co. Limerick, County Limerick, Ireland": null,
+  "Barna, Pallasgreen, Co. Limerick, County Limerick, Ireland": null,
+  "4 Main Street, Bruree, Limerick, County Limerick, Ireland": null,
+  "Main Street, Patrickswell, Co. Limerick, County Limerick, Ireland": {
+    "place_id": 285187538,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 43557950,
+    "lat": "52.5964375",
+    "lon": "-8.7118439",
+    "class": "highway",
+    "type": "secondary",
+    "place_rank": 26,
+    "importance": 0.05339922865644309,
+    "addresstype": "road",
+    "name": "Main Street",
+    "display_name": "Main Street, Patrickswell, The Metropolitan District of Limerick City, Limerick, County Limerick, Munster, Éire / Ireland",
+    "boundingbox": [
+      "52.5951993",
+      "52.5976478",
+      "-8.7154931",
+      "-8.7081392"
+    ]
+  },
+  "Pallas, Kilmeedy, Co. Limerick, County Limerick, Ireland": {
+    "place_id": 285425158,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "relation",
+    "osm_id": 6117532,
+    "lat": "52.4092740",
+    "lon": "-8.9091871",
+    "class": "boundary",
+    "type": "administrative",
+    "place_rank": 20,
+    "importance": 0.13339469520103758,
+    "addresstype": "locality",
+    "name": "Pallas",
+    "display_name": "Pallas, Kilmeedy, The Municipal District of Newcastle West, County Limerick, Munster, Éire / Ireland",
+    "boundingbox": [
+      "52.4026520",
+      "52.4158659",
+      "-8.9172372",
+      "-8.9006162"
+    ]
+  },
+  "Carrowkeel, Lisnagry, Co. Limerick, County Limerick, Ireland": null
 }

@@ -1,97 +1,129 @@
 # Sites not yet mapped (held for review)
 
-190 sites the geocoder could not place. Generated 2026-07-09.
+204 sites the geocoder could not place. Generated 2026-07-10.
+
+## South Dublin (6)
+
+- `sdcc-1734` — Capri' Bungalow, Whitechurch Road, Rathfarnham, Dublin 16
+- `sdcc-1317A` — Ballyroan House Lodge, Ballyboden Road, Rathfarnham, Dublin 16
+- `sdcc-1989` — Derelict House (Beside Coolfan House), Robinhood Road, Dublin 22.
+- `sdcc-1886` — 3 Derelict Houses on Main Street, Rathcoole, Co Dublin
+- `sdcc-1991` — Derelict Site to Main Street, Rathcoole, Co Dublin
+- `sdcc-1631` — 2 Cottages, Main Street, Rathcoole, Co Dublin
+
+## Fingal (20)
+
+- `fingal-DS-19.16` — Site at Innisfree, Jugback Lane, Swords, Co Dublin
+- `fingal-DS-19.03` — 6, 8, 8A, 10 & 12 Bridge Street, Balbriggan, Co Dublin
+- `fingal-DS-21.13` — 30 Lawless Terrace, Balbriggan, Co Dublin
+- `fingal-DS-24.13` — 9 St Georges Square, Balbriggan, Co Dublin
+- `fingal-DS-24.17` — The Bakery, Georges Hill, Balbriggan
+- `fingal-DS-23.25` — Tesco Site, The Mall, Balbriggan
+- `fingal-DS-17.12B` — Site 1A, The Nurseries, Mulhuddart, Dublin 15
+- `fingal-DS-19.02` — 17 Myra Manor, Malahide, Co Dublin
+- `fingal-DS-14.25A` — Site Upper Main St, No 12, 14, 14A, 16, 18, 20, Rush
+- `fingal-DS-14.20A` — Site adjacent to 31 Carlton Court, Swords, Co Dublin
+- `fingal-DS-24.09` — Georges Court (behind 8-10 Drogheda St) Balbriggan
+- `fingal-DS-24.07` — Main Street, Lusk (house to left of Costcutters)
+- `fingal-DS-24.42` — Bob's Casino, South Strand, Skerries
+- `fingal-DS-23.21` — Rosario, Dublin Road, Swords, Co Dublin
+- `fingal-DS-22.03` — 3 Seaview Avenue, Baldoyle, Co Dublin
+- `fingal-DS-24.81` — Ballymun Villa, Charter House Hill, Ballymun Road
+- `fingal-DS-25.05` — Allendale House, Clonsilla Road, Dublin 15
+- `fingal-DS-24.62` — St Maur's Hall, Rush, Co Dublin
+- `fingal-DS-24.79` — Station Masters House, Balbriggan, Co Dublin
+- `fingal-DS-24.76` — No 4 Bremore Pastures Avenue, Balbriggan
 
 ## Cork City (88)
 
 - `cork-DSP-1021` — Site (adjacent to No.34) South Main Street
-- `cork-DSP-1170` — Corner of Coach Street
 - `cork-DSP-1237` — Site at Broad Lane
-- `cork-DSP-1258` — Site at Moylan's Lane
 - `cork-DSP-1303` — Site at South Douglas Road
-- `cork-DSP-1426` — CARMELITE PLACE, (FORMER 1-6 CARMELITE PLACE), WESTERN ROAD, CORK
-- `cork-DSP-1437` — 4a Old Spangle Hill, Popham's Road, Farranree, Cork
-- `cork-DSP-1472` — 24, LOWER JOHN STREET
-- `cork-DSP-1478` — 17 South View, Ballinlough, Cork
-- `cork-DSP-1496` — 2 Ferry Lane, Popes Quay, Cork
-- `cork-DSP-1502` — FORMER OUR LADY'S HOSPITAL, EASTERN SECTIONS OF ATKINS HALL BUILDING
+- `cork-DSP-1170` — Corner of Coach Street
 - `cork-DSP-1520` — 1, Parkgate Villas
-- `cork-DSP-1538` — 11/13 STRAWHALL, GERALD GRIFFIN STREEET
-- `cork-DSP-1555` — 70 Watercourse Road, Corner of Berwick Lane, Blackpool
-- `cork-DSP-1567` — The Former Good Shepherd Convent Site, Convent Avenue & Buckston Hill, Sunday's Well, Cork
-- `cork-DSP-1579` — 1 The Crescent, Lough Road, Cork
-- `cork-DSP-1633` — Woolhara House, Douglas Road, Cork
-- `cork-DSP-1677` — 3 Father Matthew Street and adjacent building at Fitton Street East.
-- `cork-DSP-1724` — 'Shandon', 14 The Grove, Shanakiel, Cork
-- `cork-DSP-1732` — 23, LOWER JOHN STREET
 - `cork-DSP-1744` — 5, Prosperous Place
+- `cork-DSP-1258` — Site at Moylan's Lane
 - `cork-DSP-1745` — Warehouse, at corner of Kyle Street
-- `cork-DSP-1749` — Derelict Site incorporating 36 Dominick Street and adjacent site and corner of Dominick Street and Shandon Street
 - `cork-DSP-1752` — 7 Shandon Villa, Pope's Road
-- `cork-DSP-1766` — 1 Convent View, Strawberry Hill, Cork
 - `cork-DSP-1811` — GRIANBRU, INCORPORATING FORMER POST OFFICE AT DENNEHY'S CROSS
+- `cork-DSP-1502` — FORMER OUR LADY'S HOSPITAL, EASTERN SECTIONS OF ATKINS HALL BUILDING
 - `cork-DSP-1813` — SITE 1, KYRL'S QUAY
 - `cork-DSP-1815` — SITE 3, KYRL'S QUAY
-- `cork-DSP-1825` — Former Angel Guardian Boys School, Springfield Road, Cork
-- `cork-DSP-1827` — Comprising 1 & 2 Ashton Place and Ashton Cottage (as bounded by Blackrock Road, Ashton Avenue, Ashton Park, and the curtilage of 3 & 4 Ashton Place and Feltrim Lodge), Blackrock
+- `cork-DSP-1732` — 23, LOWER JOHN STREET
+- `cork-DSP-1472` — 24, LOWER JOHN STREET
+- `cork-DSP-1538` — 11/13 STRAWHALL, GERALD GRIFFIN STREEET
+- `cork-DSP-1426` — CARMELITE PLACE, (FORMER 1-6 CARMELITE PLACE), WESTERN ROAD, CORK
+- `cork-DSP-1766` — 1 Convent View, Strawberry Hill, Cork
 - `cork-DSP-1847` — Property on Piccadilly Lane to the rear of 84 North Main Street
-- `cork-DSP-1850` — Lands formerly known as Lakelands Tavern
-- `cork-DSP-1851` — Monerea House, Albert Street, Cork T12 VAP6
 - `cork-DSP-1852` — Car park at Avenue Des Rennes Shopping Centre, Mahon
-- `cork-DSP-1867` — "Saint Benedict's", 11 Rossa Avenue, Bishopstown
-- `cork-DSP-1870` — Lenihan & Mansfield Warehouse & Adjacent lands at junction of Devonshire & Francis Street Cork
-- `cork-DSP-1881` — Lands formerly known as Manhattan Bar (as bounded by Lower Friars Walk, curtilage of "Woodleigh," curtilage of Ard Na Gréine, and sportsground), Lower Friars Walk, Cork
-- `cork-DSP-1882` — 3 Ard Cairn Villas, Churchyard Lane, Ballintemple
+- `cork-DSP-1850` — Lands formerly known as Lakelands Tavern
+- `cork-DSP-1827` — Comprising 1 & 2 Ashton Place and Ashton Cottage (as bounded by Blackrock Road, Ashton Avenue, Ashton Park, and the curtilage of 3 & 4 Ashton Place and Feltrim Lodge), Blackrock
+- `cork-DSP-1724` — 'Shandon', 14 The Grove, Shanakiel, Cork
+- `cork-DSP-1437` — 4a Old Spangle Hill, Popham's Road, Farranree, Cork
 - `cork-DSP-1886` — Derelict Site Site comprising of 6 & 7 Bramble Cottages and lands formerly known as 4 & 5 Bramble Cottages, Old Spangle Hill, Farranree, Cork
-- `cork-DSP-1897` — 7 Matthew Place, Blackrock Road, Ballintemple, Cork,T12A0DX
-- `cork-DSP-1916` — Riverstown, Poulacurry North, Glanmire, Cork T45 NH21
+- `cork-DSP-1567` — The Former Good Shepherd Convent Site, Convent Avenue & Buckston Hill, Sunday's Well, Cork
+- `cork-DSP-1677` — 3 Father Matthew Street and adjacent building at Fitton Street East.
+- `cork-DSP-1881` — Lands formerly known as Manhattan Bar (as bounded by Lower Friars Walk, curtilage of "Woodleigh," curtilage of Ard Na Gréine, and sportsground), Lower Friars Walk, Cork
 - `cork-DSP-1921` — Old Railway Station, Rochestown, Cork
-- `cork-DSP-1922` — Site adjacent to Pinecroft Inn, Grange Road, Douglas, Cork
 - `cork-DSP-1923` — 35 Hillside, Grange, Douglas, Cork T12 V8K1
-- `cork-DSP-1943` — 49/50 Old Market Place (junction of Wolfe Tone Street & Glen Ryan Road)
-- `cork-DSP-1952` — 7 St. Patrick's Terrace, Lower Glanmire Road
-- `cork-DSP-1959` — 8 Grange Terrace, Grange Road, Douglas
-- `cork-DSP-1969` — Greystone Cottage, Ballinure Road, Cork
-- `cork-DSP-1974` — Ryan Road) Gate Lodge, Woodville, Rochestown Road, Monfieldstown
+- `cork-DSP-1870` — Lenihan & Mansfield Warehouse & Adjacent lands at junction of Devonshire & Francis Street Cork
+- `cork-DSP-1478` — 17 South View, Ballinlough, Cork
+- `cork-DSP-1749` — Derelict Site incorporating 36 Dominick Street and adjacent site and corner of Dominick Street and Shandon Street
+- `cork-DSP-1496` — 2 Ferry Lane, Popes Quay, Cork
 - `cork-DSP-1985` — Vernon Mount House & Associated lands, Curraghconway, Cork
-- `cork-DSP-1990` — The Rochestown Inn, Rochestown Road, Cork
+- `cork-DSP-1969` — Greystone Cottage, Ballinure Road, Cork
+- `cork-DSP-1916` — Riverstown, Poulacurry North, Glanmire, Cork T45 NH21
+- `cork-DSP-1952` — 7 St. Patrick's Terrace, Lower Glanmire Road
+- `cork-DSP-1882` — 3 Ard Cairn Villas, Churchyard Lane, Ballintemple
+- `cork-DSP-1974` — Ryan Road) Gate Lodge, Woodville, Rochestown Road, Monfieldstown
 - `cork-DSP-1999` — 2 Devonshire Street North, Cork
 - `cork-DSP-2017` — "Levista", 25 Bernadette Way, Boreenmanna Road, Cork
-- `cork-DSP-2022` — Rope Walk/Rockwell Lane, off Sunday's Well Road, Cork
-- `cork-DSP-2025` — Forecourt at 49/50 Old Market Place (junction of Wolfe Tone St. & Glen Ryan Rd.)
 - `cork-DSP-2030` — Glen Iris, Kiely's Lane, Tower, Blarney, Cork
 - `cork-DSP-2031` — Site at Cooney's Lane, Ballinvuskig, Douglas, Cork
 - `cork-DSP-2033` — "Collingwood", Boreenmanna Road, Cork
+- `cork-DSP-2040` — 25 Fuller's Road, Cork
+- `cork-DSP-2022` — Rope Walk/Rockwell Lane, off Sunday's Well Road, Cork
+- `cork-DSP-1959` — 8 Grange Terrace, Grange Road, Douglas
+- `cork-DSP-2057` — 19 Seminary Walk, Farranree, Cork
+- `cork-DSP-2099` — Nos. 20, 21 & 22 Thomas Davis Street, Blackpool
+- `cork-DSP-2048` — Nos. 22-23 Ballyhooly Road, Cork
+- `cork-DSP-2105` — 60 Watercourse Road, Blackpool, Cork (formerly The Distillery bar)
+- `cork-DSP-2086` — 1 & 2 High Street, Douglas Road, Cork
+- `cork-DSP-2082` — 4 Hillsboro Place, Old Blackrock Road, Ballintemple
+- `cork-DSP-2071` — Nos. 1, 2 & 3 Saint Michael's Terrace, Blackrock Road, Cork
+- `cork-DSP-2171` — Formerly the Roisin Dubh pub, 15 Cattle Market Avenue, off Shandon Street, Cork
+- `cork-DSP-2157` — 5 Springview Terrace, Commons Road, Cork
+- `cork-DSP-1867` — "Saint Benedict's", 11 Rossa Avenue, Bishopstown
+- `cork-DSP-2158` — 221 Blarney Road, Sunday's Well, Cork (Formerly Kennedy's Bar)
+- `cork-DSP-1922` — Site adjacent to Pinecroft Inn, Grange Road, Douglas, Cork
+- `cork-DSP-2159` — Site at Berwick Lane (across from Berwick House), Blackpool, Cork
+- `cork-DSP-1990` — The Rochestown Inn, Rochestown Road, Cork
+- `cork-DSP-2166` — Site fronting Wellington Road & York Street, Cork
+- `cork-DSP-1555` — 70 Watercourse Road, Corner of Berwick Lane, Blackpool
+- `cork-DSP-2113` — 7 Watercourse Road (formerly The Revenue bar), Blackpool
+- `cork-DSP-2146` — Riverstown, Glanmire, Cork (adjoining the Riverstown Inn)
+- `cork-DSP-2151` — The Former Finbarr Galvin Motors, Wilton Road, Victoria Cross, Cork
+- `cork-DSP-2187` — 66 Meadow Grove Estate, Blackrock, Cork
+- `cork-DSP-2221` — Site between 8 Seminary Road and 9 Seminary Road, Blackpool, Cork
+- `cork-DSP-2212` — 7a Coburg Lane, Coburg Street, Cork, T23A8H3
+- `cork-DSP-1897` — 7 Matthew Place, Blackrock Road, Ballintemple, Cork,T12A0DX
+- `cork-DSP-2238` — (Formerly Cremin Drycleaners and BOI), East Douglas Street, Douglas, Cork
+- `cork-DSP-2219` — Property next to 1 Rock Cottages, Kileens, Rathpeacon, Co. Cork
+- `cork-DSP-2180` — 16 Sidney Place, Wellington Road, Cork
+- `cork-DSP-1579` — 1 The Crescent, Lough Road, Cork
+- `cork-DSP-2060` — Temple View, Beaumont Avenue, Blackrock Road, Cork
+- `cork-DSP-2222` — Woodside Cottage, Poulacurry South, Glanmire Road, Glanmire,
+- `cork-DSP-2147` — Cork Hollyhill Inn, Courtown Drive, Hollyhill, Cork
+- `cork-DSP-1825` — Former Angel Guardian Boys School, Springfield Road, Cork
+- `cork-DSP-1633` — Woolhara House, Douglas Road, Cork
+- `cork-DSP-1851` — Monerea House, Albert Street, Cork T12 VAP6
+- `cork-DSP-2117` — T45A611 32 Watercourse Road, Blackpool, Cork
+- `cork-DSP-1943` — 49/50 Old Market Place (junction of Wolfe Tone Street & Glen Ryan Road)
+- `cork-DSP-2025` — Forecourt at 49/50 Old Market Place (junction of Wolfe Tone St. & Glen Ryan Rd.)
 - `cork-DSP-2036` — 1 Alms Cottages, Glanmire Village, also known as 1 The Cottages
 - `cork-DSP-2037` — 2 Alms Cottages, Glanmire Village also known as 2 The Cottages
 - `cork-DSP-2038` — 3 Alms Cottages, Glanmire Village also known as 3 The Cottages
-- `cork-DSP-2040` — 25 Fuller's Road, Cork
-- `cork-DSP-2048` — Nos. 22-23 Ballyhooly Road, Cork
-- `cork-DSP-2057` — 19 Seminary Walk, Farranree, Cork
-- `cork-DSP-2060` — Temple View, Beaumont Avenue, Blackrock Road, Cork
-- `cork-DSP-2071` — Nos. 1, 2 & 3 Saint Michael's Terrace, Blackrock Road, Cork
-- `cork-DSP-2082` — 4 Hillsboro Place, Old Blackrock Road, Ballintemple
-- `cork-DSP-2086` — 1 & 2 High Street, Douglas Road, Cork
-- `cork-DSP-2099` — Nos. 20, 21 & 22 Thomas Davis Street, Blackpool
-- `cork-DSP-2105` — 60 Watercourse Road, Blackpool, Cork (formerly The Distillery bar)
-- `cork-DSP-2113` — 7 Watercourse Road (formerly The Revenue bar), Blackpool
-- `cork-DSP-2117` — T45A611 32 Watercourse Road, Blackpool, Cork
-- `cork-DSP-2146` — Riverstown, Glanmire, Cork (adjoining the Riverstown Inn)
-- `cork-DSP-2147` — Cork Hollyhill Inn, Courtown Drive, Hollyhill, Cork
-- `cork-DSP-2151` — The Former Finbarr Galvin Motors, Wilton Road, Victoria Cross, Cork
 - `cork-DSP-2154` — 1-6 Woodlea Cottages, Eastcliffe, Ballinglanna, Glanmire, Cork T45A611
-- `cork-DSP-2157` — 5 Springview Terrace, Commons Road, Cork
-- `cork-DSP-2158` — 221 Blarney Road, Sunday's Well, Cork (Formerly Kennedy's Bar)
-- `cork-DSP-2159` — Site at Berwick Lane (across from Berwick House), Blackpool, Cork
-- `cork-DSP-2166` — Site fronting Wellington Road & York Street, Cork
-- `cork-DSP-2171` — Formerly the Roisin Dubh pub, 15 Cattle Market Avenue, off Shandon Street, Cork
-- `cork-DSP-2180` — 16 Sidney Place, Wellington Road, Cork
-- `cork-DSP-2187` — 66 Meadow Grove Estate, Blackrock, Cork
-- `cork-DSP-2212` — 7a Coburg Lane, Coburg Street, Cork, T23A8H3
-- `cork-DSP-2219` — Property next to 1 Rock Cottages, Kileens, Rathpeacon, Co. Cork
-- `cork-DSP-2221` — Site between 8 Seminary Road and 9 Seminary Road, Blackpool, Cork
-- `cork-DSP-2222` — Woodside Cottage, Poulacurry South, Glanmire Road, Glanmire,
-- `cork-DSP-2238` — (Formerly Cremin Drycleaners and BOI), East Douglas Street, Douglas, Cork
 
 ## Cork County (76)
 
@@ -111,8 +143,6 @@
 - `cork-co-CMD-DS-05` — The Old School House, Ringaskiddy
 - `cork-co-CMD-DS-08` — The Nest Pembroke, Passage West
 - `cork-co-CMD-DS-10` — Knocknagore, Middle Rd, Crosshaven
-- `cork-co-ECMD-DS-01` — 1. McCurtainstown  (Kincora Terrace), Youghal
-- `cork-co-ECMD-DS-10` — Loretto Convent Site, Youghal
 - `cork-co-FMD-DS-02` — No. 1 & 1a Bridget St, Fermoy
 - `cork-co-FMD-DS-04` — Presentation Convent, Convent Hill, Mitchelstown
 - `cork-co-FMD-DS-10` — 24 St Bernards Place, Fermoy
@@ -122,6 +152,8 @@
 - `cork-co-FMD-DS-16` — Main Street, Rathcormac
 - `cork-co-FMD-DS-17` — Canon Street, Rathcormac
 - `cork-co-FMD-DS-18` — Main Street, Rathcormac
+- `cork-co-ECMD-DS-01` — 1. McCurtainstown  (Kincora Terrace), Youghal
+- `cork-co-ECMD-DS-10` — Loretto Convent Site, Youghal
 - `cork-co-KMMD-DS-01` — Former Central Hotel Site, Mallow
 - `cork-co-KMMD-DS-02` — 131,132 Davis Street Mallow, Mallow
 - `cork-co-KMMD-DS-05` — Laharn, Lombardstown, Lombardstown, Mallow
@@ -149,10 +181,6 @@
 - `cork-co-KMMD-DS-46` — Russell Place, Mallow
 - `cork-co-KMMD-DS-47` — Watergate Place, Kanturk
 - `cork-co-KMMD-DS-48` — Kilbrin Village, Kilbrin
-- `cork-co-KMMD-DS-49` — Newline, Charleville
-- `cork-co-KMMD-DS-50` — Smith Road, Charleville
-- `cork-co-KMMD-DS-51` — 12 Main Street, Newmarket
-- `cork-co-KMMD-DS-52` — Main Street, Newmarket
 - `cork-co-MMD-DS-02` — Cloghboola Old National School, Millstreet
 - `cork-co-MMD-DS-03` — Millstreet - East Side Mill Lane, Millstreet
 - `cork-co-MMD-DS-04` — Derelict Site at Bridewell Lane, Macroom
@@ -163,7 +191,6 @@
 - `cork-co-MMD-DS-09` — No 13 An Faithin, Tarelton, Tarelton
 - `cork-co-MMD-DS-10` — No 16 An Faithin, Terelton, Tarelton
 - `cork-co-MMD-DS-12` — Former Shop at New Street, Gurteenroe, Macroom, Macroom
-- `cork-co-MMD-DS-13` — 16 Oakridge, Meadowlands, Macroom
 - `cork-co-MMD-DS-21` — 14 Church Street, Millstreet
 - `cork-co-MMD-DS-22` — 9 Church Street, Millstreet
 - `cork-co-WCMD-DS-05` — Astna Street, Clonakilty
@@ -171,36 +198,25 @@
 - `cork-co-WCMD-DS-21` — Castle Ahan, Main St, Enniskeane
 - `cork-co-WCMD-DS-25` — Stella Maris, Beach, Bantry
 - `cork-co-WCMD-DS-26` — Sackville Strreet, Dunmanway
+- `cork-co-KMMD-DS-49` — Newline, Charleville
+- `cork-co-KMMD-DS-50` — Smith Road, Charleville
+- `cork-co-KMMD-DS-51` — 12 Main Street, Newmarket
+- `cork-co-KMMD-DS-52` — Main Street, Newmarket
+- `cork-co-MMD-DS-13` — 16 Oakridge, Meadowlands, Macroom
 
-## Fingal (20)
+## Limerick City and County (14)
 
-- `fingal-DS-14.20A` — Site adjacent to 31 Carlton Court, Swords, Co Dublin
-- `fingal-DS-14.25A` — Site Upper Main St, No 12, 14, 14A, 16, 18, 20, Rush
-- `fingal-DS-17.12B` — Site 1A, The Nurseries, Mulhuddart, Dublin 15
-- `fingal-DS-19.02` — 17 Myra Manor, Malahide, Co Dublin
-- `fingal-DS-19.03` — 6, 8, 8A, 10 & 12 Bridge Street, Balbriggan, Co Dublin
-- `fingal-DS-19.16` — Site at Innisfree, Jugback Lane, Swords, Co Dublin
-- `fingal-DS-21.13` — 30 Lawless Terrace, Balbriggan, Co Dublin
-- `fingal-DS-22.03` — 3 Seaview Avenue, Baldoyle, Co Dublin
-- `fingal-DS-23.21` — Rosario, Dublin Road, Swords, Co Dublin
-- `fingal-DS-23.25` — Tesco Site, The Mall, Balbriggan
-- `fingal-DS-24.07` — Main Street, Lusk (house to left of Costcutters)
-- `fingal-DS-24.09` — Georges Court (behind 8-10 Drogheda St) Balbriggan
-- `fingal-DS-24.13` — 9 St Georges Square, Balbriggan, Co Dublin
-- `fingal-DS-24.17` — The Bakery, Georges Hill, Balbriggan
-- `fingal-DS-24.42` — Bob's Casino, South Strand, Skerries
-- `fingal-DS-24.62` — St Maur's Hall, Rush, Co Dublin
-- `fingal-DS-24.76` — No 4 Bremore Pastures Avenue, Balbriggan
-- `fingal-DS-24.79` — Station Masters House, Balbriggan, Co Dublin
-- `fingal-DS-24.81` — Ballymun Villa, Charter House Hill, Ballymun Road
-- `fingal-DS-25.05` — Allendale House, Clonsilla Road, Dublin 15
-
-## South Dublin (6)
-
-- `sdcc-1317A` — Ballyroan House Lodge, Ballyboden Road, Rathfarnham, Dublin 16
-- `sdcc-1631` — 2 Cottages, Main Street, Rathcoole, Co Dublin
-- `sdcc-1734` — Capri' Bungalow, Whitechurch Road, Rathfarnham, Dublin 16
-- `sdcc-1886` — 3 Derelict Houses on Main Street, Rathcoole, Co Dublin
-- `sdcc-1989` — Derelict House (Beside Coolfan House), Robinhood Road, Dublin 22.
-- `sdcc-1991` — Derelict Site to Main Street, Rathcoole, Co Dublin
-
+- `limerick-DS-150-20` — Sunglen, Old Pallas, Pallasgreen, Co. Limerick
+- `limerick-DS-071-25` — 8 Nicker Street, Pallasgreen, Co. Limerick
+- `limerick-DS-111-25` — 72 Abbey Vale, Corbally, Limerick
+- `limerick-DS-050-25` — Limerick — register ref DS-050-25
+- `limerick-DS-100-22` — Hassetts Cross, Limerick
+- `limerick-DS-019-24` — Upper Main Street, Rathkeale, Co. Limerick
+- `limerick-DS-076-23` — Old Road, Oolahills West, Oola, Co. Limerick
+- `limerick-DS-081-25` — Ballycormack, Shanagolden, Co. Limerick
+- `limerick-DS-098-25` — Dublin Road/Hillcroft Site, Limerick
+- `limerick-DS-005-25` — Tierney's, Roxboro Stores, Roxboro Road, Priors Land, Limerick
+- `limerick-DS-025-25` — Cuirt na hAbhainn, Clarina, Co. Limerick
+- `limerick-DS-074-23` — Barna, Pallasgreen, Co. Limerick
+- `limerick-DS-022-24` — 4 Main Street, Bruree, Limerick
+- `limerick-DS-025-26` — Carrowkeel, Lisnagry, Co. Limerick

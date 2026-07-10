@@ -19,6 +19,9 @@ const AREA_HINT: Record<string, string> = {
   "South Dublin": "Dublin",
   "Fingal": "Dublin",
   "Dún Laoghaire-Rathdown": "Dublin",
+  "Limerick City and County": "County Limerick",
+  "Wicklow": "County Wicklow",
+  "Roscommon": "County Roscommon",
 };
 
 // Nominatim's result "type" -> our honest confidence level.
