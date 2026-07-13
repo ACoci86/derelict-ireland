@@ -13140,5 +13140,2067 @@
     ]
   },
   "Carrowreagh, Bridgend, Co. Donegal, County Donegal, Ireland": null,
-  "Old Mill, Millbrae, Buncrana, Co. Donegal, County Donegal, Ireland": null
+  "Old Mill, Millbrae, Buncrana, Co. Donegal, County Donegal, Ireland": null,
+  "photon:Capri' Bungalow, Whitechurch Road, Rathfarnham, Dublin 16, Dublin, Ireland": {
+    "lat": "53.2809793",
+    "lon": "-6.2747565",
+    "type": "house"
+  },
+  "photon:Ballyroan House Lodge, Ballyboden Road, Rathfarnham, Dublin 16, Dublin, Ireland": null,
+  "photon:Derelict House (Beside Coolfan House), Robinhood Road, Dublin 22., Dublin, Ireland": null,
+  "photon:3 Derelict Houses on Main Street, Rathcoole, Co Dublin, Dublin, Ireland": null,
+  "photon:Derelict Site to Main Street, Rathcoole, Co Dublin, Dublin, Ireland": null,
+  "photon:2 Cottages, Main Street, Rathcoole, Co Dublin, Dublin, Ireland": {
+    "lat": "53.2813899",
+    "lon": "-6.4698308",
+    "type": "house"
+  },
+  "photon:Site at Innisfree, Jugback Lane, Swords, Co Dublin, Dublin, Ireland": null,
+  "photon:6, 8, 8A, 10 & 12 Bridge Street, Balbriggan, Co Dublin, Dublin, Ireland": null,
+  "photon:30 Lawless Terrace, Balbriggan, Co Dublin, Dublin, Ireland": {
+    "lat": "53.605923",
+    "lon": "-6.1736666",
+    "type": "house"
+  },
+  "photon:9 St Georges Square, Balbriggan, Co Dublin, Dublin, Ireland": {
+    "lat": "53.6085648",
+    "lon": "-6.1825145",
+    "type": "house"
+  },
+  "photon:The Bakery, Georges Hill, Balbriggan, Dublin, Ireland": {
+    "lat": "53.6118867",
+    "lon": "-6.1823134",
+    "type": "house"
+  },
+  "photon:Tesco Site, The Mall, Balbriggan, Dublin, Ireland": {
+    "lat": "53.3226195",
+    "lon": "-6.2381923",
+    "type": "house"
+  },
+  "photon:Site 1A, The Nurseries, Mulhuddart, Dublin 15, Dublin, Ireland": {
+    "lat": "53.4076344",
+    "lon": "-6.3913228",
+    "type": "house"
+  },
+  "photon:17 Myra Manor, Malahide, Co Dublin, Dublin, Ireland": {
+    "lat": "53.4209309",
+    "lon": "-6.1748097",
+    "type": "house"
+  },
+  "photon:Site Upper Main St, No 12, 14, 14A, 16, 18, 20, Rush, Dublin, Ireland": null,
+  "photon:Site adjacent to 31 Carlton Court, Swords, Co Dublin, Dublin, Ireland": null,
+  "photon:Georges Court (behind 8-10 Drogheda St) Balbriggan, Dublin, Ireland": null,
+  "photon:Main Street, Lusk (house to left of Costcutters), Dublin, Ireland": null,
+  "photon:Bob's Casino, South Strand, Skerries, Dublin, Ireland": {
+    "lat": "53.5807175",
+    "lon": "-6.105866",
+    "type": "house"
+  },
+  "photon:Rosario, Dublin Road, Swords, Co Dublin, Dublin, Ireland": {
+    "lat": "53.4282916",
+    "lon": "-6.2472741",
+    "type": "house"
+  },
+  "photon:3 Seaview Avenue, Baldoyle, Co Dublin, Dublin, Ireland": {
+    "lat": "53.3560554",
+    "lon": "-6.235477",
+    "type": "street"
+  },
+  "photon:Ballymun Villa, Charter House Hill, Ballymun Road, Dublin, Ireland": null,
+  "photon:Allendale House, Clonsilla Road, Dublin 15, Dublin, Ireland": {
+    "lat": "53.3901171",
+    "lon": "-6.4300743",
+    "type": "house"
+  },
+  "photon:St Maur's Hall, Rush, Co Dublin, Dublin, Ireland": {
+    "lat": "53.5211376",
+    "lon": "-6.1049978",
+    "type": "house"
+  },
+  "photon:Station Masters House, Balbriggan, Co Dublin, Dublin, Ireland": {
+    "lat": "53.6154311",
+    "lon": "-6.1914984",
+    "type": "house"
+  },
+  "photon:No 4 Bremore Pastures Avenue, Balbriggan, Dublin, Ireland": null,
+  "photon:Site at Berwick Lane (across from Berwick House), Blackpool, Cork, Cork, Ireland": null,
+  "photon:Riverstown, Glanmire, Cork (adjoining the Riverstown Inn), Cork, Ireland": {
+    "lat": "51.9284729",
+    "lon": "-8.3955337",
+    "type": "house"
+  },
+  "photon:66 Meadow Grove Estate, Blackrock, Cork, Cork, Ireland": {
+    "lat": "51.8938789",
+    "lon": "-8.4077438",
+    "type": "house"
+  },
+  "photon:Site between 8 Seminary Road and 9 Seminary Road, Blackpool, Cork, Cork, Ireland": null,
+  "photon:7a Coburg Lane, Coburg Street, Cork, T23A8H3, Cork, Ireland": null,
+  "photon:7 Matthew Place, Blackrock Road, Ballintemple, Cork,T12A0DX, Cork, Ireland": null,
+  "photon:(Formerly Cremin Drycleaners and BOI), East Douglas Street, Douglas, Cork, Cork, Ireland": null,
+  "photon:Property next to 1 Rock Cottages, Kileens, Rathpeacon, Co. Cork, Cork, Ireland": null,
+  "photon:16 Sidney Place, Wellington Road, Cork, Cork, Ireland": {
+    "lat": "51.9022058",
+    "lon": "-8.4692866",
+    "type": "house"
+  },
+  "photon:1 The Crescent, Lough Road, Cork, Cork, Ireland": {
+    "lat": "51.887548",
+    "lon": "-8.4867945",
+    "type": "other"
+  },
+  "photon:Temple View, Beaumont Avenue, Blackrock Road, Cork, Cork, Ireland": null,
+  "photon:Former Angel Guardian Boys School, Springfield Road, Cork, Cork, Ireland": null,
+  "photon:Woolhara House, Douglas Road, Cork, Cork, Ireland": {
+    "lat": "51.8858679",
+    "lon": "-8.4520396",
+    "type": "house"
+  },
+  "photon:T45A611 32 Watercourse Road, Blackpool, Cork, Cork, Ireland": {
+    "lat": "51.910758",
+    "lon": "-8.4737246",
+    "type": "house"
+  },
+  "photon:1-6 Woodlea Cottages, Eastcliffe, Ballinglanna, Glanmire, Cork T45A611, Cork, Ireland": null,
+  "photon:3 St Patricks Hill, Bandon, Bandon, County Cork, Ireland": {
+    "lat": "51.7444122",
+    "lon": "-8.7354435",
+    "type": "street"
+  },
+  "photon:Well Rd/Casement Rd, Bandon, County Cork, Ireland": {
+    "lat": "51.8908303",
+    "lon": "-8.4879308",
+    "type": "house"
+  },
+  "photon:Patsy's Corner, Market Place, Kinsale, County Cork, Ireland": {
+    "lat": "51.7062731",
+    "lon": "-8.5239336",
+    "type": "house"
+  },
+  "photon:Workshop Barrack Hill, Kinsale, County Cork, Ireland": {
+    "lat": "51.707529",
+    "lon": "-8.5220903",
+    "type": "street"
+  },
+  "photon:The Ramparts/Green Hill, Kinsale, County Cork, Ireland": {
+    "lat": "51.7040322",
+    "lon": "-8.5229067",
+    "type": "street"
+  },
+  "photon:Warehouse Lower O'Connell St, Kinsale, County Cork, Ireland": {
+    "lat": "51.7029993",
+    "lon": "-8.5209925",
+    "type": "street"
+  },
+  "photon:Former Kinsale Cabs, Market Square, Kinsale, County Cork, Ireland": {
+    "lat": "51.7063069",
+    "lon": "-8.523966",
+    "type": "house"
+  },
+  "photon:O'Sullivan's Apts, Market Place, Kinsale, County Cork, Ireland": null,
+  "photon:Actons Yard, The Glen, Kinsale, County Cork, Ireland": {
+    "lat": "51.7066761",
+    "lon": "-8.5227682",
+    "type": "house"
+  },
+  "photon:Castleview Dunmanway Road, Bandon, County Cork, Ireland": {
+    "lat": "51.7477951",
+    "lon": "-8.7442376",
+    "type": "street"
+  },
+  "photon:Main Street, Ringaskiddy, Ringaskiddy, County Cork, Ireland": {
+    "lat": "51.8266825",
+    "lon": "-8.3245027",
+    "type": "street"
+  },
+  "photon:Elm Lawn, Ringaskiddy, Ringaskiddy, County Cork, Ireland": {
+    "lat": "51.8266825",
+    "lon": "-8.3245027",
+    "type": "street"
+  },
+  "photon:Cogans Corner, Carrigaline, County Cork, Ireland": {
+    "lat": "51.8203622",
+    "lon": "-8.3916162",
+    "type": "house"
+  },
+  "photon:The Old School House, Ringaskiddy, County Cork, Ireland": {
+    "lat": "51.6130399",
+    "lon": "-9.688596",
+    "type": "house"
+  },
+  "photon:The Nest Pembroke, Passage West, County Cork, Ireland": {
+    "lat": "51.8727501",
+    "lon": "-8.3479941",
+    "type": "locality"
+  },
+  "photon:Knocknagore, Middle Rd, Crosshaven, County Cork, Ireland": {
+    "lat": "51.8008306",
+    "lon": "-8.2941039",
+    "type": "house"
+  },
+  "photon:No. 1 & 1a Bridget St, Fermoy, County Cork, Ireland": {
+    "lat": "54.4141953",
+    "lon": "-6.1495979",
+    "type": "street"
+  },
+  "photon:Presentation Convent, Convent Hill, Mitchelstown, County Cork, Ireland": {
+    "lat": "51.7496172",
+    "lon": "-8.7448149",
+    "type": "house"
+  },
+  "photon:24 St Bernards Place, Fermoy, County Cork, Ireland": {
+    "lat": "52.2133443",
+    "lon": "-8.4898782",
+    "type": "house"
+  },
+  "photon:21 McDermott Place, Oliver Plunkett Hill, Fermoy, County Cork, Ireland": null,
+  "photon:12 Casement Row, Fermoy, County Cork, Ireland": {
+    "lat": "51.8505093",
+    "lon": "-8.2949726",
+    "type": "house"
+  },
+  "photon:Main Street, Rathcormac, County Cork, Ireland": {
+    "lat": "52.0785143",
+    "lon": "-8.2811458",
+    "type": "house"
+  },
+  "photon:Canon Street, Rathcormac, County Cork, Ireland": {
+    "lat": "52.075077",
+    "lon": "-8.2836075",
+    "type": "street"
+  },
+  "photon:1. McCurtainstown  (Kincora Terrace), Youghal, County Cork, Ireland": {
+    "lat": "51.9095815",
+    "lon": "-8.4534936",
+    "type": "house"
+  },
+  "photon:Loretto Convent Site, Youghal, County Cork, Ireland": {
+    "lat": "51.9531339",
+    "lon": "-7.8457939",
+    "type": "house"
+  },
+  "photon:Former Central Hotel Site, Mallow, County Cork, Ireland": null,
+  "photon:131,132 Davis Street Mallow, Mallow, County Cork, Ireland": {
+    "lat": "52.136952",
+    "lon": "-8.6448205",
+    "type": "house"
+  },
+  "photon:Laharn, Lombardstown, Lombardstown, Mallow, County Cork, Ireland": {
+    "lat": "52.1187341",
+    "lon": "-8.7804791",
+    "type": "district"
+  },
+  "photon:Percival Street (formerly Deady's), Kanturk, County Cork, Ireland": {
+    "lat": "52.1767762",
+    "lon": "-8.9107998",
+    "type": "house"
+  },
+  "photon:the northeast of the main road to Kanturk ( Cecilstown), Mallow, County Cork, Ireland": null,
+  "photon:the south side of Jail Lane, Charleville, County Cork, Ireland": null,
+  "photon:1 Richmond Street, Buttevant, County Cork, Ireland": {
+    "lat": "52.2287615",
+    "lon": "-8.6697239",
+    "type": "house"
+  },
+  "photon:A lane off the westside of Main Street (Dispensary Lane)/Mc Carthys Lane, Buttevant, County Cork, Ireland": null,
+  "photon:The corner of New Street & lane leading to Ballalley Tce, Buttevant, County Cork, Ireland": null,
+  "photon:Templemary, Lisgriffin, County Cork, Ireland": {
+    "lat": "52.2296096",
+    "lon": "-8.7595458",
+    "type": "locality"
+  },
+  "photon:Westside of road between Tullylease and Freemount - Site No 3, County Cork, Ireland": null,
+  "photon:19 Ballydahin East, Mallow, County Cork, Ireland": {
+    "lat": "52.1254086",
+    "lon": "-8.6583425",
+    "type": "locality"
+  },
+  "photon:27 Ballydaheen West, Mallow, County Cork, Ireland": {
+    "lat": "52.36508",
+    "lon": "-8.7258887",
+    "type": "locality"
+  },
+  "photon:Cuil, Annabella, Mallow, County Cork, Ireland": {
+    "lat": "52.1404236",
+    "lon": "-8.6616116",
+    "type": "locality"
+  },
+  "photon:4 Ballydaheen West, Mallow, County Cork, Ireland": {
+    "lat": "52.36508",
+    "lon": "-8.7258887",
+    "type": "locality"
+  },
+  "photon:8 Burton View, Churchtown, County Cork, Ireland": {
+    "lat": "52.2688609",
+    "lon": "-8.7204688",
+    "type": "locality"
+  },
+  "photon:No. 2 Greenane Lower, Kanturk, County Cork, Ireland": {
+    "lat": "52.127961",
+    "lon": "-8.6347542",
+    "type": "locality"
+  },
+  "photon:4 Greenane Street Upper, Kanturk, County Cork, Ireland": {
+    "lat": "52.1414037",
+    "lon": "-8.6434252",
+    "type": "house"
+  },
+  "photon:Former Library, Kanturk, County Cork, Ireland": {
+    "lat": "52.177196",
+    "lon": "-8.9069218",
+    "type": "house"
+  },
+  "photon:Bluepool Lower, Kanturk, County Cork, Ireland": {
+    "lat": "52.1744913",
+    "lon": "-8.8981165",
+    "type": "locality"
+  },
+  "photon:Gate Lodge, Mallow, County Cork, Ireland": {
+    "lat": "52.1516015",
+    "lon": "-8.6735407",
+    "type": "locality"
+  },
+  "photon:East End, Knocknagree, County Cork, Ireland": {
+    "lat": "52.1320513",
+    "lon": "-9.0792607",
+    "type": "locality"
+  },
+  "photon:Croke Place, Charleville, County Cork, Ireland": {
+    "lat": "52.3478334",
+    "lon": "-8.677843",
+    "type": "street"
+  },
+  "photon:Archway House, Percival Street, Kanturk, County Cork, Ireland": {
+    "lat": "52.1766196",
+    "lon": "-8.9095495",
+    "type": "street"
+  },
+  "photon:Russell Place, Mallow, County Cork, Ireland": {
+    "lat": "52.1372163",
+    "lon": "-8.6468507",
+    "type": "house"
+  },
+  "photon:Watergate Place, Kanturk, County Cork, Ireland": {
+    "lat": "52.1743486",
+    "lon": "-8.9076252",
+    "type": "street"
+  },
+  "photon:Kilbrin Village, Kilbrin, County Cork, Ireland": {
+    "lat": "52.2111971",
+    "lon": "-8.8304061",
+    "type": "district"
+  },
+  "photon:Cloghboola Old National School, Millstreet, County Cork, Ireland": {
+    "lat": "52.0600526",
+    "lon": "-9.0682411",
+    "type": "house"
+  },
+  "photon:Millstreet - East Side Mill Lane, Millstreet, County Cork, Ireland": {
+    "lat": "51.814164",
+    "lon": "-8.3918884",
+    "type": "street"
+  },
+  "photon:Derelict Site at Bridewell Lane, Macroom, County Cork, Ireland": null,
+  "photon:Derelict Site at Duggans Lane, Macroom, County Cork, Ireland": null,
+  "photon:No 1 An Faithin, Tarelton, Tarelton, County Cork, Ireland": {
+    "lat": "54.647517",
+    "lon": "-6.7448854",
+    "type": "house"
+  },
+  "photon:No 6 An Faithin, Tarelton, Tarelton, County Cork, Ireland": null,
+  "photon:No 8 An Faithin, Tarelton, Tarelton, County Cork, Ireland": {
+    "lat": "54.647517",
+    "lon": "-6.7448854",
+    "type": "house"
+  },
+  "photon:No 13 An Faithin, Tarelton, Tarelton, County Cork, Ireland": null,
+  "photon:No 16 An Faithin, Terelton, Tarelton, County Cork, Ireland": null,
+  "photon:Former Shop at New Street, Gurteenroe, Macroom, Macroom, County Cork, Ireland": null,
+  "photon:14 Church Street, Millstreet, County Cork, Ireland": {
+    "lat": "52.0601706",
+    "lon": "-9.0616557",
+    "type": "house"
+  },
+  "photon:9 Church Street, Millstreet, County Cork, Ireland": {
+    "lat": "52.0601706",
+    "lon": "-9.0616557",
+    "type": "house"
+  },
+  "photon:Astna Street, Clonakilty, County Cork, Ireland": {
+    "lat": "51.6227888",
+    "lon": "-8.8942362",
+    "type": "house"
+  },
+  "photon:The Old Linen Hall, Connolly St, Clonakilty, County Cork, Ireland": {
+    "lat": "51.6216521",
+    "lon": "-8.8890017",
+    "type": "house"
+  },
+  "photon:Castle Ahan, Main St, Enniskeane, County Cork, Ireland": {
+    "lat": "51.7378093",
+    "lon": "-8.9319396",
+    "type": "house"
+  },
+  "photon:Stella Maris, Beach, Bantry, County Cork, Ireland": {
+    "lat": "51.6810426",
+    "lon": "-9.4535288",
+    "type": "house"
+  },
+  "photon:Sackville Strreet, Dunmanway, County Cork, Ireland": {
+    "lat": "51.7216676",
+    "lon": "-9.1085878",
+    "type": "house"
+  },
+  "photon:Newline, Charleville, County Cork, Ireland": {
+    "lat": "52.3546432",
+    "lon": "-8.6828833",
+    "type": "city"
+  },
+  "photon:Smith Road, Charleville, County Cork, Ireland": {
+    "lat": "52.3472276",
+    "lon": "-8.6535787",
+    "type": "house"
+  },
+  "photon:12 Main Street, Newmarket, County Cork, Ireland": {
+    "lat": "52.2129383",
+    "lon": "-8.9954474",
+    "type": "house"
+  },
+  "photon:Main Street, Newmarket, County Cork, Ireland": {
+    "lat": "52.2129383",
+    "lon": "-8.9954474",
+    "type": "house"
+  },
+  "photon:16 Oakridge, Meadowlands, Macroom, County Cork, Ireland": {
+    "lat": "51.9092517",
+    "lon": "-8.9642492",
+    "type": "street"
+  },
+  "photon:Sunglen, Old Pallas, Pallasgreen, Co. Limerick, County Limerick, Ireland": {
+    "lat": "52.5679529",
+    "lon": "-8.3379697",
+    "type": "district"
+  },
+  "photon:8 Nicker Street, Pallasgreen, Co. Limerick, County Limerick, Ireland": {
+    "lat": "52.5827328",
+    "lon": "-8.1698849",
+    "type": "house"
+  },
+  "photon:72 Abbey Vale, Corbally, Limerick, County Limerick, Ireland": {
+    "lat": "52.6812848",
+    "lon": "-8.6188373",
+    "type": "locality"
+  },
+  "photon:Limerick, register ref DS-050-25, County Limerick, Ireland": null,
+  "photon:Hassetts Cross, Limerick, County Limerick, Ireland": {
+    "lat": "52.6731576",
+    "lon": "-8.6402926",
+    "type": "locality"
+  },
+  "photon:Upper Main Street, Rathkeale, Co. Limerick, County Limerick, Ireland": {
+    "lat": "52.6237253",
+    "lon": "-8.8122159",
+    "type": "street"
+  },
+  "photon:Old Road, Oolahills West, Oola, Co. Limerick, County Limerick, Ireland": {
+    "lat": "52.5308614",
+    "lon": "-8.2538911",
+    "type": "locality"
+  },
+  "photon:Ballycormack, Shanagolden, Co. Limerick, County Limerick, Ireland": {
+    "lat": "52.6017221",
+    "lon": "-9.1085748",
+    "type": "district"
+  },
+  "photon:Dublin Road/Hillcroft Site, Limerick, County Limerick, Ireland": {
+    "lat": "52.6674314",
+    "lon": "-8.5573319",
+    "type": "house"
+  },
+  "photon:Tierney's, Roxboro Stores, Roxboro Road, Priors Land, Limerick, County Limerick, Ireland": {
+    "lat": "52.6539064",
+    "lon": "-8.6173239",
+    "type": "house"
+  },
+  "photon:Cuirt na hAbhainn, Clarina, Co. Limerick, County Limerick, Ireland": {
+    "lat": "52.6554783",
+    "lon": "-8.6429719",
+    "type": "street"
+  },
+  "photon:Barna, Pallasgreen, Co. Limerick, County Limerick, Ireland": {
+    "lat": "52.5679529",
+    "lon": "-8.3379697",
+    "type": "district"
+  },
+  "photon:4 Main Street, Bruree, Limerick, County Limerick, Ireland": {
+    "lat": "52.6597556",
+    "lon": "-8.6160376",
+    "type": "house"
+  },
+  "photon:Carrowkeel, Lisnagry, Co. Limerick, County Limerick, Ireland": {
+    "lat": "52.6742704",
+    "lon": "-8.5146187",
+    "type": "locality"
+  },
+  "photon:Bolgers, Ballitore, Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.0093927",
+    "lon": "-6.815586",
+    "type": "district"
+  },
+  "photon:Mary Hickeys Sweet Shop, Church Street, Kilcock, Co. Kildare, County Kildare, Ireland": null,
+  "photon:Market House, Naas, Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.2139954",
+    "lon": "-6.7220261",
+    "type": "house"
+  },
+  "photon:Allenwood North, Naas, Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.1738941",
+    "lon": "-6.6478001",
+    "type": "other"
+  },
+  "photon:Old Band Hall, Cutlery Road, Newbridge, Co. Kildare, County Kildare, Ireland": null,
+  "photon:55 Dooleys Terrace, Athy, Co. Kildare, County Kildare, Ireland": {
+    "lat": "52.9926496",
+    "lon": "-6.9804806",
+    "type": "house"
+  },
+  "photon:4 Abbeylane, Abbeyfarm, Celbridge, Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.364976",
+    "lon": "-6.4955607",
+    "type": "house"
+  },
+  "photon:Coolnaferagh, Passlands, Monasterevin, Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.1485661",
+    "lon": "-7.068376",
+    "type": "locality"
+  },
+  "photon:Bungalow, Hazelhatch Road, Celbridge, Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.3224128",
+    "lon": "-6.5241648",
+    "type": "house"
+  },
+  "photon:289 Clonaugh, Enfield, Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.3908688",
+    "lon": "-6.9189254",
+    "type": "house"
+  },
+  "photon:St. Francis, Canal Harbour, Monasterevin, Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.1433262",
+    "lon": "-7.0668902",
+    "type": "street"
+  },
+  "photon:Grange, Kilcock, Co Kildare, County Kildare, Ireland": {
+    "lat": "53.3999241",
+    "lon": "-6.6701886",
+    "type": "house"
+  },
+  "photon:Lions House Pub, Kilcock, Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.40075",
+    "lon": "-6.6689792",
+    "type": "house"
+  },
+  "photon:Blossom Hill House, Ballynakill, Broadford, Co. Kildare, County Kildare, Ireland": null,
+  "photon:Bargain Store, Kildare Town, Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.1699938",
+    "lon": "-6.9148856",
+    "type": "house"
+  },
+  "photon:Ralph Square, Leixlip ( Commercial Unit ), Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.3639439",
+    "lon": "-6.4877089",
+    "type": "street"
+  },
+  "photon:Property 1 at Hazelhatch Train Station, Celbridge, Co. Kildare, County Kildare, Ireland": null,
+  "photon:Property 2 at Hazelhatch Train Station, Celbridge, Co. Kildare, County Kildare, Ireland": null,
+  "photon:Property 3 at Hazelhatch Train Station, Celbridge, Co. Kildare, County Kildare, Ireland": null,
+  "photon:Main Street, Kilcullen, Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.1305819",
+    "lon": "-6.7456446",
+    "type": "district"
+  },
+  "photon:Coolereagh, Coill Dubh Co Kildare, County Kildare, Ireland": {
+    "lat": "53.2932362",
+    "lon": "-6.8160187",
+    "type": "district"
+  },
+  "photon:Former Garda Station, Leinster Street, Rathangan, Co.Kildare, County Kildare, Ireland": {
+    "lat": "53.2221845",
+    "lon": "-6.9974982",
+    "type": "house"
+  },
+  "photon:Hennessy Garage, Main Street, Castledermot, Co. Kildare, County Kildare, Ireland": {
+    "lat": "52.908571",
+    "lon": "-6.8371327",
+    "type": "house"
+  },
+  "photon:Property at St. Michael's Convent, Stanhope Place, Athy, Co. Kildare, County Kildare, Ireland": null,
+  "photon:Summerhill House & Stables, Blackrath, The Curragh, Co.Kildare, County Kildare, Ireland": null,
+  "photon:Clean Machine Laundrette, Shraud Road, Co. Kildare, County Kildare, Ireland": null,
+  "photon:Tattoo Parlour at Station Road, Kildare Town, County Kildare, Ireland": null,
+  "photon:Broom Cottage, Nursery Road, Allenwood South, Naas W91E51F, Co. Kildare, County Kildare, Ireland": null,
+  "photon:Main Street, Sallins, Units 5,6,7,8,9, Co. Kildare, County Kildare, Ireland": null,
+  "photon:The Laurels, Kerdiffstown, Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.2490006",
+    "lon": "-6.6423374",
+    "type": "locality"
+  },
+  "photon:Former Grand Canal Hotel, Robertstown, Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.2690671",
+    "lon": "-6.814615",
+    "type": "house"
+  },
+  "photon:46 Duke Street, Barney’s Pub Athy, Co. Kildare, County Kildare, Ireland": {
+    "lat": "52.99168435112655",
+    "lon": "-6.986798411933886",
+    "type": "house"
+  },
+  "photon:3 Bride Street, Kildare Town, County Kildare, Ireland": {
+    "lat": "53.1562164",
+    "lon": "-6.9117536",
+    "type": "house"
+  },
+  "photon:38 Curragh Plains, Kildare Town, County Kildare, Ireland": {
+    "lat": "53.1607791",
+    "lon": "-6.892729",
+    "type": "house"
+  },
+  "photon:4 Plewmans Terrace, Athy, Co. Kildare, County Kildare, Ireland": {
+    "lat": "52.9879356",
+    "lon": "-6.9954964",
+    "type": "house"
+  },
+  "photon:479 Skenagun, Castledermot, Co. Kildare, County Kildare, Ireland": {
+    "lat": "52.9209975",
+    "lon": "-6.8420257",
+    "type": "locality"
+  },
+  "photon:Pine Vale, Killeenmore, Sallins, Naas, Co. Kildare, County Kildare, Ireland": {
+    "lat": "53.2543828",
+    "lon": "-6.6724414",
+    "type": "street"
+  },
+  "photon:Lidl House, Bohernasup, Ballina, Co Mayo F26 X5P9, County Mayo, Ireland": null,
+  "photon:\"Stephanie's Hair Salon\", Abbey Street, Abbeyhalfquarter, Ardnaree South, Ballina, Co Mayo F26XT63, County Mayo, Ireland": null,
+  "photon:26 Roche's Terrace, Ballina, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.1080701",
+    "lon": "-9.1606766",
+    "type": "house"
+  },
+  "photon:Lower Bunree Road, Ballina, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.1176736",
+    "lon": "-9.1412458",
+    "type": "street"
+  },
+  "photon:Abbey Street, Abbeyhalfquater, Ardnaree South, Ballina, F26 R6D2, Co. Mayo, County Mayo, Ireland": null,
+  "photon:2 Nally Street, Ballina, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.1007774",
+    "lon": "-9.3156873",
+    "type": "house"
+  },
+  "photon:27 Roche's Terrace, Ballina, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.1080172",
+    "lon": "-9.1607606",
+    "type": "house"
+  },
+  "photon:\"Pinocchio's\", O'Rahilly Street, Ballina, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.1130556",
+    "lon": "-9.1556098",
+    "type": "street"
+  },
+  "photon:James Connolly Street, Ballina, Co MayoF26 VPP3, Co. Mayo, County Mayo, Ireland": {
+    "lat": "54.1098321",
+    "lon": "-9.1600004",
+    "type": "street"
+  },
+  "photon:27 Corcoran's Terrace, Ballina, Co Mayo F26 W889, County Mayo, Ireland": null,
+  "photon:\"Manse\", Walsh Street, Ballina, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.1144546",
+    "lon": "-9.152899",
+    "type": "street"
+  },
+  "photon:12 Convent Terrace, McDermott Street, Ballina, Co Mayo F26 R2Y1, County Mayo, Ireland": null,
+  "photon:Becket' s Saw Mill, Barret Street, Ballina, Co Mayo, County Mayo, Ireland": null,
+  "photon:The Brook, Ballina, Co Mayo F26 H9K8, County Mayo, Ireland": {
+    "lat": "54.1156622",
+    "lon": "-9.1463612",
+    "type": "house"
+  },
+  "photon:The Brook, Ballina, Co Mayo F26 F6P6, County Mayo, Ireland": {
+    "lat": "54.1156622",
+    "lon": "-9.1463612",
+    "type": "house"
+  },
+  "photon:20 Healy Terrace, Ballina, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.2794952",
+    "lon": "-9.3697661",
+    "type": "house"
+  },
+  "photon:16 Healy Terrace, Ballina, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.2794952",
+    "lon": "-9.3697661",
+    "type": "house"
+  },
+  "photon:Clare Street, Ballina, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.1143359",
+    "lon": "-9.1532099",
+    "type": "district"
+  },
+  "photon:Un-Used Land, Castlefield Manor, Kilmoremoy, Ballina, Co Mayo, County Mayo, Ireland": null,
+  "photon:No. (9) St. Enda's Villa's Ballina, Co Mayo F26 Y9P0., County Mayo, Ireland": null,
+  "photon:Property 1 Barrett Street, Ballina, Co Mayo F26 C3W2, County Mayo, Ireland": null,
+  "photon:Property 100 Barrett Street, Ballina, Co Mayo F26 C3W2, adjoining, (Old Forge Building), County Mayo, Ireland": null,
+  "photon:O'Rahilly Street, Ballina, F26 K803 (Garveys Bakery), Co. Mayo, County Mayo, Ireland": null,
+  "photon:Old Mill, Bunree Road, Ballina, Co. Mayo, County Mayo, Ireland": {
+    "lat": "54.1176736",
+    "lon": "-9.1412458",
+    "type": "street"
+  },
+  "photon:Entrance to \"The Hawthorns\", Killala Road, Ballina, Co. Mayo, County Mayo, Ireland": null,
+  "photon:Old Mill,Knocknalyre, Sligo Road, Ballina, Co. Mayo, County Mayo, Ireland": null,
+  "photon:\"Pet Stop Discount Warehouse\", Kevin Barry St., Ballina,Co Mayo F26 A073, County Mayo, Ireland": null,
+  "photon:\"Diamond Memorials\", Teeling St., Ballina, Co. Mayo, County Mayo, Ireland": {
+    "lat": "54.1140808",
+    "lon": "-9.1586644",
+    "type": "street"
+  },
+  "photon:6 Rath Glas, Rehinsfort, Ballina, Co Mayo F26 DTR2, County Mayo, Ireland": null,
+  "photon:Foxford Road, Ballina, Co Mayo F26 K4D&, County Mayo, Ireland": {
+    "lat": "54.0935891",
+    "lon": "-9.1651108",
+    "type": "house"
+  },
+  "photon:Tyrawley House, McDermott Street, Ballina, Co Mayo F26 R5P3, County Mayo, Ireland": null,
+  "photon:No. 8 Convent Hill Grove, Ballina, Co Mayo F26 X9N9, County Mayo, Ireland": null,
+  "photon:2 Oaklawn, Killala Road, Ballina, F26 P6P2, Co. Mayo, County Mayo, Ireland": null,
+  "photon:3 Oaklawn, Killala Road, Ballina, F26 D6C7, Co. Mayo, County Mayo, Ireland": null,
+  "photon:The Brook, Abbeyhalfquarter, Ballina, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.1130195",
+    "lon": "-9.1391942",
+    "type": "locality"
+  },
+  "photon:Main Street, Ballycastle, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.2800302",
+    "lon": "-9.3734749",
+    "type": "house"
+  },
+  "photon:Kilmurrymore, Rake St., Crossmolina, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.1011405",
+    "lon": "-9.3110309",
+    "type": "house"
+  },
+  "photon:\"Corcoran's\", Ballina Street, Crossmolina, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.0997833",
+    "lon": "-9.3179242",
+    "type": "house"
+  },
+  "photon:Erris Street, Crossmolina, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.0998175",
+    "lon": "-9.3227385",
+    "type": "house"
+  },
+  "photon:\"Boys National School\", Chapel Street, Crossmolina, Co. Mayo, County Mayo, Ireland": {
+    "lat": "54.0973354",
+    "lon": "-9.3180994",
+    "type": "house"
+  },
+  "photon:Georges Street, Killala, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.2139022",
+    "lon": "-9.2227937",
+    "type": "street"
+  },
+  "photon:\"Warehouse/Grainstore\", Courthosue Street, Killala, Co Mayo, County Mayo, Ireland": null,
+  "photon:The Acres, Killala, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.193662",
+    "lon": "-9.2154368",
+    "type": "other"
+  },
+  "photon:Barrack Street, Killala, Co Mayo F26 NW64, County Mayo, Ireland": {
+    "lat": "54.2130293",
+    "lon": "-9.2207459",
+    "type": "house"
+  },
+  "photon:R314, Gore Street, Killala, Co Mayo F26 CR94, County Mayo, Ireland": null,
+  "photon:43 Woodview Court, Killala, Co Mayo F26 FV32, County Mayo, Ireland": null,
+  "photon:Steelaun, Rathfran, Carrowmore Lacken, Ballina, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.2860517",
+    "lon": "-9.3253497",
+    "type": "locality"
+  },
+  "photon:\"Woodside Motors\", Claremorris Road, Balla, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.7648864",
+    "lon": "-8.7837946",
+    "type": "house"
+  },
+  "photon:Main Street, Balla, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.8031507",
+    "lon": "-9.1270565",
+    "type": "locality"
+  },
+  "photon:Main Street, Balla, Co Mayo F23 H429, County Mayo, Ireland": {
+    "lat": "53.8570372",
+    "lon": "-9.2979647",
+    "type": "house"
+  },
+  "photon:Main Street, Balla, Co Mayo F23 YH30, County Mayo, Ireland": {
+    "lat": "53.8570372",
+    "lon": "-9.2979647",
+    "type": "house"
+  },
+  "photon:Semi-detached structure adjacent to former Garda Station, Ballyglass, Claremorris, Co Mayo, County Mayo, Ireland": null,
+  "photon:\"Ballyvary House\", Main Street, Ballyvary, Castlebar, Co Mayo F23 CH64, County Mayo, Ireland": null,
+  "photon:\"Heneghan's\", Belcarra, Castlebar, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.8017945",
+    "lon": "-9.2161763",
+    "type": "district"
+  },
+  "photon:Saleen Property Site 2F, Co. Mayo, County Mayo, Ireland": null,
+  "photon:Quinns, Mountain View, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.8540782",
+    "lon": "-9.3006773",
+    "type": "street"
+  },
+  "photon:Gavin and Brennan Buildings, Knockthomas, Castlebar, Co Mayo F23 YW65, County Mayo, Ireland": null,
+  "photon:Site H: Brennan's Yard, Knockthomas, Castlebar, Co Mayo, County Mayo, Ireland": null,
+  "photon:Former Commercial Premises, Newport Road, Castlebar, Co Mayo F23E297, County Mayo, Ireland": null,
+  "photon:Hanley's Shop, Rock Square, Castlebar, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.8551388",
+    "lon": "-9.2973959",
+    "type": "street"
+  },
+  "photon:Davitt's Terrace, Castlebar, Co Mayo F23 PW30, County Mayo, Ireland": {
+    "lat": "53.8591613",
+    "lon": "-9.296945",
+    "type": "house"
+  },
+  "photon:\"Ellison Street House\", Ellison Street, Castlebar, Co Mayo F23 HY10, County Mayo, Ireland": {
+    "lat": "53.8559126",
+    "lon": "-9.2992707",
+    "type": "street"
+  },
+  "photon:\"Terraced House\", Tucker Street, Castlebar, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.8586874",
+    "lon": "-9.2991659",
+    "type": "street"
+  },
+  "photon:\"Unfinished House\", Station Road, Castlebar, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.8473852",
+    "lon": "-9.2881409",
+    "type": "house"
+  },
+  "photon:Saleen Site (beside Cushlough), Saleen, Castlebar, Co Mayo, County Mayo, Ireland": null,
+  "photon:Timlin House, Newport Road, Castlebar, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.8578792",
+    "lon": "-9.3045773",
+    "type": "street"
+  },
+  "photon:Hill House, Mountain View, Castlebar, Co Mayo, F23 WE16, County Mayo, Ireland": null,
+  "photon:12 Belvedere Court, Newtown, Castlebar, Co Mayo F23 CX29, County Mayo, Ireland": null,
+  "photon:Ashton, Spencer Park, Castlebar, Co Mayo F23 E261, County Mayo, Ireland": null,
+  "photon:Devanney's Bar, Lahardane, Co Mayo F26 CK77, County Mayo, Ireland": null,
+  "photon:Lahardane, Ballina, Co Mayo F26 P5X5, County Mayo, Ireland": {
+    "lat": "54.112845",
+    "lon": "-9.1560199",
+    "type": "other"
+  },
+  "photon:27 Ard Lugalisheen, Ballindine, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.6721919",
+    "lon": "-8.9459266",
+    "type": "locality"
+  },
+  "photon:26 Ard Lugalisheen, Ballindine, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.6721919",
+    "lon": "-8.9459266",
+    "type": "locality"
+  },
+  "photon:25 Ard Lugalisheen, Ballindine, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.6721919",
+    "lon": "-8.9459266",
+    "type": "locality"
+  },
+  "photon:24 Ard Lugalisheen, Ballindine, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.6721919",
+    "lon": "-8.9459266",
+    "type": "locality"
+  },
+  "photon:4 Ard Lugalisheen, Ballindine, Co Mayo F12 K660, County Mayo, Ireland": null,
+  "photon:High Street, Ballinrobe, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.6293139",
+    "lon": "-9.2325936",
+    "type": "house"
+  },
+  "photon:Old Rugby Club, High St., Ballinrobe, Co Mayo, County Mayo, Ireland": null,
+  "photon:Cornmarket, Ballinrobe, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.6293139",
+    "lon": "-9.2325936",
+    "type": "house"
+  },
+  "photon:Glebe Street, Ballinrobe, Co Mayo \"Farraghers Shop\", County Mayo, Ireland": {
+    "lat": "53.6237388",
+    "lon": "-9.2211555",
+    "type": "street"
+  },
+  "photon:\"Old Garage\", Castlebar Road, Ballinrobe, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.6293139",
+    "lon": "-9.2325936",
+    "type": "house"
+  },
+  "photon:\"Mooneys\", Bridge Street, Ballinrobe, Co Mayo F31 AK54, County Mayo, Ireland": null,
+  "photon:Bowgate Street, Ballinrobe, Co Mayo F31 H322, County Mayo, Ireland": {
+    "lat": "53.6245535",
+    "lon": "-9.2219342",
+    "type": "street"
+  },
+  "photon:88 New Street, Ballinrobe, Co Mayo F31 X337, County Mayo, Ireland": null,
+  "photon:Cloonnagashel, Ballinrobe, Co Mayo F31 KX73, County Mayo, Ireland": {
+    "lat": "53.6293139",
+    "lon": "-9.2325936",
+    "type": "house"
+  },
+  "photon:87 New Street, Ballinrobe, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.6262154",
+    "lon": "-9.2264929",
+    "type": "house"
+  },
+  "photon:Glenview, 49 Abbey Street, Ballinrobe, Co Mayo F31 T671, County Mayo, Ireland": null,
+  "photon:11 Hazel Court, Convent Road, Ballinrobe, Co Mayo F31 YK83, County Mayo, Ireland": null,
+  "photon:Apartment Buildings & Shop Units at Hazel Court, Convent Road, Ballinrobe, Co Mayo F31 K461, County Mayo, Ireland": null,
+  "photon:Apartment Buildings & Shop Units at Hazel Court, Convent Road, Ballinrobe, Co Mayo F31 XF34, County Mayo, Ireland": null,
+  "photon:Apartment Buildings & Shop Units at Hazel Court, Convent Road, Ballinrobe, Co Mayo F31 R981, County Mayo, Ireland": null,
+  "photon:Apartment Buildings & Shop Units at Hazel Court, Convent Road, Ballinrobe, Co Mayo F31 H562, County Mayo, Ireland": null,
+  "photon:Apartment Buildings & Shop Units at Hazel Court, Convent Road, Ballinrobe, Co Mayo F31 T025, County Mayo, Ireland": null,
+  "photon:Apartment Buildings & Shop Units at Hazel Court, Convent Road, Ballinrobe, Co Mayo F31 AN81, County Mayo, Ireland": null,
+  "photon:Clare Road, Ballyhaunis, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.6753355",
+    "lon": "-8.9466474",
+    "type": "street"
+  },
+  "photon:\"Dillon's\", Main Street & Knox Stret, Ballyhaunis, Co Mayo F25XP63, County Mayo, Ireland": null,
+  "photon:Old Larganboy School, Larganboy East, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.7875682",
+    "lon": "-8.8227427",
+    "type": "locality"
+  },
+  "photon:\"McCabe House\", Abbey Street, Ballyhaunis, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.7617728",
+    "lon": "-8.7629327",
+    "type": "house"
+  },
+  "photon:Old Shed/Garage, Carrownluggan, Ballyhaunis, Co Mayo, County Mayo, Ireland": null,
+  "photon:37 Barley Hill Court, Bohola, Co Mayo F12 NN88, County Mayo, Ireland": null,
+  "photon:Ballagh Street - Dwelling House, Charlestown, Co Mayo, County Mayo, Ireland": null,
+  "photon:Mark C. Henry Lane - Dwelling House, Charlestown, Co Mayo, County Mayo, Ireland": null,
+  "photon:Chapel Street, Charlestown, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.9638777",
+    "lon": "-8.7990766",
+    "type": "other"
+  },
+  "photon:JF Mechanical Engineering, Lowpark, Charlestown, Co Mayo F12 K235, County Mayo, Ireland": null,
+  "photon:Ballagh Street, Charlestown, Co Mayo F12 KN66, County Mayo, Ireland": null,
+  "photon:Adjacent to Town Hall, Claremorris, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.622462",
+    "lon": "-9.226597",
+    "type": "house"
+  },
+  "photon:Cash For Clothes, The Square, Claremorris, Co Mayo, County Mayo, Ireland": null,
+  "photon:O Brien Flats Knock Road Claremorris Co Mayo F12Y1T9, F12Y314, County Mayo, Ireland": null,
+  "photon:Town Hall Road, Claremorris, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.7210077",
+    "lon": "-8.9953695",
+    "type": "house"
+  },
+  "photon:James Street, Claremorris, Co Mayo (beside bank on corner F12 VF95)., County Mayo, Ireland": null,
+  "photon:Old Convent, Claremount, Claremorris, Co Mayo F12WP03, County Mayo, Ireland": null,
+  "photon:16 Ard Rua, Claremorris, Co Mayo F12 P6K5, County Mayo, Ireland": null,
+  "photon:37 Grattan Manor, Grattan Park, Claremorris, Co Mayo F12 R7P3, County Mayo, Ireland": null,
+  "photon:Dispensary Road, Foxford, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.9828647",
+    "lon": "-9.1364385",
+    "type": "house"
+  },
+  "photon:Davitt St, Foxford, Co Mayo F26 DY61, County Mayo, Ireland": null,
+  "photon:House without a roof, Irishtown, Foxford, Co Mayo, County Mayo, Ireland": null,
+  "photon:Derelict Estate, Barrack Road, Foxford, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.0568876",
+    "lon": "-9.1572007",
+    "type": "house"
+  },
+  "photon:Irishtown, Foxford, Co Mayo F26 EY90, County Mayo, Ireland": {
+    "lat": "53.9826405",
+    "lon": "-9.1122605",
+    "type": "house"
+  },
+  "photon:Old Petrol Station, N17, Kilkelly, Co Mayo, County Mayo, Ireland": null,
+  "photon:Bridge Street. Kilkelly, Co Mayo F35 V840, County Mayo, Ireland": null,
+  "photon:High Street, Kilkelly, Co Mayo F35 AP92, County Mayo, Ireland": null,
+  "photon:Ballaghaderreen Road, Kilkelly, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.8727756",
+    "lon": "-8.8488848",
+    "type": "locality"
+  },
+  "photon:Thomas Street, Kiltimagh, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.85",
+    "lon": "-9",
+    "type": "district"
+  },
+  "photon:\"Raftery Room\", Main Street, Kiltimagh, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.8492414",
+    "lon": "-8.9997384",
+    "type": "house"
+  },
+  "photon:Ballinamore, Kiltimagh, Co Mayo F12RK72, County Mayo, Ireland": {
+    "lat": "53.85",
+    "lon": "-9",
+    "type": "district"
+  },
+  "photon:Former Commercial Unit, Main Street, Kiltimagh, Co Mayo F12EK84., County Mayo, Ireland": null,
+  "photon:A. Cleary & Sons Limited, George's Street, Kiltimagh, Co Mayo, County Mayo, Ireland": null,
+  "photon:Former N17 Night-Club, Main Street, Kiltimagh, Co Mayo F12 ND32, County Mayo, Ireland": null,
+  "photon:James Street, Kiltimagh, Co Mayo F12 KV00, County Mayo, Ireland": {
+    "lat": "53.8508802",
+    "lon": "-8.9980688",
+    "type": "house"
+  },
+  "photon:Belmont Hotel, Churchfield, Knock, Co Mayo F12 XF64, County Mayo, Ireland": null,
+  "photon:Roundfort Stores, Roundfort, Hollymount, Co Mayo F12 R2E1, County Mayo, Ireland": null,
+  "photon:Main St., Shrule, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.5247995",
+    "lon": "-9.0915085",
+    "type": "house"
+  },
+  "photon:Old Dwelling House, Pound Lane, Swinford, Co Mayo F12 R1X9, County Mayo, Ireland": null,
+  "photon:Station Road, Swinford, Co Mayo F 12 D8660, County Mayo, Ireland": {
+    "lat": "53.9429599",
+    "lon": "-8.9492183",
+    "type": "house"
+  },
+  "photon:St. Ita's Terrace, Swinford, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.7014606",
+    "lon": "-9.0789554",
+    "type": "other"
+  },
+  "photon:Brookville Ave. Swinford, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.9115808",
+    "lon": "-8.8131427",
+    "type": "house"
+  },
+  "photon:Pound Lane, Swinford, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.9115808",
+    "lon": "-8.8131427",
+    "type": "house"
+  },
+  "photon:Bridge Street, Brookville Avenue, Swinford, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.9421657",
+    "lon": "-8.9464865",
+    "type": "other"
+  },
+  "photon:Brookville Avenue, Swinford, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.9115808",
+    "lon": "-8.8131427",
+    "type": "house"
+  },
+  "photon:Davitt Place, Swinford, Co Mayo F12 VY82, County Mayo, Ireland": {
+    "lat": "53.9422309",
+    "lon": "-8.9513325",
+    "type": "house"
+  },
+  "photon:No. 3 Chapel Row, Swinford, Co Mayo F12 P522., County Mayo, Ireland": null,
+  "photon:No (12) Gleann Darach, Swinford, Co Mayo F12 K318, County Mayo, Ireland": null,
+  "photon:No (13) Gleann Darach, Swinford, Co Mayo F12 WF64., County Mayo, Ireland": null,
+  "photon:No (14) Gleann Darach, Swinford, Co Mayo F12X722, County Mayo, Ireland": null,
+  "photon:Ballina Road, Swinford, Co Mayo F12 T289, County Mayo, Ireland": {
+    "lat": "53.7147099",
+    "lon": "-8.9968964",
+    "type": "street"
+  },
+  "photon:Carrowneden (House 1), Killasser, Swinford, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.9422309",
+    "lon": "-8.9513325",
+    "type": "house"
+  },
+  "photon:Carrowneden (House 2), Killasser, Swinford, Co Mayo, County Mayo, Ireland": null,
+  "photon:Kilmaine Road, The Neale, Ballinrobe, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.6199641",
+    "lon": "-9.2209445",
+    "type": "house"
+  },
+  "photon:Pollagh, Keel, Achill, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.9754365",
+    "lon": "-10.0758871",
+    "type": "house"
+  },
+  "photon:Pollagh, Keel, Achill, Co Mayo F28 NX43, County Mayo, Ireland": {
+    "lat": "53.9754365",
+    "lon": "-10.0758871",
+    "type": "house"
+  },
+  "photon:Keel West, Dooagh, Achill, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.9754365",
+    "lon": "-10.0758871",
+    "type": "house"
+  },
+  "photon:Keel West, Dooagh, Achill, Co Mayo F28 TW10, County Mayo, Ireland": {
+    "lat": "53.9754365",
+    "lon": "-10.0758871",
+    "type": "house"
+  },
+  "photon:Polranny, Achill Sound, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.9330188",
+    "lon": "-9.9121784",
+    "type": "other"
+  },
+  "photon:\"The Railway Hostel\", Polranny, Achill Sound, Westport, Co Mayo F28 W6DO, County Mayo, Ireland": null,
+  "photon:Polranny, Achill Sound, Co Mayo F28 F102, County Mayo, Ireland": {
+    "lat": "53.9296352",
+    "lon": "-9.9274511",
+    "type": "city"
+  },
+  "photon:Slievemore, Dooagh, Achill, Co Mayo F28 VW13, County Mayo, Ireland": {
+    "lat": "53.9754365",
+    "lon": "-10.0758871",
+    "type": "house"
+  },
+  "photon:Pollagh, Keel, Achill. Co Mayo, County Mayo, Ireland": {
+    "lat": "53.9754365",
+    "lon": "-10.0758871",
+    "type": "house"
+  },
+  "photon:The Old Terminal Building, Achill Sound, Co. Mayo, County Mayo, Ireland": null,
+  "photon:Bangor Erris, Ballina, Co Mayo F26 F9T3, County Mayo, Ireland": null,
+  "photon:An Eachléim, An Fód Dubh, Béal an Átha, Contae Maigh Eo (Teach 1), Co. Mayo, County Mayo, Ireland": null,
+  "photon:An Eachléim, An Fód Dubh, Béal an Átha, Contae Maigh Eo (Teach 2), Co. Mayo, County Mayo, Ireland": null,
+  "photon:An Eachléim, An Fód Dubh, Béal an Átha, Contae Maigh Eo (Teach 3), Co. Mayo, County Mayo, Ireland": null,
+  "photon:An Eachléim, An Fód Dubh, Béal an Átha, Contae Maigh Eo (Teach 4), Co. Mayo, County Mayo, Ireland": null,
+  "photon:An Eachléim, An Fód Dubh, Béal an Átha, Contae Maigh Eo (Suíomh), Co. Mayo, County Mayo, Ireland": null,
+  "photon:\"Tallagh House\", Tallagh, Belmullet, Co Mayo, County Mayo, Ireland": {
+    "lat": "54.0248472",
+    "lon": "-9.8317255",
+    "type": "other"
+  },
+  "photon:8 Shráid na Beairice, Íochtarach, Béal an Mhuirthead, Co Mhaigh Eo F26 PQ23, Co. Mayo, County Mayo, Ireland": null,
+  "photon:Shráid na Beairice, Íochtarach, Béal an Mhuirthead, Co Mhaigh Eo F26 P272, Co. Mayo, County Mayo, Ireland": null,
+  "photon:Long Street, Louisburgh, Co Mayo F28 Y567, County Mayo, Ireland": null,
+  "photon:Long Street, Louisburgh, Co Mayo F28 N660, County Mayo, Ireland": null,
+  "photon:\"Carrowbaun House\", Medlicott Street, Newport, Co Mayo F28 PD62, County Mayo, Ireland": null,
+  "photon:Quay Road, Newport, Co Mayo Townland of KnocknageehaF28 FX04, County Mayo, Ireland": null,
+  "photon:George's Street, Newport, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.8868446",
+    "lon": "-9.5450088",
+    "type": "street"
+  },
+  "photon:Newport Youth Café, Castlebar Street, Newport, Co Mayo F28 HF79, County Mayo, Ireland": null,
+  "photon:Fairgreens Lower, Westport,F28 ND68, Co. Mayo, County Mayo, Ireland": {
+    "lat": "53.8024127",
+    "lon": "-9.5183761",
+    "type": "street"
+  },
+  "photon:Quay Road Lower, Westport, Co Mayo, County Mayo, Ireland": {
+    "lat": "53.8006884",
+    "lon": "-9.5355208",
+    "type": "house"
+  },
+  "photon:Quay Road Lower, Westport, F28 Y096, Co. Mayo, County Mayo, Ireland": {
+    "lat": "53.7990208",
+    "lon": "-9.524972",
+    "type": "street"
+  },
+  "photon:Quay Road Lower, Westport, Co .Mayo, F28 V963, County Mayo, Ireland": {
+    "lat": "53.7990208",
+    "lon": "-9.524972",
+    "type": "street"
+  },
+  "photon:Altamount Street, Westport, Co Mayo F28 H292., County Mayo, Ireland": {
+    "lat": "53.8000162",
+    "lon": "-9.5221",
+    "type": "house"
+  },
+  "photon:5 Hillcrest, High Street, Westport, Co Mayo F28 WT25, County Mayo, Ireland": null,
+  "photon:Altamount Street, Westport, Co Mayo F28 RK12, County Mayo, Ireland": {
+    "lat": "53.8000162",
+    "lon": "-9.5221",
+    "type": "house"
+  },
+  "photon:2 Ormond Street, Nenagh, Co. Tipperary, E45 YP92, County Tipperary, Ireland": {
+    "lat": "52.8636818",
+    "lon": "-8.2006684",
+    "type": "house"
+  },
+  "photon:Honey Cottage, Glennagat, Cahir, Co. Tipperary, E21 Y998, County Tipperary, Ireland": null,
+  "photon:11 Castle Street Carrick On Suir Clonmel, Co. Tipperary, County Tipperary, Ireland": {
+    "lat": "52.3603646",
+    "lon": "-7.5929717",
+    "type": "house"
+  },
+  "photon:Ashbury Industrial Estate, (Former Offray Factory), Roscrea, Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:5 Kavanagh Place, Thurles, Co. Tipperary, County Tipperary, Ireland": {
+    "lat": "52.8266202",
+    "lon": "-8.08717",
+    "type": "house"
+  },
+  "photon:Caulfields Supervalu, Bank Place, Tipperary Town, County Tipperary, Ireland": null,
+  "photon:10 Lowergate, Cashel, Co Tipperary, County Tipperary, Ireland": {
+    "lat": "52.4734839",
+    "lon": "-8.1614446",
+    "type": "district"
+  },
+  "photon:2 Lower Dublin Road, Nenagh, Co. Tipperary, County Tipperary, Ireland": {
+    "lat": "52.8657753",
+    "lon": "-8.1847637",
+    "type": "street"
+  },
+  "photon:Camus Road, Cashel, Co. Tippeary, E25 NX32, Co. Tipperary, County Tipperary, Ireland": {
+    "lat": "52.5121964",
+    "lon": "-7.8797842",
+    "type": "house"
+  },
+  "photon:Camus Road, Cashel, C. Tipperary, NX32(2), County Tipperary, Ireland": {
+    "lat": "52.5193858",
+    "lon": "-7.8945461",
+    "type": "street"
+  },
+  "photon:No. 1, O' Connell Road, Tipperary, County Tipperary, Ireland": {
+    "lat": "52.8405763",
+    "lon": "-8.1429147",
+    "type": "house"
+  },
+  "photon:Tipperary Road, Cappawhite E34 X409, County Tipperary, Ireland": {
+    "lat": "52.4771775",
+    "lon": "-8.1717616",
+    "type": "house"
+  },
+  "photon:Abbey Villas, Friar St, Nenagh, Co. Tipperary, County Tipperary, Ireland": {
+    "lat": "52.8638824",
+    "lon": "-8.197389",
+    "type": "house"
+  },
+  "photon:Kearneys Castle, Main Street, Cashel, Co Tipperary E25 X732, County Tipperary, Ireland": null,
+  "photon:E91 PP99 Market Place (formerly Xtra Vision) Site (Folio TY61870F), Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:b) E91 F896 Market Place SC (formerly Mai’s Café), Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:c) E91 HY92 Unit D1 Market Place SC, Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:d) E91 WV62 Unit D2 Market Place SC, Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:e) E91 F3A4 Unit D3 Market Place SC, Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:f) E91 E192 Units F1 & F2 Market Place SC, Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:g) E91 HP02 Unit B1 Market Place SC, Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:h) E91 KH67 Unit B2 Market Place SC, Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:i) E91 XP76 Unit B4 Market Place SC, Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:j) E91 P2X0 Unit B6 Market Place SC, Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:k) E91 H4F1 Unit B7 Market Place SC, Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:l) E91 PF53 Unit B8 Market Place, Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:Former Superquinn / Supervalu, Market Place, Clonmel, Co. Tipperary, County Tipperary, Ireland": {
+    "lat": "52.3552489",
+    "lon": "-7.7005405",
+    "type": "house"
+  },
+  "photon:11 Dillon Street, Tipp Town, Co. Tipperary, County Tipperary, Ireland": {
+    "lat": "52.475002",
+    "lon": "-8.1603399",
+    "type": "house"
+  },
+  "photon:12 Columba Terrace, Thurles, Co. Tipperary, County Tipperary, Ireland": {
+    "lat": "52.6808913",
+    "lon": "-7.8217886",
+    "type": "house"
+  },
+  "photon:17 Davis Terrace, Davis Street, Clonmel, Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:The Dairy, Powerstown Road, Clonmel, Co. Tipperary, County Tipperary, Ireland": {
+    "lat": "52.3662543",
+    "lon": "-7.6801616",
+    "type": "house"
+  },
+  "photon:20 St Patrick's Terrace, Clonmel, Co. Tipperary E91 FV59, County Tipperary, Ireland": null,
+  "photon:Main Street Upper, Cappawhite, Co. Tipperary, County Tipperary, Ireland": {
+    "lat": "52.4741619",
+    "lon": "-8.1585112",
+    "type": "house"
+  },
+  "photon:Church Street, Bunacum, Toomevara E45 X924, Co. Tipperary, County Tipperary, Ireland": null,
+  "photon:Main street, Roscrea, Co. Tipperary E53 KV22 - TY72199F, County Tipperary, Ireland": {
+    "lat": "52.9556381",
+    "lon": "-7.7993129",
+    "type": "house"
+  },
+  "photon:13 Mitchel Street, Nenagh, Co. Tipperary. E45 YW20, County Tipperary, Ireland": {
+    "lat": "52.8634902",
+    "lon": "-8.200226",
+    "type": "house"
+  },
+  "photon:14 Mitchel Street, Nenagh, Co. Tipperary. E45 V266, County Tipperary, Ireland": {
+    "lat": "52.8635012",
+    "lon": "-8.2003198",
+    "type": "house"
+  },
+  "photon:Lower Birr Road, Nenagh, Co. Tipperary. E45 YT54, County Tipperary, Ireland": null,
+  "photon:Ferndale, Tyone, Nenagh, Co. Tipperary, County Tipperary, Ireland": {
+    "lat": "52.8538818",
+    "lon": "-8.1778969",
+    "type": "locality"
+  },
+  "photon:Newsworld, Market Place, Clonmel, Co. Tipperary, County Tipperary, Ireland": {
+    "lat": "52.3545462",
+    "lon": "-7.7021568",
+    "type": "house"
+  },
+  "photon:Wilmslow, The Avenue, Gorey, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.7358768",
+    "lon": "-6.2686844",
+    "type": "locality"
+  },
+  "photon:Galavan's Pub, 5 North Street, New Ross, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.396208",
+    "lon": "-6.9438889",
+    "type": "house"
+  },
+  "photon:31 Drumgoold Villas,Enniscorthy, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.4943876",
+    "lon": "-6.5391033",
+    "type": "locality"
+  },
+  "photon:Site at Clonard Road (Rear of Circle K Garage), Wexford, County Wexford, Ireland": null,
+  "photon:Clologue Lower, Camolin, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.5952727",
+    "lon": "-6.4267939",
+    "type": "house"
+  },
+  "photon:Former McNulty's, 27 South Street, New Ross, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.3936606",
+    "lon": "-6.9450766",
+    "type": "house"
+  },
+  "photon:Old School House, Marshalstown, Enniscorthy, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.5498928",
+    "lon": "-6.5973415",
+    "type": "other"
+  },
+  "photon:Vacant Unit, Esmonde Street, Gorey, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.6759703",
+    "lon": "-6.2858838",
+    "type": "street"
+  },
+  "photon:Derelict Dwelling, Main Street, Ferns, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.5905847",
+    "lon": "-6.4966936",
+    "type": "house"
+  },
+  "photon:Castle Ellis, The Ballagh, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.1920944",
+    "lon": "-6.5029173",
+    "type": "locality"
+  },
+  "photon:Derelict Site, Carnew Road, Ferns, Co. Wexford, County Wexford, Ireland": null,
+  "photon:Site Adj acent to Applegreen, Ferns, Co. Wexford, County Wexford, Ireland": null,
+  "photon:No. 1 Columba Villas, Wexford Town, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.3328898",
+    "lon": "-6.4615903",
+    "type": "locality"
+  },
+  "photon:The Old Grainstore, Bridgetown, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.2313256",
+    "lon": "-6.552791",
+    "type": "district"
+  },
+  "photon:Bungalow at Ballybrennan, Killinick, Co. Wexford, County Wexford, Ireland": null,
+  "photon:Greenlawn, Clonard Road, Wexford Town, County Wexford, Ireland": {
+    "lat": "52.332606",
+    "lon": "-6.4759869",
+    "type": "house"
+  },
+  "photon:House B, Danescastle, Bannow, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.2412362",
+    "lon": "-6.7281916",
+    "type": "locality"
+  },
+  "photon:House A Danescastle, Bannow, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.2412362",
+    "lon": "-6.7281916",
+    "type": "locality"
+  },
+  "photon:No. 53 South Main Street, Wexford Town, County Wexford, Ireland": {
+    "lat": "52.3368134",
+    "lon": "-6.4603407",
+    "type": "house"
+  },
+  "photon:Former Farrell's Furniture, Harpur's Lane, Wexford, County Wexford, Ireland": null,
+  "photon:The Old Hospital (Wexford Workhouse) Old Hospital Road, Wexford, County Wexford, Ireland": {
+    "lat": "52.3436187",
+    "lon": "-6.4795698",
+    "type": "house"
+  },
+  "photon:No. 1 South Main Street (Formerly Shoe Zone), Wexford, County Wexford, Ireland": null,
+  "photon:Angle Hill, Cornwall, Killurin, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.3878084",
+    "lon": "-6.5750508",
+    "type": "locality"
+  },
+  "photon:Old Pub, Hookless Village, Fethard-on-Sea. Co. Wexford, County Wexford, Ireland": null,
+  "photon:106 Hookless Village, Fethard-on-Sea, Co. Wexford, County Wexford, Ireland": null,
+  "photon:105 Hookless Village, Fethard-on-Sea, Co. Wexford, County Wexford, Ireland": null,
+  "photon:104 Hookless Village, Fethard-on-Sea, Co. Wexford, County Wexford, Ireland": null,
+  "photon:103 Hookless Village, Fethard-on-Sea, Co. Wexford, County Wexford, Ireland": null,
+  "photon:Old Court House, Gorey, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.339307",
+    "lon": "-6.4733049",
+    "type": "house"
+  },
+  "photon:Two Dwellings, Ballinatray Lower, Courtown, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.6461547",
+    "lon": "-6.2359849",
+    "type": "locality"
+  },
+  "photon:Walsheslough, Rosslare Strand, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.2712471",
+    "lon": "-6.391536",
+    "type": "locality"
+  },
+  "photon:Former Coogan's Pub/Kavanagh's Pub, Shannon Quay, Enniscorthy, Co. Wexford, County Wexford, Ireland": null,
+  "photon:Journeys End, Ballymoney, Gorey, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.6795561",
+    "lon": "-6.2109754",
+    "type": "locality"
+  },
+  "photon:Ballycanew Grove (2), Ballycanew, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.6092117",
+    "lon": "-6.3043961",
+    "type": "district"
+  },
+  "photon:The Ward House, Milltown, Tagoat, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.243248",
+    "lon": "-6.3940262",
+    "type": "house"
+  },
+  "photon:Swimming Pool at Hookless Village, Fethard-on-Sea, Co. Wexford, County Wexford, Ireland": null,
+  "photon:Former Mulcahy Paintings, 98 North Main Street, Wexford, County Wexford, Ireland": null,
+  "photon:The Old Mill, Bridgetown Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.2313256",
+    "lon": "-6.552791",
+    "type": "district"
+  },
+  "photon:Old Discount Stre, 2 irish Street, Enniscorthy, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.502659",
+    "lon": "-6.5699235",
+    "type": "house"
+  },
+  "photon:Steele & Co. Limited, Priory Street, New Ross, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.3919794",
+    "lon": "-6.9478529",
+    "type": "house"
+  },
+  "photon:Church View, 41 Lower John Street, Wexford, County Wexford, Ireland": null,
+  "photon:Crossroads Foodstore, Wygram Heights, Wexford, County Wexford, Ireland": null,
+  "photon:27 Saint Aidan's Villas, Enniscorthy, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.5026803",
+    "lon": "-6.5708562",
+    "type": "house"
+  },
+  "photon:Kiltennel Church Gatelodge, Courtown, Gorey, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.6585139",
+    "lon": "-6.2347231",
+    "type": "house"
+  },
+  "photon:Former Nightclub, Templeshannon, Enniscorthy, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.5046084",
+    "lon": "-6.5662858",
+    "type": "house"
+  },
+  "photon:Riverview House, Templeshannon, Enniscorthy, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.5046084",
+    "lon": "-6.5662858",
+    "type": "house"
+  },
+  "photon:Chapel Lane, Kyle, Oulart, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.5058998",
+    "lon": "-6.3890202",
+    "type": "house"
+  },
+  "photon:Former Ann's Hair Salon, Main Street, Taghmon, Co. Wexford, County Wexford, Ireland": null,
+  "photon:Site (B) Mauritiustown, Rosslare Strand, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.2664071",
+    "lon": "-6.3901305",
+    "type": "locality"
+  },
+  "photon:Ballycanew Grove, Ballycanew, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.6092117",
+    "lon": "-6.3043961",
+    "type": "district"
+  },
+  "photon:1-5 The Old Creamery, Ballycanew, Gorey, Co. Wexford, County Wexford, Ireland": null,
+  "photon:6 St. Munns Villas, Main Street, Taghmon, Co. Wexford, County Wexford, Ireland": null,
+  "photon:Clonhenret House, Clonhenret, Camolin, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.6247067",
+    "lon": "-6.4166173",
+    "type": "locality"
+  },
+  "photon:Former Bike Shop, Priory Street, New Ross, Co. Wexford, County Wexford, Ireland": null,
+  "photon:Old Thatched Cottage, Ballyedmond Village, Ballyedmond, Co. Wexford, County Wexford, Ireland": null,
+  "photon:10 Beachwalk, Seafield, Ballymoney, Courtown, Co. Wexford, County Wexford, Ireland": null,
+  "photon:The Old Garage, The Quay, New Ross, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.3925664",
+    "lon": "-6.9487153",
+    "type": "house"
+  },
+  "photon:Portersgate, Fethard-on-Sea, New Ross, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.1931243",
+    "lon": "-6.8428829",
+    "type": "house"
+  },
+  "photon:Chilcomb House, Schoolhouse Road, New Ross, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.3853574",
+    "lon": "-6.9194755",
+    "type": "house"
+  },
+  "photon:The Old Dispensary, Ballyedmond Village, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.6794519",
+    "lon": "-6.2660243",
+    "type": "house"
+  },
+  "photon:Main Street, Fethard on Sea, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.1931243",
+    "lon": "-6.8428829",
+    "type": "house"
+  },
+  "photon:BumbleBee Licensed Premises, Priory Street, New Ross, Co. Wexford, County Wexford, Ireland": null,
+  "photon:Priory Street (adj. to Bumblebee), New Ross, Co. Wexford, County Wexford, Ireland": null,
+  "photon:Sunset House, Rosslare Strand, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.2718383",
+    "lon": "-6.3915222",
+    "type": "house"
+  },
+  "photon:The Old House, 6 Templeshannon, Enniscorthy, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.5020217",
+    "lon": "-6.5668342",
+    "type": "house"
+  },
+  "photon:The Oil, Oylgate, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.4246289",
+    "lon": "-6.5311988",
+    "type": "house"
+  },
+  "photon:The Former Great Southern Hotel, Rosslare Harbour, Co. Wexford, County Wexford, Ireland": null,
+  "photon:Ailsa House, St. Martin's Road, Rosslare Harbour,Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.2500491",
+    "lon": "-6.3382273",
+    "type": "house"
+  },
+  "photon:Kickham's House, Enniscorthy, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.5002472",
+    "lon": "-6.5668664",
+    "type": "house"
+  },
+  "photon:Former Murphy Flood's, Enniscorthy, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.5024205",
+    "lon": "-6.5692749",
+    "type": "house"
+  },
+  "photon:7 Old Garden City, Gorey, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.6793782",
+    "lon": "-6.2901112",
+    "type": "locality"
+  },
+  "photon:7 Grotto Terrace, Kilmuckridge, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.5115352",
+    "lon": "-6.2853454",
+    "type": "house"
+  },
+  "photon:4 John Street, Wexford (John St/John's Road), County Wexford, Ireland": {
+    "lat": "52.3391516",
+    "lon": "-6.4653452",
+    "type": "house"
+  },
+  "photon:Cobblers Cottage, Main Street, Coolgreany, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.2213859",
+    "lon": "-6.9324099",
+    "type": "house"
+  },
+  "photon:Main Street, Coolgreany, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.7641067",
+    "lon": "-6.2370666",
+    "type": "district"
+  },
+  "photon:Spring Valley Nursing Home, Enniscorthy, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.5007118",
+    "lon": "-6.5635056",
+    "type": "house"
+  },
+  "photon:The Lodges, Parknacross, Courtown, Co. Wexford, County Wexford, Ireland": {
+    "lat": "52.6224372",
+    "lon": "-6.2355208",
+    "type": "locality"
+  },
+  "photon:Rocks Factory (Formerly Breens Carriage Factory), Templeshannon, Enniscorthy, Co. Wexford, County Wexford, Ireland": null,
+  "photon:Harneys Shoe Repairs, 4 John Street, New Ross, Co. Wexford, County Wexford, Ireland": null,
+  "photon:Gladneys Licenced Premises, 5 John Street, New Ross, Co. Wexford, County Wexford, Ireland": null,
+  "photon:34 Quay St. Dundalk (Former Danny Boys Bar), Co. Louth, County Louth, Ireland": null,
+  "photon:Former NV Niteclub, Carrickcarnon, Co. Louth, County Louth, Ireland": null,
+  "photon:34 Ship Street, Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7168943",
+    "lon": "-6.3549429",
+    "type": "house"
+  },
+  "photon:Former Bank, 3 Marsh Road, Drogheda, Co. Louth, County Louth, Ireland": null,
+  "photon:3 Mill Lane, Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7227114",
+    "lon": "-6.3257557",
+    "type": "house"
+  },
+  "photon:6 Mill Lane, Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7104277",
+    "lon": "-6.3717508",
+    "type": "house"
+  },
+  "photon:7 Mill Lane, Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7104277",
+    "lon": "-6.3717508",
+    "type": "house"
+  },
+  "photon:9 Mill Lane, Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7104277",
+    "lon": "-6.3717508",
+    "type": "house"
+  },
+  "photon:10 Mill Lane, Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7104277",
+    "lon": "-6.3717508",
+    "type": "house"
+  },
+  "photon:11 Mill Lane, Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7104277",
+    "lon": "-6.3717508",
+    "type": "house"
+  },
+  "photon:Apartment 7 Mill Lane, Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7148012",
+    "lon": "-6.3529363",
+    "type": "house"
+  },
+  "photon:Apartment 7a Mill Lane, Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7119002",
+    "lon": "-6.3495564",
+    "type": "house"
+  },
+  "photon:4 Stockwell Street, Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7144693",
+    "lon": "-6.3533619",
+    "type": "house"
+  },
+  "photon:17 Ship St Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7120167",
+    "lon": "-6.3356412",
+    "type": "house"
+  },
+  "photon:83 Strand Street, Clogherhead Allwell House/Duke House, Duke St, Co. Louth, County Louth, Ireland": null,
+  "photon:26 Ship Street, Drogheda, Co Louth, County Louth, Ireland": {
+    "lat": "53.7168943",
+    "lon": "-6.3549429",
+    "type": "house"
+  },
+  "photon:Main Street, Castlebellingham, Co. Louth, County Louth, Ireland": {
+    "lat": "53.8973883",
+    "lon": "-6.3888715",
+    "type": "house"
+  },
+  "photon:Viki's Motors, Dublin Road, Dundalk, Co. Louth, County Louth, Ireland": {
+    "lat": "53.9880007",
+    "lon": "-6.3992748",
+    "type": "house"
+  },
+  "photon:Donaghy's Mill, Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7120167",
+    "lon": "-6.3356412",
+    "type": "house"
+  },
+  "photon:St Kevin's, Carrickmacross Rd, Dundalk, Co. Louth, County Louth, Ireland": {
+    "lat": "54.0207993",
+    "lon": "-6.3831473",
+    "type": "house"
+  },
+  "photon:Former Public House, Main St, Dunleer, Co. Louth, County Louth, Ireland": null,
+  "photon:PJ Carroll Bldg,38-39 Church St,Dundalk, Co. Louth, County Louth, Ireland": null,
+  "photon:5 St Joseph's Tce, Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7290568",
+    "lon": "-6.3591627",
+    "type": "house"
+  },
+  "photon:Ferrard House, Hacketts Cross, Clogherhead, Co. Louth, County Louth, Ireland": null,
+  "photon:4 Boyne Terrace, Cord Road, Drogheda, Co. Louth, County Louth, Ireland": null,
+  "photon:Spiders Web, Carrickmacross Rd, Dundalk, Co. Louth, County Louth, Ireland": null,
+  "photon:7 Dyer Street, Drogheda A91 N22, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7170272",
+    "lon": "-6.3475679",
+    "type": "house"
+  },
+  "photon:Crossans Garage, Dublin Road, Dundalk, Co. Louth, County Louth, Ireland": {
+    "lat": "53.9828314",
+    "lon": "-6.3904702",
+    "type": "house"
+  },
+  "photon:3 former dwellings, Brewery St, Castlebellingham, Co. Louth, County Louth, Ireland": null,
+  "photon:5 St Brigid's Terrace, Dundalk Road, Dunleer, Co. Louth, County Louth, Ireland": null,
+  "photon:4 St Mary's Road, Dundalk A91 E9RL, Co. Louth, County Louth, Ireland": {
+    "lat": "54.0073048",
+    "lon": "-6.3910548",
+    "type": "house"
+  },
+  "photon:Former Drg Chem Manure Wrks, Marsh Rd, Drog, Co. Louth, County Louth, Ireland": null,
+  "photon:Dublin House, Station Road, Omeath, Co. Louth, County Louth, Ireland": {
+    "lat": "54.0882996",
+    "lon": "-6.2577524",
+    "type": "street"
+  },
+  "photon:6 Anne Street, Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7168943",
+    "lon": "-6.3549429",
+    "type": "house"
+  },
+  "photon:Santa Barbara, Jervis Street, Ardee, Co. Louth, County Louth, Ireland": {
+    "lat": "53.854921",
+    "lon": "-6.5428016",
+    "type": "street"
+  },
+  "photon:Sawmills House, Marsh Road, Drogheda, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7143257",
+    "lon": "-6.3378008",
+    "type": "house"
+  },
+  "photon:Dwelling, Drogheda Street, Collon, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7778403",
+    "lon": "-6.4829693",
+    "type": "street"
+  },
+  "photon:Dwelling, Main Street, Dunleer, Co. Louth, County Louth, Ireland": {
+    "lat": "53.8313977",
+    "lon": "-6.3946069",
+    "type": "house"
+  },
+  "photon:Williamstown, Balykeeran, Athlone, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.4001854",
+    "lon": "-7.8080576",
+    "type": "district"
+  },
+  "photon:Buildings on rhs of Mullingar Rd, Kilbeggan, Co. Westmeath, County Westmeath, Ireland": null,
+  "photon:Tanyard, Kinnegad, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.5231755",
+    "lon": "-7.3407523",
+    "type": "house"
+  },
+  "photon:Ballynacarrigy Road, Kildallan, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.5818606",
+    "lon": "-7.5398548",
+    "type": "house"
+  },
+  "photon:Main St, Rathwire, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.5085485",
+    "lon": "-7.1286207",
+    "type": "locality"
+  },
+  "photon:Glebe House, Killucan, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.5110839",
+    "lon": "-7.1354957",
+    "type": "house"
+  },
+  "photon:14 Dublin Road, Kilbeggan, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.3637915",
+    "lon": "-7.482307",
+    "type": "street"
+  },
+  "photon:Mullingar Road, Kilbeggan, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.5025502",
+    "lon": "-7.4210368",
+    "type": "other"
+  },
+  "photon:Lr Main Street, Kilbeggan, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.3687805",
+    "lon": "-7.50014",
+    "type": "house"
+  },
+  "photon:N6 Kilbeggan-Tyrrellspass Tyrrellspass, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.3885359",
+    "lon": "-7.3775607",
+    "type": "district"
+  },
+  "photon:Creggan Upper, Moate Road, Athlone, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.407222",
+    "lon": "-7.884167",
+    "type": "locality"
+  },
+  "photon:Dr. Cuppagies, Main Street, Moate, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.3952774",
+    "lon": "-7.7243962",
+    "type": "house"
+  },
+  "photon:1 Trim Rd, Kinnegad, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.5249865",
+    "lon": "-7.3448567",
+    "type": "house"
+  },
+  "photon:2 Trim Rd, Kinnegad, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.525403",
+    "lon": "-7.3401133",
+    "type": "house"
+  },
+  "photon:Railway Tce, Mullingar, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.3234952",
+    "lon": "-7.4985504",
+    "type": "other"
+  },
+  "photon:Buds in Bloom, Kilbeggan, Co. Westmeath, County Westmeath, Ireland": null,
+  "photon:Packenham Hall Rd, Castlepollard Castlepollard, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.6789776",
+    "lon": "-7.3032019",
+    "type": "house"
+  },
+  "photon:Rear of 16 Court Devenish Athlone, Co. Westmeath, County Westmeath, Ireland": null,
+  "photon:Lower Retreat Rd Athlone, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.4246383",
+    "lon": "-7.9205092",
+    "type": "house"
+  },
+  "photon:11 St Marys Tce/Place, Athlone, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.4231423",
+    "lon": "-7.9301023",
+    "type": "house"
+  },
+  "photon:Toorvalley Est. Moate, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.400939",
+    "lon": "-7.7158177",
+    "type": "street"
+  },
+  "photon:Kilbeggan, Brewery House, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.3695067",
+    "lon": "-7.5026687",
+    "type": "house"
+  },
+  "photon:Pub at Junction of Trim Rd, Kinnegad, Co. Westmeath, County Westmeath, Ireland": null,
+  "photon:Derravaragh Court, Castlepollard Castlepollard, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.6796939",
+    "lon": "-7.2981856",
+    "type": "district"
+  },
+  "photon:Athlone Glass Site, Clonown Road, Doovoge, Athlone, Co. Westmeath, County Westmeath, Ireland": null,
+  "photon:The Bungalow, Mullingar Rd, Kinnegad N91 AX21, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.5309472",
+    "lon": "-7.3502589",
+    "type": "house"
+  },
+  "photon:Former Hammond Lane, Bellaugh, Athlone, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.4219814",
+    "lon": "-7.8897347",
+    "type": "house"
+  },
+  "photon:Former Texas Oil, Bellaugh, Athlone, Co. Westmeath, County Westmeath, Ireland": null,
+  "photon:Pearse Street & O'Connell Street, Athlone, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.4219015",
+    "lon": "-7.944976",
+    "type": "street"
+  },
+  "photon:4 Castlemine Street, Athlone or (Brideswells Street), Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.4208527",
+    "lon": "-7.9258312",
+    "type": "street"
+  },
+  "photon:Bower View Athlone, Co. Westmeath, County Westmeath, Ireland": {
+    "lat": "53.4226997",
+    "lon": "-7.9354304",
+    "type": "house"
+  },
+  "photon:17 Pairc Mhuire Bagenalstown Co. Carlow, Muinebheag, County Carlow, Ireland": {
+    "lat": "52.8043408",
+    "lon": "-6.7301269",
+    "type": "house"
+  },
+  "photon:Piers & Cottage, Burton Hall, Palatine Co. Carlow, County Carlow, Ireland": null,
+  "photon:Tullow Motor Factors Building, Church Street, Tullow, Co. Carlow., County Carlow, Ireland": null,
+  "photon:Lamberts Hardware Corner of Main St and Mill St Hacketstown, Tullow, Co. Carlow, County Carlow, Ireland": null,
+  "photon:Properties at Green Lane (Shamrock Plaza), Staplestown Road and Pollerton Road Junction, Carlow, County Carlow, Ireland": null,
+  "photon:Main Street, Newbliss, Co. Monaghan H18, County Monaghan, Ireland": {
+    "lat": "54.2499364",
+    "lon": "-6.9742456",
+    "type": "house"
+  },
+  "photon:Derryveagh, Carrickroe, Co. Monaghan - Folio MN23422F, County Monaghan, Ireland": null,
+  "photon:Muckno Street, Castleblayney, Co. A75 Monaghan, County Monaghan, Ireland": {
+    "lat": "54.1210812",
+    "lon": "-6.7406568",
+    "type": "street"
+  },
+  "photon:12 Castleblayney Rd, Ballybay, Co. A75 Monaghan, County Monaghan, Ireland": {
+    "lat": "54.131194",
+    "lon": "-6.8165859",
+    "type": "other"
+  },
+  "photon:9 Plantation Terrace, Monaghan H18XK64, County Monaghan, Ireland": null,
+  "photon:Land behind Bank of Ireland on Bridwell Lane (to the South) and Drummond Etra (to the West), Carrickmacross, Co. Monaghan, County Monaghan, Ireland": null,
+  "photon:The Angler's Rest, Ballinafad, Co Sligo, County Sligo, Ireland": {
+    "lat": "54.0305082",
+    "lon": "-8.4131927",
+    "type": "house"
+  },
+  "photon:Ardnaglass Upper, Grange, Co Sligo, County Sligo, Ireland": {
+    "lat": "54.3751143",
+    "lon": "-8.4752524",
+    "type": "district"
+  },
+  "photon:Tawnymucklagh, Monasterraden, Co Sligo, County Sligo, Ireland": {
+    "lat": "53.9363383",
+    "lon": "-8.4912604",
+    "type": "district"
+  },
+  "photon:15, Connolly Park, Tubbercurry, Co. Sligo, County Sligo, Ireland": {
+    "lat": "54.0592534",
+    "lon": "-8.7237238",
+    "type": "house"
+  },
+  "photon:Carrowhubbock South, Enniscrone, Co. Sligo, County Sligo, Ireland": {
+    "lat": "54.2148085",
+    "lon": "-9.0910768",
+    "type": "house"
+  },
+  "photon:The Hollow, Enniscrone, Co. Sligo, County Sligo, Ireland": {
+    "lat": "54.2148085",
+    "lon": "-9.0910768",
+    "type": "house"
+  },
+  "photon:Old Street, Collooney, Co Sligo - Former Crystal factory, County Sligo, Ireland": null,
+  "photon:Cissy's Macs Drumcliffe, Co. Sligo, County Sligo, Ireland": {
+    "lat": "54.3382368",
+    "lon": "-8.4697578",
+    "type": "other"
+  },
+  "photon:Former Creche, Rathbraughan Park, Co. Sligo, County Sligo, Ireland": {
+    "lat": "54.2857262",
+    "lon": "-8.4682958",
+    "type": "locality"
+  },
+  "photon:18, 19, 33, 38 – 42 Barrack Street, Sligo, County Sligo, Ireland": null,
+  "photon:10, Chapel Street, Sligo - House, County Sligo, Ireland": {
+    "lat": "54.269935",
+    "lon": "-8.4658994",
+    "type": "house"
+  },
+  "photon:12, Chapel Street, Sligo - House, County Sligo, Ireland": {
+    "lat": "54.269935",
+    "lon": "-8.4658994",
+    "type": "house"
+  },
+  "photon:Westgardens, Sligo - Old Hall, County Sligo, Ireland": {
+    "lat": "54.2705745",
+    "lon": "-8.4624825",
+    "type": "house"
+  },
+  "photon:Westgardens/Market Street, Sligo - Building Property B, County Sligo, Ireland": null,
+  "photon:Westgardens/Market Street, Sligo - Building Property C, County Sligo, Ireland": null,
+  "photon:18, Connolly Park, Tubbercurry, Co. Sligo, County Sligo, Ireland": {
+    "lat": "54.2679638",
+    "lon": "-8.472594",
+    "type": "house"
+  },
+  "photon:61, St. Joseph's Terrace, Sligo, County Sligo, Ireland": {
+    "lat": "54.2708148",
+    "lon": "-8.4685028",
+    "type": "house"
+  },
+  "photon:7 Knock Terrace, Wolfe Tone Street - House, Co. Sligo, County Sligo, Ireland": null,
+  "photon:3, Dominick Street, Sligo, County Sligo, Ireland": {
+    "lat": "54.2710079",
+    "lon": "-8.4700167",
+    "type": "house"
+  },
+  "photon:Site at junction of Fatima Avenue and Cemetery Road, Sligo, County Sligo, Ireland": null,
+  "photon:Property at Carrowhubback South, Main Street, Enniscrone, Co. Sligo, County Sligo, Ireland": null,
+  "photon:Knockaculleen, Dromore West, Co. Sligo, County Sligo, Ireland": {
+    "lat": "54.2491934",
+    "lon": "-8.8770875",
+    "type": "house"
+  },
+  "photon:Farnaharpy, Skreen, Co. Sligo, County Sligo, Ireland": {
+    "lat": "54.2102691",
+    "lon": "-8.7382274",
+    "type": "district"
+  },
+  "photon:57 St Joseph's Terrace, Sligo, County Sligo, Ireland": {
+    "lat": "54.2706344",
+    "lon": "-8.4687013",
+    "type": "house"
+  },
+  "photon:Building at Swan Point, Fish Quay, Sligo, County Sligo, Ireland": null,
+  "photon:The Mill Apartments, Ballisodare, Co. Sligo, County Sligo, Ireland": {
+    "lat": "54.2713268",
+    "lon": "-8.4671779",
+    "type": "house"
+  },
+  "photon:High Street, Market Street, Sligo (Old Savoy Cinema), County Sligo, Ireland": null,
+  "photon:Old Dispensary Building, Charles Street, Sligo, County Sligo, Ireland": null,
+  "photon:2 St. Asicus Terrace, Riverside, Sligo, County Sligo, Ireland": {
+    "lat": "54.2710495",
+    "lon": "-8.4667718",
+    "type": "house"
+  },
+  "photon:Hazelwood, Ballinode, Sligo, County Sligo, Ireland": {
+    "lat": "54.256419",
+    "lon": "-8.4343153",
+    "type": "house"
+  },
+  "photon:Premier Ch Construction Limited, Co. Sligo, County Sligo, Ireland": null,
+  "photon:Clooncorrick, Carrigallen, Co. Leitrim, County Leitrim, Ireland": {
+    "lat": "53.9669756",
+    "lon": "-7.6031645",
+    "type": "district"
+  },
+  "photon:Corner of Old Church Street and Commons Lane, Manorhamilton, Co. Leitrim, County Leitrim, Ireland": null,
+  "photon:Commons Lane, Manorhamilton, Co. Leitrim, County Leitrim, Ireland": {
+    "lat": "54.3051969",
+    "lon": "-8.1720935",
+    "type": "house"
+  },
+  "photon:Stranagross, Glenfarne, Co. Leitrim, County Leitrim, Ireland": {
+    "lat": "54.2866108",
+    "lon": "-8.0185452",
+    "type": "other"
+  },
+  "photon:Near Junction of N4 and County Road 657 - Jamestown, Co. Leitrim, County Leitrim, Ireland": null,
+  "photon:Adjacent N16 near junction with County Road 144 Diffreen, Glencar, Co. Leitrim, County Leitrim, Ireland": null,
+  "photon:Tarmon, Corglass, Co. Leitrim, County Leitrim, Ireland": {
+    "lat": "54.0342724",
+    "lon": "-7.962592",
+    "type": "locality"
+  },
+  "photon:Cornalaghta, Leckaun, Dromahair, Co. Leitrim (Fivemilebourne), County Leitrim, Ireland": null,
+  "photon:Corriscoffey, Dromod, Co. Leitrim, County Leitrim, Ireland": {
+    "lat": "53.8595321",
+    "lon": "-7.9164884",
+    "type": "house"
+  },
+  "photon:Chapel St, Drumshanbo, Co. Leitrim, County Leitrim, Ireland": {
+    "lat": "54.0396428",
+    "lon": "-8.0308961",
+    "type": "house"
+  },
+  "photon:Towneycorragh, Lough Allen PO, Co. Leitrim, County Leitrim, Ireland": {
+    "lat": "54.1099685",
+    "lon": "-8.0497505",
+    "type": "other"
+  },
+  "photon:Market Street, Dromahaire, Co. Leitrim, County Leitrim, Ireland": {
+    "lat": "54.2687989",
+    "lon": "-8.2528974",
+    "type": "other"
+  },
+  "photon:Tullylannon Td., Leitrim, Co. Leitrim, County Leitrim, Ireland": {
+    "lat": "53.8595321",
+    "lon": "-7.9164884",
+    "type": "house"
+  },
+  "photon:9 Cluain Oir,Lis Cara, Co. Leitrim, County Leitrim, Ireland": null,
+  "photon:11 Cluain Oir,Lis Cara, Co. Leitrim, County Leitrim, Ireland": null,
+  "photon:14 Cluain Oir,Lis Cara, Co. Leitrim, County Leitrim, Ireland": null,
+  "photon:8 Cluain Oir, Lis Cara, Carrick on Shannon, Co. Leitrim, County Leitrim, Ireland": null,
+  "photon:Former Scally Surgery (F92 RK19) & Dwelling (F92 NP52), Castle Street, Letterkenny,Co. Donegal., County Donegal, Ireland": null,
+  "photon:Condon Building, Mall, Ballyshannon, Co. Donegal, County Donegal, Ireland": null,
+  "photon:Carrowreagh, Bridgend, Co. Donegal, County Donegal, Ireland": {
+    "lat": "55.1530636",
+    "lon": "-7.5930328",
+    "type": "locality"
+  },
+  "photon:Old Mill, Millbrae, Buncrana, Co. Donegal, County Donegal, Ireland": {
+    "lat": "55.1304425",
+    "lon": "-7.4521144",
+    "type": "other"
+  }
 }
