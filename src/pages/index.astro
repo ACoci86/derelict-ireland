@@ -57,7 +57,10 @@ const logoFiles = readdirSync("public/logos");
 const logoFor = (council: string): string | null => {
   const s = slugify(council);
   const f = logoFiles.find((x) => x.slice(0, x.lastIndexOf(".")) === s);
-  return f ? `/logos/${f}` : null;
+  // Prefix with the base path so logos resolve under GitHub Pages' /repo/ path.
+  // BASE_URL may or may not have a trailing slash, so normalise to one.
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  return f ? `${base}/logos/${f}` : null;
 };
 ---
 
@@ -772,12 +775,15 @@ const logoFor = (council: string): string | null => {
       });
 
       map.on("load", async () => {
-        // public/sites.geojson is served at the site root, so fetch "/sites.geojson".
-        const geojson = await (await fetch("/sites.geojson")).json();
+        // Assets live under the configured base path (e.g. "/derelict-ireland"
+        // on GitHub Pages, "" locally), so prefix fetches with it. Normalise any
+        // trailing slash so we always join with exactly one.
+        const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+        const geojson = await (await fetch(`${base}/sites.geojson`)).json();
 
         // County / local-authority borders, drawn under the pins for context.
         // Simplified boundaries from codeforgermany/click_that_hood (ODbL).
-        const counties = await (await fetch("/counties.geojson")).json();
+        const counties = await (await fetch(`${base}/counties.geojson`)).json();
         map.addSource("counties", { type: "geojson", data: counties });
         map.addLayer({
           id: "county-borders",

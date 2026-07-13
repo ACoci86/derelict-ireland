@@ -4,7 +4,7 @@ An interactive map of derelict sites across Ireland, built from the registers th
 
 ![Screenshot of the Derelict Ireland site](docs/screenshot.png)
 
-> Work in progress. **26 of Ireland's 31 local authorities** are covered so far — **2,196 sites mapped**, with a further ~260 held for review. Numbers and features may change.
+> Work in progress. **26 of Ireland's 31 local authorities** are covered so far: **2,196 sites mapped**, with a further ~260 held for review. Numbers and features may change.
 
 Under the Derelict Sites Act, every Irish local authority must maintain a public register of derelict sites. Those registers are scattered across dozens of PDFs, spreadsheets, and open-data portals in wildly different formats. This project pulls them into one place, puts every site on a map, and lets you explore, search, and download the data.
 
@@ -12,12 +12,12 @@ Click any pin for the address, council, and register reference. The registers va
 
 ## What the site does
 
-- **Interactive map** — every mapped site as a pin, clustered at low zoom so it stays readable with thousands of points (MapLibre + a clean CARTO basemap).
+- **Interactive map**: every mapped site as a pin, clustered at low zoom so it stays readable with thousands of points (MapLibre + a clean CARTO basemap).
 - **Click a council** in the coverage table to filter the map to just that council's sites, zoom to it, and highlight its boundary.
 - **County / local-authority borders** drawn on the map for context.
 - **Coverage-by-council table** with mapped / not-yet-mapped / total counts, a coverage bar, the total site **valuation** where the register publishes it, the source, and when each register was last updated.
 - **Search** the table by council name, and **sort** any column ascending or descending.
-- **Download** the whole dataset, or any single council, as **CSV** (spreadsheets) or **GeoJSON** (mapping tools) — generated in the browser, no server needed.
+- **Download** the whole dataset, or any single council, as **CSV** (spreadsheets) or **GeoJSON** (mapping tools), generated in the browser with no server needed.
 
 ## Coverage
 
@@ -35,9 +35,9 @@ Two parts: an offline **pipeline** that produces the data, and a static **websit
 
 `npm run pipeline` runs every council adapter, geocodes what needs geocoding, and writes:
 
-- `public/sites.geojson` — the mapped sites,
-- `public/stats.json` — per-council counts, valuations, sources, and update dates,
-- `docs/not-yet-mapped.md` — the addresses still held for review.
+- `public/sites.geojson`: the mapped sites,
+- `public/stats.json`: per-council counts, valuations, sources, and update dates,
+- `docs/not-yet-mapped.md`: the addresses still held for review.
 
 Each council has an adapter in `pipeline/adapters/`. Councils publish in two ways:
 
@@ -46,11 +46,11 @@ Each council has an adapter in `pipeline/adapters/`. Councils publish in two way
 
 ### Geocoding (address-only councils)
 
-Addresses are placed with a tiered, cost-free, terms-of-service-clean approach — no Google, nothing that forbids storing the coordinates:
+Addresses are placed with a tiered, cost-free, terms-of-service-clean approach, using no Google and nothing that forbids storing the coordinates:
 
 1. **Nominatim** (OpenStreetMap) with a per-council county hint.
 2. **Photon** (also OpenStreetMap) as a fallback, more tolerant of vague or partial addresses.
-3. **Per-county bounding-box check** — any result that lands outside the council's own county is rejected, so a fuzzy match to a same-named street elsewhere never reaches the map.
+3. **Per-county bounding-box check**: any result that lands outside the council's own county is rejected, so a fuzzy match to a same-named street elsewhere never reaches the map.
 
 Results are cached in `data/cache/` so re-runs are fast and free. Photon-derived pins are honestly capped at street/town precision. Anything still unplaced is held for review rather than guessed.
 
@@ -103,7 +103,7 @@ The website build reads the committed data files and needs no secrets or environ
 
 ## Deployment
 
-`npm run build` produces a fully static `./dist/`, so it drops onto any static host — Netlify, Cloudflare Pages, or GitHub Pages. No environment variables are needed for the build. The update loop is: run the pipeline locally → commit the regenerated data → push → the host redeploys.
+`npm run build` produces a fully static `./dist/`, so it drops onto any static host: Netlify, Cloudflare Pages, or GitHub Pages. No environment variables are needed for the build. The update loop is: run the pipeline locally → commit the regenerated data → push → the host redeploys.
 
 > Note for **GitHub Pages project sites** (served under `/<repo>/`): set `site` and `base` in `astro.config` and prefix the in-page `fetch("/sites.geojson")` / `fetch("/counties.geojson")` calls with the base path, or use a custom domain / root deploy to avoid the base-path handling.
 
