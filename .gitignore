@@ -17,6 +17,11 @@ pnpm-debug.log*
 .env
 .env.production
 
+# LLM / Gemini artifacts (kept local, never committed)
+data/cache/gemini.json
+data/manual/gemini-proposed.csv
+data/manual/gemini-proposed-eircode.csv
+
 # macOS-specific files
 .DS_Store
 

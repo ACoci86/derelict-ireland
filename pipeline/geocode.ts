@@ -15,28 +15,6 @@ const IE = { latMin: 51.3, latMax: 55.5, lonMin: -10.7, lonMax: -5.3 };
 // https://operations.osmfoundation.org/policies/nominatim/
 const USER_AGENT = "derelict-ireland/0.1 (https://github.com/ACoci86/derelict-ireland)";
 
-// --- Gemini address cleaner (optional third tier) ---------------------------
-// When both OSM geocoders fail, we ask Google's free Gemini model to rewrite a
-// messy register address into a clean "street, town, county" query, then feed
-// THAT back through Nominatim/Photon. The model never supplies coordinates - a
-// real geocoder still places the point, and the county-box guard still applies.
-// Skipped entirely if no GEMINI_API_KEY is set.
-const GEMINI_MODEL = "gemini-flash-lite-latest";
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
-const GEMINI_CACHE_PATH = "data/cache/gemini.json";
-
-// Read GEMINI_API_KEY from the environment, or from a local .env if not set.
-function geminiKey(): string {
-  if (process.env.GEMINI_API_KEY) return process.env.GEMINI_API_KEY;
-  try {
-    for (const line of readFileSync(".env", "utf8").split("\n")) {
-      const m = line.match(/^\s*GEMINI_API_KEY\s*=\s*(.+?)\s*$/);
-      if (m) return m[1].replace(/^["']|["']$/g, "");
-    }
-  } catch { /* no .env file */ }
-  return "";
-}
-
 // A locality hint per council, added to the query so ambiguous street names
 // (there's a "North Main Street" in both Cork and Wexford) resolve to the right
 // place. Keep these short, "Cork", not "Cork City", which over-specifies and
@@ -158,56 +136,6 @@ function photonConfidence(type: string): Site["geocode_confidence"] {
   return type === "house" || type === "street" ? "street" : "town";
 }
 
-// The Gemini cache maps a "county||address" key to a cleaned query (or null =
-// "the model judged this unlocatable"). Separate file from the geocode cache.
-type GeminiCache = Record<string, string | null>;
-
-function loadGeminiCache(): GeminiCache {
-  if (existsSync(GEMINI_CACHE_PATH)) return JSON.parse(readFileSync(GEMINI_CACHE_PATH, "utf8"));
-  return {};
-}
-
-function saveGeminiCache(c: GeminiCache): void {
-  mkdirSync("data/cache", { recursive: true });
-  writeFileSync(GEMINI_CACHE_PATH, JSON.stringify(c, null, 2));
-}
-
-// Ask Gemini to rewrite one messy address into a geocodable query. Returns the
-// cleaned query, or null if the model judged it unlocatable. Throws "429" on a
-// quota/rate-limit response so the caller can back off.
-async function queryGemini(key: string, address: string, county: string): Promise<string | null> {
-  const prompt =
-    `You clean messy addresses from an Irish council's Derelict Sites Register so ` +
-    `a geocoder (OpenStreetMap) can find them${county ? ` (this one is in ${county})` : ""}. ` +
-    `KEEP as much of the real postal address as possible: house/street numbers, ALL ` +
-    `street names, the town, the county, and the Eircode if present. Only REMOVE text ` +
-    `that is not part of a postal address: descriptive phrases ("Derelict House", ` +
-    `"Site at", "Property at", "Vacant"), building or business names ("Lamberts ` +
-    `Hardware", "Capri Bungalow"), and bracketed asides ("(beside X)"). A leading ` +
-    `COUNT of properties ("3 Derelict Houses on Main Street", "2 Vacant Sites at X") ` +
-    `is not a house number - drop the count and its noun, keeping just the street. If ` +
-    `several house numbers are listed for one street, keep only the first. Do not invent ` +
-    `detail. If nothing mappable remains (a bare townland or nothing usable), reply ` +
-    `exactly UNLOCATABLE. Reply with ONLY the cleaned address, no other words.` +
-    `\n\nAddress: ${address}`;
-  const resp = await fetch(GEMINI_URL, {
-    method: "POST",
-    headers: { "x-goog-api-key": key, "Content-Type": "application/json" },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: { temperature: 0, maxOutputTokens: 256 },
-    }),
-  });
-  if (resp.status === 429) throw new Error("429");
-  if (!resp.ok) throw new Error(`Gemini HTTP ${resp.status}`);
-  const data = (await resp.json()) as {
-    candidates?: { content?: { parts?: { text?: string }[] } }[];
-  };
-  const text = (data.candidates?.[0]?.content?.parts?.[0]?.text ?? "").replace(/\s+/g, " ").trim();
-  if (!text || /^UNLOCATABLE\b/i.test(text)) return null;
-  return text;
-}
-
 // One query through Nominatim, then Photon as a fallback. Returns the hit (or
 // null) and whether Photon produced it. Mutates and persists the shared cache.
 async function geocodeQuery(
@@ -288,91 +216,4 @@ export async function geocodeAll(sites: Site[]): Promise<void> {
   }
 
   console.log(`geocoded: ${counters.live} new lookups (${photonHits} Photon), ${sites.length} sites checked`);
-}
-
-// A proposed placement for a site the OSM geocoders couldn't map, produced by
-// the Gemini cleaner. These are NOT put on the map - they're written to a review
-// file so a human can eyeball each one and drop the bad ones before they go live.
-export interface GeminiProposal {
-  id: string;
-  council: string;
-  register_ref: string | null;
-  eircode: string | null;
-  address: string;                // the original register address
-  cleaned: string;                // Gemini's cleaned query
-  lat: number;
-  lon: number;
-  confidence: Site["geocode_confidence"];
-}
-
-/**
- * For every site the OSM geocoders left unplaced, ask Gemini to clean the
- * address, geocode the clean version, and (if it lands in the right county)
- * record it as a PROPOSAL. Does not mutate the sites - the caller decides what
- * to do with the proposals. Skipped entirely if there is no GEMINI_API_KEY.
- */
-export async function proposeGemini(sites: Site[]): Promise<GeminiProposal[]> {
-  const key = geminiKey();
-  if (!key) { console.log("Gemini: no API key set, skipping proposals"); return []; }
-
-  const cache = loadCache();
-  const geminiCache = loadGeminiCache();
-  const counters = { live: 0 };
-  const proposals: GeminiProposal[] = [];
-  let geminiOn = true;
-
-  for (const site of sites) {
-    if (site.lat !== null) continue;            // already mapped by the OSM geocoders
-    if (!geminiOn) break;                        // quota gone: stop, resume next run
-
-    const hint = AREA_HINT[site.council];
-    const county = hint ?? site.council;
-    const box = COUNTY_BOX[site.council];
-    const gkey = `${county}||${site.address}`;
-
-    let cleaned: string | null = null;
-    if (gkey in geminiCache) {
-      cleaned = geminiCache[gkey];
-    } else {
-      // Pace under the free tier's ~15 requests/minute limit; on a rate-limit
-      // response wait a minute and retry rather than giving up immediately.
-      for (let attempt = 0; attempt < 3 && geminiOn; attempt++) {
-        await sleep(4500);
-        try {
-          cleaned = await queryGemini(key, site.address, county);
-          geminiCache[gkey] = cleaned;
-          saveGeminiCache(geminiCache);
-          break;
-        } catch (e) {
-          if (String(e).includes("429") && attempt < 2) {
-            console.log("Gemini: rate limit, waiting 60s...");
-            await sleep(60000);
-            continue;
-          }
-          if (String(e).includes("429")) { geminiOn = false; console.log("Gemini: quota exhausted, stopping for this run"); }
-          cleaned = null;
-          break;
-        }
-      }
-    }
-    if (!cleaned) continue;
-
-    const r = await geocodeQuery(`${cleaned}, Ireland`, cache, counters);
-    if (r.hit && inCounty(r.hit, box)) {
-      proposals.push({
-        id: site.id,
-        council: site.council,
-        register_ref: site.register_ref,
-        eircode: site.eircode,
-        address: site.address,
-        cleaned,
-        lat: Math.round(parseFloat(r.hit.lat) * 1e6) / 1e6,
-        lon: Math.round(parseFloat(r.hit.lon) * 1e6) / 1e6,
-        confidence: photonConfidence(r.hit.type),
-      });
-    }
-  }
-
-  console.log(`Gemini proposals: ${proposals.length} placed (${counters.live} geocoder lookups)`);
-  return proposals;
 }

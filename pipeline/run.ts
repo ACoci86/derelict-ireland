@@ -26,7 +26,7 @@ import { load as loadMonaghan } from "./adapters/monaghan";
 import { load as loadSligo } from "./adapters/sligo";
 import { load as loadLeitrim } from "./adapters/leitrim";
 import { load as loadDonegal } from "./adapters/donegal";
-import { geocodeAll, proposeGemini } from "./geocode";
+import { geocodeAll } from "./geocode";
 
 // Rough bounding box around the island of Ireland.
 const LAT_MIN = 51.3, LAT_MAX = 55.5;
@@ -90,23 +90,6 @@ async function main() {
 
   const good = sites.filter(inIreland);
   const review = sites.filter((s) => !inIreland(s));
-
-  // For the sites the OSM geocoders couldn't place, ask Gemini for proposed
-  // placements and write them to a review file. These are NOT put on the map -
-  // they're for manual filtering; approved ones get applied in a later step.
-  const proposals = await proposeGemini(sites);
-  if (proposals.length > 0) {
-    const esc = (v: string) => `"${String(v).replace(/"/g, '""')}"`;
-    const header = "council,register_ref,eircode,id,original_address,cleaned_query,lat,lon,confidence,check_on_map";
-    const rows = proposals.map((p) =>
-      [p.council, p.register_ref ?? "", p.eircode ?? "", p.id, p.address, p.cleaned, p.lat, p.lon, p.confidence,
-        `https://www.openstreetmap.org/?mlat=${p.lat}&mlon=${p.lon}#map=18/${p.lat}/${p.lon}`]
-        .map((v) => esc(String(v))).join(",")
-    );
-    mkdirSync("data/manual", { recursive: true });
-    writeFileSync("data/manual/gemini-proposed.csv", [header, ...rows].join("\n") + "\n");
-    console.log(`wrote ${proposals.length} Gemini proposals to data/manual/gemini-proposed.csv (review, then approve)`);
-  }
 
   mkdirSync("public", { recursive: true });
   writeFileSync(
