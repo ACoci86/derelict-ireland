@@ -111,6 +111,12 @@ The website build reads the committed data files and needs no secrets or environ
 
 [Astro](https://astro.build) &middot; [MapLibre GL JS](https://maplibre.org) &middot; [OpenStreetMap](https://www.openstreetmap.org) (Nominatim + Photon geocoding) &middot; a [CARTO](https://carto.com) basemap &middot; local-authority boundaries from [click_that_hood](https://github.com/codeforgermany/click_that_hood) (ODbL).
 
+## License
+
+The **code** in this repository is released under the [MIT License](LICENSE), so you're free to reuse it as long as you keep the copyright notice.
+
+The **data** is a separate matter. It is aggregated from each local authority's public derelict sites register, and the coordinates are derived from OpenStreetMap geocoding (© OpenStreetMap contributors, [ODbL](https://opendatacommons.org/licenses/odbl/)); the county boundaries drawn on the map are OpenStreetMap-derived too. Treat the dataset as carrying those attribution and share-alike expectations: credit "OpenStreetMap contributors" if you reuse it, and see the disclaimer below.
+
 ## Disclaimer
 
 Not an official source. Data comes from each council's public derelict sites register and is provided as-is, with best-effort geocoding. For anything authoritative, consult the council's own register (linked in the coverage table).
