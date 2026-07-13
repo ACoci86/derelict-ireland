@@ -1,6 +1,6 @@
 # Sites not yet mapped (held for review)
 
-400 sites the geocoder could not place. Generated 2026-07-13.
+616 sites the geocoder could not place. Generated 2026-07-13.
 
 ## South Dublin (6)
 
@@ -425,3 +425,243 @@
 - `tipperary-trt-26-023`: Lower Birr Road, Nenagh, Co. Tipperary. E45 YT54
 - `tipperary-trt-26-025`: Ferndale, Tyone, Nenagh, Co. Tipperary
 - `tipperary-trt-26-003`: Newsworld, Market Place, Clonmel, Co. Tipperary
+
+## Wexford (80)
+
+- `wexford-der2024-060`: Wilmslow, The Avenue, Gorey, Co. Wexford
+- `wexford-der2024-087`: Galavan's Pub, 5 North Street, New Ross, Co. Wexford
+- `wexford-der2023-089`: 31 Drumgoold Villas,Enniscorthy, Co. Wexford
+- `wexford-der2024-079`: Site at Clonard Road (Rear of Circle K Garage), Wexford
+- `wexford-der2024-048`: Clologue Lower, Camolin, Co. Wexford
+- `wexford-der2023-011`: Former McNulty's, 27 South Street, New Ross, Co. Wexford
+- `wexford-der2023-013`: Old School House, Marshalstown, Enniscorthy, Co. Wexford
+- `wexford-der2022-017`: Vacant Unit, Esmonde Street, Gorey, Co. Wexford
+- `wexford-der2024-037`: Derelict Dwelling, Main Street, Ferns, Co. Wexford
+- `wexford-der2023-133`: Castle Ellis, The Ballagh, Co. Wexford
+- `wexford-der2023-090`: Derelict Site, Carnew Road, Ferns, Co. Wexford
+- `wexford-der2024-038`: Site Adj acent to Applegreen, Ferns, Co. Wexford
+- `wexford-der2022-035`: No. 1 Columba Villas, Wexford Town, Co. Wexford
+- `wexford-der2023-059`: The Old Grainstore, Bridgetown, Co. Wexford
+- `wexford-der2020-028`: Bungalow at Ballybrennan, Killinick, Co. Wexford
+- `wexford-der2024-043`: Greenlawn, Clonard Road, Wexford Town
+- `wexford-der2024-002`: House B, Danescastle, Bannow, Co. Wexford
+- `wexford-der2024-001`: House A Danescastle, Bannow, Co. Wexford
+- `wexford-der2023-135`: No. 53 South Main Street, Wexford Town
+- `wexford-der2023-134`: Former Farrell's Furniture, Harpur's Lane, Wexford
+- `wexford-der2023-009`: The Old Hospital (Wexford Workhouse) Old Hospital Road, Wexford
+- `wexford-der2023-061`: No. 1 South Main Street (Formerly Shoe Zone), Wexford
+- `wexford-der2022-012`: Angle Hill, Cornwall, Killurin, Co. Wexford
+- `wexford-der2024-041`: Old Pub, Hookless Village, Fethard-on-Sea. Co. Wexford
+- `wexford-der2023-129`: 106 Hookless Village, Fethard-on-Sea, Co. Wexford
+- `wexford-der2023-128`: 105 Hookless Village, Fethard-on-Sea, Co. Wexford
+- `wexford-der2023-127`: 104 Hookless Village, Fethard-on-Sea, Co. Wexford
+- `wexford-der2023-126`: 103 Hookless Village, Fethard-on-Sea, Co. Wexford
+- `wexford-der2023-130`: Old Court House, Gorey, Co. Wexford
+- `wexford-der2022-024`: Two Dwellings, Ballinatray Lower, Courtown, Co. Wexford
+- `wexford-der2018-011`: Walsheslough, Rosslare Strand, Co. Wexford
+- `wexford-der2024-017`: Former Coogan's Pub/Kavanagh's Pub, Shannon Quay, Enniscorthy, Co. Wexford
+- `wexford-der2023-057`: Journeys End, Ballymoney, Gorey, Co. Wexford
+- `wexford-der2023-003`: Ballycanew Grove (2), Ballycanew, Co. Wexford
+- `wexford-der2023-001`: The Ward House, Milltown, Tagoat, Co. Wexford
+- `wexford-der2023-136`: Swimming Pool at Hookless Village, Fethard-on-Sea, Co. Wexford
+- `wexford-der2024-003`: Former Mulcahy Paintings, 98 North Main Street, Wexford
+- `wexford-der2023-024`: The Old Mill, Bridgetown Co. Wexford
+- `wexford-der2023-085`: Old Discount Stre, 2 irish Street, Enniscorthy, Co. Wexford
+- `wexford-der2023-010`: Steele & Co. Limited, Priory Street, New Ross, Co. Wexford
+- `wexford-der2022-023`: Church View, 41 Lower John Street, Wexford
+- `wexford-der2023-043`: Crossroads Foodstore, Wygram Heights, Wexford
+- `wexford-der2023-037`: 27 Saint Aidan's Villas, Enniscorthy, Co. Wexford
+- `wexford-der2020-020`: Kiltennel Church Gatelodge, Courtown, Gorey, Co. Wexford
+- `wexford-der2023-030`: Former Nightclub, Templeshannon, Enniscorthy, Co. Wexford
+- `wexford-der2023-039`: Riverview House, Templeshannon, Enniscorthy, Co. Wexford
+- `wexford-der2022-025`: Chapel Lane, Kyle, Oulart, Co. Wexford
+- `wexford-der2022-034`: Former Ann's Hair Salon, Main Street, Taghmon, Co. Wexford
+- `wexford-der2022-031`: Site (B) Mauritiustown, Rosslare Strand, Co. Wexford
+- `wexford-der2020-043`: Ballycanew Grove, Ballycanew, Co. Wexford
+- `wexford-der2021-009`: 1-5 The Old Creamery, Ballycanew, Gorey, Co. Wexford
+- `wexford-der2020-019`: 6 St. Munns Villas, Main Street, Taghmon, Co. Wexford
+- `wexford-der2020-024`: Clonhenret House, Clonhenret, Camolin, Co. Wexford
+- `wexford-der2022-033`: Former Bike Shop, Priory Street, New Ross, Co. Wexford
+- `wexford-der2020-039`: Old Thatched Cottage, Ballyedmond Village, Ballyedmond, Co. Wexford
+- `wexford-der2018-020`: 10 Beachwalk, Seafield, Ballymoney, Courtown, Co. Wexford
+- `wexford-der2021-054`: The Old Garage, The Quay, New Ross, Co. Wexford
+- `wexford-der2020-034`: Portersgate, Fethard-on-Sea, New Ross, Co. Wexford
+- `wexford-der2021-037`: Chilcomb House, Schoolhouse Road, New Ross, Co. Wexford
+- `wexford-der2020-040`: The Old Dispensary, Ballyedmond Village, Co. Wexford
+- `wexford-der2018-023`: Main Street, Fethard on Sea, Co. Wexford
+- `wexford-der2020-013`: BumbleBee Licensed Premises, Priory Street, New Ross, Co. Wexford
+- `wexford-der2020-014`: Priory Street (adj. to Bumblebee), New Ross, Co. Wexford
+- `wexford-der2018-010`: Sunset House, Rosslare Strand, Co. Wexford
+- `wexford-der2018-022`: The Old House, 6 Templeshannon, Enniscorthy, Co. Wexford
+- `wexford-der2019-007`: The Oil, Oylgate, Co. Wexford
+- `wexford-der2017-007`: The Former Great Southern Hotel, Rosslare Harbour, Co. Wexford
+- `wexford-der2018-004`: Ailsa House, St. Martin's Road, Rosslare Harbour,Co. Wexford
+- `wexford-der2017-017`: Kickham's House, Enniscorthy, Co. Wexford
+- `wexford-der2018-006`: Former Murphy Flood's, Enniscorthy, Co. Wexford
+- `wexford-der2017-011`: 7 Old Garden City, Gorey, Co. Wexford
+- `wexford-der2017-003`: 7 Grotto Terrace, Kilmuckridge, Co. Wexford
+- `wexford-der2016-029`: 4 John Street, Wexford (John St/John's Road)
+- `wexford-der2016-006`: Cobblers Cottage, Main Street, Coolgreany, Co. Wexford
+- `wexford-der2016-007`: Main Street, Coolgreany, Co. Wexford
+- `wexford-der2016-004`: Spring Valley Nursing Home, Enniscorthy, Co. Wexford
+- `wexford-der2015-038`: The Lodges, Parknacross, Courtown, Co. Wexford
+- `wexford-der2014-013`: Rocks Factory (Formerly Breens Carriage Factory), Templeshannon, Enniscorthy, Co. Wexford
+- `wexford-der2014-004`: Harneys Shoe Repairs, 4 John Street, New Ross, Co. Wexford
+- `wexford-der2014-002`: Gladneys Licenced Premises, 5 John Street, New Ross, Co. Wexford
+
+## Louth (38)
+
+- `louth-ds-509`: 34 Quay St. Dundalk (Former Danny Boys Bar), Co. Louth
+- `louth-ds-540`: Former NV Niteclub, Carrickcarnon, Co. Louth
+- `louth-ds-571`: 34 Ship Street, Drogheda, Co. Louth
+- `louth-ds-584`: Former Bank, 3 Marsh Road, Drogheda, Co. Louth
+- `louth-ds-604`: 3 Mill Lane, Drogheda, Co. Louth
+- `louth-ds-605`: 6 Mill Lane, Drogheda, Co. Louth
+- `louth-ds-606`: 7 Mill Lane, Drogheda, Co. Louth
+- `louth-ds-608`: 9 Mill Lane, Drogheda, Co. Louth
+- `louth-ds-609`: 10 Mill Lane, Drogheda, Co. Louth
+- `louth-ds-610`: 11 Mill Lane, Drogheda, Co. Louth
+- `louth-ds-611`: Apartment 7 Mill Lane, Drogheda, Co. Louth
+- `louth-ds-612`: Apartment 7a Mill Lane, Drogheda, Co. Louth
+- `louth-ds-621`: 4 Stockwell Street, Drogheda, Co. Louth
+- `louth-ds-562`: 17 Ship St Drogheda, Co. Louth
+- `louth-ds-2023-001`: 83 Strand Street, Clogherhead Allwell House/Duke House, Duke St, Co. Louth
+- `louth-ds-568`: 26 Ship Street, Drogheda, Co Louth
+- `louth-ds-187`: Main Street, Castlebellingham, Co. Louth
+- `louth-ds-2023-058`: Viki's Motors, Dublin Road, Dundalk, Co. Louth
+- `louth-ds-595`: Donaghy's Mill, Drogheda, Co. Louth
+- `louth-ds-2023-069`: St Kevin's, Carrickmacross Rd, Dundalk, Co. Louth
+- `louth-ds-2024-005`: Former Public House, Main St, Dunleer, Co. Louth
+- `louth-ds-2023-070`: PJ Carroll Bldg,38-39 Church St,Dundalk, Co. Louth
+- `louth-ds-2024-024`: 5 St Joseph's Tce, Drogheda, Co. Louth
+- `louth-ds-2024-044`: Ferrard House, Hacketts Cross, Clogherhead, Co. Louth
+- `louth-ds-2025-004`: 4 Boyne Terrace, Cord Road, Drogheda, Co. Louth
+- `louth-ds-2025-010`: Spiders Web, Carrickmacross Rd, Dundalk, Co. Louth
+- `louth-ds-2024-040`: 7 Dyer Street, Drogheda A91 N22, Co. Louth
+- `louth-ds-2025-014`: Crossans Garage, Dublin Road, Dundalk, Co. Louth
+- `louth-ds-2023-013`: 3 former dwellings, Brewery St, Castlebellingham, Co. Louth
+- `louth-ds-2025-042`: 5 St Brigid's Terrace, Dundalk Road, Dunleer, Co. Louth
+- `louth-ds-2025-001`: 4 St Mary's Road, Dundalk A91 E9RL, Co. Louth
+- `louth-ds-2023-063`: Former Drg Chem Manure Wrks, Marsh Rd, Drog, Co. Louth
+- `louth-ds-2025-009`: Dublin House, Station Road, Omeath, Co. Louth
+- `louth-ds-2025-043`: 6 Anne Street, Drogheda, Co. Louth
+- `louth-ds-2025-025`: Santa Barbara, Jervis Street, Ardee, Co. Louth
+- `louth-ds-2023-062`: Sawmills House, Marsh Road, Drogheda, Co. Louth
+- `louth-ds-2026-005`: Dwelling, Drogheda Street, Collon, Co. Louth
+- `louth-ds-2025-057`: Dwelling, Main Street, Dunleer, Co. Louth
+
+## Westmeath (33)
+
+- `westmeath-1`: Williamstown, Balykeeran, Athlone, Co. Westmeath
+- `westmeath-20`: Buildings on rhs of Mullingar Rd, Kilbeggan, Co. Westmeath
+- `westmeath-73`: Tanyard, Kinnegad, Co. Westmeath
+- `westmeath-101`: Ballynacarrigy Road, Kildallan, Co. Westmeath
+- `westmeath-103`: Main St, Rathwire, Co. Westmeath
+- `westmeath-111`: Glebe House, Killucan, Co. Westmeath
+- `westmeath-120`: 14 Dublin Road, Kilbeggan, Co. Westmeath
+- `westmeath-146`: Mullingar Road, Kilbeggan, Co. Westmeath
+- `westmeath-149`: Lr Main Street, Kilbeggan, Co. Westmeath
+- `westmeath-172`: N6 Kilbeggan-Tyrrellspass Tyrrellspass, Co. Westmeath
+- `westmeath-228`: Creggan Upper, Moate Road, Athlone, Co. Westmeath
+- `westmeath-255`: Dr. Cuppagies, Main Street, Moate, Co. Westmeath
+- `westmeath-257`: Creggan Upper, Moate Road, Athlone, Co. Westmeath
+- `westmeath-305`: 1 Trim Rd, Kinnegad, Co. Westmeath
+- `westmeath-306`: 2 Trim Rd, Kinnegad, Co. Westmeath
+- `westmeath-332`: Railway Tce, Mullingar, Co. Westmeath
+- `westmeath-372`: Buds in Bloom, Kilbeggan, Co. Westmeath
+- `westmeath-380`: Packenham Hall Rd, Castlepollard Castlepollard, Co. Westmeath
+- `westmeath-468`: Rear of 16 Court Devenish Athlone, Co. Westmeath
+- `westmeath-471`: Lower Retreat Rd Athlone, Co. Westmeath
+- `westmeath-571`: 11 St Marys Tce/Place, Athlone, Co. Westmeath
+- `westmeath-627`: Toorvalley Est. Moate, Co. Westmeath
+- `westmeath-636`: Kilbeggan, Brewery House, Co. Westmeath
+- `westmeath-637`: Mullingar Road, Kilbeggan, Co. Westmeath
+- `westmeath-663`: Pub at Junction of Trim Rd, Kinnegad, Co. Westmeath
+- `westmeath-713`: Derravaragh Court, Castlepollard Castlepollard, Co. Westmeath
+- `westmeath-729`: Athlone Glass Site, Clonown Road, Doovoge, Athlone, Co. Westmeath
+- `westmeath-754`: The Bungalow, Mullingar Rd, Kinnegad N91 AX21, Co. Westmeath
+- `westmeath-758`: Former Hammond Lane, Bellaugh, Athlone, Co. Westmeath
+- `westmeath-759`: Former Texas Oil, Bellaugh, Athlone, Co. Westmeath
+- `westmeath-771`: Pearse Street & O'Connell Street, Athlone, Co. Westmeath
+- `westmeath-773`: 4 Castlemine Street, Athlone or (Brideswells Street), Co. Westmeath
+- `westmeath-775`: Bower View Athlone, Co. Westmeath
+
+## Carlow (5)
+
+- `carlow-ds147`: 17 Pairc Mhuire Bagenalstown Co. Carlow, Muinebheag
+- `carlow-ds172`: Piers & Cottage, Burton Hall, Palatine Co. Carlow
+- `carlow-ds182`: Tullow Motor Factors Building, Church Street, Tullow, Co. Carlow.
+- `carlow-ds219`: Lamberts Hardware Corner of Main St and Mill St Hacketstown, Tullow, Co. Carlow
+- `carlow-ds222`: Properties at Green Lane (Shamrock Plaza), Staplestown Road and Pollerton Road Junction, Carlow
+
+## Monaghan (7)
+
+- `monaghan-dsn-1-20`: Main Street, Newbliss, Co. Monaghan H18
+- `monaghan-dsn-7-22`: Derryveagh, Carrickroe, Co. Monaghan - Folio MN23422F
+- `monaghan-dsn-17-24`: Main Street, Newbliss, Co. Monaghan H18
+- `monaghan-dsn-56-24`: Muckno Street, Castleblayney, Co. A75 Monaghan
+- `monaghan-dsn-113-24`: 12 Castleblayney Rd, Ballybay, Co. A75 Monaghan
+- `monaghan-dsn-7-25`: 9 Plantation Terrace, Monaghan H18XK64
+- `monaghan-dsn-43-25`: Land behind Bank of Ireland on Bridwell Lane (to the South) and Drummond Etra (to the West), Carrickmacross, Co. Monaghan
+
+## Sligo (31)
+
+- `sligo-ds-003`: The Angler's Rest, Ballinafad, Co Sligo
+- `sligo-ds-019`: Ardnaglass Upper, Grange, Co Sligo
+- `sligo-ds-020`: Tawnymucklagh, Monasterraden, Co Sligo
+- `sligo-ds-044`: 15, Connolly Park, Tubbercurry, Co. Sligo
+- `sligo-ds-046`: Carrowhubbock South, Enniscrone, Co. Sligo
+- `sligo-ds-047`: The Hollow, Enniscrone, Co. Sligo
+- `sligo-ds-074`: Old Street, Collooney, Co Sligo - Former Crystal factory
+- `sligo-ds-080`: Cissy's Macs Drumcliffe, Co. Sligo
+- `sligo-ds-104`: Former Creche, Rathbraughan Park, Co. Sligo
+- `sligo-ds-108`: 18, 19, 33, 38 – 42 Barrack Street, Sligo
+- `sligo-ds-112`: 10, Chapel Street, Sligo - House
+- `sligo-ds-114`: 12, Chapel Street, Sligo - House
+- `sligo-ds-116`: Westgardens, Sligo - Old Hall
+- `sligo-ds-117`: Westgardens/Market Street, Sligo - Building Property B
+- `sligo-ds-118`: Westgardens/Market Street, Sligo - Building Property C
+- `sligo-ds-160`: 18, Connolly Park, Tubbercurry, Co. Sligo
+- `sligo-ds-175`: 61, St. Joseph's Terrace, Sligo
+- `sligo-ds-178`: 7 Knock Terrace, Wolfe Tone Street - House, Co. Sligo
+- `sligo-ds-204`: 3, Dominick Street, Sligo
+- `sligo-ds-235`: Site at junction of Fatima Avenue and Cemetery Road, Sligo
+- `sligo-ds-222`: Property at Carrowhubback South, Main Street, Enniscrone, Co. Sligo
+- `sligo-ds-89`: Knockaculleen, Dromore West, Co. Sligo
+- `sligo-ds-81`: Farnaharpy, Skreen, Co. Sligo
+- `sligo-ds-217`: 57 St Joseph's Terrace, Sligo
+- `sligo-ds-281`: Building at Swan Point, Fish Quay, Sligo
+- `sligo-ds-176`: The Mill Apartments, Ballisodare, Co. Sligo
+- `sligo-ds-100`: High Street, Market Street, Sligo (Old Savoy Cinema)
+- `sligo-ds-177`: Old Dispensary Building, Charles Street, Sligo
+- `sligo-ds-202`: 2 St. Asicus Terrace, Riverside, Sligo
+- `sligo-ds-270`: Hazelwood, Ballinode, Sligo
+- `sligo-ds-464`: Premier Ch Construction Limited, Co. Sligo
+
+## Leitrim (18)
+
+- `leitrim-ds18`: Clooncorrick, Carrigallen, Co. Leitrim
+- `leitrim-ds29`: Corner of Old Church Street and Commons Lane, Manorhamilton, Co. Leitrim
+- `leitrim-ds30`: Commons Lane, Manorhamilton, Co. Leitrim
+- `leitrim-ds45`: Stranagross, Glenfarne, Co. Leitrim
+- `leitrim-ds60`: Near Junction of N4 and County Road 657 - Jamestown, Co. Leitrim
+- `leitrim-ds62`: Adjacent N16 near junction with County Road 144 Diffreen, Glencar, Co. Leitrim
+- `leitrim-ds67`: Tarmon, Corglass, Co. Leitrim
+- `leitrim-ds72`: Cornalaghta, Leckaun, Dromahair, Co. Leitrim (Fivemilebourne)
+- `leitrim-ds84`: Corriscoffey, Dromod, Co. Leitrim
+- `leitrim-ds87`: Clooncorrick, Carrigallen, Co. Leitrim
+- `leitrim-ds94`: Chapel St, Drumshanbo, Co. Leitrim
+- `leitrim-ds99`: Towneycorragh, Lough Allen PO, Co. Leitrim
+- `leitrim-ds121`: Market Street, Dromahaire, Co. Leitrim
+- `leitrim-ds23-002`: Tullylannon Td., Leitrim, Co. Leitrim
+- `leitrim-ds23-008`: 9 Cluain Oir,Lis Cara, Co. Leitrim
+- `leitrim-ds23-009`: 11 Cluain Oir,Lis Cara, Co. Leitrim
+- `leitrim-ds23-010`: 14 Cluain Oir,Lis Cara, Co. Leitrim
+- `leitrim-ds23-017`: 8 Cluain Oir, Lis Cara, Carrick on Shannon, Co. Leitrim
+
+## Donegal (4)
+
+- `donegal-dsr-2025-004`: Former Scally Surgery (F92 RK19) & Dwelling (F92 NP52), Castle Street, Letterkenny,Co. Donegal.
+- `donegal-ds-46-d`: Condon Building, Mall, Ballyshannon, Co. Donegal
+- `donegal-ds-77-78-i`: Carrowreagh, Bridgend, Co. Donegal
+- `donegal-ds-100-i`: Old Mill, Millbrae, Buncrana, Co. Donegal

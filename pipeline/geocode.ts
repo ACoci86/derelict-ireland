@@ -29,6 +29,15 @@ const AREA_HINT: Record<string, string> = {
   "Kildare": "County Kildare",
   "Mayo": "County Mayo",
   "Tipperary": "County Tipperary",
+  "Wexford": "County Wexford",
+  "Louth": "County Louth",
+  "Laois": "County Laois",
+  "Westmeath": "County Westmeath",
+  "Carlow": "County Carlow",
+  "Monaghan": "County Monaghan",
+  "Sligo": "County Sligo",
+  "Leitrim": "County Leitrim",
+  "Donegal": "County Donegal",
 };
 
 // Nominatim's result "type" -> our honest confidence level.

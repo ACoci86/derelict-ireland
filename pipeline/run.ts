@@ -17,13 +17,22 @@ import { load as loadWaterford } from "./adapters/waterford";
 import { load as loadKildare } from "./adapters/kildare";
 import { load as loadMayo } from "./adapters/mayo";
 import { load as loadTipperary } from "./adapters/tipperary";
+import { load as loadWexford } from "./adapters/wexford";
+import { load as loadLouth } from "./adapters/louth";
+import { load as loadLaois } from "./adapters/laois";
+import { load as loadWestmeath } from "./adapters/westmeath";
+import { load as loadCarlow } from "./adapters/carlow";
+import { load as loadMonaghan } from "./adapters/monaghan";
+import { load as loadSligo } from "./adapters/sligo";
+import { load as loadLeitrim } from "./adapters/leitrim";
+import { load as loadDonegal } from "./adapters/donegal";
 import { geocodeAll } from "./geocode";
 
 // Rough bounding box around the island of Ireland.
 const LAT_MIN = 51.3, LAT_MAX = 55.5;
 const LON_MIN = -10.7, LON_MAX = -5.3;
 
-const ADAPTERS = [loadDlr, loadSouthDublin, loadFingal, loadDublinCity, loadCorkCity, loadCorkCounty, loadGalway, loadLimerick, loadWicklow, loadRoscommon, loadMeath, loadKilkenny, loadOffaly, loadWaterford, loadKildare, loadMayo, loadTipperary];   // every new council adds one entry here
+const ADAPTERS = [loadDlr, loadSouthDublin, loadFingal, loadDublinCity, loadCorkCity, loadCorkCounty, loadGalway, loadLimerick, loadWicklow, loadRoscommon, loadMeath, loadKilkenny, loadOffaly, loadWaterford, loadKildare, loadMayo, loadTipperary, loadWexford, loadLouth, loadLaois, loadWestmeath, loadCarlow, loadMonaghan, loadSligo, loadLeitrim, loadDonegal];   // every new council adds one entry here
 
 function inIreland(s: Site): boolean {
   return (
@@ -93,6 +102,15 @@ async function main() {
     "Kildare": "2026-03-20",
     "Mayo": "2026-03-06",
     "Tipperary": "2026-06-08",
+    "Wexford": "2026-03-04",
+    "Louth": "2026-06-04",
+    "Laois": "2026-07-01",
+    "Westmeath": "2026-06-11",
+    "Carlow": "2026-06-01",
+    "Monaghan": "2026-04-01",
+    "Sligo": "2026-07-11",
+    "Leitrim": "2026-01-01",
+    "Donegal": "2026-01-01",
   };
 
   const councils = [...byCouncil.entries()]
@@ -103,9 +121,19 @@ async function main() {
     }))
     .sort((a, b) => b.mapped + b.review - (a.mapped + a.review) || a.council.localeCompare(b.council));
 
+  // Councils that keep a register but do not publish it online (in-office /
+  // on-request inspection only), shown in the table as "not available online".
+  const unavailable = [
+    { council: "Kerry", source: "https://www.kerrycoco.ie/" },
+    { council: "Longford", source: "https://www.longfordcoco.ie/services/housing/vacant-homes-office/derelict-sites/" },
+    { council: "Cavan", source: "https://www.cavancoco.ie/services/planning-building/derelict-sites/" },
+    { council: "Clare", source: "https://www.clarecoco.ie/services/planning/vacant-derelict-sites/derelict-sites/" },
+    { council: "Galway County", source: "https://www.galway.ie/en/environment/derelict-sites" },
+  ];
+
   writeFileSync(
     "public/stats.json",
-    JSON.stringify({ mapped: good.length, review: review.length, councils })
+    JSON.stringify({ mapped: good.length, review: review.length, councils, unavailable })
   );
 
   // Human-readable list of everything held for review, grouped by council, so

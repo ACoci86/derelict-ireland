@@ -22,6 +22,9 @@ const councilStats: {
   updated: string | null;
 }[] = stats.councils ?? [];
 
+// Councils that keep a register but don't publish it online.
+const unavailable: { council: string; source: string }[] = stats.unavailable ?? [];
+
 // Short, human-readable host for a source URL, e.g. "corkcity.ie".
 const sourceHost = (u: string): string => {
   try {
@@ -207,6 +210,20 @@ const logoFor = (council: string): string | null => {
         font-size: 0.85rem;
         font-variant-numeric: tabular-nums;
       }
+      tbody tr.unavail td {
+        background: #fcfbf7;
+      }
+      td.qq {
+        color: #b8860b;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+      }
+      td.noreg {
+        color: var(--muted);
+        font-style: italic;
+        font-size: 0.85rem;
+        white-space: nowrap;
+      }
       td.src {
         max-width: 150px;
       }
@@ -365,6 +382,30 @@ const logoFor = (council: string): string | null => {
                     </tr>
                   );
                 })
+              }
+              {
+                unavailable.map((c) => (
+                  <tr class="unavail">
+                    <td class="council">
+                      <span class="council-cell">
+                        {logoFor(c.council) && (
+                          <img class="logo" src={logoFor(c.council)} alt="" loading="lazy" />
+                        )}
+                        {c.council}
+                      </span>
+                    </td>
+                    <td class="n qq">??</td>
+                    <td class="n qq">??</td>
+                    <td class="n qq">??</td>
+                    <td class="noreg">Not published online</td>
+                    <td class="src">
+                      <a href={c.source} target="_blank" rel="noopener" title={c.source}>
+                        {sourceHost(c.source)}
+                      </a>
+                    </td>
+                    <td class="upd" />
+                  </tr>
+                ))
               }
             </tbody>
             <tfoot>
