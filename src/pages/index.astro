@@ -20,7 +20,17 @@ const councilStats: {
   review: number;
   source: string;
   updated: string | null;
+  valuation: number | null;
+  valued: number;
 }[] = stats.councils ?? [];
+
+// Compact euro formatting for the valuation column, e.g. €24.1M, €774k.
+const euro = (n: number): string => {
+  if (n >= 1_000_000) return `€${(n / 1_000_000).toFixed(1)}M`;
+  if (n >= 1_000) return `€${Math.round(n / 1_000)}k`;
+  return `€${n}`;
+};
+const grandVal = councilStats.reduce((s, c) => s + (c.valuation ?? 0), 0);
 
 // Councils that keep a register but don't publish it online.
 const unavailable: { council: string; source: string }[] = stats.unavailable ?? [];
@@ -131,6 +141,54 @@ const logoFor = (council: string): string | null => {
         overflow: hidden;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
       }
+      .downloads {
+        max-width: 1150px;
+        margin: 1.1rem auto 0;
+        padding: 0 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+      .downloads .dl-label {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+      }
+      .downloads button,
+      td.dl button {
+        border: 1px solid var(--line);
+        background: #fafafa;
+        color: var(--accent);
+        border-radius: 6px;
+        font: inherit;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        transition:
+          background 0.15s ease,
+          border-color 0.15s ease;
+      }
+      .downloads button {
+        padding: 0.32rem 0.8rem;
+        font-size: 0.72rem;
+      }
+      .downloads button:hover,
+      td.dl button:hover {
+        background: #faf6f5;
+        border-color: #dcc9c6;
+      }
+      td.dl button {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.68rem;
+      }
+      td.dl.na {
+        color: var(--muted);
+        text-align: center;
+      }
       .coverage {
         max-width: 1150px;
         margin: 2.5rem auto 0;
@@ -141,6 +199,38 @@ const logoFor = (council: string): string | null => {
         letter-spacing: -0.01em;
         margin: 0 0 1rem;
         text-align: center;
+      }
+      .table-search {
+        display: flex;
+        justify-content: center;
+        margin: 0 0 1rem;
+      }
+      .table-search input {
+        width: 100%;
+        max-width: 340px;
+        padding: 0.55rem 0.9rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        font: inherit;
+        font-size: 0.9rem;
+        color: var(--ink);
+        background: #fff;
+        transition:
+          border-color 0.15s ease,
+          box-shadow 0.15s ease;
+      }
+      .table-search input::placeholder {
+        color: var(--muted);
+      }
+      .table-search input:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+      }
+      tr.no-results td {
+        text-align: center;
+        color: var(--muted);
+        padding: 1.5rem;
       }
       .table-card {
         border: 1px solid var(--line);
@@ -174,12 +264,81 @@ const logoFor = (council: string): string | null => {
         text-align: center;
         font-variant-numeric: tabular-nums;
       }
+      th.sortable {
+        cursor: pointer;
+        user-select: none;
+        white-space: nowrap;
+      }
+      th.sortable:hover {
+        color: var(--ink);
+      }
+      .arrow {
+        display: inline-block;
+        margin-left: 0.4em;
+        font-size: 0.7em;
+        color: #ccc;
+        vertical-align: middle;
+        transition:
+          transform 0.15s ease,
+          color 0.15s ease;
+      }
+      th.sort-asc .arrow {
+        color: var(--accent);
+      }
+      th.sort-desc .arrow {
+        color: var(--accent);
+        transform: rotate(180deg);
+      }
       tbody td {
         padding: 0.6rem 0.9rem;
         border-bottom: 1px solid var(--line);
       }
       tbody tr:hover td {
         background: #faf6f5;
+      }
+      tbody tr.council-row {
+        cursor: pointer;
+      }
+      tbody tr.council-row.active td {
+        background: #f6eceb;
+      }
+      tbody tr.council-row.active td.council {
+        color: var(--accent);
+      }
+      #reset-row {
+        cursor: pointer;
+      }
+      #reset-row:hover td {
+        background: #f2f2f2;
+      }
+      .map-hint {
+        max-width: 1100px;
+        margin: 0.6rem auto 0;
+        padding: 0 1.25rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+        text-align: center;
+      }
+      .map-hint button {
+        margin-left: 0.6rem;
+        border: 1px solid var(--line);
+        background: #fafafa;
+        color: var(--accent);
+        border-radius: 6px;
+        padding: 0.3rem 0.8rem;
+        font: inherit;
+        font-size: 0.72rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        cursor: pointer;
+        transition:
+          background 0.15s ease,
+          border-color 0.15s ease;
+      }
+      .map-hint button:hover {
+        background: #faf6f5;
+        border-color: #dcc9c6;
       }
       td.council {
         font-weight: 500;
@@ -223,6 +382,16 @@ const logoFor = (council: string): string | null => {
         font-style: italic;
         font-size: 0.85rem;
         white-space: nowrap;
+      }
+      td.val {
+        white-space: nowrap;
+        font-weight: 500;
+      }
+      td.val.na {
+        color: var(--muted);
+        font-style: italic;
+        font-size: 0.82rem;
+        font-weight: 400;
       }
       td.src {
         max-width: 150px;
@@ -318,21 +487,56 @@ const logoFor = (council: string): string | null => {
     <div class="map-box">
       <div id="map"></div>
     </div>
+    <p class="map-hint" id="map-hint">
+      Tip: click a council in the table below to zoom to its sites.
+    </p>
+    <div class="downloads">
+      <span class="dl-label">Download data</span>
+      <button type="button" id="dl-all-csv">All sites &middot; CSV</button>
+      <button type="button" id="dl-all-geojson">All sites &middot; GeoJSON</button>
+    </div>
 
     <section class="coverage">
       <h2>Coverage by council</h2>
+      <div class="table-search">
+        <input
+          id="council-search"
+          type="search"
+          placeholder="Search for a council..."
+          autocomplete="off"
+          aria-label="Search councils"
+        />
+      </div>
       <div class="table-card">
         <div class="table-scroll">
           <table>
             <thead>
               <tr>
-                <th>Council</th>
-                <th class="n">Mapped</th>
-                <th class="n">Not yet mapped</th>
-                <th class="n">Total</th>
-                <th>Coverage</th>
-                <th>Source</th>
-                <th>Updated</th>
+                <th class="sortable" data-key="council" data-type="str">
+                  Council<span class="arrow">▲</span>
+                </th>
+                <th class="n sortable" data-key="mapped" data-type="num">
+                  Mapped<span class="arrow">▲</span>
+                </th>
+                <th class="n sortable" data-key="review" data-type="num">
+                  Not yet mapped<span class="arrow">▲</span>
+                </th>
+                <th class="n sortable" data-key="total" data-type="num">
+                  Total<span class="arrow">▲</span>
+                </th>
+                <th class="n sortable" data-key="val" data-type="num">
+                  Valuation<span class="arrow">▲</span>
+                </th>
+                <th class="sortable" data-key="pct" data-type="num">
+                  Coverage<span class="arrow">▲</span>
+                </th>
+                <th class="sortable" data-key="source" data-type="str">
+                  Source<span class="arrow">▲</span>
+                </th>
+                <th class="sortable" data-key="updated" data-type="str">
+                  Updated<span class="arrow">▲</span>
+                </th>
+                <th>Download</th>
               </tr>
             </thead>
             <tbody>
@@ -341,7 +545,17 @@ const logoFor = (council: string): string | null => {
                   const total = c.mapped + c.review;
                   const pct = total ? Math.round((c.mapped / total) * 100) : 0;
                   return (
-                    <tr>
+                    <tr
+                      class="council-row"
+                      data-council={c.council}
+                      data-mapped={c.mapped}
+                      data-review={c.review}
+                      data-total={total}
+                      data-val={c.valuation ?? -1}
+                      data-pct={pct}
+                      data-source={sourceHost(c.source)}
+                      data-updated={c.updated ?? ""}
+                    >
                       <td class="council">
                         <span class="council-cell">
                           {logoFor(c.council) && (
@@ -358,6 +572,16 @@ const logoFor = (council: string): string | null => {
                       <td class="n mapped">{c.mapped}</td>
                       <td class="n dim">{c.review || "0"}</td>
                       <td class="n">{total}</td>
+                      {c.valuation ? (
+                        <td
+                          class="n val"
+                          title={`€${c.valuation.toLocaleString("en-IE")} across ${c.valued} valued site${c.valued === 1 ? "" : "s"}`}
+                        >
+                          {euro(c.valuation)}
+                        </td>
+                      ) : (
+                        <td class="n val na">not available</td>
+                      )}
                       <td>
                         <div class="cov">
                           <div class="cov-track">
@@ -379,6 +603,16 @@ const logoFor = (council: string): string | null => {
                         )}
                       </td>
                       <td class="upd">{c.updated ?? ""}</td>
+                      <td class="dl">
+                        <button
+                          type="button"
+                          class="dl-council"
+                          data-council={c.council}
+                          title={`Download ${c.council} sites as CSV`}
+                        >
+                          CSV
+                        </button>
+                      </td>
                     </tr>
                   );
                 })
@@ -397,6 +631,7 @@ const logoFor = (council: string): string | null => {
                     <td class="n qq">??</td>
                     <td class="n qq">??</td>
                     <td class="n qq">??</td>
+                    <td class="n val na">—</td>
                     <td class="noreg">Not published online</td>
                     <td class="src">
                       <a href={c.source} target="_blank" rel="noopener" title={c.source}>
@@ -404,16 +639,20 @@ const logoFor = (council: string): string | null => {
                       </a>
                     </td>
                     <td class="upd" />
+                    <td class="dl na">—</td>
                   </tr>
                 ))
               }
             </tbody>
             <tfoot>
-              <tr>
+              <tr id="reset-row">
                 <td>All councils</td>
                 <td class="n">{siteCount}</td>
                 <td class="n">{reviewCount}</td>
                 <td class="n">{siteCount + reviewCount}</td>
+                <td class="n val" title={`€${grandVal.toLocaleString("en-IE")} total`}>
+                  {euro(grandVal)}
+                </td>
                 <td>
                   <div class="cov">
                     <div class="cov-track">
@@ -434,6 +673,7 @@ const logoFor = (council: string): string | null => {
                 </td>
                 <td></td>
                 <td></td>
+                <td></td>
               </tr>
             </tfoot>
           </table>
@@ -452,6 +692,78 @@ const logoFor = (council: string): string | null => {
     </footer>
 
     <script>
+      // --- Search box: filter the coverage table rows as the user types -------
+      const search = document.getElementById(
+        "council-search",
+      ) as HTMLInputElement | null;
+      if (search) {
+        const tbody = document.querySelector("table tbody") as HTMLElement;
+        const rows = Array.from(tbody.querySelectorAll("tr")) as HTMLElement[];
+        const nameOf = (r: HTMLElement) =>
+          (
+            r.dataset.council ||
+            r.querySelector(".council-cell")?.textContent ||
+            ""
+          )
+            .trim()
+            .toLowerCase();
+        const empty = document.createElement("tr");
+        empty.className = "no-results";
+        empty.style.display = "none";
+        empty.innerHTML = `<td colspan="9">No councils match your search.</td>`;
+        tbody.appendChild(empty);
+
+        search.addEventListener("input", () => {
+          const q = search.value.trim().toLowerCase();
+          let shown = 0;
+          rows.forEach((r) => {
+            const match = !q || nameOf(r).includes(q);
+            r.style.display = match ? "" : "none";
+            if (match) shown++;
+          });
+          empty.style.display = shown === 0 ? "" : "none";
+        });
+      }
+
+      // --- Click a column header to sort the table (asc / desc toggle) --------
+      const table = document.querySelector("table");
+      if (table) {
+        const sbody = table.querySelector("tbody") as HTMLElement;
+        const headers = Array.from(
+          table.querySelectorAll("th.sortable"),
+        ) as HTMLElement[];
+        // Sorted rows are re-inserted before the "not published" rows, which
+        // always stay at the bottom.
+        const anchor = sbody.querySelector("tr.unavail");
+
+        const sortBy = (key: string, type: string, dir: number) => {
+          const rows = Array.from(
+            sbody.querySelectorAll("tr.council-row"),
+          ) as HTMLElement[];
+          rows.sort((a, b) => {
+            const av = a.dataset[key] ?? "";
+            const bv = b.dataset[key] ?? "";
+            const cmp =
+              type === "num"
+                ? (parseFloat(av) || 0) - (parseFloat(bv) || 0)
+                : av.localeCompare(bv);
+            return cmp * dir;
+          });
+          rows.forEach((r) => sbody.insertBefore(r, anchor));
+        };
+
+        headers.forEach((th) => {
+          th.addEventListener("click", () => {
+            const asc = !th.classList.contains("sort-asc");
+            headers.forEach((h) =>
+              h.classList.remove("sort-asc", "sort-desc"),
+            );
+            th.classList.add(asc ? "sort-asc" : "sort-desc");
+            sortBy(th.dataset.key!, th.dataset.type!, asc ? 1 : -1);
+          });
+        });
+      }
+
       const map = new maplibregl.Map({
         container: "map",
         style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json", // clean light basemap (CARTO Positron, no API key)
@@ -462,6 +774,25 @@ const logoFor = (council: string): string | null => {
       map.on("load", async () => {
         // public/sites.geojson is served at the site root, so fetch "/sites.geojson".
         const geojson = await (await fetch("/sites.geojson")).json();
+
+        // County / local-authority borders, drawn under the pins for context.
+        // Simplified boundaries from codeforgermany/click_that_hood (ODbL).
+        const counties = await (await fetch("/counties.geojson")).json();
+        map.addSource("counties", { type: "geojson", data: counties });
+        map.addLayer({
+          id: "county-borders",
+          type: "line",
+          source: "counties",
+          paint: { "line-color": "#9aa0a6", "line-width": 0.8, "line-opacity": 0.55 },
+        });
+        // A brighter outline for the currently-selected council (empty by default).
+        map.addLayer({
+          id: "county-highlight",
+          type: "line",
+          source: "counties",
+          filter: ["in", ["get", "name"], ["literal", []]],
+          paint: { "line-color": "#c0392b", "line-width": 2.5, "line-opacity": 0.9 },
+        });
 
         // Cluster the points. With ~1,400 sites, a plain point layer overwhelms
         // the low-zoom tiles (points get dropped when zoomed out); clustering
@@ -524,15 +855,80 @@ const logoFor = (council: string): string | null => {
           },
         });
 
-        // Frame the whole dataset (i.e. the island) rather than a fixed city.
-        const coords = geojson.features.map((f: any) => f.geometry.coordinates);
-        if (coords.length) {
-          const bounds = coords.reduce(
+        // Bounding box helper for a set of point features.
+        const boundsOf = (features: any[]) => {
+          const coords = features.map((f: any) => f.geometry.coordinates);
+          if (!coords.length) return null;
+          return coords.reduce(
             (b: any, c: any) => b.extend(c),
             new maplibregl.LngLatBounds(coords[0], coords[0]),
           );
-          map.fitBounds(bounds, { padding: 40, maxZoom: 13, duration: 0 });
-        }
+        };
+
+        const allFeatures = geojson.features;
+        const fullBounds = boundsOf(allFeatures);
+        // Frame the whole dataset (i.e. the island) rather than a fixed city.
+        if (fullBounds)
+          map.fitBounds(fullBounds, { padding: 40, maxZoom: 13, duration: 0 });
+
+        // --- Data downloads: build CSV / GeoJSON in the browser on demand -----
+        const slug = (s: string) =>
+          s
+            .normalize("NFKD")
+            .replace(/[̀-ͯ]/g, "")
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-|-$/g, "");
+        const CSV_FIELDS = [
+          "id", "council", "address", "register_ref", "eircode",
+          "date_entered", "valuation", "lat", "lon", "geocode_confidence",
+          "source_url",
+        ];
+        const toCSV = (feats: any[]) => {
+          const esc = (v: any) => {
+            const s = v == null ? "" : String(v);
+            return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+          };
+          const lines = feats.map((f: any) => {
+            const p = f.properties;
+            const [lon, lat] = f.geometry.coordinates;
+            return CSV_FIELDS.map((k) =>
+              esc(k === "lat" ? lat : k === "lon" ? lon : p[k]),
+            ).join(",");
+          });
+          return [CSV_FIELDS.join(","), ...lines].join("\n");
+        };
+        const save = (name: string, text: string, mime: string) => {
+          const url = URL.createObjectURL(new Blob([text], { type: mime }));
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = name;
+          a.click();
+          URL.revokeObjectURL(url);
+        };
+        const featsFor = (name: string) =>
+          allFeatures.filter((f: any) => f.properties.council === name);
+
+        document
+          .getElementById("dl-all-csv")
+          ?.addEventListener("click", () =>
+            save("derelict-ireland-all.csv", toCSV(allFeatures), "text/csv"),
+          );
+        document
+          .getElementById("dl-all-geojson")
+          ?.addEventListener("click", () =>
+            save(
+              "derelict-ireland-all.geojson",
+              JSON.stringify({ type: "FeatureCollection", features: allFeatures }),
+              "application/geo+json",
+            ),
+          );
+        document.querySelectorAll("button.dl-council").forEach((btn) =>
+          btn.addEventListener("click", () => {
+            const name = (btn as HTMLElement).dataset.council!;
+            save(`derelict-${slug(name)}.csv`, toCSV(featsFor(name)), "text/csv");
+          }),
+        );
 
         // Click a cluster to zoom in until it splits apart.
         map.on("click", "clusters", async (e: any) => {
@@ -567,6 +963,88 @@ const logoFor = (council: string): string | null => {
           );
           map.on("mouseleave", id, () => (map.getCanvas().style.cursor = ""));
         }
+
+        // --- Filter the map to one council when its table row is clicked -----
+        const source = map.getSource("sites") as any;
+        const hint = document.getElementById("map-hint");
+        const rows = Array.from(
+          document.querySelectorAll("tr.council-row"),
+        ) as HTMLElement[];
+        let active: string | null = null;
+
+        // Match a council to its boundary polygon(s). Most councils are a county
+        // (with a " County" suffix in the boundary data); a few merged councils
+        // span two of the older boundaries.
+        const BORDER_ALIASES: Record<string, string[]> = {
+          "Limerick City and County": ["Limerick City", "Limerick County"],
+          "Tipperary": ["North Tipperary", "South Tipperary"],
+          "Waterford": ["Waterford City", "Waterford County"],
+        };
+        const countyNames = new Set(
+          counties.features.map((f: any) => f.properties.name),
+        );
+        const bordersFor = (name: string | null): string[] => {
+          if (!name) return [];
+          if (BORDER_ALIASES[name]) return BORDER_ALIASES[name];
+          if (countyNames.has(name)) return [name];
+          if (countyNames.has(name + " County")) return [name + " County"];
+          return [];
+        };
+        const polyBounds = (feats: any[]) => {
+          let b: any = null;
+          const add = (c: any) => {
+            if (typeof c[0] === "number") {
+              b = b ? b.extend(c) : new maplibregl.LngLatBounds(c, c);
+            } else for (const x of c) add(x);
+          };
+          for (const f of feats) if (f.geometry) add(f.geometry.coordinates);
+          return b;
+        };
+
+        const show = (name: string | null) => {
+          active = name;
+          const feats = name
+            ? allFeatures.filter((f: any) => f.properties.council === name)
+            : allFeatures;
+          source.setData({ type: "FeatureCollection", features: feats });
+
+          // Outline the selected council's border.
+          const borderNames = bordersFor(name);
+          map.setFilter("county-highlight", [
+            "in",
+            ["get", "name"],
+            ["literal", borderNames],
+          ]);
+
+          // Zoom to the council's boundary if we have it, else to its sites.
+          let b = fullBounds;
+          if (name) {
+            const cf = counties.features.filter((f: any) =>
+              borderNames.includes(f.properties.name),
+            );
+            b = cf.length ? polyBounds(cf) : boundsOf(feats);
+          }
+          if (b) map.fitBounds(b, { padding: 40, maxZoom: 13, duration: 700 });
+          rows.forEach((r) =>
+            r.classList.toggle("active", r.dataset.council === name),
+          );
+          if (hint) {
+            hint.innerHTML = name
+              ? `Showing <strong>${name}</strong> &middot; ${feats.length} sites <button id="show-all">Show all councils</button>`
+              : "Tip: click a council in the table below to zoom to its sites.";
+            const btn = document.getElementById("show-all");
+            if (btn) btn.addEventListener("click", () => show(null));
+          }
+        };
+
+        rows.forEach((r) =>
+          r.addEventListener("click", (e) => {
+            if ((e.target as HTMLElement).closest("a, button")) return; // let links / download buttons work
+            show(active === r.dataset.council ? null : r.dataset.council!);
+          }),
+        );
+        const resetRow = document.getElementById("reset-row");
+        if (resetRow) resetRow.addEventListener("click", () => show(null));
       });
     </script>
   </body>

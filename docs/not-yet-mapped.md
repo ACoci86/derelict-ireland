@@ -1,6 +1,6 @@
 # Sites not yet mapped (held for review)
 
-263 sites the geocoder could not place. Generated 2026-07-13.
+260 sites the geocoder could not place. Generated 2026-07-13.
 
 ## South Dublin (5)
 
@@ -10,10 +10,9 @@
 - `sdcc-1886`: 3 Derelict Houses on Main Street, Rathcoole, Co Dublin
 - `sdcc-1991`: Derelict Site to Main Street, Rathcoole, Co Dublin
 
-## Fingal (10)
+## Fingal (9)
 
 - `fingal-DS-19.16`: Site at Innisfree, Jugback Lane, Swords, Co Dublin
-- `fingal-DS-19.03`: 6, 8, 8A, 10 & 12 Bridge Street, Balbriggan, Co Dublin
 - `fingal-DS-23.25`: Tesco Site, The Mall, Balbriggan
 - `fingal-DS-14.25A`: Site Upper Main St, No 12, 14, 14A, 16, 18, 20, Rush
 - `fingal-DS-14.20A`: Site adjacent to 31 Carlton Court, Swords, Co Dublin
@@ -35,10 +34,9 @@
 - `cork-DSP-1825`: Former Angel Guardian Boys School, Springfield Road, Cork
 - `cork-DSP-2154`: 1-6 Woodlea Cottages, Eastcliffe, Ballinglanna, Glanmire, Cork T45A611
 
-## Cork County (17)
+## Cork County (16)
 
 - `cork-co-BK-DS-18`: O'Sullivan's Apts, Market Place, Kinsale
-- `cork-co-FMD-DS-02`: No. 1 & 1a Bridget St, Fermoy
 - `cork-co-FMD-DS-11`: 21 McDermott Place, Oliver Plunkett Hill, Fermoy
 - `cork-co-KMMD-DS-01`: Former Central Hotel Site, Mallow
 - `cork-co-KMMD-DS-08`: the northeast of the main road to Kanturk ( Cecilstown), Mallow
@@ -280,11 +278,10 @@
 - `monaghan-dsn-7-25`: 9 Plantation Terrace, Monaghan H18XK64
 - `monaghan-dsn-43-25`: Land behind Bank of Ireland on Bridwell Lane (to the South) and Drummond Etra (to the West), Carrickmacross, Co. Monaghan
 
-## Sligo (12)
+## Sligo (11)
 
 - `sligo-ds-020`: Tawnymucklagh, Monasterraden, Co Sligo
 - `sligo-ds-074`: Old Street, Collooney, Co Sligo - Former Crystal factory
-- `sligo-ds-108`: 18, 19, 33, 38 – 42 Barrack Street, Sligo
 - `sligo-ds-117`: Westgardens/Market Street, Sligo - Building Property B
 - `sligo-ds-118`: Westgardens/Market Street, Sligo - Building Property C
 - `sligo-ds-178`: 7 Knock Terrace, Wolfe Tone Street - House, Co. Sligo

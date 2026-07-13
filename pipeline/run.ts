@@ -26,7 +26,7 @@ import { load as loadMonaghan } from "./adapters/monaghan";
 import { load as loadSligo } from "./adapters/sligo";
 import { load as loadLeitrim } from "./adapters/leitrim";
 import { load as loadDonegal } from "./adapters/donegal";
-import { geocodeAll } from "./geocode";
+import { geocodeAll, proposeGemini } from "./geocode";
 
 // Rough bounding box around the island of Ireland.
 const LAT_MIN = 51.3, LAT_MAX = 55.5;
@@ -42,6 +42,29 @@ function inIreland(s: Site): boolean {
   );
 }
 
+// A single register entry can list several properties on one street, e.g.
+// "6, 8, 8A, 10 & 12 Bridge Street, Balbriggan". Those are distinct addresses,
+// so we split them into one site per number ("6 Bridge Street, …", "8 Bridge
+// Street, …") before geocoding, each with a suffixed id but the same register
+// reference. Addresses with a single number, a range ("6-12"), or no leading
+// number pass through unchanged.
+const MULTI_UNIT = /^\s*(?:Nos?\.?\s+)?(\d+[A-Za-z]?(?:\s*(?:,|&|and|\+)\s*\d+[A-Za-z]?)+)\s+(\D.*)$/i;
+function expandMultiUnit(site: Site): Site[] {
+  const m = site.address.match(MULTI_UNIT);
+  if (!m) return [site];
+  const nums = m[1].split(/\s*(?:,|&|and|\+)\s*/i).map((n) => n.trim()).filter(Boolean);
+  if (nums.length < 2 || nums.length > 12) return [site];   // guard against odd matches
+  const rest = m[2].trim();
+  // The entry lists one valuation for all the properties together, so keep it on
+  // the first split only - otherwise the per-council total counts it N times.
+  return nums.map((n, i) => ({
+    ...site,
+    id: `${site.id}-${n.replace(/\s+/g, "")}`,
+    address: `${n} ${rest}`,
+    valuation: i === 0 ? site.valuation : null,
+  }));
+}
+
 async function main() {
   const all: Site[] = [];
   for (const load of ADAPTERS) {
@@ -50,10 +73,40 @@ async function main() {
     all.push(...sites);
   }
 
-  await geocodeAll(all);          // fill in coordinates for sites that lack them
+  // Split multi-property entries ("6, 8 & 10 Main Street") into one site each.
+  const sites = all.flatMap(expandMultiUnit);
+  const split = sites.length - all.length;
+  if (split > 0) console.log(`split ${split} extra sites from multi-property entries`);
 
-  const good = all.filter(inIreland);
-  const review = all.filter((s) => !inIreland(s));
+  // Guard against valuation parse errors: no derelict site is worth over 50m,
+  // so anything above that (one Mayo entry lists ~40 trillion) is bad data.
+  for (const s of sites) {
+    if (s.valuation !== null && (s.valuation <= 0 || s.valuation > 50_000_000)) {
+      s.valuation = null;
+    }
+  }
+
+  await geocodeAll(sites);         // fill in coordinates for sites that lack them
+
+  const good = sites.filter(inIreland);
+  const review = sites.filter((s) => !inIreland(s));
+
+  // For the sites the OSM geocoders couldn't place, ask Gemini for proposed
+  // placements and write them to a review file. These are NOT put on the map -
+  // they're for manual filtering; approved ones get applied in a later step.
+  const proposals = await proposeGemini(sites);
+  if (proposals.length > 0) {
+    const esc = (v: string) => `"${String(v).replace(/"/g, '""')}"`;
+    const header = "council,register_ref,eircode,id,original_address,cleaned_query,lat,lon,confidence,check_on_map";
+    const rows = proposals.map((p) =>
+      [p.council, p.register_ref ?? "", p.eircode ?? "", p.id, p.address, p.cleaned, p.lat, p.lon, p.confidence,
+        `https://www.openstreetmap.org/?mlat=${p.lat}&mlon=${p.lon}#map=18/${p.lat}/${p.lon}`]
+        .map((v) => esc(String(v))).join(",")
+    );
+    mkdirSync("data/manual", { recursive: true });
+    writeFileSync("data/manual/gemini-proposed.csv", [header, ...rows].join("\n") + "\n");
+    console.log(`wrote ${proposals.length} Gemini proposals to data/manual/gemini-proposed.csv (review, then approve)`);
+  }
 
   mkdirSync("public", { recursive: true });
   writeFileSync(
@@ -72,6 +125,17 @@ async function main() {
   };
   for (const s of good) bump(s.council, "mapped");
   for (const s of review) bump(s.council, "review");
+
+  // Total valuation per council (where the register publishes site values), and
+  // how many sites that total is based on. Councils that publish none get 0.
+  const valByCouncil = new Map<string, { total: number; count: number }>();
+  for (const s of sites) {
+    if (!s.valuation) continue;
+    const e = valByCouncil.get(s.council) ?? { total: 0, count: 0 };
+    e.total += s.valuation;
+    e.count++;
+    valByCouncil.set(s.council, e);
+  }
 
   // Where each council's data comes from, for the coverage table's Source link.
   const sourceByCouncil = new Map<string, string>();
@@ -118,6 +182,8 @@ async function main() {
       council, ...c,
       source: sourceByCouncil.get(council) ?? "",
       updated: SOURCE_UPDATED[council] ?? null,
+      valuation: valByCouncil.get(council)?.total ?? null,
+      valued: valByCouncil.get(council)?.count ?? 0,
     }))
     .sort((a, b) => b.mapped + b.review - (a.mapped + a.review) || a.council.localeCompare(b.council));
 
