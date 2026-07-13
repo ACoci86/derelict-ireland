@@ -5,25 +5,41 @@ import { readFileSync, readdirSync } from "node:fs";
 
 const geojson = JSON.parse(readFileSync("public/sites.geojson", "utf8"));
 const siteCount = geojson.features.length;
-const councils = [...new Set(geojson.features.map((f) => f.properties.council))];
+const councils = [
+  ...new Set(geojson.features.map((f) => f.properties.council)),
+];
 const councilCount = councils.length;
 
 // stats.json (written by the pipeline) holds counts the geojson can't, like the
 // number of sites we couldn't place on the map.
 const stats = JSON.parse(readFileSync("public/stats.json", "utf8"));
 const reviewCount = stats.review;
-const councilStats: { council: string; mapped: number; review: number; source: string; updated: string | null }[] = stats.councils ?? [];
+const councilStats: {
+  council: string;
+  mapped: number;
+  review: number;
+  source: string;
+  updated: string | null;
+}[] = stats.councils ?? [];
 
 // Short, human-readable host for a source URL, e.g. "corkcity.ie".
 const sourceHost = (u: string): string => {
-  try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; }
+  try {
+    return new URL(u).hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
 };
 
 // Council logos live in public/logos/<slug>.<ext> (scraped from each council's
 // own site). Match by an accent-stripped slug so extensions can vary.
 const slugify = (s: string): string =>
-  s.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  s
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 const logoFiles = readdirSync("public/logos");
 const logoFor = (council: string): string | null => {
   const s = slugify(council);
@@ -32,377 +48,485 @@ const logoFor = (council: string): string | null => {
 };
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Derelict Ireland</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
-  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
-  <style>
-    :root {
-      --ink: #1a1a1a;
-      --muted: #666;
-      --accent: #c0392b;
-      --line: #e5e5e5;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      color: var(--ink);
-      line-height: 1.5;
-    }
-    header {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 3rem 1.25rem 1.5rem;
-      text-align: center;
-    }
-    h1 {
-      margin: 0 0 .5rem;
-      font-size: 2.25rem;
-      letter-spacing: -0.02em;
-    }
-    .lede {
-      margin: 0 auto 1.5rem;
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 60ch;
-    }
-    .stats {
-      display: flex;
-      gap: 2.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .stat .num {
-      font-size: 1.9rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-    .stat .label {
-      font-size: .85rem;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      color: var(--muted);
-    }
-    .map-box {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-    #map {
-      height: 60vh;
-      min-height: 420px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
-    }
-    .coverage {
-      max-width: 1150px;
-      margin: 2.5rem auto 0;
-      padding: 0 1.25rem;
-    }
-    .coverage h2 {
-      font-size: 1.3rem;
-      letter-spacing: -0.01em;
-      margin: 0 0 1rem;
-      text-align: center;
-    }
-    .table-card {
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
-      background: #fff;
-    }
-    .table-scroll { overflow-x: auto; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: .95rem;
-    }
-    thead th {
-      text-align: left;
-      font-size: .72rem;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      color: var(--muted);
-      font-weight: 600;
-      padding: .85rem .9rem;
-      background: #fafafa;
-      border-bottom: 1px solid var(--line);
-      white-space: nowrap;
-    }
-    th.n, td.n { text-align: center; font-variant-numeric: tabular-nums; }
-    tbody td {
-      padding: .6rem .9rem;
-      border-bottom: 1px solid var(--line);
-    }
-    tbody tr:hover td { background: #faf6f5; }
-    td.council { font-weight: 500; white-space: nowrap; }
-    .council-cell { display: flex; align-items: center; gap: .55rem; }
-    img.logo {
-      height: 22px;
-      width: auto;
-      max-width: 34px;
-      object-fit: contain;
-      flex: none;
-    }
-    td.mapped { color: var(--accent); font-weight: 600; }
-    td.dim { color: var(--muted); }
-    td.upd { white-space: nowrap; color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
-    td.src { max-width: 150px; }
-    td.src a {
-      display: inline-block;
-      max-width: 100%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      vertical-align: bottom;
-      color: var(--accent);
-      text-decoration: none;
-      font-size: .85rem;
-    }
-    td.src a:hover { text-decoration: underline; }
-    .maplibregl-popup-content a { color: var(--accent); }
-    .cov { display: flex; align-items: center; gap: .6rem; min-width: 130px; }
-    .cov-track {
-      flex: 1;
-      height: 7px;
-      border-radius: 4px;
-      background: var(--line);
-      overflow: hidden;
-    }
-    .cov-fill { height: 100%; background: var(--accent); border-radius: 4px; }
-    .cov-pct {
-      font-size: .8rem;
-      color: var(--muted);
-      font-variant-numeric: tabular-nums;
-      width: 2.6em;
-      text-align: right;
-    }
-    tfoot td {
-      padding: .75rem .9rem;
-      border-top: 2px solid var(--line);
-      font-weight: 700;
-      background: #fafafa;
-    }
-    tfoot td.n { font-variant-numeric: tabular-nums; }
-    footer {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 1.5rem 1.25rem 3rem;
-      font-size: .9rem;
-      color: var(--muted);
-      text-align: center;
-    }
-    footer a { color: var(--accent); }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Derelict Ireland</h1>
-    <p class="lede">
-      A map of derelict sites across Ireland, built from the registers councils
-      are legally required to keep. Click any pin to see the address and
-      register reference.
-    </p>
-    <div class="stats">
-      <div class="stat">
-        <div class="num">{siteCount}</div>
-        <div class="label">Sites mapped</div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Derelict Ireland</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"
+    ></script>
+    <link
+      href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #1a1a1a;
+        --muted: #666;
+        --accent: #c0392b;
+        --line: #e5e5e5;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        color: var(--ink);
+        line-height: 1.5;
+      }
+      header {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 1.5rem;
+        text-align: center;
+      }
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: 2.25rem;
+        letter-spacing: -0.02em;
+      }
+      .lede {
+        margin: 0 auto 1.5rem;
+        font-size: 1.1rem;
+        color: var(--muted);
+        max-width: 60ch;
+      }
+      .stats {
+        display: flex;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .stat .num {
+        font-size: 1.9rem;
+        font-weight: 700;
+        color: var(--accent);
+      }
+      .stat .label {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--muted);
+      }
+      .map-box {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      }
+      #map {
+        height: 60vh;
+        min-height: 420px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      }
+      .coverage {
+        max-width: 1150px;
+        margin: 2.5rem auto 0;
+        padding: 0 1.25rem;
+      }
+      .coverage h2 {
+        font-size: 1.3rem;
+        letter-spacing: -0.01em;
+        margin: 0 0 1rem;
+        text-align: center;
+      }
+      .table-card {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+        background: #fff;
+      }
+      .table-scroll {
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      }
+      thead th {
+        text-align: left;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+        font-weight: 600;
+        padding: 0.85rem 0.9rem;
+        background: #fafafa;
+        border-bottom: 1px solid var(--line);
+        white-space: nowrap;
+      }
+      th.n,
+      td.n {
+        text-align: center;
+        font-variant-numeric: tabular-nums;
+      }
+      tbody td {
+        padding: 0.6rem 0.9rem;
+        border-bottom: 1px solid var(--line);
+      }
+      tbody tr:hover td {
+        background: #faf6f5;
+      }
+      td.council {
+        font-weight: 500;
+        white-space: nowrap;
+      }
+      .council-cell {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+      }
+      img.logo {
+        height: 22px;
+        width: auto;
+        max-width: 34px;
+        object-fit: contain;
+        flex: none;
+      }
+      td.mapped {
+        color: var(--accent);
+        font-weight: 600;
+      }
+      td.dim {
+        color: var(--muted);
+      }
+      td.upd {
+        white-space: nowrap;
+        color: var(--muted);
+        font-size: 0.85rem;
+        font-variant-numeric: tabular-nums;
+      }
+      td.src {
+        max-width: 150px;
+      }
+      td.src a {
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: bottom;
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.85rem;
+      }
+      td.src a:hover {
+        text-decoration: underline;
+      }
+      .maplibregl-popup-content a {
+        color: var(--accent);
+      }
+      .cov {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        min-width: 130px;
+      }
+      .cov-track {
+        flex: 1;
+        height: 7px;
+        border-radius: 4px;
+        background: var(--line);
+        overflow: hidden;
+      }
+      .cov-fill {
+        height: 100%;
+        background: var(--accent);
+        border-radius: 4px;
+      }
+      .cov-pct {
+        font-size: 0.8rem;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+        width: 2.6em;
+        text-align: right;
+      }
+      tfoot td {
+        padding: 0.75rem 0.9rem;
+        border-top: 2px solid var(--line);
+        font-weight: 700;
+        background: #fafafa;
+      }
+      tfoot td.n {
+        font-variant-numeric: tabular-nums;
+      }
+      footer {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 1.5rem 1.25rem 3rem;
+        font-size: 0.9rem;
+        color: var(--muted);
+        text-align: center;
+      }
+      footer a {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Derelict Ireland</h1>
+      <p class="lede">
+        A map of derelict sites across Ireland, built from the registers
+        councils are legally required to keep. Click any pin to see the address
+        and register reference.
+      </p>
+      <div class="stats">
+        <div class="stat">
+          <div class="num">{siteCount}</div>
+          <div class="label">Sites mapped</div>
+        </div>
+        <div class="stat">
+          <div class="num">{councilCount}</div>
+          <div class="label">Councils</div>
+        </div>
+        <div class="stat">
+          <div class="num">{reviewCount}</div>
+          <div class="label">Not yet mapped</div>
+        </div>
       </div>
-      <div class="stat">
-        <div class="num">{councilCount}</div>
-        <div class="label">Councils</div>
-      </div>
-      <div class="stat">
-        <div class="num">{reviewCount}</div>
-        <div class="label">Not yet mapped</div>
-      </div>
+    </header>
+
+    <div class="map-box">
+      <div id="map"></div>
     </div>
-  </header>
 
-  <div class="map-box">
-    <div id="map"></div>
-  </div>
-
-  <section class="coverage">
-    <h2>Coverage by council</h2>
-    <div class="table-card">
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th>Council</th>
-              <th class="n">Mapped</th>
-              <th class="n">Not yet mapped</th>
-              <th class="n">Total</th>
-              <th>Coverage</th>
-              <th>Source</th>
-              <th>Updated</th>
-            </tr>
-          </thead>
-          <tbody>
-            {councilStats.map((c) => {
-              const total = c.mapped + c.review;
-              const pct = total ? Math.round((c.mapped / total) * 100) : 0;
-              return (
-                <tr>
-                  <td class="council">
-                    <span class="council-cell">
-                      {logoFor(c.council) && <img class="logo" src={logoFor(c.council)} alt="" loading="lazy" />}
-                      {c.council}
-                    </span>
-                  </td>
-                  <td class="n mapped">{c.mapped}</td>
-                  <td class="n dim">{c.review || "0"}</td>
-                  <td class="n">{total}</td>
-                  <td>
-                    <div class="cov">
-                      <div class="cov-track"><div class="cov-fill" style={`width:${pct}%`}></div></div>
-                      <span class="cov-pct">{pct}%</span>
+    <section class="coverage">
+      <h2>Coverage by council</h2>
+      <div class="table-card">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Council</th>
+                <th class="n">Mapped</th>
+                <th class="n">Not yet mapped</th>
+                <th class="n">Total</th>
+                <th>Coverage</th>
+                <th>Source</th>
+                <th>Updated</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                councilStats.map((c) => {
+                  const total = c.mapped + c.review;
+                  const pct = total ? Math.round((c.mapped / total) * 100) : 0;
+                  return (
+                    <tr>
+                      <td class="council">
+                        <span class="council-cell">
+                          {logoFor(c.council) && (
+                            <img
+                              class="logo"
+                              src={logoFor(c.council)}
+                              alt=""
+                              loading="lazy"
+                            />
+                          )}
+                          {c.council}
+                        </span>
+                      </td>
+                      <td class="n mapped">{c.mapped}</td>
+                      <td class="n dim">{c.review || "0"}</td>
+                      <td class="n">{total}</td>
+                      <td>
+                        <div class="cov">
+                          <div class="cov-track">
+                            <div class="cov-fill" style={`width:${pct}%`} />
+                          </div>
+                          <span class="cov-pct">{pct}%</span>
+                        </div>
+                      </td>
+                      <td class="src">
+                        {c.source && (
+                          <a
+                            href={c.source}
+                            target="_blank"
+                            rel="noopener"
+                            title={c.source}
+                          >
+                            {sourceHost(c.source)}
+                          </a>
+                        )}
+                      </td>
+                      <td class="upd">{c.updated ?? ""}</td>
+                    </tr>
+                  );
+                })
+              }
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>All councils</td>
+                <td class="n">{siteCount}</td>
+                <td class="n">{reviewCount}</td>
+                <td class="n">{siteCount + reviewCount}</td>
+                <td>
+                  <div class="cov">
+                    <div class="cov-track">
+                      <div
+                        class="cov-fill"
+                        style={`width:${Math.round((siteCount / (siteCount + reviewCount)) * 100)}%`}
+                      >
+                      </div>
                     </div>
-                  </td>
-                  <td class="src">
-                    {c.source && (
-                      <a href={c.source} target="_blank" rel="noopener" title={c.source}>{sourceHost(c.source)}</a>
-                    )}
-                  </td>
-                  <td class="upd">{c.updated ?? ""}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>All councils</td>
-              <td class="n">{siteCount}</td>
-              <td class="n">{reviewCount}</td>
-              <td class="n">{siteCount + reviewCount}</td>
-              <td>
-                <div class="cov">
-                  <div class="cov-track"><div class="cov-fill" style={`width:${Math.round((siteCount / (siteCount + reviewCount)) * 100)}%`}></div></div>
-                  <span class="cov-pct">{Math.round((siteCount / (siteCount + reviewCount)) * 100)}%</span>
-                </div>
-              </td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tfoot>
-        </table>
+                    <span class="cov-pct"
+                      >{
+                        Math.round(
+                          (siteCount / (siteCount + reviewCount)) * 100,
+                        )
+                      }%</span
+                    >
+                  </div>
+                </td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    Work in progress. Currently covering {councils.join(", ")}. Data comes from
-    each council's public derelict sites register. Not an official source.
-    <br />
-    <a href="https://github.com/ACoci86/derelict-ireland">View the code on GitHub</a>
-  </footer>
+    <footer>
+      Work in progress. Currently covering {councils.join(", ")}. Data comes
+      from each council's public derelict sites register. Not an official
+      source.
+      <br />
+      <a href="https://github.com/ACoci86/derelict-ireland"
+        >View the code on GitHub</a
+      >
+    </footer>
 
-  <script>
-    const map = new maplibregl.Map({
-      container: "map",
-      style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",  // clean light basemap (CARTO Positron, no API key)
-      center: [-8.0, 53.4],                                // middle of Ireland, lon/lat
-      zoom: 6,
-    });
-
-    map.on("load", async () => {
-      // public/sites.geojson is served at the site root, so fetch "/sites.geojson".
-      const geojson = await (await fetch("/sites.geojson")).json();
-
-      // Cluster the points. With ~1,400 sites, a plain point layer overwhelms
-      // the low-zoom tiles (points get dropped when zoomed out); clustering
-      // renders reliably at every zoom and reads better than overlapping dots.
-      map.addSource("sites", {
-        type: "geojson",
-        data: geojson,
-        cluster: true,
-        clusterRadius: 45,
-        clusterMaxZoom: 12,
+    <script>
+      const map = new maplibregl.Map({
+        container: "map",
+        style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json", // clean light basemap (CARTO Positron, no API key)
+        center: [-8.0, 53.4], // middle of Ireland, lon/lat
+        zoom: 6,
       });
 
-      // Cluster bubbles, sized by how many sites they contain.
-      map.addLayer({
-        id: "clusters",
-        type: "circle",
-        source: "sites",
-        filter: ["has", "point_count"],
-        paint: {
-          "circle-color": "#c0392b",
-          "circle-opacity": 0.85,
-          "circle-radius": ["step", ["get", "point_count"], 14, 10, 18, 50, 24, 200, 32],
-          "circle-stroke-width": 2,
-          "circle-stroke-color": "#fff",
-        },
-      });
-      map.addLayer({
-        id: "cluster-count",
-        type: "symbol",
-        source: "sites",
-        filter: ["has", "point_count"],
-        layout: {
-          "text-field": ["get", "point_count_abbreviated"],
-          "text-font": ["Open Sans Semibold"],
-          "text-size": 12,
-        },
-        paint: { "text-color": "#fff" },
-      });
-      // Individual sites (shown once a cluster is broken open by zooming in).
-      map.addLayer({
-        id: "site",
-        type: "circle",
-        source: "sites",
-        filter: ["!", ["has", "point_count"]],
-        paint: {
-          "circle-color": "#c0392b",
-          "circle-radius": 7,
-          "circle-stroke-width": 1.5,
-          "circle-stroke-color": "#fff",
-        },
-      });
+      map.on("load", async () => {
+        // public/sites.geojson is served at the site root, so fetch "/sites.geojson".
+        const geojson = await (await fetch("/sites.geojson")).json();
 
-      // Frame the whole dataset (i.e. the island) rather than a fixed city.
-      const coords = geojson.features.map((f: any) => f.geometry.coordinates);
-      if (coords.length) {
-        const bounds = coords.reduce(
-          (b: any, c: any) => b.extend(c),
-          new maplibregl.LngLatBounds(coords[0], coords[0])
-        );
-        map.fitBounds(bounds, { padding: 40, maxZoom: 13, duration: 0 });
-      }
+        // Cluster the points. With ~1,400 sites, a plain point layer overwhelms
+        // the low-zoom tiles (points get dropped when zoomed out); clustering
+        // renders reliably at every zoom and reads better than overlapping dots.
+        map.addSource("sites", {
+          type: "geojson",
+          data: geojson,
+          cluster: true,
+          clusterRadius: 45,
+          clusterMaxZoom: 12,
+        });
 
-      // Click a cluster to zoom in until it splits apart.
-      map.on("click", "clusters", async (e: any) => {
-        const f = map.queryRenderedFeatures(e.point, { layers: ["clusters"] })[0];
-        const zoom = await map.getSource("sites").getClusterExpansionZoom(f.properties.cluster_id);
-        map.easeTo({ center: f.geometry.coordinates, zoom });
-      });
+        // Cluster bubbles, sized by how many sites they contain.
+        map.addLayer({
+          id: "clusters",
+          type: "circle",
+          source: "sites",
+          filter: ["has", "point_count"],
+          paint: {
+            "circle-color": "#c0392b",
+            "circle-opacity": 0.85,
+            "circle-radius": [
+              "step",
+              ["get", "point_count"],
+              14,
+              10,
+              18,
+              50,
+              24,
+              200,
+              32,
+            ],
+            "circle-stroke-width": 2,
+            "circle-stroke-color": "#fff",
+          },
+        });
+        map.addLayer({
+          id: "cluster-count",
+          type: "symbol",
+          source: "sites",
+          filter: ["has", "point_count"],
+          layout: {
+            "text-field": ["get", "point_count_abbreviated"],
+            "text-font": ["Open Sans Semibold"],
+            "text-size": 12,
+          },
+          paint: { "text-color": "#fff" },
+        });
+        // Individual sites (shown once a cluster is broken open by zooming in).
+        map.addLayer({
+          id: "site",
+          type: "circle",
+          source: "sites",
+          filter: ["!", ["has", "point_count"]],
+          paint: {
+            "circle-color": "#c0392b",
+            "circle-radius": 7,
+            "circle-stroke-width": 1.5,
+            "circle-stroke-color": "#fff",
+          },
+        });
 
-      // Click an individual site for its details.
-      map.on("click", "site", (e: any) => {
-        const p = e.features[0].properties;
-        const ref = p.register_ref ? `ref: ${p.register_ref}` : "";
-        const src = p.source_url
-          ? `<br><a href="${p.source_url}" target="_blank" rel="noopener">View source</a>`
-          : "";
-        new maplibregl.Popup()
-          .setLngLat(e.features[0].geometry.coordinates)
-          .setHTML(`<strong>${p.address}</strong><br>${p.council}<br>${ref}${src}`)
-          .addTo(map);
+        // Frame the whole dataset (i.e. the island) rather than a fixed city.
+        const coords = geojson.features.map((f: any) => f.geometry.coordinates);
+        if (coords.length) {
+          const bounds = coords.reduce(
+            (b: any, c: any) => b.extend(c),
+            new maplibregl.LngLatBounds(coords[0], coords[0]),
+          );
+          map.fitBounds(bounds, { padding: 40, maxZoom: 13, duration: 0 });
+        }
+
+        // Click a cluster to zoom in until it splits apart.
+        map.on("click", "clusters", async (e: any) => {
+          const f = map.queryRenderedFeatures(e.point, {
+            layers: ["clusters"],
+          })[0];
+          const zoom = await map
+            .getSource("sites")
+            .getClusterExpansionZoom(f.properties.cluster_id);
+          map.easeTo({ center: f.geometry.coordinates, zoom });
+        });
+
+        // Click an individual site for its details.
+        map.on("click", "site", (e: any) => {
+          const p = e.features[0].properties;
+          const ref = p.register_ref ? `ref: ${p.register_ref}` : "";
+          const src = p.source_url
+            ? `<br><a href="${p.source_url}" target="_blank" rel="noopener">View source</a>`
+            : "";
+          new maplibregl.Popup()
+            .setLngLat(e.features[0].geometry.coordinates)
+            .setHTML(
+              `<strong>${p.address}</strong><br>${p.council}<br>${ref}${src}`,
+            )
+            .addTo(map);
+        });
+        for (const id of ["clusters", "site"]) {
+          map.on(
+            "mouseenter",
+            id,
+            () => (map.getCanvas().style.cursor = "pointer"),
+          );
+          map.on("mouseleave", id, () => (map.getCanvas().style.cursor = ""));
+        }
       });
-      for (const id of ["clusters", "site"]) {
-        map.on("mouseenter", id, () => (map.getCanvas().style.cursor = "pointer"));
-        map.on("mouseleave", id, () => (map.getCanvas().style.cursor = ""));
-      }
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

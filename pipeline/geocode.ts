@@ -28,6 +28,7 @@ const AREA_HINT: Record<string, string> = {
   "Waterford": "County Waterford",
   "Kildare": "County Kildare",
   "Mayo": "County Mayo",
+  "Tipperary": "County Tipperary",
 };
 
 // Nominatim's result "type" -> our honest confidence level.

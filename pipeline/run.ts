@@ -16,13 +16,14 @@ import { load as loadOffaly } from "./adapters/offaly";
 import { load as loadWaterford } from "./adapters/waterford";
 import { load as loadKildare } from "./adapters/kildare";
 import { load as loadMayo } from "./adapters/mayo";
+import { load as loadTipperary } from "./adapters/tipperary";
 import { geocodeAll } from "./geocode";
 
 // Rough bounding box around the island of Ireland.
 const LAT_MIN = 51.3, LAT_MAX = 55.5;
 const LON_MIN = -10.7, LON_MAX = -5.3;
 
-const ADAPTERS = [loadDlr, loadSouthDublin, loadFingal, loadDublinCity, loadCorkCity, loadCorkCounty, loadGalway, loadLimerick, loadWicklow, loadRoscommon, loadMeath, loadKilkenny, loadOffaly, loadWaterford, loadKildare, loadMayo];   // every new council adds one entry here
+const ADAPTERS = [loadDlr, loadSouthDublin, loadFingal, loadDublinCity, loadCorkCity, loadCorkCounty, loadGalway, loadLimerick, loadWicklow, loadRoscommon, loadMeath, loadKilkenny, loadOffaly, loadWaterford, loadKildare, loadMayo, loadTipperary];   // every new council adds one entry here
 
 function inIreland(s: Site): boolean {
   return (
@@ -91,6 +92,7 @@ async function main() {
     "Waterford": "2026-07-09",
     "Kildare": "2026-03-20",
     "Mayo": "2026-03-06",
+    "Tipperary": "2026-06-08",
   };
 
   const councils = [...byCouncil.entries()]

@@ -1,6 +1,6 @@
 # Sites not yet mapped (held for review)
 
-359 sites the geocoder could not place. Generated 2026-07-10.
+400 sites the geocoder could not place. Generated 2026-07-13.
 
 ## South Dublin (6)
 
@@ -381,3 +381,47 @@
 - `mayo-ds10-24`: Altamount Street, Westport, Co Mayo F28 H292.
 - `mayo-ds10-25`: 5 Hillcrest, High Street, Westport, Co Mayo F28 WT25
 - `mayo-ds10-27`: Altamount Street, Westport, Co Mayo F28 RK12
+
+## Tipperary (41)
+
+- `tipperary-env-c-20-09`: 2 Ormond Street, Nenagh, Co. Tipperary, E45 YP92
+- `tipperary-env-c-20-19`: Honey Cottage, Glennagat, Cahir, Co. Tipperary, E21 Y998
+- `tipperary-env-c-22-13`: 11 Castle Street Carrick On Suir Clonmel, Co. Tipperary
+- `tipperary-env-c-22-16`: Ashbury Industrial Estate, (Former Offray Factory), Roscrea, Co. Tipperary
+- `tipperary-env-c-21-15`: 5 Kavanagh Place, Thurles, Co. Tipperary
+- `tipperary-env-c-17-5`: Caulfields Supervalu, Bank Place, Tipperary Town
+- `tipperary-env-c-18-18`: 10 Lowergate, Cashel, Co Tipperary
+- `tipperary-env-c-23-37`: 2 Lower Dublin Road, Nenagh, Co. Tipperary
+- `tipperary-env-c-23-6`: Camus Road, Cashel, Co. Tippeary, E25 NX32, Co. Tipperary
+- `tipperary-env-c-23-7`: Camus Road, Cashel, C. Tipperary, NX32(2)
+- `tipperary-env-c-22-17`: No. 1, O' Connell Road, Tipperary
+- `tipperary-env-c-22-23`: Tipperary Road, Cappawhite E34 X409
+- `tipperary-env-c-22-18`: Abbey Villas, Friar St, Nenagh, Co. Tipperary
+- `tipperary-env-c-19-10`: Kearneys Castle, Main Street, Cashel, Co Tipperary E25 X732
+- `tipperary-trt-25-010-1`: E91 PP99 Market Place (formerly Xtra Vision) Site (Folio TY61870F), Co. Tipperary
+- `tipperary-trt-25-010-2`: b) E91 F896 Market Place SC (formerly Mai’s Café), Co. Tipperary
+- `tipperary-trt-25-010-3`: c) E91 HY92 Unit D1 Market Place SC, Co. Tipperary
+- `tipperary-trt-25-010-4`: d) E91 WV62 Unit D2 Market Place SC, Co. Tipperary
+- `tipperary-trt-25-010-5`: e) E91 F3A4 Unit D3 Market Place SC, Co. Tipperary
+- `tipperary-trt-25-010-6`: f) E91 E192 Units F1 & F2 Market Place SC, Co. Tipperary
+- `tipperary-trt-25-010-7`: g) E91 HP02 Unit B1 Market Place SC, Co. Tipperary
+- `tipperary-trt-25-010-8`: h) E91 KH67 Unit B2 Market Place SC, Co. Tipperary
+- `tipperary-trt-25-010-9`: i) E91 XP76 Unit B4 Market Place SC, Co. Tipperary
+- `tipperary-trt-25-010-10`: j) E91 P2X0 Unit B6 Market Place SC, Co. Tipperary
+- `tipperary-trt-25-010-11`: k) E91 H4F1 Unit B7 Market Place SC, Co. Tipperary
+- `tipperary-trt-25-010-12`: l) E91 PF53 Unit B8 Market Place, Co. Tipperary
+- `tipperary-trt-25-012`: Former Superquinn / Supervalu, Market Place, Clonmel, Co. Tipperary
+- `tipperary-trt-25-018`: 11 Dillon Street, Tipp Town, Co. Tipperary
+- `tipperary-trt-25-022`: 12 Columba Terrace, Thurles, Co. Tipperary
+- `tipperary-trt-25-026`: 17 Davis Terrace, Davis Street, Clonmel, Co. Tipperary
+- `tipperary-trt-25-029`: The Dairy, Powerstown Road, Clonmel, Co. Tipperary
+- `tipperary-trt-25-033`: 20 St Patrick's Terrace, Clonmel, Co. Tipperary E91 FV59
+- `tipperary-trt-26-014`: Main Street Upper, Cappawhite, Co. Tipperary
+- `tipperary-trt-26-016`: Main Street Upper, Cappawhite, Co. Tipperary
+- `tipperary-trt-26-010`: Church Street, Bunacum, Toomevara E45 X924, Co. Tipperary
+- `tipperary-trt-26-013`: Main street, Roscrea, Co. Tipperary E53 KV22 - TY72199F
+- `tipperary-trt-26-018`: 13 Mitchel Street, Nenagh, Co. Tipperary. E45 YW20
+- `tipperary-trt-26-019`: 14 Mitchel Street, Nenagh, Co. Tipperary. E45 V266
+- `tipperary-trt-26-023`: Lower Birr Road, Nenagh, Co. Tipperary. E45 YT54
+- `tipperary-trt-26-025`: Ferndale, Tyone, Nenagh, Co. Tipperary
+- `tipperary-trt-26-003`: Newsworld, Market Place, Clonmel, Co. Tipperary
