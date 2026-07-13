@@ -461,6 +461,22 @@ const logoFor = (council: string): string | null => {
       footer a {
         color: var(--accent);
       }
+      footer p {
+        margin: 0 auto 0.7rem;
+      }
+      footer .disclaimer {
+        max-width: 640px;
+        line-height: 1.6;
+      }
+      footer .disclaimer strong {
+        color: var(--ink);
+      }
+      footer .footer-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem 1.5rem;
+      }
     </style>
   </head>
   <body>
@@ -634,7 +650,7 @@ const logoFor = (council: string): string | null => {
                     <td class="n qq">??</td>
                     <td class="n qq">??</td>
                     <td class="n qq">??</td>
-                    <td class="n val na">—</td>
+                    <td class="n val na">n/a</td>
                     <td class="noreg">Not published online</td>
                     <td class="src">
                       <a href={c.source} target="_blank" rel="noopener" title={c.source}>
@@ -642,7 +658,7 @@ const logoFor = (council: string): string | null => {
                       </a>
                     </td>
                     <td class="upd" />
-                    <td class="dl na">—</td>
+                    <td class="dl na">n/a</td>
                   </tr>
                 ))
               }
@@ -685,13 +701,26 @@ const logoFor = (council: string): string | null => {
     </section>
 
     <footer>
-      Work in progress. Currently covering {councils.join(", ")}. Data comes
-      from each council's public derelict sites register. Not an official
-      source.
-      <br />
-      <a href="https://github.com/ACoci86/derelict-ireland"
-        >View the code on GitHub</a
-      >
+      <p class="disclaimer">
+        <strong>Not an official source.</strong> Every site is taken from a
+        council's public derelict sites register, but pins are placed by
+        best-effort geocoding and are only approximate: a marker is not a
+        statement about any specific building. No owner or occupier details are
+        shown. For the authoritative record, consult the relevant council's
+        register, linked in the table above.
+      </p>
+      <p>
+        Work in progress, covering {councilCount} of Ireland's 31 local
+        authorities.
+      </p>
+      <p class="footer-links">
+        <a
+          href="https://github.com/ACoci86/derelict-ireland/issues/new"
+          target="_blank"
+          rel="noopener">Report a wrong or missing site</a
+        >
+        <a href="https://github.com/ACoci86/derelict-ireland">View the code on GitHub</a>
+      </p>
     </footer>
 
     <script>
