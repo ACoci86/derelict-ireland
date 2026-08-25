@@ -2,7 +2,6 @@ ref,address,date_entered,municipal_district
 "DS-2010-B01","Bolgers, Ballitore","2011-01-31","Athy"
 "DS-2007-K02","Mary Hickeys Sweet Shop, Church Street, Kilcock","2011-06-22","Clane - Maynooth"
 "DS-2015-Naas13","Market House, Naas","2015-04-24","Naas"
-"DS-2007-A01","Allenwood North, Naas","2015-07-15","Clane- Maynooth"
 "DS-2007-N03","Old Band Hall, Cutlery Road, Newbridge","2016-02-12","Kildare - Newbridge"
 "DS-2007-A27","30 Woodstock Street, Athy","2016-05-27","Athy"
 "DS-2007-A28","31 Woodstock Street, Athy","2016-05-27","Athy"
@@ -62,3 +61,4 @@ ref,address,date_entered,municipal_district
 "DS-2024-06","4 Plewmans Terrace, Athy","2026-02-18","Athy"
 "DS-2026-06","479 Skenagun, Castledermot","2026-03-19","Athy"
 "DS-2025-23","Pine Vale, Killeenmore, Sallins, Naas","2026-03-20","Naas"
+"DS-2025-28","Home Farm House, Clane Road, Sallins","2026-07-10","Naas"

@@ -48,7 +48,11 @@ export async function load(): Promise<Site[]> {
   const text = await resp.text();
 
   mkdirSync(RAW_DIR, { recursive: true });
-  writeFileSync(`${RAW_DIR}/${RETRIEVED}.geojson`, text);
+  // Archive one dated copy per run. The name has to be the date this ran,
+  // not a constant: a fixed name silently overwrites the previous snapshot,
+  // which leaves the archive claiming data it no longer holds.
+  const today = new Date().toISOString().slice(0, 10);
+  writeFileSync(`${RAW_DIR}/${today}.geojson`, text);
 
   const data = JSON.parse(text) as {
     features: { properties: RosProps; geometry: { type: string; coordinates: any } | null }[];

@@ -5,7 +5,11 @@
 import { writeFileSync } from "node:fs";
 import { execSync } from "node:child_process";
 
-const PDF_URL = "https://www.corkcity.ie/media/astd5t1p/derelict-sites-register.pdf";
+// Cork City keeps an undated "latest" alias at /media/astd5t1p/, but it lags:
+// the council posts each revision at its own dated url and links THAT from the
+// derelict sites page. Point at the dated file and bump it when a newer one
+// appears (npm run check reports it).
+const PDF_URL = "https://www.corkcity.ie/media/qjyg4get/220726-derelict-sites-register.pdf";
 const PDF_TMP = "data/manual/cork_city.pdf";
 const CSV_OUT = "data/manual/cork_city.csv";
 

@@ -9,7 +9,7 @@ const SOURCE_URL =
   "https://www.corkcoco.ie/en/resident/municipal-districts/" +
   "derelict-sites-dangerous-structures/derelict-sites-register-list";
 const COUNCIL = "Cork County";
-const RETRIEVED = "2026-07-09";    // date we scraped the page
+const RETRIEVED = "2026-08-25";    // date we scraped the page
 
 export async function load(): Promise<Site[]> {
   const rows = parse(readFileSync(CSV_PATH, "utf8"), {

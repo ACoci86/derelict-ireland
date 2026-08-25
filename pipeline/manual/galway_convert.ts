@@ -9,7 +9,7 @@ import { execSync } from "node:child_process";
 
 const PDF_URL =
   "https://files.galwaycity.ie/gccfiles/?r=/download&path=" +
-  "L0RlcGFydG1lbnRzL0Vudmlyb25tZW50L0RlcmVsaWN0IFNpdGVzL0RlcmVsaWN0IFNpdGUgUmVnaXN0ZXIgMDguMDcuMjAyNi5wZGY%3D";
+  "L0RlcGFydG1lbnRzL0Vudmlyb25tZW50L0RlcmVsaWN0IFNpdGVzL0RlcmVsaWN0IFNpdGUgUmVnaXN0ZXIgMTMuMDguMjAyNi5wZGY%3D";
 const PDF_TMP = "data/manual/galway.pdf";
 const CSV_OUT = "data/manual/galway.csv";
 

@@ -9,7 +9,7 @@
 import { writeFileSync } from "node:fs";
 import { execSync } from "node:child_process";
 
-const PDF_URL = "https://www.louthcoco.ie/media/jtmhrz14/derelict-sites-register-updated-4-june-2026.pdf";
+const PDF_URL = "https://www.louthcoco.ie/media/mxib4re2/derelict-sites-register-july-2026.pdf";
 const PDF_TMP = "data/manual/louth.pdf";
 const CSV_OUT = "data/manual/louth.csv";
 const UA = "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0";
@@ -101,13 +101,37 @@ async function main() {
   }
 
   const order = (p: Word[]) => [...p].sort((a, b) => a.y - b.y || a.x0 - b.x0);
+
+  // The actions column bleeds a word or two into the address band whenever the
+  // register is typeset a fraction narrower, as the July 2026 edition is. Cut
+  // from "Section" to the end of THAT LINE rather than from the joined string,
+  // so an address sitting on the line below a stray "Section 8 notice served"
+  // survives instead of being wiped out along with it.
+  const stripActions = (p: Word[]): Word[] => {
+    const byLine = new Map<number, Word[]>();
+    for (const w of p) {
+      const key = [...byLine.keys()].find((k) => Math.abs(k - w.y) < 4) ?? w.y;
+      if (!byLine.has(key)) byLine.set(key, []);
+      byLine.get(key)!.push(w);
+    }
+    const out: Word[] = [];
+    for (const line of byLine.values()) {
+      const sorted = [...line].sort((a, b) => a.x0 - b.x0);
+      const cut = sorted.findIndex((w) => /^Section$/i.test(w.t.trim()));
+      out.push(...(cut >= 0 ? sorted.slice(0, cut) : sorted));
+    }
+    return out;
+  };
   const join = (p: Word[]) => unesc(order(p).map((w) => w.t).join(" ")).replace(/\s+/g, " ").replace(/ ,/g, ",").trim();
 
   const out: string[][] = [];
   for (const r of recs) {
     // Strip any "Section 8 Notice ..." text that bled in from the actions column
-    // where two columns rendered as one word (never part of a real address).
-    const address = join(r.addr).replace(/\s*Section .*$/, "").replace(/Section$/, "").replace(/,+\s*$/, "").trim();
+    // (never part of a real address), line by line.
+    // The trailing "Section$" strip stays for the rows where the last address
+    // word and "Section" render glued into one token ("DroghedaSection").
+    const address = join(stripActions(r.addr))
+      .replace(/\s*Section .*$/, "").replace(/Section$/, "").replace(/,+\s*$/, "").trim();
     if (!address) continue;
     out.push([r.ref, address, eircode(address), iso(join(r.date)), money(join(r.val))]);
   }

@@ -17,10 +17,12 @@ const ARCGIS_URL =
   "https://services-eu1.arcgis.com/f0ZQOHXBIeLonX0V/arcgis/rest/services/" +
   "DerelictSites/FeatureServer/0/query?where=1=1&outFields=DSP,MktValue&f=geojson";
 const RAW_DIR = "data/raw/cork_city";
-const SOURCE_URL = "https://www.corkcity.ie/media/astd5t1p/derelict-sites-register.pdf";
+const SOURCE_URL =
+  "https://www.corkcity.ie/en/council-services/services/planning/" +
+  "derelict-vacant-sites-rzlt-and-grants/derelict-sites/";
 const COUNCIL = "Cork City";
-const RETRIEVED = "2026-07-09";    // date we converted the PDF
-const ARCGIS_RETRIEVED = "2026-07-10";   // date we fetched the coordinate layer
+const RETRIEVED = "2026-08-25";    // date we converted the PDF
+const ARCGIS_RETRIEVED = "2026-08-25";   // date we fetched the coordinate layer
 
 const round6 = (n: number): number => Math.round(n * 1e6) / 1e6;
 
@@ -52,7 +54,11 @@ async function fetchArcgis(): Promise<Map<string, ArcgisMatch>> {
   const text = await resp.text();
 
   mkdirSync(RAW_DIR, { recursive: true });
-  writeFileSync(`${RAW_DIR}/${ARCGIS_RETRIEVED}.geojson`, text);
+  // Archive one dated copy per run. The name has to be the date this ran,
+  // not a constant: a fixed name silently overwrites the previous snapshot,
+  // which leaves the archive claiming data it no longer holds.
+  const today = new Date().toISOString().slice(0, 10);
+  writeFileSync(`${RAW_DIR}/${today}.geojson`, text);
 
   const data = JSON.parse(text) as {
     features: { properties: { DSP?: string | number; MktValue?: string | number };

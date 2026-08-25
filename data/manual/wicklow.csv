@@ -1,3 +1,5 @@
-ref,address,date_entered,valuation
-"DS/113","Corner of Church Hill and Weaver’s Square, Baltinglass, Co. Wicklow","2016-12-15","100000"
-"DS/164","Lands located on Mill Street, Baltinglass, Co. Wicklow","2023-11-17","50000"
+ref,address,eircode,date_entered,valuation
+"DS/113","Corner of Church Hill and Weaver’s Square, Baltinglass, Co. Wicklow","","2016-12-15","100000"
+"DS/164","Lands located on Mill Street, Baltinglass, Co. Wicklow","","2023-11-17","50000"
+"DS/171","23 The Brook Arklow Co Wicklow","Y14 Y281","2026-07-08",""
+"DS/172","5A Wexford Road Arklow Co. Wicklow","","2026-07-08",""

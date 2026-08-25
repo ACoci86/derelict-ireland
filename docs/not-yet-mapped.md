@@ -1,6 +1,6 @@
 # Sites not yet mapped (held for review)
 
-260 sites the geocoder could not place. Generated 2026-07-13.
+261 sites the geocoder could not place. Generated 2026-08-25.
 
 ## South Dublin (5)
 
@@ -34,30 +34,28 @@
 - `cork-DSP-1825`: Former Angel Guardian Boys School, Springfield Road, Cork
 - `cork-DSP-2154`: 1-6 Woodlea Cottages, Eastcliffe, Ballinglanna, Glanmire, Cork T45A611
 
-## Cork County (16)
+## Cork County (14)
 
 - `cork-co-BK-DS-18`: O'Sullivan's Apts, Market Place, Kinsale
 - `cork-co-FMD-DS-11`: 21 McDermott Place, Oliver Plunkett Hill, Fermoy
 - `cork-co-KMMD-DS-01`: Former Central Hotel Site, Mallow
 - `cork-co-KMMD-DS-08`: the northeast of the main road to Kanturk ( Cecilstown), Mallow
-- `cork-co-KMMD-DS-09`: the south side of Jail Lane, Charleville
-- `cork-co-KMMD-DS-11`: A lane off the westside of Main Street (Dispensary Lane)/Mc Carthys Lane, Buttevant
-- `cork-co-KMMD-DS-12`: The corner of New Street & lane leading to Ballalley Tce, Buttevant
+- `cork-co-KMMD-DS-12`: Ballalley Tce, Buttevant
 - `cork-co-KMMD-DS-15`: Westside of road between Tullylease and Freemount - Site No 3
 - `cork-co-MMD-DS-04`: Derelict Site at Bridewell Lane, Macroom
 - `cork-co-MMD-DS-05`: Derelict Site at Duggans Lane, Macroom
-- `cork-co-MMD-DS-06`: No 1 An Faithin, Tarelton, Tarelton
-- `cork-co-MMD-DS-07`: No 6 An Faithin, Tarelton, Tarelton
-- `cork-co-MMD-DS-08`: No 8 An Faithin, Tarelton, Tarelton
-- `cork-co-MMD-DS-09`: No 13 An Faithin, Tarelton, Tarelton
-- `cork-co-MMD-DS-10`: No 16 An Faithin, Terelton, Tarelton
+- `cork-co-MMD-DS-06`: No 1 An Faithin, Terelton
+- `cork-co-MMD-DS-07`: No 6 An Faithin, Terelton
+- `cork-co-MMD-DS-08`: No 8 An Faithin, Terelton
+- `cork-co-MMD-DS-09`: No 13 An Faithin, Terelton
+- `cork-co-MMD-DS-10`: No 16 An Faithin, Terelton
 - `cork-co-MMD-DS-12`: Former Shop at New Street, Gurteenroe, Macroom, Macroom
 
 ## Limerick City and County (1)
 
 - `limerick-DS-050-25`: Limerick, register ref DS-050-25
 
-## Kildare (12)
+## Kildare (13)
 
 - `kildare-DS-2007-K02`: Mary Hickeys Sweet Shop, Church Street, Kilcock, Co. Kildare
 - `kildare-DS-2007-N03`: Old Band Hall, Cutlery Road, Newbridge, Co. Kildare
@@ -71,6 +69,7 @@
 - `kildare-DS-2024-32`: Tattoo Parlour at Station Road, Kildare Town
 - `kildare-DS-2024-27`: Broom Cottage, Nursery Road, Allenwood South, Naas W91E51F, Co. Kildare
 - `kildare-DS-2024-29`: Main Street, Sallins, Units 5,6,7,8,9, Co. Kildare
+- `kildare-DS-2025-28`: Home Farm House, Clane Road, Sallins, Co. Kildare
 
 ## Mayo (112)
 
@@ -241,20 +240,22 @@
 - `wexford-der2014-004`: Harneys Shoe Repairs, 4 John Street, New Ross, Co. Wexford
 - `wexford-der2014-002`: Gladneys Licenced Premises, 5 John Street, New Ross, Co. Wexford
 
-## Louth (12)
+## Louth (14)
 
 - `louth-ds-509`: 34 Quay St. Dundalk (Former Danny Boys Bar), Co. Louth
 - `louth-ds-540`: Former NV Niteclub, Carrickcarnon, Co. Louth
 - `louth-ds-584`: Former Bank, 3 Marsh Road, Drogheda, Co. Louth
 - `louth-ds-2023-001`: 83 Strand Street, Clogherhead Allwell House/Duke House, Duke St, Co. Louth
-- `louth-ds-2024-005`: Former Public House, Main St, Dunleer, Co. Louth
 - `louth-ds-2023-070`: PJ Carroll Bldg,38-39 Church St,Dundalk, Co. Louth
 - `louth-ds-2024-044`: Ferrard House, Hacketts Cross, Clogherhead, Co. Louth
 - `louth-ds-2025-004`: 4 Boyne Terrace, Cord Road, Drogheda, Co. Louth
 - `louth-ds-2025-010`: Spiders Web, Carrickmacross Rd, Dundalk, Co. Louth
 - `louth-ds-2023-013`: 3 former dwellings, Brewery St, Castlebellingham, Co. Louth
-- `louth-ds-2025-042`: 5 St Brigid's Terrace, Dundalk Road, Dunleer, Co. Louth
+- `louth-ds-2024-042`: 5 St Brigid's Terrace, Dundalk Road, Dunleer, Co. Louth
 - `louth-ds-2023-063`: Former Drg Chem Manure Wrks, Marsh Rd, Drog, Co. Louth
+- `louth-ds-2025-057`: Dwelling, Main Street, Dunleer Semi detached dwelling Marsh Road, Co. Louth
+- `louth-ds-2024-016`: 1 33 Ship St, Drogheda, A92 HKR9, Co. Louth
+- `louth-ds-2025-060`: Hazel Hill, 4 Ardee Street, Collon, Co. Louth
 
 ## Westmeath (6)
 
@@ -275,8 +276,8 @@
 ## Monaghan (3)
 
 - `monaghan-dsn-7-22`: Derryveagh, Carrickroe, Co. Monaghan - Folio MN23422F
-- `monaghan-dsn-7-25`: 9 Plantation Terrace, Monaghan H18XK64
 - `monaghan-dsn-43-25`: Land behind Bank of Ireland on Bridwell Lane (to the South) and Drummond Etra (to the West), Carrickmacross, Co. Monaghan
+- `monaghan-dsn-58-25`: Unfinished Apartment Block along with Associated Underground and Overground Car Parking Levels, Magheross, Riverside Road, Carrickmacross, Co. Monaghan
 
 ## Sligo (11)
 

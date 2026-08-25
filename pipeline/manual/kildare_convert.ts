@@ -10,7 +10,7 @@ import { writeFileSync } from "node:fs";
 import { execSync } from "node:child_process";
 
 const PDF_URL =
-  "https://kildarecoco.ie/AllServices/Housing/DerelictSites/DS%20register%2020.03.2026.pdf";
+  "https://kildarecoco.ie/AllServices/Housing/DerelictSites/Derelict%20Sites%20Register%20%2017.07.2026.pdf";
 const PDF_TMP = "data/manual/kildare.pdf";
 const CSV_OUT = "data/manual/kildare.csv";
 const UA = "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0";

@@ -4,11 +4,11 @@ An interactive map of derelict sites across Ireland, built from the registers th
 
 ![Screenshot of the Derelict Ireland site](docs/screenshot.png)
 
-> Work in progress. **26 of Ireland's 31 local authorities** are covered so far: **2,196 sites mapped**, with a further ~260 held for review. Numbers and features may change.
+> Work in progress. **26 of Ireland's 31 local authorities** are covered so far: **2,227 sites mapped**, with a further ~261 held for review. Numbers and features may change.
 
 Under the Derelict Sites Act, every Irish local authority must maintain a public register of derelict sites. Those registers are scattered across dozens of PDFs, spreadsheets, and open-data portals in wildly different formats. This project pulls them into one place, puts every site on a map, and lets you explore, search, and download the data.
 
-Click any pin for the address, council, and register reference. The registers value the mapped sites at roughly **€210 million** in total.
+Click any pin for the address, council, and register reference. The registers value the mapped sites at roughly **€211 million** in total.
 
 ## What the site does
 
@@ -18,6 +18,8 @@ Click any pin for the address, council, and register reference. The registers va
 - **Coverage-by-council table** with mapped / not-yet-mapped / total counts, a coverage bar, the total site **valuation** where the register publishes it, the source, and when each register was last updated.
 - **Search** the table by council name, and **sort** any column ascending or descending.
 - **Download** the whole dataset, or any single council, as **CSV** (spreadsheets) or **GeoJSON** (mapping tools), generated in the browser with no server needed.
+- **A menu** on every page, linking the map, the changes page, the downloads, and the source.
+- **What's changed** at `/history`: which councils have republished lately and by how many entries, plus how up to date every register is, oldest last.
 
 ## Coverage
 
@@ -44,6 +46,30 @@ Each council has an adapter in `pipeline/adapters/`. Councils publish in two way
 - **Coordinate-ready** (ArcGIS / open-data layers): coordinates come straight from the council, so sites map precisely with no geocoding. These are marked `council` confidence.
 - **Address-only** (PDF / spreadsheet / HTML): the register is first scraped into a committed CSV by a one-off converter in `pipeline/manual/`, then each address is geocoded.
 
+### Update checker (`pipeline/check-updates.ts`)
+
+Registers move under us: a council republishes a PDF at a new address, edits a
+live map layer, or quietly adds rows to a table. `npm run check` sweeps all 26
+published registers and reports which ones have moved since the copy this site
+carries. It only reads, and never touches the dataset.
+
+Each way of publishing needs its own probe:
+
+- **live map layer**: ask the layer for its last edit stamp and record count,
+  and compare both with the last archived snapshot,
+- **open-data file**: hash the download against our archived copy,
+- **PDF / spreadsheet**: hash the file we converted, and re-read the council's
+  page, because a new register usually appears _beside_ the old one at a new
+  url with a new date in its file name,
+- **web page table**: re-read the page and count the register rows.
+
+Each run appends a dated entry to `public/history.json`, which the
+[what&#39;s-changed page](src/pages/history.astro) renders at `/history`. That page
+reads the log the other way round from how it is stored: it leads with what the
+councils did, and leaves the method to a note at the end. Taking an update in is
+still deliberate: re-run the council's converter in `pipeline/manual/` against
+the new file, then `npm run pipeline`.
+
 ### Geocoding (address-only councils)
 
 Addresses are placed with a tiered, cost-free, terms-of-service-clean approach, using no Google and nothing that forbids storing the coordinates:
@@ -58,7 +84,7 @@ Multi-property register entries (e.g. `6, 8, 10 Main Street`) are split into one
 
 ### Confidence levels
 
-Every pin is tagged with how sure we are of its position: `council` (council-supplied coordinates), `exact` (house-level geocode), `street`, `town`, or `none` (held for review). Current mix: ~1,350 council-precise, 45 exact, 401 street, 400 town.
+Every pin is tagged with how sure we are of its position: `council` (council-supplied coordinates), `exact` (house-level geocode), `street`, `town`, or `none` (held for review). Current mix: ~1,372 council-precise, 46 exact, 407 street, 402 town.
 
 ### A note on personal data
 
@@ -76,9 +102,12 @@ pipeline/
   manual/       one-off converters that scrape a PDF/XLSX/HTML into a committed CSV
   geocode.ts    Nominatim -> Photon -> county-box guard
   run.ts        runs all adapters, splits multi-unit entries, writes outputs
+  check-updates.ts  asks every council whether its register has moved
   schema.ts     the Site type and helpers
-src/pages/index.astro   the map + coverage table
-public/         sites.geojson, stats.json, counties.geojson, logos, served as-is
+src/components/  Nav.astro (the site menu) + Icon.astro
+src/pages/index.astro     the map + coverage table
+src/pages/history.astro   what's changed on the registers
+public/         sites.geojson, stats.json, history.json, counties.geojson, logos
 data/           raw sources, scraped CSVs, and the geocode cache
 docs/           screenshot + the not-yet-mapped list
 ```
@@ -87,6 +116,7 @@ docs/           screenshot + the not-yet-mapped list
 
 ```sh
 npm install        # install dependencies
+npm run check      # ask every council whether its register has moved
 npm run pipeline   # rebuild the dataset from the registers
 npm run dev        # local site at http://localhost:4321
 npm run build      # build the production site to ./dist/
@@ -109,7 +139,7 @@ The website build reads the committed data files and needs no secrets or environ
 
 ## Built with
 
-[Astro](https://astro.build) &middot; [MapLibre GL JS](https://maplibre.org) &middot; [OpenStreetMap](https://www.openstreetmap.org) (Nominatim + Photon geocoding) &middot; a [CARTO](https://carto.com) basemap &middot; local-authority boundaries from [click_that_hood](https://github.com/codeforgermany/click_that_hood) (ODbL).
+[Astro](https://astro.build) &middot; [MapLibre GL JS](https://maplibre.org) &middot; [OpenStreetMap](https://www.openstreetmap.org) (Nominatim + Photon geocoding) &middot; a [CARTO](https://carto.com) basemap &middot; local-authority boundaries from [click_that_hood](https://github.com/codeforgermany/click_that_hood) (ODbL) &middot; interface icons from [Feather](https://github.com/feathericons/feather) (MIT, &copy; Cole Bemis), served from GitHub at a pinned tag.
 
 ## License
 

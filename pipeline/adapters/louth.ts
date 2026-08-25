@@ -10,7 +10,7 @@ const CSV_PATH = "data/manual/louth.csv";
 const SOURCE_URL = "https://www.louthcoco.ie/en/services/planning/derelict-sites-dangerous-structures/";
 const COUNCIL = "Louth";
 // The date we converted the PDF. Bump when re-running louth_convert.ts.
-const RETRIEVED = "2026-07-11";
+const RETRIEVED = "2026-08-25";
 
 // "DS 2023 010" -> "ds-2023-010" for a clean id.
 const slug = (r: string): string =>

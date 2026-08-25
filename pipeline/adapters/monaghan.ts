@@ -11,7 +11,7 @@ import { makeSite, type Site } from "../schema";
 const CSV_PATH = "data/manual/monaghan.csv";
 const SOURCE_URL = "https://monaghan.ie/planning/derelict-sites/";
 const COUNCIL = "Monaghan";
-const RETRIEVED = "2026-07-11";
+const RETRIEVED = "2026-08-25";
 
 proj4.defs(
   "EPSG:2157",

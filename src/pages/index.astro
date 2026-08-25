@@ -2,6 +2,7 @@
 // Runs at build time. Read the finished dataset so the headline numbers
 // on the page always match what's actually on the map.
 import { readFileSync, readdirSync } from "node:fs";
+import Nav from "../components/Nav.astro";
 
 const geojson = JSON.parse(readFileSync("public/sites.geojson", "utf8"));
 const siteCount = geojson.features.length;
@@ -85,6 +86,13 @@ const logoFor = (council: string): string | null => {
       }
       * {
         box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      /* The menu is sticky, so an anchored jump has to stop short of it. */
+      #downloads {
+        scroll-margin-top: 70px;
       }
       body {
         margin: 0;
@@ -202,6 +210,15 @@ const logoFor = (council: string): string | null => {
         letter-spacing: -0.01em;
         margin: 0 0 1rem;
         text-align: center;
+      }
+      .cov-note {
+        margin: -0.5rem 0 1rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      .cov-note a {
+        color: var(--accent);
       }
       .table-search {
         display: flex;
@@ -477,9 +494,18 @@ const logoFor = (council: string): string | null => {
         flex-wrap: wrap;
         gap: 0.6rem 1.5rem;
       }
+      footer .credit {
+        margin-top: 1.1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--line);
+        max-width: 320px;
+        font-size: 0.85rem;
+      }
     </style>
   </head>
   <body>
+    <Nav current="map" />
+
     <header>
       <h1>Derelict Ireland</h1>
       <p class="lede">
@@ -509,7 +535,7 @@ const logoFor = (council: string): string | null => {
     <p class="map-hint" id="map-hint">
       Tip: click a council in the table below to zoom to its sites.
     </p>
-    <div class="downloads">
+    <div class="downloads" id="downloads">
       <span class="dl-label">Download data</span>
       <button type="button" id="dl-all-csv">All sites &middot; CSV</button>
       <button type="button" id="dl-all-geojson">All sites &middot; GeoJSON</button>
@@ -517,6 +543,12 @@ const logoFor = (council: string): string | null => {
 
     <section class="coverage">
       <h2>Coverage by council</h2>
+      <p class="cov-note">
+        Registers move. See <a
+          href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/history`}
+          >what&rsquo;s changed</a
+        > for when each council last republished and what moved.
+      </p>
       <div class="table-search">
         <input
           id="council-search"
@@ -714,12 +746,20 @@ const logoFor = (council: string): string | null => {
         authorities.
       </p>
       <p class="footer-links">
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/history`}
+          >What&rsquo;s changed</a
+        >
         <a
           href="https://github.com/ACoci86/derelict-ireland/issues/new"
           target="_blank"
           rel="noopener">Report a wrong or missing site</a
         >
         <a href="https://github.com/ACoci86/derelict-ireland">View the code on GitHub</a>
+      </p>
+      <p class="credit">
+        Built by <a href="https://acoci.dev/" target="_blank" rel="noopener me"
+          >Alessio Coci</a
+        >
       </p>
     </footer>
 

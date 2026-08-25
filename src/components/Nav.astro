@@ -1,0 +1,206 @@
+---
+// Site menu, shared by every page. `current` marks the active link.
+import Icon from "./Icon.astro";
+
+interface Props {
+  current?: "map" | "history";
+}
+const { current } = Astro.props;
+
+// BASE_URL may or may not carry a trailing slash, so normalise to one form.
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<nav class="site-nav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="brand" href={`${base}/`}>
+      <Icon name="map-pin" size={18} class="brand-mark" />
+      <span>Derelict Ireland</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="nav-links"
+      aria-label="Show menu"
+    >
+      <Icon name="menu" size={20} />
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li>
+        <a href={`${base}/`} class:list={[{ active: current === "map" }]}>
+          <Icon name="map" size={15} />
+          <span>Map</span>
+        </a>
+      </li>
+      <li>
+        <a href={`${base}/history`} class:list={[{ active: current === "history" }]}>
+          <Icon name="clock" size={15} />
+          <span>What&rsquo;s changed</span>
+        </a>
+      </li>
+      <li>
+        <a href={`${base}/#downloads`}>
+          <Icon name="download" size={15} />
+          <span>Download</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/ACoci86/derelict-ireland"
+          target="_blank"
+          rel="noopener"
+        >
+          <Icon name="github" size={15} />
+          <span>GitHub</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line, #e5e5e5);
+  }
+  .nav-inner {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 52px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink, #1a1a1a);
+    text-decoration: none;
+    margin-right: auto;
+    font-size: 0.98rem;
+  }
+  .brand .icon {
+    opacity: 1;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.65rem;
+    border-radius: 7px;
+    color: var(--muted, #666);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
+  }
+  .nav-links a:hover {
+    background: #f6f2f1;
+    color: var(--ink, #1a1a1a);
+  }
+  .nav-links a.active {
+    color: var(--accent, #c0392b);
+    background: #fdeceb;
+  }
+  .nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line, #e5e5e5);
+    background: #fff;
+    border-radius: 7px;
+    padding: 0.3rem 0.45rem;
+    cursor: pointer;
+    color: var(--ink, #1a1a1a);
+  }
+
+  /* Icons are remote SVGs, so they paint in their own black; dial them back to
+     sit with the text rather than shout over it. */
+  .site-nav :global(.icon) {
+    opacity: 0.6;
+    flex: none;
+  }
+  .nav-links a:hover :global(.icon),
+  .nav-links a.active :global(.icon) {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 720px) {
+    .nav-toggle {
+      display: inline-flex;
+    }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 52px;
+      right: 1.25rem;
+      left: 1.25rem;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.15rem;
+      background: #fff;
+      border: 1px solid var(--line, #e5e5e5);
+      border-radius: 10px;
+      padding: 0.4rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.09);
+    }
+    .nav-links.open {
+      display: flex;
+    }
+    .nav-links a {
+      padding: 0.6rem 0.7rem;
+      font-size: 0.95rem;
+    }
+  }
+</style>
+
+<script>
+  // Small-screen menu. Progressive: with no JS the button simply does nothing
+  // and the links stay reachable from the footer of every page.
+  const toggle = document.querySelector(".nav-toggle") as HTMLButtonElement | null;
+  const links = document.getElementById("nav-links");
+  if (toggle && links) {
+    toggle.addEventListener("click", () => {
+      const open = links.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Hide menu" : "Show menu");
+    });
+    // Tapping outside or hitting Escape closes it again.
+    document.addEventListener("click", (e) => {
+      if (!links.classList.contains("open")) return;
+      const t = e.target as Node;
+      if (links.contains(t) || toggle.contains(t)) return;
+      links.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        links.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.focus();
+      }
+    });
+  }
+</script>

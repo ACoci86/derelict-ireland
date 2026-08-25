@@ -78,6 +78,20 @@ async function main() {
   const split = sites.length - all.length;
   if (split > 0) console.log(`split ${split} extra sites from multi-property entries`);
 
+  // A council can list the same register reference against two different
+  // properties: Louth's July 2026 register uses "DS 2023 041" twice, and Cork
+  // County repeats two Youghal refs. Ids are built from the reference, so those
+  // rows would collide in the geojson and the CSV downloads. Suffix the repeats
+  // and keep both sites, since both are real entries on the council's register.
+  const idSeen = new Map<string, number>();
+  let renamed = 0;
+  for (const s of sites) {
+    const n = (idSeen.get(s.id) ?? 0) + 1;
+    idSeen.set(s.id, n);
+    if (n > 1) { s.id = `${s.id}-${n}`; renamed++; }
+  }
+  if (renamed > 0) console.log(`suffixed ${renamed} duplicate ids from repeated register references`);
+
   // Guard against valuation parse errors: no derelict site is worth over 50m,
   // so anything above that (one Mayo entry lists ~40 trillion) is bad data.
   for (const s of sites) {
@@ -129,32 +143,35 @@ async function main() {
   // When each council last updated its OWN register at source (best-effort, not
   // when we fetched it). ArcGIS layers: editingInfo.lastEditDate; smartdublin:
   // dataset modified date; PDF/portal councils: the date stated on the register.
-  // Limerick is a publication month only (register PDF under a /2026-03/ path).
+  // Where a council dates its register only to the month (Limerick's PDF sits
+  // under a /2026-03/ path; Louth's and Monaghan's are named "July 2026"), the
+  // first of that month stands in. Cork County states no date at all, so its
+  // newest entry date is the closest honest stand-in.
   // Refresh these when you re-pull the sources.
   const SOURCE_UPDATED: Record<string, string> = {
     "Dún Laoghaire-Rathdown": "2025-06-19",
     "South Dublin": "2026-05-28",
     "Fingal": "2026-01-05",
     "Dublin City": "2026-06-24",
-    "Cork City": "2026-07-08",
-    "Cork County": "2026-06-18",
-    "Galway City": "2026-07-08",
+    "Cork City": "2026-07-22",
+    "Cork County": "2026-06-26",
+    "Galway City": "2026-08-13",
     "Limerick City and County": "2026-03-01",
-    "Wicklow": "2025-08-19",
-    "Roscommon": "2026-07-10",
+    "Wicklow": "2026-07-08",
+    "Roscommon": "2026-08-25",
     "Meath": "2026-03-30",
     "Kilkenny": "2026-03-27",
     "Offaly": "2025-10-15",
-    "Waterford": "2026-07-09",
-    "Kildare": "2026-03-20",
+    "Waterford": "2026-08-24",
+    "Kildare": "2026-07-17",
     "Mayo": "2026-03-06",
     "Tipperary": "2026-06-08",
     "Wexford": "2026-03-04",
-    "Louth": "2026-06-04",
+    "Louth": "2026-07-01",
     "Laois": "2026-07-01",
     "Westmeath": "2026-06-11",
     "Carlow": "2026-06-01",
-    "Monaghan": "2026-04-01",
+    "Monaghan": "2026-07-01",
     "Sligo": "2026-07-11",
     "Leitrim": "2026-01-01",
     "Donegal": "2026-01-01",

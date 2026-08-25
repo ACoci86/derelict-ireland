@@ -10,7 +10,7 @@ const CSV_PATH = "data/manual/galway.csv";
 const SOURCE_URL =
   "https://www.galwaycity.ie/services/housing/housing-services/vacant-and-derelict-properties/derelict-sites";
 const COUNCIL = "Galway City";
-const RETRIEVED = "2026-07-09";    // date we downloaded the PDF
+const RETRIEVED = "2026-08-25";    // date we downloaded the PDF
 
 // Irish Transverse Mercator, EPSG:2157 (same grid DLR publishes in).
 proj4.defs(

@@ -18534,5 +18534,308 @@
     "lat": "54.5178448",
     "lon": "-8.1839792",
     "type": "district"
+  },
+  "Main Street, Ringaskiddy, County Cork, Ireland": null,
+  "photon:Main Street, Ringaskiddy, County Cork, Ireland": {
+    "lat": "52.3560568",
+    "lon": "-8.6841402",
+    "type": "house"
+  },
+  "Elm Lawn, Ringaskiddy, County Cork, Ireland": null,
+  "photon:Elm Lawn, Ringaskiddy, County Cork, Ireland": {
+    "lat": "51.8854372",
+    "lon": "-8.598403",
+    "type": "street"
+  },
+  "1 Harbour View (Garage), Cobh, County Cork, Ireland": null,
+  "photon:1 Harbour View (Garage), Cobh, County Cork, Ireland": {
+    "lat": "51.8516387",
+    "lon": "-8.2871019",
+    "type": "street"
+  },
+  "1 Sanymount, Cobh, County Cork, Ireland": null,
+  "photon:1 Sanymount, Cobh, County Cork, Ireland": {
+    "lat": "51.8515936",
+    "lon": "-8.2950265",
+    "type": "street"
+  },
+  "56 South Main Street, Youghal, County Cork, Ireland": {
+    "place_id": 285226988,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 147280704,
+    "lat": "51.9521658",
+    "lon": "-7.8459899",
+    "class": "highway",
+    "type": "secondary",
+    "place_rank": 26,
+    "importance": 0.053387581445029336,
+    "addresstype": "road",
+    "name": "South Main Street",
+    "display_name": "South Main Street, Youghal Urban, The Municipal District of East Cork, County Cork, Munster, Éire / Ireland",
+    "boundingbox": [
+      "51.9513742",
+      "51.9527059",
+      "-7.8467553",
+      "-7.8454948"
+    ]
+  },
+  "57 South Main Street, Youghal, County Cork, Ireland": {
+    "place_id": 285502070,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 688042198,
+    "lat": "51.9527251",
+    "lon": "-7.8467854",
+    "class": "highway",
+    "type": "secondary",
+    "place_rank": 26,
+    "importance": 0.053387581445029336,
+    "addresstype": "road",
+    "name": "South Main Street",
+    "display_name": "South Main Street, Youghal Urban, The Municipal District of East Cork, County Cork, Munster, Éire / Ireland",
+    "boundingbox": [
+      "51.9527059",
+      "51.9527443",
+      "-7.8468155",
+      "-7.8467553"
+    ]
+  },
+  "48 North Main Street, Youghal, County Cork, Ireland": {
+    "place_id": 284810604,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 853987525,
+    "lat": "51.9546939",
+    "lon": "-7.8491503",
+    "class": "building",
+    "type": "house",
+    "place_rank": 30,
+    "importance": 0.00005424811169599477,
+    "addresstype": "building",
+    "name": "",
+    "display_name": "48, North Main Street, Youghal Urban, The Municipal District of East Cork, County Cork, Munster, P36 TA44, Éire / Ireland",
+    "boundingbox": [
+      "51.9546346",
+      "51.9547614",
+      "-7.8492816",
+      "-7.8490516"
+    ]
+  },
+  "1Clifton, Lighthouse Road, Youghal, County Cork, Ireland": null,
+  "photon:1Clifton, Lighthouse Road, Youghal, County Cork, Ireland": {
+    "lat": "51.9427974",
+    "lon": "-7.8421133",
+    "type": "house"
+  },
+  "2 Clifton, Lighthouse Road, Youghal, County Cork, Ireland": null,
+  "photon:2 Clifton, Lighthouse Road, Youghal, County Cork, Ireland": {
+    "lat": "51.9093902",
+    "lon": "-8.4531232",
+    "type": "house"
+  },
+  "137 North Main Street, Youghal, County Cork, Ireland": {
+    "place_id": 283394912,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 140388719,
+    "lat": "51.9567588",
+    "lon": "-7.8516203",
+    "class": "highway",
+    "type": "secondary",
+    "place_rank": 26,
+    "importance": 0.053387581445029336,
+    "addresstype": "road",
+    "name": "North Main Street",
+    "display_name": "North Main Street, Youghal Urban, The Municipal District of East Cork, County Cork, Munster, Éire / Ireland",
+    "boundingbox": [
+      "51.9563415",
+      "51.9571986",
+      "-7.8521318",
+      "-7.8510902"
+    ]
+  },
+  "21 Emmet Street, Fermoy, County Cork, Ireland": {
+    "place_id": 286546457,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 33104000,
+    "lat": "52.1359490",
+    "lon": "-8.2795184",
+    "class": "highway",
+    "type": "tertiary",
+    "place_rank": 26,
+    "importance": 0.0533860067139696,
+    "addresstype": "road",
+    "name": "Emmet Street",
+    "display_name": "Emmet Street, Fermoy Urban, The Municipal District of Fermoy, County Cork, Munster, Éire / Ireland",
+    "boundingbox": [
+      "52.1359195",
+      "52.1359748",
+      "-8.2814008",
+      "-8.2776388"
+    ]
+  },
+  "Jail Lane, Charleville, County Cork, Ireland": {
+    "place_id": 283343372,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 64325918,
+    "lat": "52.3527596",
+    "lon": "-8.6811788",
+    "class": "highway",
+    "type": "unclassified",
+    "place_rank": 26,
+    "importance": 0.05338188982986187,
+    "addresstype": "road",
+    "name": "Jail Lane",
+    "display_name": "Jail Lane, Rathluirc, The Municipal District of Kanturk-Mallow, County Cork, Munster, P56 N966, Éire / Ireland",
+    "boundingbox": [
+      "52.3525788",
+      "52.3528925",
+      "-8.6813484",
+      "-8.6808482"
+    ]
+  },
+  "Dispensary Lane/Mc Carthys Lane, Buttevant, County Cork, Ireland": null,
+  "photon:Dispensary Lane/Mc Carthys Lane, Buttevant, County Cork, Ireland": {
+    "lat": "51.8999583",
+    "lon": "-8.4770332",
+    "type": "house"
+  },
+  "Ballalley Tce, Buttevant, County Cork, Ireland": null,
+  "photon:Ballalley Tce, Buttevant, County Cork, Ireland": null,
+  "Archbishop Croke Place, Charleville, County Cork, Ireland": null,
+  "photon:Archbishop Croke Place, Charleville, County Cork, Ireland": {
+    "lat": "52.3478334",
+    "lon": "-8.677843",
+    "type": "street"
+  },
+  "Hazel Hill, Mallow, County Cork, Ireland": null,
+  "photon:Hazel Hill, Mallow, County Cork, Ireland": {
+    "lat": "52.1914183",
+    "lon": "-8.644388",
+    "type": "house"
+  },
+  "East Side Mill Lane, Millstreet, County Cork, Ireland": null,
+  "photon:East Side Mill Lane, Millstreet, County Cork, Ireland": {
+    "lat": "51.9129248",
+    "lon": "-8.170772",
+    "type": "house"
+  },
+  "No 1 An Faithin, Terelton, County Cork, Ireland": null,
+  "photon:No 1 An Faithin, Terelton, County Cork, Ireland": {
+    "lat": "53.2773012",
+    "lon": "-6.1748667",
+    "type": "other"
+  },
+  "No 6 An Faithin, Terelton, County Cork, Ireland": null,
+  "photon:No 6 An Faithin, Terelton, County Cork, Ireland": {
+    "lat": "54.8692195",
+    "lon": "-6.2738852",
+    "type": "house"
+  },
+  "No 8 An Faithin, Terelton, County Cork, Ireland": null,
+  "photon:No 8 An Faithin, Terelton, County Cork, Ireland": {
+    "lat": "55.1294638",
+    "lon": "-6.3284621",
+    "type": "house"
+  },
+  "No 13 An Faithin, Terelton, County Cork, Ireland": null,
+  "photon:No 13 An Faithin, Terelton, County Cork, Ireland": {
+    "lat": "55.1296784",
+    "lon": "-6.3289994",
+    "type": "house"
+  },
+  "No 16 An Faithin, Terelton, County Cork, Ireland": null,
+  "photon:No 16 An Faithin, Terelton, County Cork, Ireland": {
+    "lat": "55.1297383",
+    "lon": "-6.3292957",
+    "type": "house"
+  },
+  "Home Farm House, Clane Road, Sallins, Co. Kildare, County Kildare, Ireland": null,
+  "photon:Home Farm House, Clane Road, Sallins, Co. Kildare, County Kildare, Ireland": null,
+  "Dwelling, Main Street, Dunleer Semi detached dwelling Marsh Road, Co. Louth, County Louth, Ireland": null,
+  "photon:Dwelling, Main Street, Dunleer Semi detached dwelling Marsh Road, Co. Louth, County Louth, Ireland": null,
+  "1 Bellurgan, Co. Louth, County Louth, Ireland": {
+    "place_id": 275011695,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "relation",
+    "osm_id": 5230280,
+    "lat": "54.0279368",
+    "lon": "-6.3292065",
+    "class": "boundary",
+    "type": "administrative",
+    "place_rank": 20,
+    "importance": 0.13339451056687265,
+    "addresstype": "locality",
+    "name": "Bellurgan",
+    "display_name": "Bellurgan, Ballymascanlan ED, The Municipal District of Dundalk, County Louth, Leinster, Éire / Ireland",
+    "boundingbox": [
+      "54.0098891",
+      "54.0459402",
+      "-6.3651597",
+      "-6.2873288"
+    ]
+  },
+  "1 33 Ship St, Drogheda, A92 HKR9, Co. Louth, County Louth, Ireland": null,
+  "photon:1 33 Ship St, Drogheda, A92 HKR9, Co. Louth, County Louth, Ireland": null,
+  "9 9a & 10 Earl Street, Co. Louth, County Louth, Ireland": null,
+  "photon:9 9a & 10 Earl Street, Co. Louth, County Louth, Ireland": {
+    "lat": "54.0039019",
+    "lon": "-6.4018708",
+    "type": "street"
+  },
+  "Elm View, Drogheda St, Collon, Co. Louth, County Louth, Ireland": null,
+  "photon:Elm View, Drogheda St, Collon, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7778403",
+    "lon": "-6.4829693",
+    "type": "street"
+  },
+  "Hazel Hill, 4 Ardee Street, Collon, Co. Louth, County Louth, Ireland": null,
+  "photon:Hazel Hill, 4 Ardee Street, Collon, Co. Louth, County Louth, Ireland": null,
+  "Dwelling, Ardee Street, Collon, Co. Louth, County Louth, Ireland": null,
+  "photon:Dwelling, Ardee Street, Collon, Co. Louth, County Louth, Ireland": {
+    "lat": "53.7820371",
+    "lon": "-6.4889947",
+    "type": "locality"
+  },
+  "1 Old Cross Square, Monaghan H1W2738, County Monaghan, Ireland": null,
+  "photon:1 Old Cross Square, Monaghan H1W2738, County Monaghan, Ireland": {
+    "lat": "54.2465759",
+    "lon": "-6.9652631",
+    "type": "street"
+  },
+  "35 O’Neill Park, Clones, Co. Monaghan H23, County Monaghan, Ireland": null,
+  "photon:35 O’Neill Park, Clones, Co. Monaghan H23, County Monaghan, Ireland": {
+    "lat": "54.1831918",
+    "lon": "-7.2354822",
+    "type": "locality"
+  },
+  "Assembly Rooms, Dawson St, Monaghan, County Monaghan, Ireland": null,
+  "photon:Assembly Rooms, Dawson St, Monaghan, County Monaghan, Ireland": {
+    "lat": "54.2463841",
+    "lon": "-6.9696316",
+    "type": "house"
+  },
+  "Unfinished Apartment Block along with Associated Underground and Overground Car Parking Levels, Magheross, Riverside Road, Carrickmacross, Co. Monaghan, County Monaghan, Ireland": null,
+  "photon:Unfinished Apartment Block along with Associated Underground and Overground Car Parking Levels, Magheross, Riverside Road, Carrickmacross, Co. Monaghan, County Monaghan, Ireland": null,
+  "17 Market Street, Monaghan, Co H18 Monaghan, County Monaghan, Ireland": null,
+  "photon:17 Market Street, Monaghan, Co H18 Monaghan, County Monaghan, Ireland": {
+    "lat": "54.2475137",
+    "lon": "-6.9717154",
+    "type": "house"
+  },
+  "Clonedergole, Clones, Co. Monaghan H23, County Monaghan, Ireland": null,
+  "photon:Clonedergole, Clones, Co. Monaghan H23, County Monaghan, Ireland": {
+    "lat": "54.1795034",
+    "lon": "-7.2529616",
+    "type": "locality"
+  },
+  "Woodbury, Corlattan, Threemilehouse, H18 Co. Monaghan, County Monaghan, Ireland": null,
+  "photon:Woodbury, Corlattan, Threemilehouse, H18 Co. Monaghan, County Monaghan, Ireland": {
+    "lat": "54.2403108",
+    "lon": "-6.939273",
+    "type": "locality"
   }
 }

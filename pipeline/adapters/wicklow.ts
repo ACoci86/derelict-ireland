@@ -17,7 +17,7 @@ const RAW_DIR = "data/raw/wicklow";
 const SOURCE_URL =
   "https://www.wicklow.ie/Living/Services/Planning/Derelict-Vacant-Sites/Derelict-Sites";
 const COUNCIL = "Wicklow";
-const RETRIEVED = "2026-07-10";    // date we downloaded the register PDF
+const RETRIEVED = "2026-08-25";    // date we downloaded the register PDF
 
 // The register prints "DS/113"; the ArcGIS layer stores "DS113". Strip anything
 // that isn't a letter or digit so the two line up.
@@ -37,7 +37,11 @@ async function fetchCoords(): Promise<Map<string, [number, number]>> {
   const text = await resp.text();
 
   mkdirSync(RAW_DIR, { recursive: true });
-  writeFileSync(`${RAW_DIR}/${RETRIEVED}.geojson`, text);
+  // Archive one dated copy per run. The name has to be the date this ran,
+  // not a constant: a fixed name silently overwrites the previous snapshot,
+  // which leaves the archive claiming data it no longer holds.
+  const today = new Date().toISOString().slice(0, 10);
+  writeFileSync(`${RAW_DIR}/${today}.geojson`, text);
 
   const data = JSON.parse(text) as {
     features: { properties: { Derelict?: string }; geometry: { type: string; coordinates: number[][][] } | null }[];
@@ -82,6 +86,7 @@ export async function load(): Promise<Site[]> {
       council: COUNCIL,
       address: row.address?.trim() || `Wicklow, register ref ${ref}`,
       register_ref: ref,
+      eircode: row.eircode?.trim() || null,
       date_entered: row.date_entered?.trim() || null,
       valuation: Number.isFinite(valuation) && valuation > 0 ? valuation : null,
       lat,

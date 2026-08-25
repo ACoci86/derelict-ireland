@@ -1,0 +1,27 @@
+---
+// Feather icons (MIT, https://github.com/feathericons/feather), hotlinked from
+// GitHub at a pinned tag so the set cannot shift under a moving branch.
+// raw.githubusercontent.com serves these as image/svg+xml with an open
+// Access-Control-Allow-Origin, so they render in a plain <img>.
+//
+// They are decorative: every icon sits beside its own text label, so a failed
+// load costs nothing but the glyph. alt="" keeps them out of the accessibility
+// tree rather than having screen readers announce a filename.
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+}
+const { name, size = 16, class: cls = "" } = Astro.props;
+const ICONS = "https://raw.githubusercontent.com/feathericons/feather/v4.29.2/icons";
+---
+
+<img
+  src={`${ICONS}/${name}.svg`}
+  width={size}
+  height={size}
+  alt=""
+  aria-hidden="true"
+  class={`icon ${cls}`.trim()}
+  decoding="async"
+/>

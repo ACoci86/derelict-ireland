@@ -1,19 +1,30 @@
 // One-time converter: Wicklow County Council publishes its Derelict Sites
-// Register as a PDF (currently just two sites, both in Baltinglass). The PDF
-// carries no coordinates, those come separately from the council's ArcGIS
-// layer and are joined in the adapter on the reference number. This scrapes
-// ref + address + date + valuation into a committed CSV.
+// Register as a PDF. The PDF carries no coordinates, those come separately from
+// the council's ArcGIS layer and are joined in the adapter on the reference
+// number. This scrapes ref + address + eircode + date + valuation into a
+// committed CSV. The register's Owner column is personal data and is never read.
 //
-// The PDF is committed at data/manual/wicklow.pdf because wicklow.ie sits behind
-// a WAF that 404s plain scripted requests; it was downloaded in a browser
-// session from the "Derelict Sites" page:
-//   https://www.wicklow.ie/Living/Services/Planning/Derelict-Vacant-Sites/Derelict-Sites
-// Re-run after replacing that PDF:  npx tsx pipeline/manual/wicklow_convert.ts
+// wicklow.ie sits behind a WAF that 404s a bare scripted request, but it serves
+// the file to a request that carries a browser user agent AND a Referer from the
+// register page, which is what the fetch below sends. The PDF is still committed
+// at data/manual/wicklow.pdf so a run works if the WAF tightens again.
+// Re-run when the register changes:  npx tsx pipeline/manual/wicklow_convert.ts
 import { writeFileSync } from "node:fs";
 import { execSync } from "node:child_process";
 
+const PAGE_URL = "https://www.wicklow.ie/Living/Services/Planning/Derelict-Vacant-Sites/Derelict-Sites";
+const PDF_URL =
+  "https://www.wicklow.ie/Portals/0/adam/Documents/c92_sV08yUmlmhureE6YIQ/Link/" +
+  "Derelict%20Site%20Register%20at%208th%20July%202026.pdf";
 const PDF_PATH = "data/manual/wicklow.pdf";
 const CSV_OUT = "data/manual/wicklow.csv";
+const UA = "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0";
+
+// "Y14Y281" and "Y14 Y281" both appear; normalise to the spaced form.
+function eircode(s: string): string {
+  const m = (s ?? "").toUpperCase().match(/\b([A-Z]\d{2})\s?([A-Z0-9]{4})\b/);
+  return m ? `${m[1]} ${m[2]}` : "";
+}
 
 // "15/12/2016" -> "2016-12-15". "" if no date on the line.
 function iso(line: string): string {
@@ -21,7 +32,20 @@ function iso(line: string): string {
   return m ? `${m[3]}-${m[2]}-${m[1]}` : "";
 }
 
-function main() {
+async function main() {
+  // Refresh the committed PDF when the council's server will hand it over; keep
+  // the committed copy and carry on if it will not.
+  try {
+    const resp = await fetch(PDF_URL, { headers: { "User-Agent": UA, Referer: PAGE_URL } });
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const buf = Buffer.from(await resp.arrayBuffer());
+    if (buf.subarray(0, 4).toString() !== "%PDF") throw new Error("not a PDF");
+    writeFileSync(PDF_PATH, buf);
+    console.log(`downloaded ${buf.length} bytes to ${PDF_PATH}`);
+  } catch (e) {
+    console.log(`could not download the register (${e}); using the committed ${PDF_PATH}`);
+  }
+
   const text = execSync(`pdftotext -layout "${PDF_PATH}" -`, { encoding: "utf8" });
   const lines = text.split("\n");
 
@@ -50,7 +74,14 @@ function main() {
     // "Date entered on Register"; the second (if any) is the valuation date.
     const val = first.match(/€\s?([\d,]+)/);
 
-    out.push([ref, address, iso(first), val ? val[1].replace(/,/g, "") : ""]);
+    // Newer entries carry the eircode on its own wrapped line, so lift it out of
+    // the address rather than leaving it glued on the end.
+    const eir = eircode(address);
+    const addr = eir
+      ? address.replace(/\b[A-Z]\d{2}\s?[A-Z0-9]{4}\b/i, "").replace(/[\s,]+$/, "").trim()
+      : address;
+
+    out.push([ref, addr, eir, iso(first), val ? val[1].replace(/,/g, "") : ""]);
     block = [];
   };
 
@@ -62,7 +93,7 @@ function main() {
   }
   flush();
 
-  const header = "ref,address,date_entered,valuation";
+  const header = "ref,address,eircode,date_entered,valuation";
   const rows = out.map((r) => r.map((v) => `"${v.replace(/"/g, '""')}"`).join(","));
   writeFileSync(CSV_OUT, [header, ...rows].join("\n") + "\n");
   console.log(`wrote ${out.length} rows to ${CSV_OUT}`);

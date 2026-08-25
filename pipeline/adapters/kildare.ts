@@ -10,7 +10,7 @@ const CSV_PATH = "data/manual/kildare.csv";
 const SOURCE_URL = "https://kildarecoco.ie/AllServices/Housing/DerelictSites/";
 const COUNCIL = "Kildare";
 // The date we converted the PDF. Bump this when re-running kildare_convert.ts.
-const RETRIEVED = "2026-07-10";
+const RETRIEVED = "2026-08-25";
 
 export async function load(): Promise<Site[]> {
   const rows = parse(readFileSync(CSV_PATH, "utf8"), {

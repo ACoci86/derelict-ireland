@@ -11,8 +11,8 @@ import { writeFileSync } from "node:fs";
 import { execSync } from "node:child_process";
 
 const PDF_URL =
-  "https://monaghan.ie/planning/wp-content/uploads/sites/4/2026/05/" +
-  "Derelict-Sites-Online-Register-April-2026.pdf";
+  "https://monaghan.ie/planning/wp-content/uploads/sites/4/2026/07/" +
+  "Derelict-Sites-Online-Register-July-2026.pdf";
 const PDF_TMP = "data/manual/monaghan.pdf";
 const CSV_OUT = "data/manual/monaghan.csv";
 const UA = "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0";
