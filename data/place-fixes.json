@@ -1,0 +1,404 @@
+{
+ "_about": "Sites the pipeline's fuzzy geocoder (Photon) put far from the town or townland their address names. Each is moved to that place and marked as placed to the town only. Generated with the same town check the pipeline now runs (pipeline/geocode.ts, townCheck); applied by scripts/prepare-data.mjs until the pipeline output includes the fix.",
+ "fixes": [
+  {
+   "id": "carlow-ds147",
+   "address": "17 Pairc Mhuire Bagenalstown Co. Carlow, Muinebheag",
+   "lat": 52.701827,
+   "lon": -6.956662,
+   "note": "geocoded 19.0 km from Muinebheag; placed at Muinebheag instead"
+  },
+  {
+   "id": "cork-co-BK-DS-10",
+   "address": "Well Rd/Casement Rd, Bandon",
+   "lat": 51.746171,
+   "lon": -8.73693,
+   "note": "geocoded 23.5 km from Bandon; placed at Bandon instead"
+  },
+  {
+   "id": "cork-co-CMD-DS-01",
+   "address": "Main Street, Ringaskiddy",
+   "lat": 51.830235,
+   "lon": -8.32077,
+   "note": "geocoded 63.5 km from Ringaskiddy; placed at Ringaskiddy instead"
+  },
+  {
+   "id": "cork-co-CMD-DS-03",
+   "address": "Elm Lawn, Ringaskiddy",
+   "lat": 51.830235,
+   "lon": -8.32077,
+   "note": "geocoded 20.0 km from Ringaskiddy; placed at Ringaskiddy instead"
+  },
+  {
+   "id": "cork-co-CMD-DS-05",
+   "address": "The Old School House, Ringaskiddy",
+   "lat": 51.830235,
+   "lon": -8.32077,
+   "note": "geocoded 97.5 km from Ringaskiddy; placed at Ringaskiddy instead"
+  },
+  {
+   "id": "cork-co-ECMD-DS-01",
+   "address": "1. McCurtainstown  (Kincora Terrace), Youghal",
+   "lat": 51.949474,
+   "lon": -7.843189,
+   "note": "geocoded 42.1 km from Youghal; placed at Youghal instead"
+  },
+  {
+   "id": "cork-co-ECMD-DS-08",
+   "address": "2 Clifton, Lighthouse Road, Youghal",
+   "lat": 51.949474,
+   "lon": -7.843189,
+   "note": "geocoded 42.1 km from Youghal; placed at Youghal instead"
+  },
+  {
+   "id": "cork-co-FMD-DS-04",
+   "address": "Presentation Convent, Convent Hill, Mitchelstown",
+   "lat": 52.259515,
+   "lon": -8.237844,
+   "note": "geocoded 66.6 km from Mitchelstown; placed at Mitchelstown instead"
+  },
+  {
+   "id": "cork-co-FMD-DS-10",
+   "address": "24 St Bernards Place, Fermoy",
+   "lat": 52.138167,
+   "lon": -8.275223,
+   "note": "geocoded 16.8 km from Fermoy; placed at Fermoy instead"
+  },
+  {
+   "id": "cork-co-FMD-DS-14",
+   "address": "12 Casement Row, Fermoy",
+   "lat": 52.138167,
+   "lon": -8.275223,
+   "note": "geocoded 32.0 km from Fermoy; placed at Fermoy instead"
+  },
+  {
+   "id": "cork-co-KMMD-DS-11",
+   "address": "Dispensary Lane/Mc Carthys Lane, Buttevant",
+   "lat": 52.23317,
+   "lon": -8.670494,
+   "note": "geocoded 39.4 km from Buttevant; placed at Buttevant instead"
+  },
+  {
+   "id": "cork-co-KMMD-DS-18",
+   "address": "27 Ballydaheen West, Mallow",
+   "lat": 52.137385,
+   "lon": -8.645033,
+   "note": "geocoded 25.9 km from Mallow; placed at Mallow instead"
+  },
+  {
+   "id": "cork-co-KMMD-DS-20",
+   "address": "4 Ballydaheen West, Mallow",
+   "lat": 52.137385,
+   "lon": -8.645033,
+   "note": "geocoded 25.9 km from Mallow; placed at Mallow instead"
+  },
+  {
+   "id": "cork-co-KMMD-DS-29",
+   "address": "No. 2 Greenane Lower, Kanturk",
+   "lat": 52.187685,
+   "lon": -8.92057,
+   "note": "geocoded 20.6 km from Kanturk; placed at Kanturk instead"
+  },
+  {
+   "id": "cork-co-KMMD-DS-30",
+   "address": "4 Greenane Street Upper, Kanturk",
+   "lat": 52.187685,
+   "lon": -8.92057,
+   "note": "geocoded 19.6 km from Kanturk; placed at Kanturk instead"
+  },
+  {
+   "id": "cork-co-KMMD-DS-39",
+   "address": "East End, Knocknagree",
+   "lat": 52.122282,
+   "lon": -9.207647,
+   "note": "geocoded 8.8 km from Knocknagree; placed at Knocknagree instead"
+  },
+  {
+   "id": "cork-co-KMMD-DS-54",
+   "address": "Hazel Hill, Mallow",
+   "lat": 52.137385,
+   "lon": -8.645033,
+   "note": "geocoded 6.0 km from Mallow; placed at Mallow instead"
+  },
+  {
+   "id": "cork-co-MMD-DS-03",
+   "address": "East Side Mill Lane, Millstreet",
+   "lat": 52.060231,
+   "lon": -9.064011,
+   "note": "geocoded 63.4 km from Millstreet; placed at Millstreet instead"
+  },
+  {
+   "id": "donegal-ds-77-78-i",
+   "address": "Carrowreagh, Bridgend, Co. Donegal",
+   "lat": 55.024915,
+   "lon": -7.414413,
+   "note": "geocoded 18.2 km from Carrowreagh; placed at Carrowreagh instead"
+  },
+  {
+   "id": "fingal-DS-22.03",
+   "address": "3 Seaview Avenue, Baldoyle, Co Dublin",
+   "lat": 53.39583,
+   "lon": -6.12855,
+   "note": "geocoded 8.4 km from Baldoyle; placed at Baldoyle instead"
+  },
+  {
+   "id": "limerick-DS-019-24",
+   "address": "Upper Main Street, Rathkeale, Co. Limerick",
+   "lat": 52.523612,
+   "lon": -8.937737,
+   "note": "geocoded 14.0 km from Rathkeale; placed at Rathkeale instead"
+  },
+  {
+   "id": "limerick-DS-022-24",
+   "address": "4 Main Street, Bruree, Limerick",
+   "lat": 52.424339,
+   "lon": -8.660582,
+   "note": "geocoded 26.4 km from Bruree; placed at Bruree instead"
+  },
+  {
+   "id": "limerick-DS-025-25",
+   "address": "Cuirt na hAbhainn, Clarina, Co. Limerick",
+   "lat": 52.616541,
+   "lon": -8.739987,
+   "note": "geocoded 7.8 km from Clarina; placed at Clarina instead"
+  },
+  {
+   "id": "limerick-DS-071-25",
+   "address": "8 Nicker Street, Pallasgreen, Co. Limerick",
+   "lat": 52.567953,
+   "lon": -8.33797,
+   "note": "geocoded 11.5 km from Pallasgreen; placed at Pallasgreen instead"
+  },
+  {
+   "id": "mayo-ds15-36",
+   "address": "St. Ita's Terrace, Swinford, Co Mayo",
+   "lat": 53.943516,
+   "lon": -8.949812,
+   "note": "geocoded 28.2 km from Swinford; placed at Swinford instead"
+  },
+  {
+   "id": "mayo-ds18-26",
+   "address": "Clare Road, Ballyhaunis, Co Mayo",
+   "lat": 53.763359,
+   "lon": -8.765153,
+   "note": "geocoded 15.5 km from Ballyhaunis; placed at Ballyhaunis instead"
+  },
+  {
+   "id": "mayo-ds19-33",
+   "address": "Adjacent to Town Hall, Claremorris, Co Mayo",
+   "lat": 53.71973,
+   "lon": -8.998786,
+   "note": "geocoded 18.5 km from Claremorris; placed at Claremorris instead"
+  },
+  {
+   "id": "mayo-ds2024-14",
+   "address": "Ballina Road, Swinford, Co Mayo F12 T289",
+   "lat": 53.943516,
+   "lon": -8.949812,
+   "note": "geocoded 25.6 km from Swinford; placed at Swinford instead"
+  },
+  {
+   "id": "mayo-ds2024-26",
+   "address": "Derelict Estate, Barrack Road, Foxford, Co Mayo",
+   "lat": 53.983333,
+   "lon": -9.116667,
+   "note": "geocoded 8.6 km from Foxford; placed at Foxford instead"
+  },
+  {
+   "id": "mayo-ds40-128",
+   "address": "2 Nally Street, Ballina, Co Mayo",
+   "lat": 54.114336,
+   "lon": -9.15321,
+   "note": "geocoded 10.7 km from Ballina; placed at Ballina instead"
+  },
+  {
+   "id": "mayo-ds40-174",
+   "address": "20 Healy Terrace, Ballina, Co Mayo",
+   "lat": 54.114336,
+   "lon": -9.15321,
+   "note": "geocoded 23.1 km from Ballina; placed at Ballina instead"
+  },
+  {
+   "id": "mayo-ds40-175",
+   "address": "16 Healy Terrace, Ballina, Co Mayo",
+   "lat": 54.114336,
+   "lon": -9.15321,
+   "note": "geocoded 23.1 km from Ballina; placed at Ballina instead"
+  },
+  {
+   "id": "mayo-ds42-06",
+   "address": "Main Street, Balla, Co Mayo F23 H429",
+   "lat": 53.804574,
+   "lon": -9.130621,
+   "note": "geocoded 12.4 km from Balla; placed at Balla instead"
+  },
+  {
+   "id": "mayo-ds42-08",
+   "address": "Main Street, Balla, Co Mayo F23 YH30",
+   "lat": 53.804574,
+   "lon": -9.130621,
+   "note": "geocoded 12.4 km from Balla; placed at Balla instead"
+  },
+  {
+   "id": "monaghan-dsn-17-24",
+   "address": "Main Street, Newbliss, Co. Monaghan H18",
+   "lat": 54.157845,
+   "lon": -7.136582,
+   "note": "geocoded 14.7 km from Newbliss; placed at Newbliss instead"
+  },
+  {
+   "id": "sligo-ds-003",
+   "address": "The Angler's Rest, Ballinafad, Co Sligo",
+   "lat": 54.027269,
+   "lon": -8.334346,
+   "note": "geocoded 5.2 km from Ballinafad; placed at Ballinafad instead"
+  },
+  {
+   "id": "sligo-ds-160",
+   "address": "18, Connolly Park, Tubbercurry, Co. Sligo",
+   "lat": 54.05393,
+   "lon": -8.730565,
+   "note": "geocoded 29.1 km from Tubbercurry; placed at Tubbercurry instead"
+  },
+  {
+   "id": "sligo-ds-176",
+   "address": "The Mill Apartments, Ballisodare, Co. Sligo",
+   "lat": 54.209888,
+   "lon": -8.509265,
+   "note": "geocoded 7.4 km from Ballisodare; placed at Ballisodare instead"
+  },
+  {
+   "id": "tipperary-env-c-18-18",
+   "address": "10 Lowergate, Cashel, Co Tipperary",
+   "lat": 52.516748,
+   "lon": -7.887931,
+   "note": "geocoded 19.1 km from Cashel; placed at Cashel instead"
+  },
+  {
+   "id": "tipperary-env-c-21-15",
+   "address": "5 Kavanagh Place, Thurles, Co. Tipperary",
+   "lat": 52.680155,
+   "lon": -7.815101,
+   "note": "geocoded 24.5 km from Thurles; placed at Thurles instead"
+  },
+  {
+   "id": "tipperary-env-c-22-23",
+   "address": "Tipperary Road, Cappawhite E34 X409",
+   "lat": 52.581677,
+   "lon": -8.166136,
+   "note": "geocoded 11.6 km from Cappawhite; placed at Cappawhite instead"
+  },
+  {
+   "id": "tipperary-trt-26-014",
+   "address": "Main Street Upper, Cappawhite, Co. Tipperary",
+   "lat": 52.581677,
+   "lon": -8.166136,
+   "note": "geocoded 12.0 km from Cappawhite; placed at Cappawhite instead"
+  },
+  {
+   "id": "tipperary-trt-26-016",
+   "address": "Main Street Upper, Cappawhite, Co. Tipperary",
+   "lat": 52.581677,
+   "lon": -8.166136,
+   "note": "geocoded 12.0 km from Cappawhite; placed at Cappawhite instead"
+  },
+  {
+   "id": "westmeath-1",
+   "address": "Williamstown, Balykeeran, Athlone, Co. Westmeath",
+   "lat": 53.422843,
+   "lon": -7.94259,
+   "note": "geocoded 9.3 km from Athlone; placed at Athlone instead"
+  },
+  {
+   "id": "westmeath-101",
+   "address": "Ballynacarrigy Road, Kildallan, Co. Westmeath",
+   "lat": 53.554907,
+   "lon": -7.47122,
+   "note": "geocoded 5.4 km from Kildallan; placed at Kildallan instead"
+  },
+  {
+   "id": "westmeath-146",
+   "address": "Mullingar Road, Kilbeggan, Co. Westmeath",
+   "lat": 53.368141,
+   "lon": -7.497979,
+   "note": "geocoded 15.8 km from Kilbeggan; placed at Kilbeggan instead"
+  },
+  {
+   "id": "westmeath-305",
+   "address": "1 Trim Rd, Kinnegad, Co. Westmeath",
+   "lat": 53.454815,
+   "lon": -7.101195,
+   "note": "geocoded 17.9 km from Kinnegad; placed at Kinnegad instead"
+  },
+  {
+   "id": "westmeath-306",
+   "address": "2 Trim Rd, Kinnegad, Co. Westmeath",
+   "lat": 53.454815,
+   "lon": -7.101195,
+   "note": "geocoded 17.6 km from Kinnegad; placed at Kinnegad instead"
+  },
+  {
+   "id": "westmeath-332",
+   "address": "Railway Tce, Mullingar, Co. Westmeath",
+   "lat": 53.525822,
+   "lon": -7.341304,
+   "note": "geocoded 24.8 km from Mullingar; placed at Mullingar instead"
+  },
+  {
+   "id": "westmeath-637",
+   "address": "Mullingar Road, Kilbeggan, Co. Westmeath",
+   "lat": 53.368141,
+   "lon": -7.497979,
+   "note": "geocoded 15.8 km from Kilbeggan; placed at Kilbeggan instead"
+  },
+  {
+   "id": "westmeath-73",
+   "address": "Tanyard, Kinnegad, Co. Westmeath",
+   "lat": 53.454815,
+   "lon": -7.101195,
+   "note": "geocoded 17.6 km from Kinnegad; placed at Kinnegad instead"
+  },
+  {
+   "id": "westmeath-754",
+   "address": "The Bungalow, Mullingar Rd, Kinnegad N91 AX21, Co. Westmeath",
+   "lat": 53.454815,
+   "lon": -7.101195,
+   "note": "geocoded 18.5 km from Kinnegad; placed at Kinnegad instead"
+  },
+  {
+   "id": "wexford-der2016-006",
+   "address": "Cobblers Cottage, Main Street, Coolgreany, Co. Wexford",
+   "lat": 52.764107,
+   "lon": -6.237067,
+   "note": "geocoded 76.7 km from Coolgreany; placed at Coolgreany instead"
+  },
+  {
+   "id": "wexford-der2020-040",
+   "address": "The Old Dispensary, Ballyedmond Village, Co. Wexford",
+   "lat": 52.552895,
+   "lon": -6.340688,
+   "note": "geocoded 14.9 km from Ballyedmond; placed at Ballyedmond instead"
+  },
+  {
+   "id": "wexford-der2023-130",
+   "address": "Old Court House, Gorey, Co. Wexford",
+   "lat": 52.676135,
+   "lon": -6.292752,
+   "note": "geocoded 39.4 km from Gorey; placed at Gorey instead"
+  },
+  {
+   "id": "wexford-der2023-133",
+   "address": "Castle Ellis, The Ballagh, Co. Wexford",
+   "lat": 52.470451,
+   "lon": -6.396557,
+   "note": "geocoded 31.8 km from Castle Ellis; placed at Castle Ellis instead"
+  },
+  {
+   "id": "wexford-der2024-060",
+   "address": "Wilmslow, The Avenue, Gorey, Co. Wexford",
+   "lat": 52.676135,
+   "lon": -6.292752,
+   "note": "geocoded 6.8 km from Gorey; placed at Gorey instead"
+  }
+ ]
+}

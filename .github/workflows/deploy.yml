@@ -35,6 +35,9 @@ jobs:
 
       - name: Build site
         run: npm run build
+        env:
+          # Makes the sharing-preview image address absolute (WhatsApp, X, LinkedIn need that).
+          SITE_URL: https://acoci86.github.io/derelict-ireland/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
