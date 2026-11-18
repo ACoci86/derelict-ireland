@@ -492,10 +492,10 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
   // drag hint, which fades out again by itself.
   function stageIn() {
     const steps = [
-      ["pre-labels", 900],
-      ["pre-ui", 1500],
-      ["pre-lens", 2100],
-      ["pre-hint", 2900],
+      ["pre-labels", 300],
+      ["pre-ui", 650],
+      ["pre-lens", 1000],
+      ["pre-hint", 1600],
     ];
     if (reducedMotion()) {
       for (const [c] of steps) container.classList.remove(c);
@@ -621,10 +621,43 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
     lens.src = projection.invert([lens.sx, lens.sy]);
     lensSrc.attr("transform", `translate(${lens.sx},${lens.sy})`);
     lensMag.attr("transform", `scale(${lens.k}) translate(${-lens.sx},${-lens.sy})`);
-    lensLabels.attr("transform", (d) => `translate(${(d.p[0] - lens.sx) * lens.k},${(d.p[1] - lens.sy) * lens.k})`);
+    placeLensLabels();
     updateLinks();
     if (!titleRaf) titleRaf = requestAnimationFrame(updateLensTitle);
   }
+
+  // Council names inside the lens sit on their council, but a name near the
+  // rim would be cut by the circle ("OUTH DUBLIN"). Nudge it inward (across,
+  // and a little towards the middle) just far enough to fit; if it would have
+  // to go well off its council, hide it instead.
+  const LABEL_PAD = 8;
+  const LABEL_HALF_H = 6; // 10px capitals, around the baseline
+  const LABEL_MAX_DY = 18;
+  function placeLensLabels() {
+    const R = lens.r - LABEL_PAD;
+    lensLabels.each(function (d) {
+      d.w ??= this.getComputedTextLength();
+      const x = (d.p[0] - lens.sx) * lens.k;
+      const y = (d.p[1] - lens.sy) * lens.k;
+      const outside = Math.abs(y - LABEL_HALF_H / 2) - LABEL_HALF_H > lens.r || Math.abs(x) - d.w / 2 > lens.r;
+      let spot = null;
+      for (let dy = 0; dy <= LABEL_MAX_DY && !spot; dy += 2) {
+        const ty = y - Math.sign(y - LABEL_HALF_H / 2) * dy;
+        const mid = ty - LABEL_HALF_H / 2;
+        const room = Math.sqrt(Math.max(0, R * R - (Math.abs(mid) + LABEL_HALF_H) ** 2)) - d.w / 2;
+        const tx = Math.max(-room, Math.min(room, x));
+        if (room > 0 && Math.abs(tx - x) <= d.w * 0.45) spot = [tx, ty];
+      }
+      const [tx, ty] = spot ?? [x, y];
+      this.setAttribute("transform", `translate(${tx},${ty})`);
+      this.style.visibility = spot || outside ? "" : "hidden";
+    });
+  }
+  // Text widths change once the web font arrives.
+  document.fonts?.ready.then(() => {
+    lensLabels?.each((d) => (d.w = undefined));
+    if (lensLabels) placeLensLabels();
+  });
 
   function setLensBody(x, y) {
     lens.cx = clampTo(x, lens.r * 0.5, L.W - lens.r * 0.5);
@@ -819,7 +852,7 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
     }
     const animate = mode !== "instant" && !reducedMotion();
     // Sweep in from west to east, like the registers being switched on.
-    const span = !animate ? 0 : mode === "intro" ? 1400 : Math.min(700, 120 + appear.length * 2);
+    const span = !animate ? 0 : mode === "intro" ? 800 : Math.min(700, 120 + appear.length * 2);
     const xs = appear.map((el) => (el.__data__.s ?? el.__data__).x);
     const [x0, x1] = d3.extent(xs);
     const tween = (to) =>

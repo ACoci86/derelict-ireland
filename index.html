@@ -34,6 +34,10 @@
       href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@1&family=Cookie&display=swap"
       rel="stylesheet"
     />
+    <!-- The map's data: fetched while the script downloads, not after it. -->
+    <link rel="preload" href="/data/base.json" as="fetch" crossorigin />
+    <link rel="preload" href="/data/sites.json" as="fetch" crossorigin />
+    <link rel="preload" href="/data/summary.json" as="fetch" crossorigin />
     <link rel="stylesheet" href="/src/style.css" />
     <link rel="stylesheet" href="/src/story.css" />
   </head>

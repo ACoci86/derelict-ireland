@@ -14,6 +14,10 @@ const [base, siteData, summary] = await Promise.all([
   getJSON("sites.json"),
   getJSON("summary.json"),
 ]);
+// Let the page paint once (header, headline, the map's sea) before the map is
+// built: on a slow phone the build is a long task, and the data now arrives
+// early enough that it would otherwise hold up the very first paint.
+await new Promise((r) => requestAnimationFrame(() => setTimeout(r, 0)));
 
 const sites = siteData.rows.map(([lon, lat, ci, v, date, addr, ref, p], i) => ({
   i,
@@ -276,49 +280,75 @@ for (const mark of document.querySelectorAll(".mark")) {
 }
 
 // ---------- The essay ----------
-// Lines quoted from the registers, and inline links that name one site.
-registerLines(document, { sites, onSite: showSite });
-
-yearDots(document.getElementById("chart-years"), sites, {
-  onSite: showSite,
-  ui: {
-    root: document.getElementById("fig-years"),
-    show: document.getElementById("guess-show"),
-    skip: document.getElementById("guess-skip"),
-    result: document.querySelector("#fig-years .guess-result"),
-    pick: document.getElementById("guess-pick"),
-    select: document.getElementById("years-filter"),
+// Everything below the map is built after the map has painted, one piece per
+// task, so none of it holds the map back or stalls its opening animation.
+const essay = [
+  // Lines quoted from the registers, and inline links that name one site.
+  () => registerLines(document, { sites, onSite: showSite }),
+  () =>
+    yearDots(document.getElementById("chart-years"), sites, {
+      onSite: showSite,
+      ui: {
+        root: document.getElementById("fig-years"),
+        show: document.getElementById("guess-show"),
+        skip: document.getElementById("guess-skip"),
+        result: document.querySelector("#fig-years .guess-result"),
+        pick: document.getElementById("guess-pick"),
+        select: document.getElementById("years-filter"),
+      },
+    }),
+  () =>
+    councilDots(document.getElementById("chart-councils"), {
+      sites,
+      councils: summary.councils,
+      offline: summary.unpublishedSources,
+      sorterEl: document.querySelector("#fig-councils .sorter"),
+      onPick: showCouncil,
+      onSite: showSite,
+    }),
+  () =>
+    valueDots(document.getElementById("chart-values"), sites, {
+      onSite: showSite,
+      levy: { say: document.getElementById("levy-say"), foot: document.getElementById("levy-foot") },
+    }),
+  () => offlineMap(document.getElementById("offline-map"), { base, sites, offline: summary.unpublishedSources }),
+  () => {
+    const puller = linePuller(document.getElementById("puller"), { sites, onSite: showSite });
+    councilPicker(document.getElementById("council-pick"), { sites, summary, onShow: showCouncil, onChange: puller.setCouncil });
+    onceVisible(document.getElementById("puller"), puller.start, 0.2);
   },
-});
-councilDots(document.getElementById("chart-councils"), {
-  sites,
-  councils: summary.councils,
-  offline: summary.unpublishedSources,
-  sorterEl: document.querySelector("#fig-councils .sorter"),
-  onPick: showCouncil,
-  onSite: showSite,
-});
-valueDots(document.getElementById("chart-values"), sites, {
-  onSite: showSite,
-  levy: { say: document.getElementById("levy-say"), foot: document.getElementById("levy-foot") },
-});
-offlineMap(document.getElementById("offline-map"), { base, sites, offline: summary.unpublishedSources });
-const puller = linePuller(document.getElementById("puller"), { sites, onSite: showSite });
-councilPicker(document.getElementById("council-pick"), { sites, summary, onShow: showCouncil, onChange: puller.setCouncil });
-onceVisible(document.getElementById("puller"), puller.start, 0.2);
-councilMultiples(document.getElementById("chart-multiples"), {
-  base,
-  sites,
-  councils: summary.councils,
-  offline: summary.unpublishedSources,
-  onPick: showCouncil,
-});
-
-// The night map lights up, and the council shapes fade in one after another,
-// when they scroll into view (only where motion is welcome).
-if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("motion");
-document.querySelectorAll("#chart-multiples .mult").forEach((m, i) => (m.style.transitionDelay = `${i * 30}ms`));
-for (const id of ["offline-map", "fig-multiples"]) {
-  const el = document.getElementById(id);
-  onceVisible(el, () => el.classList.add("is-in"), 0.15);
-}
+  () =>
+    councilMultiples(document.getElementById("chart-multiples"), {
+      base,
+      sites,
+      councils: summary.councils,
+      offline: summary.unpublishedSources,
+      onPick: showCouncil,
+    }),
+  // The night map lights up, and the council shapes fade in one after another,
+  // when they scroll into view (only where motion is welcome).
+  () => {
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("motion");
+    document.querySelectorAll("#chart-multiples .mult").forEach((m, i) => (m.style.transitionDelay = `${i * 30}ms`));
+    for (const id of ["offline-map", "fig-multiples"]) {
+      const el = document.getElementById(id);
+      onceVisible(el, () => el.classList.add("is-in"), 0.15);
+    }
+  },
+];
+const later = window.requestIdleCallback ?? ((fn) => setTimeout(fn, 1));
+const arrivedAt = location.hash;
+const buildNext = () => {
+  const step = essay.shift();
+  if (!step) {
+    // A link straight to a section (#method) jumped there before the charts
+    // above it existed; go back to it now that they do, unless the reader moved.
+    if (arrivedAt && location.hash === arrivedAt) document.querySelector(arrivedAt)?.scrollIntoView();
+    return;
+  }
+  step();
+  later(buildNext, { timeout: 300 });
+};
+// The map starts its opening two frames after it's drawn; start the essay
+// a frame after that, so the opening isn't held up.
+requestAnimationFrame(() => requestAnimationFrame(() => requestAnimationFrame(() => later(buildNext, { timeout: 300 }))));
