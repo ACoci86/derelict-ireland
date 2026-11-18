@@ -83,7 +83,9 @@ export function fitSelect(select) {
   probe.className = "ml-probe";
   probe.textContent = select.selectedOptions[0]?.textContent ?? "";
   select.parentNode.append(probe);
-  if (probe.offsetWidth) select.style.width = `${Math.ceil(probe.offsetWidth) + 30}px`;
+  // + room for the arrow (24px of padding) and a little slack: browsers draw
+  // the text inside a menu slightly differently from plain text.
+  if (probe.offsetWidth) select.style.width = `${Math.ceil(probe.offsetWidth) + 36}px`;
   probe.remove();
 }
 

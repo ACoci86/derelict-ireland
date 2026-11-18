@@ -626,10 +626,13 @@
 }
 
 /* A word in a sentence that is really a menu */
+/* The menu and its hidden measuring copy must set the name identically:
+   form controls reset letter-spacing, so it's inherited explicitly. */
 .ml-sel select,
 .ml-probe {
   font: inherit;
   font-weight: 700;
+  letter-spacing: inherit;
 }
 .ml-sel select {
   max-width: 100%;
