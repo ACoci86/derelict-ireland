@@ -400,6 +400,6 @@ const buildNext = () => {
   step();
   later(buildNext, { timeout: 300 });
 };
-// The map starts its opening two frames after it's drawn; start the essay
-// a frame after that, so the opening isn't held up.
-requestAnimationFrame(() => requestAnimationFrame(() => requestAnimationFrame(() => later(buildNext, { timeout: 300 }))));
+// The map starts its opening two frames after it's drawn and the sweep lasts
+// about 1.5 s; build the essay after that, so nothing interrupts the sweep.
+requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(() => later(buildNext, { timeout: 300 }), 1600)));
