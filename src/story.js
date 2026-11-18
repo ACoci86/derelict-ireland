@@ -269,14 +269,24 @@ export function offlineMap(el, { base, sites, offline }) {
   if (ni.length) svg.append("path").attr("class", "o-context").attr("d", path(topojson.merge(base, ni)));
   svg.append("path").attr("class", "o-land").attr("d", path(topojson.merge(base, geoms)));
   svg.append("path").attr("class", "o-borders").attr("d", path(topojson.mesh(base, base.objects.councils, (a, b) => a !== b)));
+  // The sites come on in five scattered batches: five groups fading in one
+  // after another look like lights coming on, and cost far less than
+  // animating 2,400 dots one by one.
+  const BATCHES = 5;
+  const batch = d3.range(BATCHES).map(() => []);
+  sites.forEach((s) => batch[Math.floor(Math.random() * BATCHES)].push(s));
   svg
     .append("g")
+    .selectAll("g")
+    .data(batch)
+    .join("g")
+    .attr("class", "o-sites")
+    .style("transition-delay", (d, i) => `${i * 90}ms`)
     .selectAll("circle")
-    .data(sites)
+    .data((d) => d)
     .join("circle")
     .attr("class", "o-site")
     .attr("r", 1.3)
-    .style("transition-delay", () => `${Math.round(Math.random() * 1400)}ms`)
     .attr("transform", (s) => `translate(${proj([s.lon, s.lat])})`);
   for (const name of off) {
     const shape = topojson.merge(

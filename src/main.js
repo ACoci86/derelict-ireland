@@ -332,7 +332,7 @@ const essay = [
     document.querySelectorAll("#chart-multiples .mult").forEach((m, i) => (m.style.transitionDelay = `${i * 30}ms`));
     for (const id of ["offline-map", "fig-multiples"]) {
       const el = document.getElementById(id);
-      onceVisible(el, () => el.classList.add("is-in"), 0.15);
+      onceVisible(el, () => el.classList.add("is-in"), 0.05);
     }
   },
 ];

@@ -884,6 +884,18 @@ button {
 .pill {
   white-space: nowrap;
 }
+/* Phones get one button, "Read", which jumps to the story; Method is at its end */
+.on-phone {
+  display: none;
+}
+@media (max-width: 639px) {
+  .on-wide {
+    display: none;
+  }
+  .on-phone {
+    display: inline;
+  }
+}
 @media (max-width: 639px) {
   body:has(.map.streets-on) .bar .mark {
     padding: 3px 10px 3px 4px;
