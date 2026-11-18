@@ -109,6 +109,26 @@ const esc = (t) =>
   String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const reducedMotion = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// A d3.geoPath that remembers what it has drawn. The same outlines are used
+// several times per layout (the map, its clip mask, the magnifier's copy, the
+// textures, hover highlights), and projecting the coastline is the slow part.
+// Made fresh on every layout, since the projection changes.
+function memoPath(raw) {
+  const cache = (fn) => {
+    const seen = new WeakMap();
+    return (g) => {
+      if (!g || typeof g !== "object") return fn(g);
+      if (!seen.has(g)) seen.set(g, fn(g));
+      return seen.get(g);
+    };
+  };
+  const path = cache((g) => raw(g));
+  path.bounds = cache((g) => raw.bounds(g));
+  path.area = cache((g) => raw.area(g));
+  path.centroid = cache((g) => raw.centroid(g));
+  return path;
+}
+
 // Rasterise an SVG snippet once into a bitmap URL.
 async function rasterise(markup, w, h) {
   const img = new Image();
@@ -178,7 +198,6 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
     (v) => v.length,
     (s) => s.council,
   );
-  const lensData = sites.map((s) => ({ s, lens: true }));
 
   // ---------- Controls ----------
   const ctl = d3.select(container).append("div").attr("class", "zoom-ctl");
@@ -199,7 +218,7 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
   let grow = 1;
   let worldSize = 1;
   let zoomBase = 0;
-  let tilesG, tilesTint, sitesZoomG, overG, streetsOn = false;
+  let tilesG, tilesTint, overG, streetsOn = false;
   let flying = false;
   let sizeFor = () => 0;
   let view = { match: () => true, annotations: [], missing: false };
@@ -212,13 +231,34 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
   let bakeToken = 0;
   let drag = null;
   let titleRaf = 0;
-  let wavesImg, zoomG, sitesSel, labelsG, labelItems, annoG, annoItems, hoverRing, councilHi, watersG;
+  let wavesImg, zoomG, labelsG, labelItems, annoG, annoItems, hoverRing, councilHi, watersG;
   // The magnifier: a small source circle on the map (what is magnified) and
   // the big lens (where it is shown), joined by tangent lines. Both can be
   // dragged. src is remembered as lon/lat and the lens as a fraction of the
   // frame, so they survive a resize.
   const lens = { src: DUBLIN, fx: null, fy: null, k: 1, r: 0, r0: 0, sx: 0, sy: 0, cx: 0, cy: 0, moved: false };
-  let lensG, lensLinks, lensSrc, lensBody, lensMag, lensSites, lensLabels, lensTitle, lensHint;
+  let lensG, lensLinks, lensSrc, lensBody, lensMag, lensLabels, lensTitle, lensHint;
+
+  // ---------- the dots, painted on canvas ----------
+  // Every site is painted onto one canvas (and the magnifier's dots onto a
+  // second), not drawn as ~4,700 SVG circles: the browser had to lay out and
+  // animate each circle separately, and the opening ran at 8 frames a second
+  // on a slow phone. Each site carries its own state:
+  //   __p   pop progress, 0 hidden -> 1 shown (overshoots on the way in)
+  //   __to  where __p is heading
+  //   __o   opacity, easing towards __oTo (dimmed for previews and the
+  //         offline-registers view)
+  // Hover and clicks find sites with a Delaunay search (siteAt), as before.
+  const TAU = Math.PI * 2;
+  const css = getComputedStyle(document.documentElement);
+  const INK = { accent: css.getPropertyValue("--accent").trim() || "#c4552c", land: css.getPropertyValue("--land").trim() || "#fdfaf5" };
+  let dotsCtx = null;
+  let lensCtx = null;
+  let dpr = 1;
+  let drawOrder = [];
+  let previewing = false;
+  const anims = new Map(); // site -> { from, to, start, dur, ease }
+  let dotsRaf = 0;
 
   // Zoom by the buttons, the mouse wheel, double-click and county clicks; drag
   // to pan when zoomed in. The wheel only zooms while the map is at the top of
@@ -253,7 +293,7 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
     zoomBase = Math.log2(worldSize / 256);
     streetZoomBase = zoomBase;
     zoom.scaleExtent([1, Math.pow(2, TILE_MAX - zoomBase)]);
-    path = d3.geoPath(projection);
+    path = memoPath(d3.geoPath(projection));
     landCentroid = path.centroid(land);
 
     const irelandH = path.bounds(land)[1][1] - path.bounds(land)[0][1];
@@ -315,13 +355,27 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
       .attr("width", bx1 - bx0)
       .attr("height", by1 - by0);
     const token = ++bakeToken;
-    bakeTextures({ W: L.W, H, landD: path(land), allLandD: path(allLand), bounds: [bx0, by0, bx1 - bx0, by1 - by0] }).then(
-      ({ waves, relief }) => {
+    const bakeArgs = { W: L.W, H, landD: path(land), allLandD: path(allLand), bounds: [bx0, by0, bx1 - bx0, by1 - by0] };
+    const bake = () => {
+      if (token !== bakeToken) return;
+      bakeTextures(bakeArgs).then(({ waves, relief }) => {
         if (token !== bakeToken) return;
         wavesImg.attr("href", waves);
         landImg.attr("href", relief);
-      },
-    );
+        requestAnimationFrame(() => {
+          wavesImg.classed("fresh", false);
+          landImg.classed("fresh", false);
+        });
+      });
+    };
+    // The paper grain and coastal waves are decoration, and painting them is
+    // slow: on the first load they wait until the opening sweep is over (they
+    // fade in), so the map itself appears sooner.
+    if (introPending) {
+      wavesImg.classed("fresh", true);
+      landImg.classed("fresh", true);
+      setTimeout(bake, 1700);
+    } else bake();
     const unpub = councils.filter((c) => c.properties.unpublished);
     zoomG
       .append("g")
@@ -390,12 +444,11 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
     }
 
     // Sites: hollow rings first (underneath), then discs from big to small.
-    const byDrawOrder = (a, b) => {
-      const A = a.s ?? a;
-      const B = b.s ?? b;
-      return (A.v == null ? 0 : 1) - (B.v == null ? 0 : 1) || B.r - A.r;
-    };
-    const initP = (d) => (d.__p = introPending || !view.match(d.s ?? d) ? 0 : 1);
+    drawOrder = [...sites].sort((a, b) => (a.v == null ? 0 : 1) - (b.v == null ? 0 : 1) || b.r - a.r);
+    for (const s of sites) {
+      if (!anims.has(s)) s.__p = s.__to = introPending || !view.match(s) ? 0 : 1;
+      s.__o = s.__oTo = opacityFor(s);
+    }
     // Street tiles sit above the drawn map and below the sites.
     tilesG = svg.append("g").attr("class", "tiles").attr("opacity", 0);
     tilesG.append("g").attr("class", "tile-imgs");
@@ -406,20 +459,11 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
       .selectAll(":scope > g:has(> .hatch-area), :scope > g:has(> .hatch-edge), :scope > g:has(> .council), :scope > .borders, :scope > .coast, :scope > .council-hi")
       .nodes())
       overG.node().append(node);
-    sitesZoomG = svg.append("g").attr("class", "zoomable-sites");
-    sitesSel = sitesZoomG
-      .append("g")
-      .attr("class", "sites")
-      .selectAll("circle")
-      .data([...sites].sort(byDrawOrder))
-      .join("circle")
-      .each(initP)
-      .attr("class", (d) => `site ${d.v == null ? "u" : "v"}`)
-      .classed("off", (d) => !d.__p)
-      .attr("cx", (d) => d.x)
-      .attr("cy", (d) => d.y)
-      .attr("r", radiusOf)
-      .call(nonScaling);
+    // The dots' canvas sits here in the SVG's stacking order: above the
+    // streets and borders, below the place names, callouts and magnifier.
+    dpr = Math.min(2, Math.max(1, devicePixelRatio || 1));
+    stamps.clear();
+    dotsCtx = canvasIn(svg.append("foreignObject").attr("class", "sites").attr("width", L.W).attr("height", H), L.W, H);
 
     // ---------- screen-space layers ----------
     labelsG = svg.append("g").attr("class", "labels");
@@ -444,7 +488,7 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
     annoG = svg.append("g").attr("class", "annos");
     annoItems = [];
 
-    buildLens(defs, nonScaling, byDrawOrder, initP);
+    buildLens(defs, nonScaling);
 
     hoverRing = svg.append("circle").attr("class", "hover-ring").attr("r", 0).attr("opacity", 0);
 
@@ -485,6 +529,171 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
     } else {
       applyView("instant");
     }
+    drawDots();
+  }
+
+  // A canvas inside a <foreignObject>, at device resolution.
+  function canvasIn(fo, w, h) {
+    fo.style("pointer-events", "none");
+    const c = document.createElementNS("http://www.w3.org/1999/xhtml", "canvas");
+    c.width = Math.round(w * dpr);
+    c.height = Math.round(h * dpr);
+    c.style.cssText = `display:block;width:${w}px;height:${h}px`;
+    fo.node().append(c);
+    return c.getContext("2d");
+  }
+
+  // Paint one site. Filled discs carry a value, hollow rings don't; over the
+  // street tiles both get bolder so they read against the map. Each look and
+  // size (to a quarter pixel) is drawn once onto a small stamp, then stamped:
+  // copying an image is far cheaper than filling and stroking a circle, and
+  // a frame paints up to ~2,400 of them.
+  const stamps = new Map();
+  function stampFor(unvalued, r, street) {
+    const q = Math.max(1, Math.round(r * 4)); // quarter-pixel steps
+    const key = `${unvalued ? "u" : "v"}${street ? "s" : ""}${q}`;
+    let st = stamps.get(key);
+    if (st) return st;
+    const rr = q / 4;
+    const pad = 2;
+    const size = Math.ceil((rr + pad) * 2 * dpr);
+    const c = document.createElement("canvas");
+    c.width = c.height = size;
+    const g = c.getContext("2d");
+    g.scale(dpr, dpr);
+    const m = size / dpr / 2;
+    g.beginPath();
+    g.arc(m, m, rr, 0, TAU);
+    if (unvalued) {
+      g.globalAlpha = street ? 0.9 : 0.6;
+      g.fillStyle = INK.land;
+      g.fill();
+      g.globalAlpha = street ? 1 : 0.55;
+      g.strokeStyle = INK.accent;
+      g.lineWidth = street ? 1.6 : 1.1;
+      g.stroke();
+    } else {
+      g.globalAlpha = street ? 0.9 : 0.72;
+      g.fillStyle = INK.accent;
+      g.fill();
+      g.globalAlpha = 1;
+      g.strokeStyle = INK.land;
+      g.lineWidth = street ? 1.4 : 0.9;
+      g.stroke();
+    }
+    st = { c, half: m };
+    stamps.set(key, st);
+    return st;
+  }
+  function paintDot(ctx, s, x, y, r, street) {
+    if (r < 0.2) return;
+    const st = stampFor(s.v == null, r, street);
+    ctx.globalAlpha = s.__o;
+    ctx.drawImage(st.c, x - st.half, y - st.half, st.half * 2, st.half * 2);
+  }
+
+  // The main map's dots, at the current zoom. Called straight from the zoom
+  // handler, so they move in the same frame as the land underneath.
+  function drawDots() {
+    const ctx = dotsCtx;
+    if (!ctx) return;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, L.W, L.H);
+    for (const s of drawOrder) {
+      if (s.__p <= 0.001 || s.__o <= 0.005) continue;
+      const x = t.x + s.x * t.k;
+      const y = t.y + s.y * t.k;
+      const r = screenR(s.r, t.k) * s.__p;
+      if (x + r < -2 || x - r > L.W + 2 || y + r < -2 || y - r > L.H + 2) continue;
+      paintDot(ctx, s, x, y, r, streetsOn);
+    }
+    ctx.globalAlpha = 1;
+    drawLensDots();
+  }
+
+  // The magnifier's dots: only those inside its circle, at lens scale.
+  function drawLensDots() {
+    const ctx = lensCtx;
+    if (!ctx || !lensVisible()) return;
+    const R = lens.r;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, 2 * R, 2 * R);
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(R, R, R, 0, TAU);
+    ctx.clip();
+    for (const s of drawOrder) {
+      if (s.__p <= 0.001 || s.__o <= 0.005) continue;
+      const dx = (s.x - lens.sx) * lens.k;
+      const dy = (s.y - lens.sy) * lens.k;
+      const r = s.r * s.__p;
+      if (Math.abs(dx) > R + r || Math.abs(dy) > R + r) continue;
+      paintDot(ctx, s, R + dx, R + dy, r, false);
+    }
+    ctx.restore();
+    ctx.globalAlpha = 1;
+  }
+
+  // How visible a site is: dimmed when a preview picks out others, and on the
+  // offline-registers view.
+  function opacityFor(s) {
+    return (previewing && !s.pv ? 0.12 : 1) * (view.missing ? 0.3 : 1);
+  }
+  function retargetOpacity() {
+    const instant = reducedMotion();
+    for (const s of sites) {
+      s.__oTo = opacityFor(s);
+      if (instant) s.__o = s.__oTo;
+    }
+    requestDots();
+  }
+
+  // One animation loop for pops and fades; it stops when nothing is moving.
+  let lastFrame = 0;
+  function requestDots() {
+    if (!dotsRaf) dotsRaf = requestAnimationFrame(frame);
+  }
+  function frame(now) {
+    dotsRaf = 0;
+    const dt = lastFrame ? Math.min(100, now - lastFrame) : 16;
+    lastFrame = now;
+    let busy = false;
+    for (const [s, a] of anims) {
+      const k = (now - a.start) / a.dur;
+      if (k < 0) {
+        busy = true;
+        continue;
+      }
+      if (k >= 1) {
+        s.__p = a.to;
+        anims.delete(s);
+      } else {
+        s.__p = a.from + (a.to - a.from) * a.ease(k);
+        busy = true;
+      }
+    }
+    const ease = 1 - Math.exp(-dt / 80); // opacity settles in about a quarter second
+    for (const s of sites) {
+      const d = s.__oTo - s.__o;
+      if (d === 0) continue;
+      if (Math.abs(d) < 0.004) s.__o = s.__oTo;
+      else {
+        s.__o += d * ease;
+        busy = true;
+      }
+    }
+    drawDots();
+    if (busy) requestDots();
+    else lastFrame = 0;
+  }
+  function popTo(s, to, delay, dur, ease) {
+    s.__to = to;
+    if (!dur) {
+      anims.delete(s);
+      s.__p = to;
+      return;
+    }
+    anims.set(s, { from: s.__p, to, start: performance.now() + delay, dur, ease });
   }
 
   // The opening is staged so it doesn't all land at once: the dots sweep in,
@@ -514,9 +723,9 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
   }
 
   // ---------- the magnifier ----------
-  function buildLens(defs, nonScaling, byDrawOrder, initP) {
+  function buildLens(defs, nonScaling) {
     lensG = svg.append("g").attr("class", "lens").attr("aria-hidden", "true");
-    lensSites = d3.select(null);
+    lensCtx = null;
     if (!L.lens) return;
     const { r } = L.lens;
     const a = projection(DUBLIN);
@@ -569,19 +778,7 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
       .attr("d", path);
     lensMag.append("path").attr("class", "borders").attr("d", path(borders)).call(nonScaling);
     lensMag.append("path").attr("class", "coast").attr("d", path(coast)).call(nonScaling);
-    lensSites = lensMag
-      .append("g")
-      .attr("class", "sites")
-      .selectAll("circle")
-      .data([...lensData].sort(byDrawOrder))
-      .join("circle")
-      .each(initP)
-      .attr("class", (d) => `site ${d.s.v == null ? "u" : "v"}`)
-      .classed("off", (d) => !d.__p)
-      .attr("cx", (d) => d.s.x)
-      .attr("cy", (d) => d.s.y)
-      .attr("r", radiusOf)
-      .call(nonScaling);
+    lensCtx = canvasIn(inner.append("foreignObject").attr("class", "sites").attr("x", -r).attr("y", -r).attr("width", 2 * r).attr("height", 2 * r), 2 * r, 2 * r);
     svg.select("#hatch-lens").attr("patternTransform", `rotate(45) scale(${1 / lens.k})`);
     // Every council gets a name inside the lens, even the small Dublin ones.
     lensLabels = inner
@@ -622,6 +819,7 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
     lensSrc.attr("transform", `translate(${lens.sx},${lens.sy})`);
     lensMag.attr("transform", `scale(${lens.k}) translate(${-lens.sx},${-lens.sy})`);
     placeLensLabels();
+    drawLensDots();
     updateLinks();
     if (!titleRaf) titleRaf = requestAnimationFrame(updateLensTitle);
   }
@@ -710,10 +908,8 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
     t = e.transform;
     grow = 1 / t.k;
     zoomG.attr("transform", t);
-    sitesZoomG.attr("transform", t);
     overG.attr("transform", t);
     updateTiles();
-    sitesSel.attr("r", radiusOf);
     svg.select("#hatch").attr("patternTransform", `rotate(45) scale(${1 / t.k})`);
     for (const l of labelItems) {
       const [x, y] = t.apply([l.x, l.y]);
@@ -726,6 +922,7 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
     wavesImg.attr("opacity", t.k > 1.6 ? 0 : 1);
     watersG.attr("opacity", t.k > 1.6 ? 0 : 1);
     resetBtn.property("disabled", !zoomed);
+    drawDots();
     if (e.sourceEvent || zoomed) {
       pinned = null;
       hideTip();
@@ -821,66 +1018,29 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
   }
 
   // ---------- filtering + pop animation ----------
-  // A circle's radius: its size, times zoom growth, times its pop-in progress
-  // __p (0 hidden → 1 shown, overshooting on the way in). Lens circles sit
-  // inside the lens's scale(k), so they are divided back to screen size.
-  function radiusOf(d) {
-    const p = Math.max(0, d.__p);
-    if (d.lens) return (d.s.r / lens.k) * p;
-    return (screenR(d.r, t.k) / t.k) * p;
-  }
-
   function applyView(mode) {
     const appear = [];
     const vanish = [];
-    const instant = [];
-    svg.selectAll("circle.site").each(function (d) {
-      const on = view.match(d.s ?? d);
-      const off = this.classList.contains("off");
-      if (on === !off) return;
-      // Lens circles outside the source circle change instantly (nobody sees them).
-      if (d.lens && Math.hypot(d.s.x - lens.sx, d.s.y - lens.sy) > lens.r0 + 20) {
-        instant.push([this, on]);
-        return;
-      }
-      (on ? appear : vanish).push(this);
-    });
-    for (const [el, on] of instant) {
-      el.__data__.__p = on ? 1 : 0;
-      el.classList.toggle("off", !on);
-      d3.select(el).interrupt("pop").attr("r", radiusOf(el.__data__));
+    for (const s of sites) {
+      const to = view.match(s) ? 1 : 0;
+      if (s.__to === to) continue;
+      (to ? appear : vanish).push(s);
     }
     const animate = mode !== "instant" && !reducedMotion();
     // Sweep in from west to east, like the registers being switched on.
     const span = !animate ? 0 : mode === "intro" ? 800 : Math.min(700, 120 + appear.length * 2);
-    const xs = appear.map((el) => (el.__data__.s ?? el.__data__).x);
-    const [x0, x1] = d3.extent(xs);
-    const tween = (to) =>
-      function (d) {
-        const from = d.__p;
-        return (k) => {
-          d.__p = from + (to - from) * k;
-          return radiusOf(d);
-        };
-      };
-    d3.selectAll(vanish)
-      .classed("off", true)
-      .interrupt("pop")
-      .transition("pop")
-      .duration(animate ? 240 : 0)
-      .ease(d3.easeCubicIn)
-      .attrTween("r", tween(0));
-    d3.selectAll(appear)
-      .classed("off", false)
-      .interrupt("pop")
-      .transition("pop")
-      .delay((d, i) => (x1 > x0 ? ((xs[i] - x0) / (x1 - x0)) * span : 0) + (animate ? Math.random() * 80 : 0))
-      .duration(animate ? 560 : 0)
-      .ease(d3.easeBackOut.overshoot(1.8))
-      .attrTween("r", tween(1));
+    const [x0, x1] = d3.extent(appear, (s) => s.x);
+    for (const s of vanish) popTo(s, 0, 0, animate ? 240 : 0, d3.easeCubicIn);
+    const out = d3.easeBackOut.overshoot(1.8);
+    for (const s of appear) {
+      const delay = (x1 > x0 ? ((s.x - x0) / (x1 - x0)) * span : 0) + (animate ? Math.random() * 80 : 0);
+      popTo(s, 1, delay, animate ? 560 : 0, out);
+    }
     shown = sites.filter(view.match);
     delaunay = d3.Delaunay.from(shown, (s) => s.x, (s) => s.y);
     svg.classed("missing", !!view.missing);
+    retargetOpacity();
+    if (!animate) drawDots();
     renderAnnotations(span * 0.6 + 200);
     pinned = null;
     hideTip();
@@ -1173,7 +1333,9 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
     },
     preview(fn) {
       svg.classed("previewing", !!fn);
-      if (fn) svg.selectAll("circle.site").classed("pv", (d) => fn(d.s ?? d));
+      previewing = !!fn;
+      for (const s of sites) s.pv = fn ? fn(s) : false;
+      retargetOpacity();
     },
     councils,
     get mode() {

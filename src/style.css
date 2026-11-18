@@ -193,6 +193,13 @@ button {
 #viz .hatch-area,
 #viz .hatch-edge,
 #viz .council-hi,
+/* The baked textures fade in when they arrive (after the opening sweep) */
+#viz image.texture {
+  transition: opacity 700ms ease;
+}
+#viz image.texture.fresh {
+  opacity: 0;
+}
 #viz .texture,
 #viz .waters,
 #viz .labels,
@@ -299,30 +306,7 @@ button {
   transition: opacity 300ms;
 }
 
-/* Sites: filled discs carry a value, hollow rings don't. The pop in/out is a
-   d3 transition on r (CSS transforms on ~2,400 SVG circles ran at a few fps). */
-#viz .site {
-  transition: opacity 250ms;
-}
-#viz .site.v {
-  fill: var(--accent);
-  fill-opacity: 0.72;
-  stroke: var(--land);
-  stroke-width: 0.9;
-}
-#viz .site.u {
-  fill: var(--land);
-  fill-opacity: 0.6;
-  stroke-opacity: 0.55;
-  stroke: var(--accent);
-  stroke-width: 1.1;
-}
-#viz.previewing .site:not(.pv) {
-  opacity: 0.12;
-}
-#viz.missing .site {
-  opacity: 0.3;
-}
+/* Sites are painted on a canvas by map.js (drawDots), not drawn as SVG. */
 #viz .hover-ring {
   fill: none;
   stroke: var(--ink);
@@ -870,16 +854,6 @@ button {
 .map.streets-on #viz .zoomable-over .hatch-area {
   opacity: 0.35;
 }
-.map.streets-on #viz .site.u {
-  fill: var(--land);
-  fill-opacity: 0.9;
-  stroke-opacity: 1;
-  stroke-width: 1.6;
-}
-.map.streets-on #viz .site.v {
-  fill-opacity: 0.9;
-  stroke-width: 1.4;
-}
 .mark-name,
 .pill {
   white-space: nowrap;
@@ -1368,7 +1342,6 @@ body:has(.map.streets-on) .bar .mark {
   html {
     scroll-behavior: auto;
   }
-  #viz .site,
   #viz .lens-src-pulse,
   #viz .anno,
   #viz.missing .hatch-edge,
