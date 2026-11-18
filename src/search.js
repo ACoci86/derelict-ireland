@@ -16,7 +16,7 @@ const esc = (t) =>
 
 const MAX = 8;
 
-export function createSearch(el, { sites, councils, offline, onSite, onCouncil }) {
+export function createSearch(el, { sites, councils, offline, onSite, onCouncil, onClear }) {
   // Clearing from outside (the logo resets the whole page).
   el.reset = () => {
     const input = el.querySelector("input");
@@ -41,6 +41,7 @@ export function createSearch(el, { sites, councils, offline, onSite, onCouncil }
     syncClear();
     close();
     input.focus();
+    onClear?.();
   });
 
   const siteIdx = sites.map((s) => ({ s, text: norm(`${s.addr} ${s.council} ${s.ref}`), addr: norm(s.addr) }));
