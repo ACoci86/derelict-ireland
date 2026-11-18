@@ -56,11 +56,8 @@
     <main id="top">
       <section class="hero" aria-label="Map of derelict sites">
         <div class="map pre-labels pre-ui pre-lens pre-hint" id="map">
-          <svg id="viz" role="img" aria-labelledby="viz-title">
-            <title id="viz-title">
-              Map of Ireland with every published derelict site drawn as a circle sized by its valuation.
-            </title>
-          </svg>
+          <!-- An aria-label, not a <title>: browsers pop a <title> up as a tooltip on hover. -->
+          <svg id="viz" role="img" aria-label="Map of Ireland with every published derelict site drawn as a circle sized by its valuation."></svg>
           <div class="tip" id="tip" role="status" hidden></div>
           <div class="search" id="search" role="search"></div>
           <aside class="scale" id="scale" aria-label="Filter by valuation"></aside>

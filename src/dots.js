@@ -597,6 +597,7 @@ export function councilDots(el, { sites, councils, offline, sorterEl, onPick, on
       .attr("text-anchor", narrow ? "start" : "end")
       .attr("tabindex", 0)
       .attr("role", "button")
+      .attr("aria-label", (d) => `Show ${d.name} on the map`)
       .text((d) => d.name)
       .on("click", (e, d) => onPick(d.name))
       .on("keydown", (e, d) => {
@@ -604,9 +605,7 @@ export function councilDots(el, { sites, councils, offline, sorterEl, onPick, on
           e.preventDefault();
           onPick(d.name);
         }
-      })
-      .append("title")
-      .text((d) => `Show ${d.name} on the map`);
+      });
     const tail = g
       .append("text")
       .attr("class", "row-tail")

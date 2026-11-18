@@ -315,7 +315,7 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
     }
 
     svg.attr("viewBox", `0 0 ${L.W} ${H}`).attr("width", L.W).attr("height", H);
-    svg.selectAll(":scope > :not(title)").remove();
+    svg.selectAll(":scope > *").remove();
     t = d3.zoomIdentity;
     grow = 1;
 
