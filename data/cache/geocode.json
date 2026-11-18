@@ -18837,5 +18837,1683 @@
     "lat": "54.2403108",
     "lon": "-6.939273",
     "type": "locality"
+  },
+  "place:Rathcoole, County Dublin, Ireland": {
+    "lat": "53.2813003",
+    "lon": "-6.4679425",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Balbriggan, County Dublin, Ireland": {
+    "lat": "53.6118769",
+    "lon": "-6.1823282",
+    "type": "station",
+    "class": "railway"
+  },
+  "place:Mulhuddart, County Dublin, Ireland": {
+    "lat": "53.4027828",
+    "lon": "-6.398205",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Malahide, County Dublin, Ireland": {
+    "lat": "53.4508401",
+    "lon": "-6.15367",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Skerries, County Dublin, Ireland": {
+    "lat": "53.5739887",
+    "lon": "-6.1191749",
+    "type": "station",
+    "class": "railway"
+  },
+  "place:Swords, County Dublin, Ireland": {
+    "lat": "53.4594799",
+    "lon": "-6.219175",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Rush, County Dublin, Ireland": {
+    "lat": "53.5220444",
+    "lon": "-6.0908956",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Cork (adjoining the Riverstown Inn), County Cork, Ireland": null,
+  "place:Cork, County Cork, Ireland": {
+    "lat": "51.8985136",
+    "lon": "-8.4726423",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Bandon, County Cork, Ireland": {
+    "lat": "51.7461712",
+    "lon": "-8.7369303",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Kinsale, County Cork, Ireland": {
+    "lat": "51.705737",
+    "lon": "-8.5229823",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Ringaskiddy, County Cork, Ireland": {
+    "lat": "51.8302347",
+    "lon": "-8.3207701",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Carrigaline, County Cork, Ireland": {
+    "lat": "51.8149556",
+    "lon": "-8.3922675",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Passage West, County Cork, Ireland": {
+    "lat": "51.8711088",
+    "lon": "-8.3354199",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Crosshaven, County Cork, Ireland": {
+    "lat": "51.8023829",
+    "lon": "-8.2953269",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Cobh, County Cork, Ireland": {
+    "lat": "51.8502284",
+    "lon": "-8.2950649",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Youghal, County Cork, Ireland": {
+    "lat": "51.9494736",
+    "lon": "-7.8431892",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Mitchelstown, County Cork, Ireland": {
+    "lat": "52.2595146",
+    "lon": "-8.2378442",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Fermoy, County Cork, Ireland": {
+    "lat": "52.1381665",
+    "lon": "-8.275223",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Rathcormac, County Cork, Ireland": {
+    "lat": "52.0501482",
+    "lon": "-8.3078635",
+    "type": "motorway_junction",
+    "class": "highway"
+  },
+  "place:Mallow, County Cork, Ireland": {
+    "lat": "52.138912",
+    "lon": "-8.6551101",
+    "type": "station",
+    "class": "railway"
+  },
+  "place:Kanturk, County Cork, Ireland": {
+    "lat": "52.1876848",
+    "lon": "-8.9205697",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Buttevant, County Cork, Ireland": {
+    "lat": "52.23317",
+    "lon": "-8.6704936",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Lisgriffin, County Cork, Ireland": {
+    "lat": "52.2296096",
+    "lon": "-8.7595458",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Churchtown, County Cork, Ireland": {
+    "lat": "52.2711931",
+    "lon": "-8.7309549",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Knocknagree, County Cork, Ireland": {
+    "lat": "52.1222818",
+    "lon": "-9.2076473",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Charleville, County Cork, Ireland": {
+    "lat": "52.3546432",
+    "lon": "-8.6828833",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Kilbrin, County Cork, Ireland": {
+    "lat": "52.2295895",
+    "lon": "-8.8456847",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Newmarket, County Cork, Ireland": {
+    "lat": "52.2158934",
+    "lon": "-8.9814744",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Millstreet, County Cork, Ireland": {
+    "lat": "52.060231",
+    "lon": "-9.0640113",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Clonakilty, County Cork, Ireland": {
+    "lat": "51.6232159",
+    "lon": "-8.8914072",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Enniskeane, County Cork, Ireland": {
+    "lat": "51.7370723",
+    "lon": "-8.8615838",
+    "type": "aerodrome",
+    "class": "aeroway"
+  },
+  "place:Bantry, County Cork, Ireland": {
+    "lat": "51.6797696",
+    "lon": "-9.4523603",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Dunmanway, County Cork, Ireland": {
+    "lat": "51.7202004",
+    "lon": "-9.1126898",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Macroom, County Cork, Ireland": {
+    "lat": "51.9049705",
+    "lon": "-8.9599195",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Pallasgreen, County Limerick, Ireland": {
+    "lat": "52.5679529",
+    "lon": "-8.3379697",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Limerick, County Limerick, Ireland": {
+    "lat": "52.661252",
+    "lon": "-8.6301239",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Rathkeale, County Limerick, Ireland": {
+    "lat": "52.5236119",
+    "lon": "-8.9377374",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Oola, County Limerick, Ireland": {
+    "lat": "52.5493971",
+    "lon": "-8.263597",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Clarina, County Limerick, Ireland": {
+    "lat": "52.6165412",
+    "lon": "-8.7399871",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Lisnagry, County Limerick, Ireland": {
+    "lat": "52.6885757",
+    "lon": "-8.5151027",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Ballitore, County Kildare, Ireland": {
+    "lat": "53.0093927",
+    "lon": "-6.815586",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Athy, County Kildare, Ireland": {
+    "lat": "52.9923938",
+    "lon": "-6.9835926",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Celbridge, County Kildare, Ireland": {
+    "lat": "53.3383004",
+    "lon": "-6.5396223",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Monasterevin, County Kildare, Ireland": {
+    "lat": "53.1382507",
+    "lon": "-7.0629159",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Kilcock, County Kildare, Ireland": {
+    "lat": "53.399043",
+    "lon": "-6.6688581",
+    "type": "station",
+    "class": "railway"
+  },
+  "place:Kildare Town, County Kildare, Ireland": {
+    "lat": "53.1568951",
+    "lon": "-6.9106265",
+    "type": "bus_stop",
+    "class": "highway"
+  },
+  "place:Leixlip, County Kildare, Ireland": {
+    "lat": "53.3644766",
+    "lon": "-6.4897438",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Leixlip ( Commercial Unit ), County Kildare, Ireland": null,
+  "place:Kilcullen, County Kildare, Ireland": {
+    "lat": "53.1305819",
+    "lon": "-6.7456446",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Coill Dubh, County Kildare, Ireland": {
+    "lat": "53.2932362",
+    "lon": "-6.8160187",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Castledermot, County Kildare, Ireland": {
+    "lat": "52.9119491",
+    "lon": "-6.8368376",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Kerdiffstown, County Kildare, Ireland": {
+    "lat": "53.2490006",
+    "lon": "-6.6423374",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Robertstown, County Kildare, Ireland": {
+    "lat": "53.2697889",
+    "lon": "-6.8161946",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Barney’s Pub Athy, County Kildare, Ireland": null,
+  "place:Naas, County Kildare, Ireland": {
+    "lat": "53.2214677",
+    "lon": "-6.6574093",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Ballina, County Mayo, Ireland": {
+    "lat": "54.1143359",
+    "lon": "-9.1532099",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Ballycastle, County Mayo, Ireland": {
+    "lat": "54.2788019",
+    "lon": "-9.3692786",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Crossmolina, County Mayo, Ireland": {
+    "lat": "54.1",
+    "lon": "-9.316667",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Killala, County Mayo, Ireland": {
+    "lat": "54.2138959",
+    "lon": "-9.2209417",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Balla, County Mayo, Ireland": {
+    "lat": "53.8045739",
+    "lon": "-9.1306207",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Castlebar, County Mayo, Ireland": {
+    "lat": "53.8568418",
+    "lon": "-9.297967",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Mountain View, County Mayo, Ireland": {
+    "lat": "53.8540782",
+    "lon": "-9.3006773",
+    "type": "secondary",
+    "class": "highway"
+  },
+  "place:Ballindine, County Mayo, Ireland": {
+    "lat": "53.669328",
+    "lon": "-8.9570134",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Ballinrobe, County Mayo, Ireland": {
+    "lat": "53.6240883",
+    "lon": "-9.2220833",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Ballyhaunis, County Mayo, Ireland": {
+    "lat": "53.7616691",
+    "lon": "-8.7585405",
+    "type": "station",
+    "class": "railway"
+  },
+  "place:Claremorris, County Mayo, Ireland": {
+    "lat": "53.7197301",
+    "lon": "-8.9987858",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Foxford, County Mayo, Ireland": {
+    "lat": "53.9828717",
+    "lon": "-9.1364984",
+    "type": "stop",
+    "class": "railway"
+  },
+  "place:Kiltimagh, County Mayo, Ireland": {
+    "lat": "53.85",
+    "lon": "-9",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Shrule, County Mayo, Ireland": {
+    "lat": "53.5199658",
+    "lon": "-9.0877716",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Swinford, County Mayo, Ireland": {
+    "lat": "53.9435164",
+    "lon": "-8.9498117",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Achill, County Mayo, Ireland": {
+    "lat": "53.9521577",
+    "lon": "-10.008959",
+    "type": "island",
+    "class": "place"
+  },
+  "place:Achill Sound, County Mayo, Ireland": {
+    "lat": "53.9296352",
+    "lon": "-9.9274511",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Achill., County Mayo, Ireland": {
+    "lat": "53.9521577",
+    "lon": "-10.008959",
+    "type": "island",
+    "class": "place"
+  },
+  "place:Belmullet, County Mayo, Ireland": {
+    "lat": "54.22411",
+    "lon": "-9.9872173",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Westport, County Mayo, Ireland": {
+    "lat": "53.8000645",
+    "lon": "-9.520218",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Nenagh, County Tipperary, Ireland": {
+    "lat": "52.861944",
+    "lon": "-8.196667",
+    "type": "census",
+    "class": "boundary"
+  },
+  "place:Thurles, County Tipperary, Ireland": {
+    "lat": "52.6766937",
+    "lon": "-7.8219058",
+    "type": "station",
+    "class": "railway"
+  },
+  "place:Cashel, County Tipperary, Ireland": {
+    "lat": "52.5167478",
+    "lon": "-7.8879311",
+    "type": "town",
+    "class": "place"
+  },
+  "place:NX32(2), County Tipperary, Ireland": null,
+  "place:Cappawhite, County Tipperary, Ireland": {
+    "lat": "52.5816765",
+    "lon": "-8.1661357",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Clonmel, County Tipperary, Ireland": {
+    "lat": "52.3611052",
+    "lon": "-7.6991779",
+    "type": "stop",
+    "class": "railway"
+  },
+  "place:Tipp Town, County Tipperary, Ireland": {
+    "lat": "52.478171",
+    "lon": "-8.1772841",
+    "type": "mall",
+    "class": "shop"
+  },
+  "place:Roscrea, County Tipperary, Ireland": {
+    "lat": "52.9551598",
+    "lon": "-7.7990264",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Gorey, County Wexford, Ireland": {
+    "lat": "52.6712171",
+    "lon": "-6.2920098",
+    "type": "station",
+    "class": "railway"
+  },
+  "place:New Ross, County Wexford, Ireland": {
+    "lat": "52.3955671",
+    "lon": "-6.9446066",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Enniscorthy, County Wexford, Ireland": {
+    "lat": "52.5046084",
+    "lon": "-6.5662858",
+    "type": "station",
+    "class": "railway"
+  },
+  "place:Camolin, County Wexford, Ireland": {
+    "lat": "52.6166981",
+    "lon": "-6.4242938",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Ferns, County Wexford, Ireland": {
+    "lat": "52.5897916",
+    "lon": "-6.4952889",
+    "type": "town",
+    "class": "place"
+  },
+  "place:The Ballagh, County Wexford, Ireland": {
+    "lat": "52.4802972",
+    "lon": "-6.424415",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Wexford Town, County Wexford, Ireland": {
+    "lat": "52.3367671",
+    "lon": "-6.4601397",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Bridgetown, County Wexford, Ireland": {
+    "lat": "52.2313256",
+    "lon": "-6.552791",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Bannow, County Wexford, Ireland": {
+    "lat": "52.2115197",
+    "lon": "-6.7830378",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Wexford, County Wexford, Ireland": {
+    "lat": "52.3367671",
+    "lon": "-6.4601397",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Killurin, County Wexford, Ireland": {
+    "lat": "52.3837871",
+    "lon": "-6.5785299",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Rosslare Strand, County Wexford, Ireland": {
+    "lat": "52.2718383",
+    "lon": "-6.3915222",
+    "type": "station",
+    "class": "railway"
+  },
+  "place:Ballycanew, County Wexford, Ireland": {
+    "lat": "52.6092117",
+    "lon": "-6.3043961",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Tagoat, County Wexford, Ireland": {
+    "lat": "52.2435457",
+    "lon": "-6.390351",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Oulart, County Wexford, Ireland": {
+    "lat": "52.5034251",
+    "lon": "-6.3916482",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Ballyedmond Village, County Wexford, Ireland": {
+    "lat": "52.5528948",
+    "lon": "-6.3406882",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Fethard on Sea, County Wexford, Ireland": {
+    "lat": "52.1915688",
+    "lon": "-6.8398404",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Oylgate, County Wexford, Ireland": {
+    "lat": "52.4246289",
+    "lon": "-6.5311988",
+    "type": "bus_stop",
+    "class": "highway"
+  },
+  "place:Rosslare Harbour, County Wexford, Ireland": {
+    "lat": "52.2511936",
+    "lon": "-6.3375376",
+    "type": "station",
+    "class": "railway"
+  },
+  "place:Kilmuckridge, County Wexford, Ireland": {
+    "lat": "52.5127323",
+    "lon": "-6.2841717",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Wexford (John St/John's Road), County Wexford, Ireland": null,
+  "place:Coolgreany, County Wexford, Ireland": {
+    "lat": "52.7641067",
+    "lon": "-6.2370666",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Courtown, County Wexford, Ireland": {
+    "lat": "52.644821",
+    "lon": "-6.227824",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Drogheda, County Louth, Ireland": {
+    "lat": "53.7149877",
+    "lon": "-6.3524183",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Castlebellingham, County Louth, Ireland": {
+    "lat": "53.8970616",
+    "lon": "-6.3890554",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Dundalk, County Louth, Ireland": {
+    "lat": "54.0046033",
+    "lon": "-6.4008879",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Omeath, County Louth, Ireland": {
+    "lat": "54.086944",
+    "lon": "-6.261667",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Ardee, County Louth, Ireland": {
+    "lat": "53.8553092",
+    "lon": "-6.5389138",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Collon, County Louth, Ireland": {
+    "lat": "53.7820371",
+    "lon": "-6.4889947",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Athlone, County Westmeath, Ireland": {
+    "lat": "53.4228434",
+    "lon": "-7.9425897",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Kinnegad, County Westmeath, Ireland": {
+    "lat": "53.4548146",
+    "lon": "-7.1011946",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Rathwire, County Westmeath, Ireland": {
+    "lat": "53.5082202",
+    "lon": "-7.1412",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Killucan, County Westmeath, Ireland": {
+    "lat": "53.497122",
+    "lon": "-7.1562201",
+    "type": "civil_parish",
+    "class": "boundary"
+  },
+  "place:Kilbeggan, County Westmeath, Ireland": {
+    "lat": "53.3695067",
+    "lon": "-7.5026687",
+    "type": "distillery",
+    "class": "craft"
+  },
+  "place:Moate, County Westmeath, Ireland": {
+    "lat": "53.3962015",
+    "lon": "-7.7240549",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Mullingar, County Westmeath, Ireland": {
+    "lat": "53.525822",
+    "lon": "-7.341304",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Castlepollard Castlepollard, County Westmeath, Ireland": {
+    "lat": "53.6785447",
+    "lon": "-7.297975",
+    "type": "place_of_worship",
+    "class": "amenity"
+  },
+  "place:Brewery House, County Westmeath, Ireland": null,
+  "place:Athlone or (Brideswells Street), County Westmeath, Ireland": null,
+  "place:Muinebheag, County Carlow, Ireland": {
+    "lat": "52.7018267",
+    "lon": "-6.9566623",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Monaghan H1W2738, County Monaghan, Ireland": null,
+  "place:Newbliss, County Monaghan, Ireland": {
+    "lat": "54.157845",
+    "lon": "-7.1365822",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Clones, County Monaghan, Ireland": {
+    "lat": "54.1792105",
+    "lon": "-7.2320729",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Castleblayney, County Monaghan, Ireland": {
+    "lat": "54.1202148",
+    "lon": "-6.7404433",
+    "type": "house",
+    "class": "building"
+  },
+  "place:Monaghan, County Monaghan, Ireland": {
+    "lat": "54.2485576",
+    "lon": "-6.9688855",
+    "type": "town",
+    "class": "place"
+  },
+  "place:H18, County Monaghan, Ireland": {
+    "lat": "54.2465453",
+    "lon": "-6.9610742",
+    "type": "industrial",
+    "class": "landuse"
+  },
+  "place:Ballinafad, County Sligo, Ireland": {
+    "lat": "54.0272688",
+    "lon": "-8.3343456",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Grange, County Sligo, Ireland": {
+    "lat": "54.3923808",
+    "lon": "-8.5240949",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Tubbercurry, County Sligo, Ireland": {
+    "lat": "54.0539302",
+    "lon": "-8.730565",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Enniscrone, County Sligo, Ireland": {
+    "lat": "54.2132221",
+    "lon": "-9.0934543",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Rathbraughan Park, County Sligo, Ireland": {
+    "lat": "54.2857262",
+    "lon": "-8.4682958",
+    "type": "residential",
+    "class": "landuse"
+  },
+  "place:Sligo - House, County Sligo, Ireland": {
+    "lat": "54.2720802",
+    "lon": "-8.4749585",
+    "type": "community_centre",
+    "class": "amenity"
+  },
+  "place:Sligo, County Sligo, Ireland": {
+    "lat": "54.2720696",
+    "lon": "-8.4751357",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Dromore West, County Sligo, Ireland": {
+    "lat": "54.2491446",
+    "lon": "-8.8752953",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Skreen, County Sligo, Ireland": {
+    "lat": "54.222979",
+    "lon": "-8.7337948",
+    "type": "civil_parish",
+    "class": "boundary"
+  },
+  "place:Ballisodare, County Sligo, Ireland": {
+    "lat": "54.2098884",
+    "lon": "-8.509265",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Manorhamilton, County Leitrim, Ireland": {
+    "lat": "54.3040414",
+    "lon": "-8.1754431",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Corglass, County Leitrim, Ireland": {
+    "lat": "54.0342724",
+    "lon": "-7.962592",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Dromod, County Leitrim, Ireland": {
+    "lat": "53.8590965",
+    "lon": "-7.9163715",
+    "type": "station",
+    "class": "railway"
+  },
+  "place:Drumshanbo, County Leitrim, Ireland": {
+    "lat": "54.0467406",
+    "lon": "-8.0401507",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Lough Allen PO, County Leitrim, Ireland": null,
+  "place:Dromahaire, County Leitrim, Ireland": {
+    "lat": "54.2687989",
+    "lon": "-8.2528974",
+    "type": "historic_parish",
+    "class": "boundary"
+  },
+  "place:Leitrim, County Leitrim, Ireland": {
+    "lat": "53.9905176",
+    "lon": "-8.065392",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Bridgend, County Donegal, Ireland": {
+    "lat": "55.0413841",
+    "lon": "-7.3791898",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Buncrana, County Donegal, Ireland": {
+    "lat": "55.1353624",
+    "lon": "-7.453109",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Laharn, County Cork, Ireland": null,
+  "place:Lombardstown, County Cork, Ireland": {
+    "lat": "52.1187341",
+    "lon": "-8.7804791",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Cuirt na hAbhainn, County Limerick, Ireland": null,
+  "place:Steelaun, County Mayo, Ireland": {
+    "lat": "54.2483013",
+    "lon": "-9.2245929",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Rathfran, County Mayo, Ireland": {
+    "lat": "54.2426413",
+    "lon": "-9.2377441",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Carrowmore Lacken, County Mayo, Ireland": {
+    "lat": "54.2860517",
+    "lon": "-9.3253497",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Heneghan's, County Mayo, Ireland": {
+    "lat": "53.7636057",
+    "lon": "-8.7669155",
+    "type": "furniture",
+    "class": "shop"
+  },
+  "place:Belcarra, County Mayo, Ireland": {
+    "lat": "53.8017945",
+    "lon": "-9.2161763",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Pollagh, County Mayo, Ireland": {
+    "lat": "53.9726103",
+    "lon": "-10.1077656",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Keel, County Mayo, Ireland": {
+    "lat": "53.9733139",
+    "lon": "-10.085191",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Dooagh, County Mayo, Ireland": {
+    "lat": "53.9749647",
+    "lon": "-10.1279582",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Slievemore, County Mayo, Ireland": {
+    "lat": "54.0097442",
+    "lon": "-10.0589933",
+    "type": "peak",
+    "class": "natural"
+  },
+  "place:Tallagh, County Mayo, Ireland": {
+    "lat": "54.0169942",
+    "lon": "-9.8479517",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Wilmslow, County Wexford, Ireland": null,
+  "place:Marshalstown, County Wexford, Ireland": {
+    "lat": "52.5497525",
+    "lon": "-6.5973307",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Castle Ellis, County Wexford, Ireland": {
+    "lat": "52.4704509",
+    "lon": "-6.3965569",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Ballymoney, County Wexford, Ireland": {
+    "lat": "52.6810243",
+    "lon": "-6.2201534",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Portersgate, County Wexford, Ireland": {
+    "lat": "52.1531671",
+    "lon": "-6.8941588",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Fethard-on-Sea, County Wexford, Ireland": {
+    "lat": "52.1915688",
+    "lon": "-6.8398404",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Williamstown, County Westmeath, Ireland": {
+    "lat": "53.7711657",
+    "lon": "-7.3642569",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Balykeeran, County Westmeath, Ireland": null,
+  "place:Tanyard, County Westmeath, Ireland": {
+    "lat": "53.3954385",
+    "lon": "-7.7166084",
+    "type": "yes",
+    "class": "building"
+  },
+  "place:The Angler's Rest, County Sligo, Ireland": null,
+  "place:Tullylannon, County Leitrim, Ireland": null,
+  "place:Carrowreagh, County Donegal, Ireland": {
+    "lat": "55.024915",
+    "lon": "-7.4144127",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "settlement:Kilbeggan, County Westmeath, Ireland": {
+    "lat": "53.3681414",
+    "lon": "-7.4979792",
+    "type": "town",
+    "class": "place"
+  },
+  "settlement:Foxford, County Mayo, Ireland": {
+    "lat": "53.983333",
+    "lon": "-9.116667",
+    "type": "town",
+    "class": "place"
+  },
+  "settlement:Ballyedmond, County Wexford, Ireland": {
+    "lat": "52.5528948",
+    "lon": "-6.3406882",
+    "type": "village",
+    "class": "place"
+  },
+  "settlement:Balbriggan, County Dublin, Ireland": {
+    "lat": "53.6085326",
+    "lon": "-6.1829121",
+    "type": "town",
+    "class": "place"
+  },
+  "place:The Bakery, County Dublin, Ireland": {
+    "lat": "53.3446102",
+    "lon": "-6.2686326",
+    "type": "bakery",
+    "class": "shop"
+  },
+  "settlement:The Bakery, County Dublin, Ireland": null,
+  "place:The Nurseries, County Dublin, Ireland": {
+    "lat": "53.2922167",
+    "lon": "-6.2406694",
+    "type": "residential",
+    "class": "landuse"
+  },
+  "settlement:The Nurseries, County Dublin, Ireland": null,
+  "place:Bob's Casino, County Dublin, Ireland": null,
+  "settlement:Bob's Casino, County Dublin, Ireland": null,
+  "settlement:Skerries, County Dublin, Ireland": {
+    "lat": "53.5806379",
+    "lon": "-6.1066867",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Rosario, County Dublin, Ireland": {
+    "lat": "53.3027058",
+    "lon": "-6.2454158",
+    "type": "retail",
+    "class": "building"
+  },
+  "settlement:Rosario, County Dublin, Ireland": null,
+  "place:Baldoyle, County Dublin, Ireland": {
+    "lat": "53.3958303",
+    "lon": "-6.1285497",
+    "type": "suburb",
+    "class": "place"
+  },
+  "place:Riverstown, County Cork, Ireland": {
+    "lat": "51.9705788",
+    "lon": "-8.3907805",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Glanmire, County Cork, Ireland": {
+    "lat": "51.9192272",
+    "lon": "-8.3959789",
+    "type": "suburb",
+    "class": "place"
+  },
+  "settlement:Cork (adjoining the Riverstown Inn), County Cork, Ireland": null,
+  "place:Blackrock, County Cork, Ireland": {
+    "lat": "51.8974571",
+    "lon": "-8.4130853",
+    "type": "suburb",
+    "class": "place"
+  },
+  "place:Blackpool, County Cork, Ireland": {
+    "lat": "51.9112651",
+    "lon": "-8.4736373",
+    "type": "suburb",
+    "class": "place"
+  },
+  "place:Patsy's Corner, County Cork, Ireland": {
+    "lat": "51.7062731",
+    "lon": "-8.5239336",
+    "type": "art",
+    "class": "shop"
+  },
+  "settlement:Patsy's Corner, County Cork, Ireland": null,
+  "place:Former Kinsale Cabs, County Cork, Ireland": null,
+  "settlement:Former Kinsale Cabs, County Cork, Ireland": null,
+  "place:Actons Yard, County Cork, Ireland": null,
+  "settlement:Actons Yard, County Cork, Ireland": null,
+  "place:The Glen, County Cork, Ireland": {
+    "lat": "51.9112710",
+    "lon": "-8.4604061",
+    "type": "suburb",
+    "class": "place"
+  },
+  "place:Cogans Corner, County Cork, Ireland": null,
+  "settlement:Cogans Corner, County Cork, Ireland": null,
+  "place:The Nest Pembroke, County Cork, Ireland": null,
+  "settlement:The Nest Pembroke, County Cork, Ireland": null,
+  "place:Knocknagore, County Cork, Ireland": {
+    "lat": "51.7977796",
+    "lon": "-8.2984791",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "settlement:Rathcormac, County Cork, Ireland": null,
+  "settlement:Laharn, County Cork, Ireland": null,
+  "settlement:Mallow, County Cork, Ireland": {
+    "lat": "52.1373851",
+    "lon": "-8.6450328",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Templemary, County Cork, Ireland": {
+    "lat": "52.2168231",
+    "lon": "-8.7570650",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Cuil, County Cork, Ireland": {
+    "lat": "52.1378879",
+    "lon": "-8.6540414",
+    "type": "house",
+    "class": "building"
+  },
+  "settlement:Cuil, County Cork, Ireland": {
+    "lat": "51.9281669",
+    "lon": "-9.2182130",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Annabella, County Cork, Ireland": {
+    "lat": "52.1404236",
+    "lon": "-8.6616116",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Former Library, County Cork, Ireland": null,
+  "settlement:Former Library, County Cork, Ireland": null,
+  "place:Gate Lodge, County Cork, Ireland": {
+    "lat": "51.8976602",
+    "lon": "-8.4029181",
+    "type": "residential",
+    "class": "highway"
+  },
+  "settlement:Gate Lodge, County Cork, Ireland": null,
+  "place:Newline, County Cork, Ireland": null,
+  "settlement:Newline, County Cork, Ireland": null,
+  "place:Castle Ahan, County Cork, Ireland": null,
+  "settlement:Castle Ahan, County Cork, Ireland": null,
+  "settlement:Enniskeane, County Cork, Ireland": null,
+  "place:Stella Maris, County Cork, Ireland": {
+    "lat": "51.9149941",
+    "lon": "-8.4520922",
+    "type": "house",
+    "class": "building"
+  },
+  "settlement:Stella Maris, County Cork, Ireland": null,
+  "place:Beach, County Cork, Ireland": {
+    "lat": "51.6725971",
+    "lon": "-9.4850953",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Sackville Strreet, County Cork, Ireland": null,
+  "settlement:Sackville Strreet, County Cork, Ireland": null,
+  "place:Meadowlands, County Cork, Ireland": {
+    "lat": "51.9250171",
+    "lon": "-8.1662613",
+    "type": "residential",
+    "class": "highway"
+  },
+  "settlement:Meadowlands, County Cork, Ireland": null,
+  "place:Sunglen, County Limerick, Ireland": {
+    "lat": "52.5472303",
+    "lon": "-8.3659280",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Old Pallas, County Limerick, Ireland": {
+    "lat": "52.5483893",
+    "lon": "-8.3541631",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Corbally, County Limerick, Ireland": {
+    "lat": "52.6864223",
+    "lon": "-8.6155067",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Hassetts Cross, County Limerick, Ireland": null,
+  "settlement:Hassetts Cross, County Limerick, Ireland": null,
+  "place:Ballycormack, County Limerick, Ireland": null,
+  "settlement:Ballycormack, County Limerick, Ireland": null,
+  "place:Shanagolden, County Limerick, Ireland": {
+    "lat": "52.6017221",
+    "lon": "-9.1085748",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Tierney's, County Limerick, Ireland": {
+    "lat": "52.6539064",
+    "lon": "-8.6173239",
+    "type": "retail",
+    "class": "building"
+  },
+  "settlement:Tierney's, County Limerick, Ireland": null,
+  "place:Roxboro Stores, County Limerick, Ireland": {
+    "lat": "52.6539064",
+    "lon": "-8.6173239",
+    "type": "retail",
+    "class": "building"
+  },
+  "settlement:Roxboro Stores, County Limerick, Ireland": null,
+  "place:Priors Land, County Limerick, Ireland": null,
+  "settlement:Priors Land, County Limerick, Ireland": null,
+  "settlement:Cuirt na hAbhainn, County Limerick, Ireland": null,
+  "place:Barna, County Limerick, Ireland": {
+    "lat": "52.3717353",
+    "lon": "-8.2514703",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Bruree, County Limerick, Ireland": {
+    "lat": "52.4243387",
+    "lon": "-8.6605818",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Carrowkeel, County Limerick, Ireland": {
+    "lat": "52.6742704",
+    "lon": "-8.5146187",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Bolgers, County Kildare, Ireland": null,
+  "settlement:Bolgers, County Kildare, Ireland": null,
+  "place:Abbeyfarm, County Kildare, Ireland": null,
+  "settlement:Abbeyfarm, County Kildare, Ireland": null,
+  "place:Coolnaferagh, County Kildare, Ireland": null,
+  "settlement:Coolnaferagh, County Kildare, Ireland": null,
+  "place:Passlands, County Kildare, Ireland": {
+    "lat": "53.1485661",
+    "lon": "-7.0683760",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Enfield, County Kildare, Ireland": {
+    "lat": "53.4113943",
+    "lon": "-6.8774110",
+    "type": "services",
+    "class": "highway"
+  },
+  "settlement:Enfield, County Kildare, Ireland": null,
+  "place:Canal Harbour, County Kildare, Ireland": {
+    "lat": "53.1433262",
+    "lon": "-7.0668902",
+    "type": "tertiary",
+    "class": "highway"
+  },
+  "settlement:Canal Harbour, County Kildare, Ireland": null,
+  "place:Grange, County Kildare, Ireland": {
+    "lat": "53.3966339",
+    "lon": "-6.7389230",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "settlement:Kilcock, County Kildare, Ireland": {
+    "lat": "53.4003472",
+    "lon": "-6.6673520",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Bargain Store, County Kildare, Ireland": null,
+  "settlement:Bargain Store, County Kildare, Ireland": null,
+  "settlement:Kildare Town, County Kildare, Ireland": {
+    "lat": "53.1568465",
+    "lon": "-6.9117199",
+    "type": "town",
+    "class": "place"
+  },
+  "settlement:Leixlip ( Commercial Unit ), County Kildare, Ireland": null,
+  "place:Coolereagh, County Kildare, Ireland": null,
+  "settlement:Coolereagh, County Kildare, Ireland": null,
+  "place:Former Garda Station, County Kildare, Ireland": null,
+  "settlement:Former Garda Station, County Kildare, Ireland": null,
+  "place:Rathangan, County Kildare, Ireland": {
+    "lat": "53.2203302",
+    "lon": "-6.9929735",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Co.Kildare, County Kildare, Ireland": {
+    "lat": "53.2756646",
+    "lon": "-6.6901089",
+    "type": "place_of_worship",
+    "class": "amenity"
+  },
+  "settlement:Co.Kildare, County Kildare, Ireland": null,
+  "place:Hennessy Garage, County Kildare, Ireland": null,
+  "settlement:Hennessy Garage, County Kildare, Ireland": null,
+  "place:The Laurels, County Kildare, Ireland": {
+    "lat": "53.0967784",
+    "lon": "-6.7838312",
+    "type": "house",
+    "class": "building"
+  },
+  "settlement:The Laurels, County Kildare, Ireland": null,
+  "place:Former Grand Canal Hotel, County Kildare, Ireland": null,
+  "settlement:Former Grand Canal Hotel, County Kildare, Ireland": null,
+  "settlement:Barney’s Pub Athy, County Kildare, Ireland": null,
+  "place:Pine Vale, County Kildare, Ireland": null,
+  "settlement:Pine Vale, County Kildare, Ireland": null,
+  "place:Killeenmore, County Kildare, Ireland": {
+    "lat": "53.2735358",
+    "lon": "-6.6199435",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Sallins, County Kildare, Ireland": {
+    "lat": "53.2490330",
+    "lon": "-6.6656860",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Pinocchio's, County Mayo, Ireland": null,
+  "settlement:Pinocchio's, County Mayo, Ireland": null,
+  "place:Manse, County Mayo, Ireland": null,
+  "settlement:Manse, County Mayo, Ireland": null,
+  "place:The Brook, County Mayo, Ireland": null,
+  "settlement:The Brook, County Mayo, Ireland": null,
+  "place:Diamond Memorials, County Mayo, Ireland": null,
+  "settlement:Diamond Memorials, County Mayo, Ireland": null,
+  "place:Abbeyhalfquarter, County Mayo, Ireland": {
+    "lat": "54.1130195",
+    "lon": "-9.1391942",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Kilmurrymore, County Mayo, Ireland": null,
+  "settlement:Kilmurrymore, County Mayo, Ireland": null,
+  "place:Corcoran's, County Mayo, Ireland": null,
+  "settlement:Corcoran's, County Mayo, Ireland": null,
+  "place:The Acres, County Mayo, Ireland": null,
+  "settlement:The Acres, County Mayo, Ireland": null,
+  "settlement:Heneghan's, County Mayo, Ireland": null,
+  "place:Quinns, County Mayo, Ireland": {
+    "lat": "53.9810957",
+    "lon": "-9.1147961",
+    "type": "butcher",
+    "class": "shop"
+  },
+  "settlement:Quinns, County Mayo, Ireland": null,
+  "place:Hanley's Shop, County Mayo, Ireland": null,
+  "settlement:Hanley's Shop, County Mayo, Ireland": null,
+  "place:Lahardane, County Mayo, Ireland": {
+    "lat": "54.0282478",
+    "lon": "-9.3216581",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Cornmarket, County Mayo, Ireland": null,
+  "settlement:Cornmarket, County Mayo, Ireland": null,
+  "place:Old Garage, County Mayo, Ireland": null,
+  "settlement:Old Garage, County Mayo, Ireland": null,
+  "place:Cloonnagashel, County Mayo, Ireland": {
+    "lat": "53.6559706",
+    "lon": "-9.1668469",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "settlement:Ballyhaunis, County Mayo, Ireland": {
+    "lat": "53.7633588",
+    "lon": "-8.7651532",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Irishtown, County Mayo, Ireland": {
+    "lat": "53.6626542",
+    "lon": "-8.8880037",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Raftery Room, County Mayo, Ireland": null,
+  "settlement:Raftery Room, County Mayo, Ireland": null,
+  "place:Ballinamore, County Mayo, Ireland": {
+    "lat": "53.8249346",
+    "lon": "-9.0415404",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Killasser, County Mayo, Ireland": {
+    "lat": "53.9933286",
+    "lon": "-8.9780962",
+    "type": "civil_parish",
+    "class": "boundary"
+  },
+  "place:The Neale, County Mayo, Ireland": {
+    "lat": "53.5687508",
+    "lon": "-9.2339405",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Polranny, County Mayo, Ireland": {
+    "lat": "53.9339392",
+    "lon": "-9.9135354",
+    "type": "village",
+    "class": "place"
+  },
+  "settlement:Slievemore, County Mayo, Ireland": {
+    "lat": "53.9970898",
+    "lon": "-10.0811486",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Newport, County Mayo, Ireland": {
+    "lat": "53.8848021",
+    "lon": "-9.5466736",
+    "type": "town",
+    "class": "place"
+  },
+  "settlement:Thurles, County Tipperary, Ireland": {
+    "lat": "52.6801547",
+    "lon": "-7.8151008",
+    "type": "town",
+    "class": "place"
+  },
+  "place:C. Tipperary, County Tipperary, Ireland": {
+    "lat": "52.4734839",
+    "lon": "-8.1614446",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Abbey Villas, County Tipperary, Ireland": null,
+  "settlement:Abbey Villas, County Tipperary, Ireland": null,
+  "place:Former Superquinn / Supervalu, County Tipperary, Ireland": null,
+  "settlement:Former Superquinn / Supervalu, County Tipperary, Ireland": null,
+  "settlement:Clonmel, County Tipperary, Ireland": {
+    "lat": "52.3550000",
+    "lon": "-7.7038890",
+    "type": "town",
+    "class": "place"
+  },
+  "settlement:Tipp Town, County Tipperary, Ireland": null,
+  "place:The Dairy, County Tipperary, Ireland": null,
+  "settlement:The Dairy, County Tipperary, Ireland": null,
+  "place:Ferndale, County Tipperary, Ireland": null,
+  "settlement:Ferndale, County Tipperary, Ireland": null,
+  "place:Tyone, County Tipperary, Ireland": {
+    "lat": "52.8538818",
+    "lon": "-8.1778969",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Newsworld, County Tipperary, Ireland": null,
+  "settlement:Newsworld, County Tipperary, Ireland": null,
+  "settlement:Wilmslow, County Wexford, Ireland": null,
+  "settlement:Gorey, County Wexford, Ireland": {
+    "lat": "52.6761350",
+    "lon": "-6.2927520",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Galavan's Pub, County Wexford, Ireland": null,
+  "settlement:Galavan's Pub, County Wexford, Ireland": null,
+  "settlement:Enniscorthy, County Wexford, Ireland": {
+    "lat": "52.5011493",
+    "lon": "-6.5674944",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Former McNulty's, County Wexford, Ireland": null,
+  "settlement:Former McNulty's, County Wexford, Ireland": null,
+  "place:Vacant Unit, County Wexford, Ireland": null,
+  "settlement:Vacant Unit, County Wexford, Ireland": null,
+  "place:Derelict Dwelling, County Wexford, Ireland": null,
+  "settlement:Derelict Dwelling, County Wexford, Ireland": null,
+  "place:The Old Grainstore, County Wexford, Ireland": null,
+  "settlement:The Old Grainstore, County Wexford, Ireland": null,
+  "place:Greenlawn, County Wexford, Ireland": null,
+  "settlement:Greenlawn, County Wexford, Ireland": null,
+  "place:Danescastle, County Wexford, Ireland": {
+    "lat": "52.2412362",
+    "lon": "-6.7281916",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Cornwall, County Wexford, Ireland": {
+    "lat": "52.3878084",
+    "lon": "-6.5750508",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Two Dwellings, County Wexford, Ireland": null,
+  "settlement:Two Dwellings, County Wexford, Ireland": null,
+  "place:Walsheslough, County Wexford, Ireland": {
+    "lat": "52.2712471",
+    "lon": "-6.3915360",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "settlement:Rosslare Strand, County Wexford, Ireland": null,
+  "place:Milltown, County Wexford, Ireland": {
+    "lat": "52.2561641",
+    "lon": "-6.8562189",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Old Discount Stre, County Wexford, Ireland": null,
+  "settlement:Old Discount Stre, County Wexford, Ireland": null,
+  "place:Steele &, County Wexford, Ireland": {
+    "lat": "52.3919794",
+    "lon": "-6.9478529",
+    "type": "engineer",
+    "class": "office"
+  },
+  "settlement:Steele &, County Wexford, Ireland": null,
+  "place:Former Nightclub, County Wexford, Ireland": null,
+  "settlement:Former Nightclub, County Wexford, Ireland": null,
+  "place:Templeshannon, County Wexford, Ireland": {
+    "lat": "52.5015436",
+    "lon": "-6.5593111",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Kyle, County Wexford, Ireland": {
+    "lat": "52.6136096",
+    "lon": "-6.7018478",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Clonhenret, County Wexford, Ireland": {
+    "lat": "52.6247067",
+    "lon": "-6.4166173",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:The Old Garage, County Wexford, Ireland": null,
+  "settlement:The Old Garage, County Wexford, Ireland": null,
+  "place:The Oil, County Wexford, Ireland": null,
+  "settlement:The Oil, County Wexford, Ireland": null,
+  "settlement:Oylgate, County Wexford, Ireland": null,
+  "settlement:Rosslare Harbour, County Wexford, Ireland": {
+    "lat": "52.2497333",
+    "lon": "-6.3401152",
+    "type": "village",
+    "class": "place"
+  },
+  "place:Former Murphy Flood's, County Wexford, Ireland": null,
+  "settlement:Former Murphy Flood's, County Wexford, Ireland": null,
+  "place:Spring Valley Nursing Home, County Wexford, Ireland": null,
+  "settlement:Spring Valley Nursing Home, County Wexford, Ireland": null,
+  "place:The Lodges, County Wexford, Ireland": null,
+  "settlement:The Lodges, County Wexford, Ireland": null,
+  "place:Parknacross, County Wexford, Ireland": {
+    "lat": "52.6224372",
+    "lon": "-6.2355208",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Viki's Motors, County Louth, Ireland": null,
+  "settlement:Viki's Motors, County Louth, Ireland": null,
+  "place:Crossans Garage, County Louth, Ireland": null,
+  "settlement:Crossans Garage, County Louth, Ireland": null,
+  "place:Santa Barbara, County Louth, Ireland": null,
+  "settlement:Santa Barbara, County Louth, Ireland": null,
+  "place:Dwelling, County Louth, Ireland": null,
+  "settlement:Dwelling, County Louth, Ireland": null,
+  "settlement:Balykeeran, County Westmeath, Ireland": null,
+  "settlement:Tanyard, County Westmeath, Ireland": null,
+  "place:Kildallan, County Westmeath, Ireland": {
+    "lat": "53.5549067",
+    "lon": "-7.4712201",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Dr. Cuppagies, County Westmeath, Ireland": null,
+  "settlement:Dr. Cuppagies, County Westmeath, Ireland": null,
+  "settlement:Castlepollard Castlepollard, County Westmeath, Ireland": {
+    "lat": "53.6796939",
+    "lon": "-7.2981856",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Toorvalley Est. Moate, County Westmeath, Ireland": null,
+  "settlement:Toorvalley Est. Moate, County Westmeath, Ireland": null,
+  "place:Bellaugh, County Westmeath, Ireland": {
+    "lat": "53.4212728",
+    "lon": "-7.9569955",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "settlement:Castleblayney, County Monaghan, Ireland": {
+    "lat": "54.1201142",
+    "lon": "-6.7389328",
+    "type": "town",
+    "class": "place"
+  },
+  "place:Assembly Rooms, County Monaghan, Ireland": null,
+  "settlement:Assembly Rooms, County Monaghan, Ireland": null,
+  "place:Clonedergole, County Monaghan, Ireland": {
+    "lat": "54.1794945",
+    "lon": "-7.2529471",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Woodbury, County Monaghan, Ireland": null,
+  "settlement:Woodbury, County Monaghan, Ireland": null,
+  "place:Corlattan, County Monaghan, Ireland": {
+    "lat": "54.2250598",
+    "lon": "-7.0028832",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Threemilehouse, County Monaghan, Ireland": {
+    "lat": "54.2165174",
+    "lon": "-7.0442106",
+    "type": "village",
+    "class": "place"
+  },
+  "settlement:The Angler's Rest, County Sligo, Ireland": null,
+  "place:The Hollow, County Sligo, Ireland": null,
+  "settlement:The Hollow, County Sligo, Ireland": null,
+  "place:Cissy's Macs Drumcliffe, County Sligo, Ireland": null,
+  "settlement:Cissy's Macs Drumcliffe, County Sligo, Ireland": null,
+  "place:Former Creche, County Sligo, Ireland": null,
+  "settlement:Former Creche, County Sligo, Ireland": null,
+  "place:Westgardens, County Sligo, Ireland": null,
+  "settlement:Westgardens, County Sligo, Ireland": null,
+  "place:Knockaculleen, County Sligo, Ireland": {
+    "lat": "54.2518420",
+    "lon": "-8.8809067",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Farnaharpy, County Sligo, Ireland": null,
+  "settlement:Farnaharpy, County Sligo, Ireland": null,
+  "place:Riverside, County Sligo, Ireland": {
+    "lat": "54.2712385",
+    "lon": "-8.4655032",
+    "type": "tertiary",
+    "class": "highway"
+  },
+  "settlement:Riverside, County Sligo, Ireland": null,
+  "place:Hazelwood, County Sligo, Ireland": {
+    "lat": "54.2557859",
+    "lon": "-8.4280182",
+    "type": "wood",
+    "class": "natural"
+  },
+  "settlement:Hazelwood, County Sligo, Ireland": {
+    "lat": "54.2642609",
+    "lon": "-8.4322207",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Ballinode, County Sligo, Ireland": {
+    "lat": "54.2780775",
+    "lon": "-8.4566314",
+    "type": "house",
+    "class": "building"
+  },
+  "settlement:Ballinode, County Sligo, Ireland": null,
+  "place:Stranagross, County Leitrim, Ireland": null,
+  "settlement:Stranagross, County Leitrim, Ireland": null,
+  "place:Glenfarne, County Leitrim, Ireland": {
+    "lat": "54.2869440",
+    "lon": "-7.9872220",
+    "type": "locality",
+    "class": "place"
+  },
+  "place:Tarmon, County Leitrim, Ireland": {
+    "lat": "54.1255560",
+    "lon": "-8.0847220",
+    "type": "locality",
+    "class": "place"
+  },
+  "place:Corriscoffey, County Leitrim, Ireland": null,
+  "settlement:Corriscoffey, County Leitrim, Ireland": null,
+  "settlement:Dromod, County Leitrim, Ireland": {
+    "lat": "53.8788023",
+    "lon": "-7.9472829",
+    "type": "administrative",
+    "class": "boundary"
+  },
+  "place:Towneycorragh, County Leitrim, Ireland": null,
+  "settlement:Towneycorragh, County Leitrim, Ireland": null,
+  "settlement:Lough Allen PO, County Leitrim, Ireland": null,
+  "settlement:Tullylannon, County Leitrim, Ireland": null,
+  "place:Millbrae, County Donegal, Ireland": {
+    "lat": "55.2450568",
+    "lon": "-7.2642786",
+    "type": "residential",
+    "class": "highway"
+  },
+  "settlement:Millbrae, County Donegal, Ireland": null,
+  "place:Ballyedmond, County Wexford, Ireland": {
+    "lat": "52.5319644",
+    "lon": "-6.4313848",
+    "type": "river",
+    "class": "waterway"
   }
 }
