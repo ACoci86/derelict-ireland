@@ -935,6 +935,45 @@ body:has(.map.streets-on) .bar .mark {
   width: 15px;
   height: 15px;
 }
+/* The header's story button: its arrow nudges down a few times once the map
+   has opened, and keeps nudging gently while it says "Back". */
+@keyframes arrow-nudge {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(3.5px);
+  }
+  40% {
+    transform: translateY(-0.5px);
+  }
+}
+.read-btn .ico {
+  animation: arrow-nudge 1.4s ease-in-out 2.4s 3;
+}
+.read-btn:hover .ico {
+  animation: arrow-nudge 1.1s ease-in-out infinite;
+}
+.read-btn.is-back {
+  background: var(--ink);
+  color: var(--land);
+  box-shadow: none;
+}
+.read-btn.is-back:hover {
+  background: var(--accent);
+}
+.read-btn.is-back .ico {
+  animation: arrow-nudge 1.6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .read-btn .ico,
+  .read-btn:hover .ico,
+  .read-btn.is-back .ico {
+    animation: none;
+  }
+}
 .zoom-ctl .reset {
   display: inline-flex;
   align-items: center;

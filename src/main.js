@@ -191,36 +191,83 @@ const scale = createScale(document.getElementById("scale"), {
   onPreview: (fn) => map.preview(fn),
 });
 
-function setState(next) {
+function setState(next, { wholeIsland = false } = {}) {
   const prevCouncil = state.council;
   state = next;
   map.setView(
     { match: matches, annotations: annotationsFor(state), missing: state.missing },
-    { zoomTo: state.council ? [state.council] : null, resetView: !state.council && !!prevCouncil },
+    { zoomTo: state.council ? [state.council] : null, resetView: !state.council && (!!prevCouncil || wholeIsland) },
   );
   scale.update({ ...state, shown: sites.filter(matches).length });
 }
 
+// ---------- "Back to the story" ----------
+// A link in the essay takes the reader up to the map. The header's first
+// button then turns into "Back", which returns to the exact spot they left.
+const readBtn = document.getElementById("read-btn");
+const readText = [...readBtn.querySelectorAll("span")];
+let returnTo = null;
+let goingBack = false;
+let goingUp = false; // the page's own scroll up to the map, which mustn't count as returning
+function setBack(y) {
+  returnTo = y;
+  const back = y != null;
+  readText[0].textContent = back ? "Back to the story" : "The story";
+  readText[1].textContent = back ? "Back" : "Read";
+  readBtn.classList.toggle("is-back", back);
+  readBtn.setAttribute("aria-label", back ? "Back to where you were in the story" : "Read the story");
+}
+readBtn.addEventListener("click", (e) => {
+  if (returnTo == null) return; // a plain jump to the story
+  e.preventDefault();
+  goingBack = true;
+  const smooth = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: returnTo, behavior: smooth ? "smooth" : "auto" });
+  setBack(null);
+});
+// Once the reader is back in the story by any route, the button is "Read" again.
+addEventListener(
+  "scroll",
+  () => {
+    if (goingUp || (returnTo == null && !goingBack)) return;
+    const story = document.getElementById("story").getBoundingClientRect().top;
+    if (story < innerHeight * 0.5) {
+      goingBack = false;
+      if (returnTo != null) setBack(null);
+    }
+  },
+  { passive: true },
+);
+
 // Scroll up to the map first, then change it, so the change is seen.
-function toMapThen(fn) {
+function toMapThen(fn, { offerBack = true } = {}) {
   if (window.scrollY < 8) return fn();
+  // Coming from the story: offer the way back.
+  if (offerBack && document.getElementById("story").getBoundingClientRect().top < innerHeight * 0.5) setBack(window.scrollY);
+  goingUp = true;
   const smooth = !matchMedia("(prefers-reduced-motion: reduce)").matches;
   window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
   const started = performance.now();
   const wait = () => {
-    if (window.scrollY < 8 || performance.now() - started > 1500) fn();
-    else requestAnimationFrame(wait);
+    if (window.scrollY < 8 || performance.now() - started > 1500) {
+      goingUp = false;
+      fn();
+    } else requestAnimationFrame(wait);
   };
   requestAnimationFrame(wait);
 }
 
 function explore(key, scroll = true) {
+  // From the essay these are nationwide groups, so the map flies back out to
+  // the whole island (it may still be zoomed in on a site from earlier). From
+  // the value panel on the map, it stays where the reader put it.
+  const opts = { wholeIsland: scroll };
   const apply = () => {
-    if (key === "old") setState({ ...ALL, era: "pre2000", label: "Entered before 2000" });
-    else if (key === "missing") setState({ ...ALL, missing: true, label: `The ${word(summary.unpublished.length)} registers not published online` });
+    if (key === "old") setState({ ...ALL, era: "pre2000", label: "Entered before 2000" }, opts);
+    else if (key === "missing") setState({ ...ALL, missing: true, label: `The ${word(summary.unpublished.length)} registers not published online` }, opts);
     else {
       const c = CATEGORIES.find((c) => c.key === key);
-      setState({ ...ALL, cat: key, lo: c.lo, hi: c.hi, unvalued: false, label: CAT_LABELS[key] });
+      setState({ ...ALL, cat: key, lo: c.lo, hi: c.hi, unvalued: false, label: CAT_LABELS[key] }, opts);
     }
   };
   scroll ? toMapThen(apply) : apply();
@@ -270,12 +317,16 @@ createSearch(document.getElementById("search"), {
 for (const mark of document.querySelectorAll(".mark")) {
   mark.addEventListener("click", (e) => {
     e.preventDefault();
+    setBack(null);
     document.getElementById("search").reset?.();
     scale.collapse();
-    toMapThen(() => {
-      setState({ ...ALL });
-      map.reset();
-    });
+    toMapThen(
+      () => {
+        setState({ ...ALL });
+        map.reset();
+      },
+      { offerBack: false },
+    );
   });
 }
 
