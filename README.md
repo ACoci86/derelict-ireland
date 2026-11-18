@@ -1,153 +1,47 @@
 # Derelict Ireland
 
-An interactive map of derelict sites across Ireland, built from the registers that local authorities are legally required to keep.
+Every council in Ireland has to keep a public register of derelict sites. The trouble is they're scattered across PDFs, spreadsheets, web tables and map portals, each in its own format. This project gathers them up and puts every site on one map.
+
+**Live site:** https://acoci86.github.io/derelict-ireland/
 
 ![Screenshot of the Derelict Ireland site](docs/screenshot.png)
 
-> Work in progress. **27 of Ireland's 31 local authorities** are covered so far: **2,364 sites mapped**, with a further ~261 held for review. Numbers and features may change.
+27 of the 31 councils publish their register online, and they're all here: 2,364 sites on the map, with about 260 more I couldn't place yet. Kerry, Longford, Clare and Galway County keep theirs offline (you have to ask or visit the office), so they're blank on the map. Cavan joined in September 2026.
 
-Under the Derelict Sites Act, every Irish local authority must maintain a public register of derelict sites. Those registers are scattered across dozens of PDFs, spreadsheets, and open-data portals in wildly different formats. This project pulls them into one place, puts every site on a map, and lets you explore, search, and download the data.
+On the site you can click any site for its details, filter by council, see what's changed recently at `/history`, and download everything as CSV or GeoJSON.
 
-Click any pin for the address, council, and register reference. The registers value the mapped sites at roughly **€211 million** in total.
+## How the data gets made
 
-## What the site does
+`npm run pipeline` reads every council's register through its own adapter in `pipeline/adapters/` and writes `public/sites.geojson` and `public/stats.json`.
 
-- **Interactive map**: every mapped site as a pin, clustered at low zoom so it stays readable with thousands of points (MapLibre + a clean CARTO basemap).
-- **Click a council** in the coverage table to filter the map to just that council's sites, zoom to it, and highlight its boundary.
-- **County / local-authority borders** drawn on the map for context.
-- **Coverage-by-council table** with mapped / not-yet-mapped / total counts, a coverage bar, the total site **valuation** where the register publishes it, the source, and when each register was last updated.
-- **Search** the table by council name, and **sort** any column ascending or descending.
-- **Download** the whole dataset, or any single council, as **CSV** (spreadsheets) or **GeoJSON** (mapping tools), generated in the browser with no server needed.
-- **A menu** on every page, linking the map, the changes page, the downloads, and the source.
-- **What's changed** at `/history`: which councils have republished lately and by how many entries, plus how up to date every register is, oldest last.
+Some councils publish map layers with coordinates, so those sites land exactly where the council puts them. The rest only give addresses. Their registers get scraped into a CSV once (the converters are in `pipeline/manual/`), and each address is looked up on OpenStreetMap: Nominatim first, then Photon if that finds nothing.
 
-## Coverage
+Photon is fuzzy. It once put "Main Street, Ringaskiddy" near the Limerick border. So every result has to land in the right county, and a Photon result also has to be within 5 km of a town the address names, or the site goes to that town instead. Anything I can't place sensibly is held back, not guessed. Lookups are cached in `data/cache/`, so re-runs are quick.
 
-**27 councils published and mapped:** Carlow, Cavan, Cork City, Cork County, Donegal, Dublin City, Dún Laoghaire-Rathdown, Fingal, Galway City, Kildare, Kilkenny, Laois, Leitrim, Limerick City and County, Louth, Mayo, Meath, Monaghan, Offaly, Roscommon, Sligo, South Dublin, Tipperary, Waterford, Westmeath, Wexford, Wicklow.
+I never read owner or occupier details, even where a register includes them. Only the location, reference, dates and value.
 
-**4 councils that keep a register but don't publish it online** (inspection in-office / on request only), shown in the table as "not available online": Kerry, Longford, Clare, Galway County. (Cavan published its register online in September 2026.)
+`npm run check` asks each council whether its register has changed since my copy and logs the answer to `public/history.json`. Pulling an update in is still a manual step: re-run that council's converter, then the pipeline.
 
-That accounts for all 31 local authorities.
-
-## How it works
-
-Two parts: an offline **pipeline** that produces the data, and a static **website** that displays it.
-
-### Pipeline (`pipeline/`)
-
-`npm run pipeline` runs every council adapter, geocodes what needs geocoding, and writes:
-
-- `public/sites.geojson`: the mapped sites,
-- `public/stats.json`: per-council counts, valuations, sources, and update dates,
-- `docs/not-yet-mapped.md`: the addresses still held for review.
-
-Each council has an adapter in `pipeline/adapters/`. Councils publish in two ways:
-
-- **Coordinate-ready** (ArcGIS / open-data layers): coordinates come straight from the council, so sites map precisely with no geocoding. These are marked `council` confidence.
-- **Address-only** (PDF / spreadsheet / HTML): the register is first scraped into a committed CSV by a one-off converter in `pipeline/manual/`, then each address is geocoded.
-
-### Update checker (`pipeline/check-updates.ts`)
-
-Registers move under us: a council republishes a PDF at a new address, edits a
-live map layer, or quietly adds rows to a table. `npm run check` sweeps all 26
-published registers and reports which ones have moved since the copy this site
-carries. It only reads, and never touches the dataset.
-
-Each way of publishing needs its own probe:
-
-- **live map layer**: ask the layer for its last edit stamp and record count,
-  and compare both with the last archived snapshot,
-- **open-data file**: hash the download against our archived copy,
-- **PDF / spreadsheet**: hash the file we converted, and re-read the council's
-  page, because a new register usually appears _beside_ the old one at a new
-  url with a new date in its file name,
-- **web page table**: re-read the page and count the register rows.
-
-Each run appends a dated entry to `public/history.json`, which the
-[what&#39;s-changed page](src/pages/history.astro) renders at `/history`. That page
-reads the log the other way round from how it is stored: it leads with what the
-councils did, and leaves the method to a note at the end. Taking an update in is
-still deliberate: re-run the council's converter in `pipeline/manual/` against
-the new file, then `npm run pipeline`.
-
-### Geocoding (address-only councils)
-
-Addresses are placed with a tiered, cost-free, terms-of-service-clean approach, using no Google and nothing that forbids storing the coordinates:
-
-1. **Nominatim** (OpenStreetMap) with a per-council county hint.
-2. **Photon** (also OpenStreetMap) as a fallback, more tolerant of vague or partial addresses.
-3. **Per-county bounding-box check**: any result that lands outside the council's own county is rejected, so a fuzzy match to a same-named street elsewhere in Ireland never reaches the map.
-4. **Town check** (Photon results only): the county box can't catch a same-named street in the wrong part of the right county ("Main Street, Ringaskiddy" was matched near the Limerick border). So a Photon result must also lie within 5 km of a town or townland the address names. If it doesn't, the site is placed at that town instead and marked `town` precision. If Nominatim can't be reached for the check, the site keeps its result and is checked again on the next run.
-
-Results are cached in `data/cache/` so re-runs are fast and free. Photon-derived pins are honestly capped at street/town precision. Anything still unplaced is held for review rather than guessed.
-
-Multi-property register entries (e.g. `6, 8, 10 Main Street`) are split into one site per number before geocoding, so each property is mapped separately.
-
-### Confidence levels
-
-Every pin is tagged with how sure we are of its position: `council` (council-supplied coordinates), `exact` (house-level geocode), `street`, `town`, or `none` (held for review). Current mix: ~1,372 council-precise, 46 exact, 407 street, 402 town.
-
-### A note on personal data
-
-Owner names, owner addresses, and occupier details are **deliberately never read**, even when a source register exposes them. The pipeline only extracts location, reference, dates, and valuation.
-
-## The data
-
-The downloadable CSV / GeoJSON carries: `id, council, address, register_ref, eircode, date_entered, valuation, lat, lon, geocode_confidence, source_url`. Valuations are the market values the registers publish (used for the derelict-sites levy); not every council publishes them, and a total is the sum of the valued sites only.
-
-## Repository layout
-
-```
-pipeline/
-  adapters/     one file per council -> Site[]
-  manual/       one-off converters that scrape a PDF/XLSX/HTML into a committed CSV
-  geocode.ts    Nominatim -> Photon -> county-box guard -> town check
-  run.ts        runs all adapters, splits multi-unit entries, writes outputs
-  check-updates.ts  asks every council whether its register has moved
-  schema.ts     the Site type and helpers
-src/components/  Nav.astro (the site menu) + Icon.astro
-src/pages/index.astro     the map + coverage table
-src/pages/history.astro   what's changed on the registers
-public/         sites.geojson, stats.json, history.json, counties.geojson, logos
-data/           raw sources, scraped CSVs, and the geocode cache
-docs/           screenshot + the not-yet-mapped list
-```
-
-## Commands
+## Running it
 
 ```sh
-npm install        # install dependencies
-npm run check      # ask every council whether its register has moved
-npm run pipeline   # rebuild the dataset from the registers
-npm run dev        # local site at http://localhost:4321
-npm run build      # build the production site to ./dist/
+npm install
+npm run dev        # the site, at http://localhost:4321
+npm run check      # has any register changed?
+npm run pipeline   # rebuild the data
+npm run build      # static site in ./dist
 ```
 
-The website build reads the committed data files and needs no secrets or environment variables.
+Pushing to `main` deploys to GitHub Pages.
 
 ## Adding a council
 
-1. Write an adapter in `pipeline/adapters/` that returns `Site[]` via `makeSite()`. For address-only councils, add a converter in `pipeline/manual/` first.
-2. Add one line to the `ADAPTERS` array in `pipeline/run.ts` (and a county hint / bounding box in `pipeline/geocode.ts` if it needs geocoding).
-3. Drop the council's logo into `public/logos/`.
-4. Run `npm run pipeline`.
+Write an adapter in `pipeline/adapters/` (and a converter in `pipeline/manual/` if the register is a PDF or spreadsheet), add it to `ADAPTERS` in `pipeline/run.ts`, give it a county hint and bounding box in `pipeline/geocode.ts` if it needs geocoding, drop its logo in `public/logos/`, and run the pipeline.
 
-## Deployment
+## Licence and a warning
 
-`npm run build` produces a fully static `./dist/`, so it drops onto any static host: Netlify, Cloudflare Pages, or GitHub Pages. No environment variables are needed for the build. The update loop is: run the pipeline locally → commit the regenerated data → push → the host redeploys.
+The code is MIT. The data comes from the councils' registers, and the positions and boundaries come from OpenStreetMap (© OpenStreetMap contributors, ODbL), so please credit them if you reuse it.
 
-> Note for **GitHub Pages project sites** (served under `/<repo>/`): set `site` and `base` in `astro.config` and prefix the in-page `fetch("/sites.geojson")` / `fetch("/counties.geojson")` calls with the base path, or use a custom domain / root deploy to avoid the base-path handling.
+This isn't an official source. Check the council's own register before relying on anything here.
 
-## Built with
-
-[Astro](https://astro.build) &middot; [MapLibre GL JS](https://maplibre.org) &middot; [OpenStreetMap](https://www.openstreetmap.org) (Nominatim + Photon geocoding) &middot; a [CARTO](https://carto.com) basemap &middot; local-authority boundaries from [click_that_hood](https://github.com/codeforgermany/click_that_hood) (ODbL) &middot; interface icons from [Feather](https://github.com/feathericons/feather) (MIT, &copy; Cole Bemis), served from GitHub at a pinned tag.
-
-## License
-
-The **code** in this repository is released under the [MIT License](LICENSE), so you're free to reuse it as long as you keep the copyright notice.
-
-The **data** is a separate matter. It is aggregated from each local authority's public derelict sites register, and the coordinates are derived from OpenStreetMap geocoding (© OpenStreetMap contributors, [ODbL](https://opendatacommons.org/licenses/odbl/)); the county boundaries drawn on the map are OpenStreetMap-derived too. Treat the dataset as carrying those attribution and share-alike expectations: credit "OpenStreetMap contributors" if you reuse it, and see the disclaimer below.
-
-## Disclaimer
-
-Not an official source. Data comes from each council's public derelict sites register and is provided as-is, with best-effort geocoding. For anything authoritative, consult the council's own register (linked in the coverage table).
+Built with [Astro](https://astro.build), [MapLibre](https://maplibre.org), [OpenStreetMap](https://www.openstreetmap.org), a [CARTO](https://carto.com) basemap, boundaries from [click_that_hood](https://github.com/codeforgermany/click_that_hood) and icons from [Feather](https://github.com/feathericons/feather).
