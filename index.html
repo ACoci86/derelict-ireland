@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Derelict Ireland: every derelict site the councils publish, on one map</title>
+    <meta
+      name="description"
+      content="2,364 derelict sites from 27 council registers on one interactive map, and the four councils that keep their registers offline."
+    />
+    <!-- Sharing previews (WhatsApp, X, LinkedIn, Facebook...). %SITE_URL% is
+         filled in at build time from the SITE_URL environment variable, since
+         most platforms need an absolute image address. -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Derelict Ireland" />
+    <meta property="og:title" content="Ireland's councils list 2,625 derelict sites online. Four publish nothing." />
+    <meta property="og:description" content="Every derelict site the councils publish, on one interactive map: what they're worth, how long they've been listed, and where the gaps are." />
+    <meta property="og:image" content="%SITE_URL%og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The Derelict Ireland logo: Ireland drawn as a grid of dots" />
+    <meta property="og:url" content="%SITE_URL%" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ireland's councils list 2,625 derelict sites online. Four publish nothing." />
+    <meta name="twitter:description" content="Every derelict site the councils publish, on one interactive map." />
+    <meta name="twitter:image" content="%SITE_URL%og.png" />
+    <meta name="theme-color" content="#e8ddcf" />
+    <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png?v=2" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@1&family=Cookie&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/story.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <a class="mark" href="#top" aria-label="Derelict Ireland, back to the start">
+        <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24.18" cy="4.72" r=".95" class="lg-dot"/><circle cx="26.73" cy="4.72" r=".95" class="lg-dot"/><circle cx="29.28" cy="4.72" r=".95" class="lg-dot"/><circle cx="31.83" cy="4.72" r=".95" class="lg-dot"/><circle cx="34.38" cy="4.72" r=".95" class="lg-dot"/><circle cx="36.93" cy="4.72" r=".75" class="lg-ring"/><circle cx="22.9" cy="6.94" r=".95" class="lg-dot"/><circle cx="25.45" cy="6.94" r=".95" class="lg-dot"/><circle cx="28" cy="6.94" r=".95" class="lg-dot"/><circle cx="30.55" cy="6.94" r=".95" class="lg-dot"/><circle cx="33.1" cy="6.94" r=".95" class="lg-dot"/><circle cx="35.65" cy="6.94" r=".95" class="lg-dot"/><circle cx="38.2" cy="6.94" r=".95" class="lg-dot"/><circle cx="21.63" cy="9.16" r=".95" class="lg-dot"/><circle cx="24.18" cy="9.16" r=".95" class="lg-dot"/><circle cx="29.28" cy="9.16" r=".95" class="lg-dot"/><circle cx="31.83" cy="9.16" r=".75" class="lg-ring"/><circle cx="34.38" cy="9.16" r=".95" class="lg-dot"/><circle cx="36.93" cy="9.16" r=".95" class="lg-dot"/><circle cx="39.48" cy="9.16" r=".95" class="lg-dot"/><circle cx="25.45" cy="11.37" r=".95" class="lg-dot"/><circle cx="28" cy="11.37" r=".95" class="lg-dot"/><circle cx="30.55" cy="11.37" r=".95" class="lg-dot"/><circle cx="33.1" cy="11.37" r=".95" class="lg-dot"/><circle cx="35.65" cy="11.37" r=".95" class="lg-dot"/><circle cx="38.2" cy="11.37" r=".95" class="lg-dot"/><circle cx="40.75" cy="11.37" r=".95" class="lg-dot"/><circle cx="21.63" cy="13.59" r=".75" class="lg-ring"/><circle cx="24.18" cy="13.59" r=".95" class="lg-dot"/><circle cx="26.73" cy="13.59" r=".95" class="lg-dot"/><circle cx="29.28" cy="13.59" r=".95" class="lg-dot"/><circle cx="31.83" cy="13.59" r=".95" class="lg-dot"/><circle cx="34.38" cy="13.59" r=".95" class="lg-dot"/><circle cx="36.93" cy="13.59" r=".95" class="lg-dot"/><circle cx="39.48" cy="13.59" r=".95" class="lg-dot"/><circle cx="12.7" cy="15.81" r=".95" class="lg-dot"/><circle cx="15.25" cy="15.81" r=".95" class="lg-dot"/><circle cx="17.8" cy="15.81" r=".95" class="lg-dot"/><circle cx="20.35" cy="15.81" r=".75" class="lg-ring"/><circle cx="22.9" cy="15.81" r=".95" class="lg-dot"/><circle cx="25.45" cy="15.81" r=".95" class="lg-dot"/><circle cx="28" cy="15.81" r=".95" class="lg-dot"/><circle cx="30.55" cy="15.81" r=".95" class="lg-dot"/><circle cx="33.1" cy="15.81" r=".95" class="lg-dot"/><circle cx="35.65" cy="15.81" r=".95" class="lg-dot"/><circle cx="11.43" cy="18.03" r=".95" class="lg-dot"/><circle cx="13.98" cy="18.03" r=".95" class="lg-dot"/><circle cx="16.53" cy="18.03" r=".95" class="lg-dot"/><circle cx="19.08" cy="18.03" r=".95" class="lg-dot"/><circle cx="21.63" cy="18.03" r=".75" class="lg-ring"/><circle cx="24.18" cy="18.03" r=".95" class="lg-dot"/><circle cx="26.73" cy="18.03" r=".95" class="lg-dot"/><circle cx="29.28" cy="18.03" r=".95" class="lg-dot"/><circle cx="31.83" cy="18.03" r=".95" class="lg-dot"/><circle cx="34.38" cy="18.03" r=".95" class="lg-dot"/><circle cx="12.7" cy="20.25" r=".95" class="lg-dot"/><circle cx="15.25" cy="20.25" r=".95" class="lg-dot"/><circle cx="17.8" cy="20.25" r=".95" class="lg-dot"/><circle cx="20.35" cy="20.25" r=".95" class="lg-dot"/><circle cx="22.9" cy="20.25" r=".95" class="lg-dot"/><circle cx="25.45" cy="20.25" r=".75" class="lg-ring"/><circle cx="28" cy="20.25" r=".95" class="lg-dot"/><circle cx="30.55" cy="20.25" r=".95" class="lg-dot"/><circle cx="33.1" cy="20.25" r=".95" class="lg-dot"/><circle cx="35.65" cy="20.25" r=".95" class="lg-dot"/><circle cx="11.43" cy="22.47" r=".95" class="lg-dot"/><circle cx="13.98" cy="22.47" r=".95" class="lg-dot"/><circle cx="16.53" cy="22.47" r=".95" class="lg-dot"/><circle cx="19.08" cy="22.47" r=".95" class="lg-dot"/><circle cx="21.63" cy="22.47" r=".95" class="lg-dot"/><circle cx="24.18" cy="22.47" r=".95" class="lg-dot"/><circle cx="26.73" cy="22.47" r=".75" class="lg-ring"/><circle cx="29.28" cy="22.47" r=".95" class="lg-dot"/><circle cx="31.83" cy="22.47" r=".95" class="lg-dot"/><circle cx="34.38" cy="22.47" r=".95" class="lg-dot"/><circle cx="12.7" cy="24.68" r=".95" class="lg-dot"/><circle cx="15.25" cy="24.68" r=".95" class="lg-dot"/><circle cx="17.8" cy="24.68" r=".95" class="lg-dot"/><circle cx="20.35" cy="24.68" r=".95" class="lg-dot"/><circle cx="22.9" cy="24.68" r=".95" class="lg-dot"/><circle cx="25.45" cy="24.68" r=".95" class="lg-dot"/><circle cx="28" cy="24.68" r=".95" class="lg-dot"/><circle cx="30.55" cy="24.68" r=".75" class="lg-ring"/><circle cx="33.1" cy="24.68" r=".95" class="lg-dot"/><circle cx="35.65" cy="24.68" r=".95" class="lg-dot"/><circle cx="19.08" cy="26.9" r=".95" class="lg-dot"/><circle cx="21.63" cy="26.9" r=".95" class="lg-dot"/><circle cx="24.18" cy="26.9" r=".95" class="lg-dot"/><circle cx="26.73" cy="26.9" r=".95" class="lg-dot"/><circle cx="29.28" cy="26.9" r=".95" class="lg-dot"/><circle cx="31.83" cy="26.9" r=".95" class="lg-dot"/><circle cx="34.38" cy="26.9" r=".95" class="lg-dot"/><circle cx="36.93" cy="26.9" r=".95" class="lg-dot"/><circle cx="15.25" cy="29.12" r=".75" class="lg-ring"/><circle cx="17.8" cy="29.12" r=".95" class="lg-dot"/><circle cx="20.35" cy="29.12" r=".95" class="lg-dot"/><circle cx="22.9" cy="29.12" r=".95" class="lg-dot"/><circle cx="25.45" cy="29.12" r=".95" class="lg-dot"/><circle cx="28" cy="29.12" r=".95" class="lg-dot"/><circle cx="30.55" cy="29.12" r=".95" class="lg-dot"/><circle cx="33.1" cy="29.12" r=".95" class="lg-dot"/><circle cx="35.65" cy="29.12" r=".95" class="lg-dot"/><circle cx="16.53" cy="31.34" r=".95" class="lg-dot"/><circle cx="19.08" cy="31.34" r=".95" class="lg-dot"/><circle cx="21.63" cy="31.34" r=".75" class="lg-ring"/><circle cx="24.18" cy="31.34" r=".95" class="lg-dot"/><circle cx="26.73" cy="31.34" r=".95" class="lg-dot"/><circle cx="29.28" cy="31.34" r=".95" class="lg-dot"/><circle cx="31.83" cy="31.34" r=".95" class="lg-dot"/><circle cx="34.38" cy="31.34" r=".95" class="lg-dot"/><circle cx="36.93" cy="31.34" r=".95" class="lg-dot"/><circle cx="15.25" cy="33.56" r=".95" class="lg-dot"/><circle cx="17.8" cy="33.56" r=".95" class="lg-dot"/><circle cx="20.35" cy="33.56" r=".95" class="lg-dot"/><circle cx="22.9" cy="33.56" r=".95" class="lg-dot"/><circle cx="25.45" cy="33.56" r=".75" class="lg-ring"/><circle cx="28" cy="33.56" r=".95" class="lg-dot"/><circle cx="30.55" cy="33.56" r=".95" class="lg-dot"/><circle cx="33.1" cy="33.56" r=".95" class="lg-dot"/><circle cx="35.65" cy="33.56" r=".95" class="lg-dot"/><circle cx="13.98" cy="35.78" r=".95" class="lg-dot"/><circle cx="16.53" cy="35.78" r=".95" class="lg-dot"/><circle cx="19.08" cy="35.78" r=".95" class="lg-dot"/><circle cx="21.63" cy="35.78" r=".95" class="lg-dot"/><circle cx="24.18" cy="35.78" r=".95" class="lg-dot"/><circle cx="26.73" cy="35.78" r=".95" class="lg-dot"/><circle cx="29.28" cy="35.78" r=".75" class="lg-ring"/><circle cx="31.83" cy="35.78" r=".95" class="lg-dot"/><circle cx="34.38" cy="35.78" r=".95" class="lg-dot"/><circle cx="10.15" cy="38" r=".95" class="lg-dot"/><circle cx="12.7" cy="38" r=".95" class="lg-dot"/><circle cx="15.25" cy="38" r=".95" class="lg-dot"/><circle cx="17.8" cy="38" r=".95" class="lg-dot"/><circle cx="20.35" cy="38" r=".95" class="lg-dot"/><circle cx="22.9" cy="38" r=".95" class="lg-dot"/><circle cx="25.45" cy="38" r=".95" class="lg-dot"/><circle cx="28" cy="38" r=".95" class="lg-dot"/><circle cx="30.55" cy="38" r=".75" class="lg-ring"/><circle cx="8.88" cy="40.21" r=".95" class="lg-dot"/><circle cx="11.43" cy="40.21" r=".95" class="lg-dot"/><circle cx="13.98" cy="40.21" r=".95" class="lg-dot"/><circle cx="16.53" cy="40.21" r=".95" class="lg-dot"/><circle cx="19.08" cy="40.21" r=".95" class="lg-dot"/><circle cx="21.63" cy="40.21" r=".95" class="lg-dot"/><circle cx="24.18" cy="40.21" r=".95" class="lg-dot"/><circle cx="12.7" cy="42.43" r=".95" class="lg-dot"/><circle cx="15.25" cy="42.43" r=".95" class="lg-dot"/><circle cx="17.8" cy="42.43" r=".95" class="lg-dot"/><circle cx="20.35" cy="42.43" r=".75" class="lg-ring"/><circle cx="22.9" cy="42.43" r=".95" class="lg-dot"/><circle cx="13.98" cy="44.65" r=".95" class="lg-dot"/><circle cx="16.53" cy="44.65" r=".95" class="lg-dot"/></svg>
+        <span class="mark-name"><b>Derelict</b> Ireland</span>
+      </a>
+      <nav class="bar-links">
+        <a class="pill" href="#story">The story <svg class="ico ico-down" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5 L12 19.5 M6.5 14 L12 19.5 L17.5 14"/></svg></a>
+        <a class="pill" href="#method">Method <svg class="ico ico-down" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5 L12 19.5 M6.5 14 L12 19.5 L17.5 14"/></svg></a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Map of derelict sites">
+        <div class="map pre-labels pre-ui pre-lens pre-hint" id="map">
+          <svg id="viz" role="img" aria-labelledby="viz-title">
+            <title id="viz-title">
+              Map of Ireland with every published derelict site drawn as a circle sized by its valuation.
+            </title>
+          </svg>
+          <div class="tip" id="tip" role="status" hidden></div>
+          <div class="search" id="search" role="search"></div>
+          <aside class="scale" id="scale" aria-label="Filter by valuation"></aside>
+          <p class="map-credit">
+            <span class="long">Boundaries</span> ©
+            <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>
+            <span class="long">contributors</span>
+          </p>
+        </div>
+      </section>
+
+      <article class="article" id="story">
+        <header class="art-head wide">
+          <h1>
+            Ireland's councils list <span data-n="entries"></span> derelict sites online. <span data-n="offline.word">Four</span> councils
+            publish nothing.
+          </h1>
+          <p class="standfirst">
+            Every council must keep a public register of derelict sites. This map brings together
+            the <span data-n="published"></span> registers published online,
+            <span data-n="mapped"></span> mapped entries in all, and what they show about value, age
+            and the gaps.
+          </p>
+        </header>
+
+        <div data-reg="Leitrim|DS30"></div>
+
+        <p>
+          That is one line from Leitrim County Council's register of derelict sites. Commons Lane in
+          Manorhamilton was entered on 19 June 1991, a year after the law that created the registers,
+          and it is still there. Nothing on any register in the country has been listed for longer.
+        </p>
+        <p>
+          Every council has to keep a list like Leitrim's. Once a site is on it, the council can order
+          the owner to clean it up, and can charge a levy of 7% of the site's market value for every
+          year it stays listed.
+        </p>
+        <p>What counts as derelict is written into the Derelict Sites Act 1990:</p>
+
+        <blockquote class="law wide">
+          <p>
+            “any land … which detracts, or is likely to detract, to a material degree from the amenity,
+            character or appearance of land in the neighbourhood”
+          </p>
+          <footer>
+            The Act gives three causes: structures in a “ruinous, derelict or dangerous condition”, the
+            “neglected, unsightly or objectionable condition” of the land, or “litter, rubbish, debris
+            or waste”.
+            <cite>
+              Section 3 of the
+              <a href="https://www.irishstatutebook.ie/eli/1990/act/14/section/3">Derelict Sites Act 1990</a>
+            </cite>
+          </footer>
+        </blockquote>
+
+        <p>
+          So derelict is about condition, and it isn't the same as vacant or abandoned.
+          <b>Vacant</b> is about use: a well-kept empty house isn't derelict, and empty homes are dealt
+          with separately, through Revenue's
+          <a href="https://www.revenue.ie/en/property/vacant-homes-tax/apply/index.aspx">Vacant Homes Tax</a>.
+          <b>Abandoned</b> has no legal meaning. A site appears on the map above only once a council
+          has entered it on its register.
+        </p>
+
+        <h2>Draw the last ten years</h2>
+        <p>
+          Commons Lane is the exception. So when did everything else go on? Each dot below is a site
+          that is on a register today, stacked by the year it was entered. The chart stops at 2015.
+          Before you see the rest, draw what you think happened next.
+        </p>
+
+        <figure class="fig wide guess" id="fig-years">
+          <div class="fig-body" id="chart-years"></div>
+          <div class="guess-bar">
+            <button type="button" class="gbtn" id="guess-show" disabled>Show me</button>
+            <button type="button" class="link" id="guess-skip">Skip, just show me</button>
+            <p class="guess-result" aria-live="polite"></p>
+            <label class="guess-pick" id="guess-pick" hidden>
+              Pick out
+              <span class="ml-sel"><select id="years-filter" aria-label="Pick out one council's sites"></select></span>
+            </label>
+          </div>
+          <figcaption class="cap">
+            The <span data-n="dated"></span> mapped sites that have an entry date. Another
+            <span data-n="undated"></span> have none, because Limerick, Waterford, Roscommon and a few
+            other councils don't publish one. <span data-n="thisYear"></span>, in a lighter tint, isn't
+            over yet. <span class="if-hover">Hover over</span><span class="if-touch">Tap</span> a dot
+            to see the site.
+          </figcaption>
+        </figure>
+
+        <p>
+          Read the early years with care. A register lists only what is still derelict. Sites that
+          were repaired, sold or knocked down have come off it, so the past looks emptier than it was.
+          Only <span data-n="pre2000.lc"></span> entries from before 2000 survive
+          <button type="button" class="inl" data-explore="old">show them</button>.
+        </p>
+        <p>
+          And the date is the day the council wrote the site in. That can be long after the place
+          fell apart.
+        </p>
+
+        <figure class="photo wide">
+          <img src="photos/players-lounge-2000.jpg" srcset="photos/players-lounge-1000.jpg 1000w, photos/players-lounge-2000.jpg 2000w"
+            sizes="(min-width: 1080px) 1000px, 100vw" width="2000" height="1500" loading="lazy" decoding="async"
+            alt="The shuttered front of the Players Lounge pub at 47 to 49 Fairview Strand: black-painted ground floor with boarded windows, a security notice, and cracked grey render above." />
+          <figcaption>
+            <div data-reg="Dublin City|DS1017"></div>
+            <p class="cap">
+              The Players Lounge on Fairview Strand in Dublin was badly damaged by fire after an armed
+              robbery in 2011 and has been derelict since,
+              <a href="https://www.irishtimes.com/news/ireland/irish-news/considerable-notoriety-city-pub-targeted-by-criminals-set-for-demolition-1.4478341">The Irish Times reported</a>.
+              The register gives its date of entry as 24 April 2026. Photographed in November 2021 by
+              <a href="https://commons.wikimedia.org/wiki/File:Players_Lounge,_Fairview_Strand,_Dublin.jpg">Smirkybec</a>
+              (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).
+            </p>
+          </figcaption>
+        </figure>
+
+        <h2>Limerick lists the most. Dublin puts a price on none</h2>
+        <p>
+          Here are the same sites again, lined up by the council that listed them.
+          <span class="key k-v">Solid dots</span> are sites with a published value,
+          <span class="key k-u">pale dots</span> have none, and
+          <span class="key k-h">outlines</span> are register entries that couldn't be placed on the
+          map with confidence.
+        </p>
+
+        <figure class="fig wide" id="fig-councils">
+          <div class="fig-top">
+            <div class="sorter" role="group" aria-label="Sort councils">
+              <button type="button" data-sort="sites" aria-pressed="true">Most sites</button>
+              <button type="button" data-sort="value" aria-pressed="false">Highest value</button>
+            </div>
+          </div>
+          <div class="fig-body" id="chart-councils"></div>
+          <figcaption class="cap">
+            <span class="if-hover">Hover over a dot to see the site, and click it to find it on the
+            map. Click</span><span class="if-touch">Tap a dot to see the site, and tap it again to
+            find it on the map. Tap</span> a council's name to show its whole register. The euro figure adds up the published values of a
+            council's mapped sites.
+          </figcaption>
+        </figure>
+
+        <p>
+          Limerick City and County has <span data-n="limerick"></span> sites on the map, more than any
+          other council. Mayo comes second with <span data-n="mayo"></span>, though its register is
+          longer than that: another <span data-n="mayo.held"></span> entries couldn't be placed and
+          are left off the map.
+        </p>
+        <p>
+          Dublin's four councils list <span data-n="dublin.total"></span> sites between them, and none
+          of the four publishes a value for a single one. They aren't alone.
+          <span data-n="novalue.word"></span> of the <span data-n="published"></span> councils with a
+          register online give no values at all.
+        </p>
+
+        <figure class="photo split wide">
+          <img src="photos/annesley-place-2000.jpg" srcset="photos/annesley-place-1000.jpg 1000w, photos/annesley-place-2000.jpg 2000w"
+            sizes="(min-width: 1080px) 520px, (min-width: 760px) 50vw, 100vw" width="2000" height="1500" loading="lazy" decoding="async"
+            alt="A two-storey corner building on Annesley Place, painted black below and white above, its windows boarded and bushes growing out of the walls and roof." />
+          <figcaption>
+            <div data-reg="Dublin City|DS1005"></div>
+            <p class="cap">
+              2–4 Annesley Place in North Strand, photographed in December 2021. No. 2 went on Dublin
+              City's register in April 2025. What it is worth, the register doesn't say. Photo:
+              <a href="https://commons.wikimedia.org/wiki/File:2-4_Annesley_Place,_Dublin.jpg">Smirkybec</a>
+              (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).
+            </p>
+          </figcaption>
+        </figure>
+
+        <h2>The typical site is valued at <span data-n="valueMedian"></span></h2>
+        <p>
+          The councils that do publish values put a figure on <span data-n="valued"></span> sites:
+          <span data-n="valueTotal"></span> in all. Half are valued at
+          <span data-n="valueMedian"></span> or less, and <span data-n="under250.share"></span> at
+          under €250,000.
+        </p>
+        <p>
+          The figure matters because the levy is a share of it, 7% a year. Drag the marker along the
+          scale to see what a site would owe.
+        </p>
+
+        <figure class="fig wide" id="fig-values">
+          <p class="hed" id="levy-say" aria-live="polite"></p>
+          <p class="sub" id="levy-foot"></p>
+          <div class="fig-body" id="chart-values"></div>
+          <figcaption class="cap">
+            Each dot is one valued site, on a logarithmic scale. <span data-n="unvalued"></span> mapped
+            sites have no published value and aren't shown.
+          </figcaption>
+        </figure>
+
+        <p>
+          <span data-n="c1.count.word"></span> sites are valued at €1 million or more
+          <button type="button" class="inl" data-explore="c1">show them</button>.
+          <span data-n="c1.galway.word"></span> are in Galway City, and every one of those went on its
+          register in 2025. The most valuable of all has no address. It is listed only as reference
+          760.
+        </p>
+
+        <div data-reg="Galway City|760;Mayo|DS19/59" data-levy></div>
+
+        <p>
+          At the other end, <span data-n="c3.min.count"></span> sites are valued at €5,000, one of
+          them on Town Hall Road in Claremorris. Most of the money sits in between: the
+          <span data-n="c2.count"></span> sites valued from €100,000 to €1 million add up to
+          <span data-n="c2.total"></span>, <span data-n="c2.share"></span> of the total
+          <button type="button" class="inl" data-explore="c2">show them</button>.
+        </p>
+
+        <section class="dark bleed" aria-labelledby="offline-title">
+          <div class="dark-in">
+            <div class="dark-text">
+              <h2 id="offline-title"><span data-n="offline.word">Four</span> registers you can't see</h2>
+              <p>
+                Kerry, Clare, Galway County and Longford keep a register but don't put it online. It
+                can only be inspected at the council's offices or asked for, so none of their sites
+                are on the map and their areas are hatched. Together they cover much of the west
+                coast, from Kerry to Connemara. An empty county there means the data is missing. It
+                doesn't mean nothing is derelict.
+              </p>
+              <p>
+                Cavan was on this list until September 2026, when it published its register. Its
+                <span data-n="cavan"></span> sites are on the map now, at the council's own
+                coordinates, though the register gives townlands instead of street addresses, and no
+                values.
+              </p>
+              <p><button type="button" class="inl" data-explore="missing">Show the gaps on the map</button></p>
+            </div>
+            <div class="dark-map" id="offline-map"></div>
+          </div>
+        </section>
+
+        <h2>Every register, side by side</h2>
+        <p class="madlib" id="council-pick"></p>
+
+        <div class="pull wide" id="puller"></div>
+
+        <p class="ml-lead">
+          Change the council in the sentence above to pull lines from its register, or click a
+          shape below to see its sites on the map.
+        </p>
+
+        <figure class="fig full" id="fig-multiples">
+          <div class="fig-body multiples" id="chart-multiples"></div>
+          <figcaption class="cap">Sorted by number of mapped sites. Boundaries from OpenStreetMap.</figcaption>
+        </figure>
+
+        <section class="method wide" aria-labelledby="method">
+          <h2 id="method">About the data</h2>
+          <p>
+            All 31 local authorities were checked for a published register.
+            <span data-n="published"></span> publish one online; the other
+            <span data-n="offline.lc"></span> offer inspection only. Registers that are live map layers
+            were read directly, with the council's own coordinates. PDFs, spreadsheets and web tables
+            were converted one council at a time, and their addresses geocoded with OpenStreetMap
+            services.
+          </p>
+          <p>
+            That makes some positions more exact than others. <span data-n="prec.council"></span> of
+            the mapped sites carry the council's own coordinates and <span data-n="prec.exact"></span>
+            were matched to a full address. <span data-n="prec.street"></span> were placed on their
+            street, and <span data-n="prec.town"></span> only in their town, where the circle marks the
+            town and not the building. Entries that couldn't be placed confidently are held back
+            and not guessed.
+          </p>
+          <p>
+            A checker revisits every register to flag the ones that have changed. This is not an
+            official source: check a council's own register before relying on any entry.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="foot">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="mark" href="#top" aria-label="Derelict Ireland, back to the start">
+            <svg width="36" height="36" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24.18" cy="4.72" r=".95" class="lg-dot"/><circle cx="26.73" cy="4.72" r=".95" class="lg-dot"/><circle cx="29.28" cy="4.72" r=".95" class="lg-dot"/><circle cx="31.83" cy="4.72" r=".95" class="lg-dot"/><circle cx="34.38" cy="4.72" r=".95" class="lg-dot"/><circle cx="36.93" cy="4.72" r=".75" class="lg-ring"/><circle cx="22.9" cy="6.94" r=".95" class="lg-dot"/><circle cx="25.45" cy="6.94" r=".95" class="lg-dot"/><circle cx="28" cy="6.94" r=".95" class="lg-dot"/><circle cx="30.55" cy="6.94" r=".95" class="lg-dot"/><circle cx="33.1" cy="6.94" r=".95" class="lg-dot"/><circle cx="35.65" cy="6.94" r=".95" class="lg-dot"/><circle cx="38.2" cy="6.94" r=".95" class="lg-dot"/><circle cx="21.63" cy="9.16" r=".95" class="lg-dot"/><circle cx="24.18" cy="9.16" r=".95" class="lg-dot"/><circle cx="29.28" cy="9.16" r=".95" class="lg-dot"/><circle cx="31.83" cy="9.16" r=".75" class="lg-ring"/><circle cx="34.38" cy="9.16" r=".95" class="lg-dot"/><circle cx="36.93" cy="9.16" r=".95" class="lg-dot"/><circle cx="39.48" cy="9.16" r=".95" class="lg-dot"/><circle cx="25.45" cy="11.37" r=".95" class="lg-dot"/><circle cx="28" cy="11.37" r=".95" class="lg-dot"/><circle cx="30.55" cy="11.37" r=".95" class="lg-dot"/><circle cx="33.1" cy="11.37" r=".95" class="lg-dot"/><circle cx="35.65" cy="11.37" r=".95" class="lg-dot"/><circle cx="38.2" cy="11.37" r=".95" class="lg-dot"/><circle cx="40.75" cy="11.37" r=".95" class="lg-dot"/><circle cx="21.63" cy="13.59" r=".75" class="lg-ring"/><circle cx="24.18" cy="13.59" r=".95" class="lg-dot"/><circle cx="26.73" cy="13.59" r=".95" class="lg-dot"/><circle cx="29.28" cy="13.59" r=".95" class="lg-dot"/><circle cx="31.83" cy="13.59" r=".95" class="lg-dot"/><circle cx="34.38" cy="13.59" r=".95" class="lg-dot"/><circle cx="36.93" cy="13.59" r=".95" class="lg-dot"/><circle cx="39.48" cy="13.59" r=".95" class="lg-dot"/><circle cx="12.7" cy="15.81" r=".95" class="lg-dot"/><circle cx="15.25" cy="15.81" r=".95" class="lg-dot"/><circle cx="17.8" cy="15.81" r=".95" class="lg-dot"/><circle cx="20.35" cy="15.81" r=".75" class="lg-ring"/><circle cx="22.9" cy="15.81" r=".95" class="lg-dot"/><circle cx="25.45" cy="15.81" r=".95" class="lg-dot"/><circle cx="28" cy="15.81" r=".95" class="lg-dot"/><circle cx="30.55" cy="15.81" r=".95" class="lg-dot"/><circle cx="33.1" cy="15.81" r=".95" class="lg-dot"/><circle cx="35.65" cy="15.81" r=".95" class="lg-dot"/><circle cx="11.43" cy="18.03" r=".95" class="lg-dot"/><circle cx="13.98" cy="18.03" r=".95" class="lg-dot"/><circle cx="16.53" cy="18.03" r=".95" class="lg-dot"/><circle cx="19.08" cy="18.03" r=".95" class="lg-dot"/><circle cx="21.63" cy="18.03" r=".75" class="lg-ring"/><circle cx="24.18" cy="18.03" r=".95" class="lg-dot"/><circle cx="26.73" cy="18.03" r=".95" class="lg-dot"/><circle cx="29.28" cy="18.03" r=".95" class="lg-dot"/><circle cx="31.83" cy="18.03" r=".95" class="lg-dot"/><circle cx="34.38" cy="18.03" r=".95" class="lg-dot"/><circle cx="12.7" cy="20.25" r=".95" class="lg-dot"/><circle cx="15.25" cy="20.25" r=".95" class="lg-dot"/><circle cx="17.8" cy="20.25" r=".95" class="lg-dot"/><circle cx="20.35" cy="20.25" r=".95" class="lg-dot"/><circle cx="22.9" cy="20.25" r=".95" class="lg-dot"/><circle cx="25.45" cy="20.25" r=".75" class="lg-ring"/><circle cx="28" cy="20.25" r=".95" class="lg-dot"/><circle cx="30.55" cy="20.25" r=".95" class="lg-dot"/><circle cx="33.1" cy="20.25" r=".95" class="lg-dot"/><circle cx="35.65" cy="20.25" r=".95" class="lg-dot"/><circle cx="11.43" cy="22.47" r=".95" class="lg-dot"/><circle cx="13.98" cy="22.47" r=".95" class="lg-dot"/><circle cx="16.53" cy="22.47" r=".95" class="lg-dot"/><circle cx="19.08" cy="22.47" r=".95" class="lg-dot"/><circle cx="21.63" cy="22.47" r=".95" class="lg-dot"/><circle cx="24.18" cy="22.47" r=".95" class="lg-dot"/><circle cx="26.73" cy="22.47" r=".75" class="lg-ring"/><circle cx="29.28" cy="22.47" r=".95" class="lg-dot"/><circle cx="31.83" cy="22.47" r=".95" class="lg-dot"/><circle cx="34.38" cy="22.47" r=".95" class="lg-dot"/><circle cx="12.7" cy="24.68" r=".95" class="lg-dot"/><circle cx="15.25" cy="24.68" r=".95" class="lg-dot"/><circle cx="17.8" cy="24.68" r=".95" class="lg-dot"/><circle cx="20.35" cy="24.68" r=".95" class="lg-dot"/><circle cx="22.9" cy="24.68" r=".95" class="lg-dot"/><circle cx="25.45" cy="24.68" r=".95" class="lg-dot"/><circle cx="28" cy="24.68" r=".95" class="lg-dot"/><circle cx="30.55" cy="24.68" r=".75" class="lg-ring"/><circle cx="33.1" cy="24.68" r=".95" class="lg-dot"/><circle cx="35.65" cy="24.68" r=".95" class="lg-dot"/><circle cx="19.08" cy="26.9" r=".95" class="lg-dot"/><circle cx="21.63" cy="26.9" r=".95" class="lg-dot"/><circle cx="24.18" cy="26.9" r=".95" class="lg-dot"/><circle cx="26.73" cy="26.9" r=".95" class="lg-dot"/><circle cx="29.28" cy="26.9" r=".95" class="lg-dot"/><circle cx="31.83" cy="26.9" r=".95" class="lg-dot"/><circle cx="34.38" cy="26.9" r=".95" class="lg-dot"/><circle cx="36.93" cy="26.9" r=".95" class="lg-dot"/><circle cx="15.25" cy="29.12" r=".75" class="lg-ring"/><circle cx="17.8" cy="29.12" r=".95" class="lg-dot"/><circle cx="20.35" cy="29.12" r=".95" class="lg-dot"/><circle cx="22.9" cy="29.12" r=".95" class="lg-dot"/><circle cx="25.45" cy="29.12" r=".95" class="lg-dot"/><circle cx="28" cy="29.12" r=".95" class="lg-dot"/><circle cx="30.55" cy="29.12" r=".95" class="lg-dot"/><circle cx="33.1" cy="29.12" r=".95" class="lg-dot"/><circle cx="35.65" cy="29.12" r=".95" class="lg-dot"/><circle cx="16.53" cy="31.34" r=".95" class="lg-dot"/><circle cx="19.08" cy="31.34" r=".95" class="lg-dot"/><circle cx="21.63" cy="31.34" r=".75" class="lg-ring"/><circle cx="24.18" cy="31.34" r=".95" class="lg-dot"/><circle cx="26.73" cy="31.34" r=".95" class="lg-dot"/><circle cx="29.28" cy="31.34" r=".95" class="lg-dot"/><circle cx="31.83" cy="31.34" r=".95" class="lg-dot"/><circle cx="34.38" cy="31.34" r=".95" class="lg-dot"/><circle cx="36.93" cy="31.34" r=".95" class="lg-dot"/><circle cx="15.25" cy="33.56" r=".95" class="lg-dot"/><circle cx="17.8" cy="33.56" r=".95" class="lg-dot"/><circle cx="20.35" cy="33.56" r=".95" class="lg-dot"/><circle cx="22.9" cy="33.56" r=".95" class="lg-dot"/><circle cx="25.45" cy="33.56" r=".75" class="lg-ring"/><circle cx="28" cy="33.56" r=".95" class="lg-dot"/><circle cx="30.55" cy="33.56" r=".95" class="lg-dot"/><circle cx="33.1" cy="33.56" r=".95" class="lg-dot"/><circle cx="35.65" cy="33.56" r=".95" class="lg-dot"/><circle cx="13.98" cy="35.78" r=".95" class="lg-dot"/><circle cx="16.53" cy="35.78" r=".95" class="lg-dot"/><circle cx="19.08" cy="35.78" r=".95" class="lg-dot"/><circle cx="21.63" cy="35.78" r=".95" class="lg-dot"/><circle cx="24.18" cy="35.78" r=".95" class="lg-dot"/><circle cx="26.73" cy="35.78" r=".95" class="lg-dot"/><circle cx="29.28" cy="35.78" r=".75" class="lg-ring"/><circle cx="31.83" cy="35.78" r=".95" class="lg-dot"/><circle cx="34.38" cy="35.78" r=".95" class="lg-dot"/><circle cx="10.15" cy="38" r=".95" class="lg-dot"/><circle cx="12.7" cy="38" r=".95" class="lg-dot"/><circle cx="15.25" cy="38" r=".95" class="lg-dot"/><circle cx="17.8" cy="38" r=".95" class="lg-dot"/><circle cx="20.35" cy="38" r=".95" class="lg-dot"/><circle cx="22.9" cy="38" r=".95" class="lg-dot"/><circle cx="25.45" cy="38" r=".95" class="lg-dot"/><circle cx="28" cy="38" r=".95" class="lg-dot"/><circle cx="30.55" cy="38" r=".75" class="lg-ring"/><circle cx="8.88" cy="40.21" r=".95" class="lg-dot"/><circle cx="11.43" cy="40.21" r=".95" class="lg-dot"/><circle cx="13.98" cy="40.21" r=".95" class="lg-dot"/><circle cx="16.53" cy="40.21" r=".95" class="lg-dot"/><circle cx="19.08" cy="40.21" r=".95" class="lg-dot"/><circle cx="21.63" cy="40.21" r=".95" class="lg-dot"/><circle cx="24.18" cy="40.21" r=".95" class="lg-dot"/><circle cx="12.7" cy="42.43" r=".95" class="lg-dot"/><circle cx="15.25" cy="42.43" r=".95" class="lg-dot"/><circle cx="17.8" cy="42.43" r=".95" class="lg-dot"/><circle cx="20.35" cy="42.43" r=".75" class="lg-ring"/><circle cx="22.9" cy="42.43" r=".95" class="lg-dot"/><circle cx="13.98" cy="44.65" r=".95" class="lg-dot"/><circle cx="16.53" cy="44.65" r=".95" class="lg-dot"/></svg>
+            <span class="mark-name"><b>Derelict</b> Ireland</span>
+          </a>
+          <p>Every derelict site Ireland's councils publish, on one map.</p>
+        </div>
+        <div class="foot-support">
+          <p>Useful? Support the project.</p>
+          <a class="bmc" href="https://buymeacoffee.com/acoci86" target="_blank" rel="noopener">
+            <svg class="bmc-cup" viewBox="0 0 24 24" aria-hidden="true">
+            <path class="lid" d="M6.4 3.6h11.2l1.1 2.6H5.3z" />
+            <path class="rim" d="M4.8 6.2h14.4v2.2H4.8z" />
+            <path class="cup" d="M6.2 8.4h11.6l-1.5 11.4a1.6 1.6 0 0 1-1.6 1.4H9.3a1.6 1.6 0 0 1-1.6-1.4z" />
+            <path class="coffee" d="M6.9 12.4h10.2l-.7 5.2H7.6z" />
+          </svg>
+            <span>Buy me a coffee</span>
+          </a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span id="year">2026</span> Derelict Ireland</span>
+        <span>Website made by <a href="https://acoci.dev">acoci.dev</a></span>
+      </div>
+    </footer>
+
+    <div class="ctip" id="ctip" hidden></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
