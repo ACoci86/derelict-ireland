@@ -152,6 +152,7 @@ function annotationsFor(s) {
   return [];
 }
 
+let searchCouncil = null; // a council filter that came from the search box
 const map = createMap({
   container: document.getElementById("map"),
   svgEl: document.getElementById("viz"),
@@ -162,6 +163,13 @@ const map = createMap({
   onCouncilClick: (c) => setState(state.council === c ? { ...ALL } : { ...ALL, council: c, label: `${c} only` }),
   onBackgroundClick: () => {
     if (state.council) setState({ ...ALL });
+  },
+  // "Reset view" means the whole map again: clear the search box and any
+  // filter (a council picked in the search, a value range) as well as the zoom.
+  onResetView: () => {
+    document.getElementById("search").reset?.();
+    searchCouncil = null;
+    setState({ ...ALL });
   },
 });
 
@@ -310,7 +318,15 @@ createSearch(document.getElementById("search"), {
   councils: summary.councils,
   offline: summary.unpublishedSources,
   onSite: showSite,
-  onCouncil: (c) => toMapThen(() => setState({ ...ALL, council: c, label: `${c} only` })),
+  onCouncil: (c) => {
+    searchCouncil = c;
+    toMapThen(() => setState({ ...ALL, council: c, label: `${c} only` }));
+  },
+  // Clearing the search box also drops the council it picked.
+  onClear: () => {
+    if (searchCouncil && state.council === searchCouncil) setState({ ...ALL });
+    searchCouncil = null;
+  },
 });
 
 // ---------- The logo returns everything to how the page opened ----------

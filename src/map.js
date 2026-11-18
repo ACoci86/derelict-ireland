@@ -166,7 +166,7 @@ async function bakeTextures({ W, H, landD, allLandD, bounds: [x, y, w, h] }) {
   return { waves, relief };
 }
 
-export function createMap({ container, svgEl, tipEl, base, sites, councilStats, onCouncilClick, onBackgroundClick }) {
+export function createMap({ container, svgEl, tipEl, base, sites, councilStats, onCouncilClick, onBackgroundClick, onResetView }) {
   const svg = d3.select(svgEl);
   const tip = d3.select(tipEl);
   container.classList.add("pre-labels", "pre-ui", "pre-lens", "pre-hint");
@@ -209,7 +209,12 @@ export function createMap({ container, svgEl, tipEl, base, sites, councilStats, 
     .attr("class", "reset")
     .html(`${icon("reset")}<span>Reset view</span>`)
     .property("disabled", true)
-    .on("click", () => resetZoom());
+    // Back to the whole island with every site: main.js also clears the search
+    // and any filter, so nothing from before is still narrowing the map.
+    .on("click", () => {
+      resetZoom();
+      onResetView?.();
+    });
 
   // ---------- State ----------
   let L = null;
