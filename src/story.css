@@ -954,23 +954,23 @@
   stroke-linejoin: round;
 }
 /* With motion allowed, the sites come on like lights and the gaps draw themselves */
-.motion .dark-map .o-site {
+.motion .dark-map .o-sites {
   opacity: 0;
-  transition: opacity 500ms ease;
+  transition: opacity 350ms ease;
 }
 .motion .dark-map .o-off {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
   fill-opacity: 0;
   transition:
-    stroke-dashoffset 1600ms ease 900ms,
-    fill-opacity 700ms ease 2300ms;
+    stroke-dashoffset 750ms ease 100ms,
+    fill-opacity 400ms ease 550ms;
 }
 .motion .dark-map .o-label {
   opacity: 0;
-  transition: opacity 500ms ease 2600ms;
+  transition: opacity 350ms ease 650ms;
 }
-.motion .dark-map.is-in .o-site,
+.motion .dark-map.is-in .o-sites,
 .motion .dark-map.is-in .o-label {
   opacity: 1;
 }
