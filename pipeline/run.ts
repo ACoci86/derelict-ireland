@@ -125,14 +125,23 @@ async function main() {
 
   // Total valuation per council (where the register publishes site values), and
   // how many sites that total is based on. Councils that publish none get 0.
-  const valByCouncil = new Map<string, { total: number; count: number }>();
-  for (const s of sites) {
-    if (!s.valuation) continue;
-    const e = valByCouncil.get(s.council) ?? { total: 0, count: 0 };
-    e.total += s.valuation;
-    e.count++;
-    valByCouncil.set(s.council, e);
-  }
+  // Two scopes, kept apart on purpose: `valued`/`valuation` cover every entry on
+  // the register (including those held for review), while `mappedValued`/
+  // `mappedValuation` cover only the sites placed on the map. Comparing `valued`
+  // with `mapped` mixed the two (Mayo showed 238 valued against 196 mapped).
+  const sumValues = (list: Site[]) => {
+    const m = new Map<string, { total: number; count: number }>();
+    for (const s of list) {
+      if (!s.valuation) continue;
+      const e = m.get(s.council) ?? { total: 0, count: 0 };
+      e.total += s.valuation;
+      e.count++;
+      m.set(s.council, e);
+    }
+    return m;
+  };
+  const valByCouncil = sumValues(sites);
+  const mappedValByCouncil = sumValues(good);
 
   // Where each council's data comes from, for the coverage table's Source link.
   const sourceByCouncil = new Map<string, string>();
@@ -184,6 +193,8 @@ async function main() {
       updated: SOURCE_UPDATED[council] ?? null,
       valuation: valByCouncil.get(council)?.total ?? null,
       valued: valByCouncil.get(council)?.count ?? 0,
+      mappedValuation: mappedValByCouncil.get(council)?.total ?? null,
+      mappedValued: mappedValByCouncil.get(council)?.count ?? 0,
     }))
     .sort((a, b) => b.mapped + b.review - (a.mapped + a.review) || a.council.localeCompare(b.council));
 
