@@ -76,7 +76,8 @@ Addresses are placed with a tiered, cost-free, terms-of-service-clean approach, 
 
 1. **Nominatim** (OpenStreetMap) with a per-council county hint.
 2. **Photon** (also OpenStreetMap) as a fallback, more tolerant of vague or partial addresses.
-3. **Per-county bounding-box check**: any result that lands outside the council's own county is rejected, so a fuzzy match to a same-named street elsewhere never reaches the map.
+3. **Per-county bounding-box check**: any result that lands outside the council's own county is rejected, so a fuzzy match to a same-named street elsewhere in Ireland never reaches the map.
+4. **Town check** (Photon results only): the county box can't catch a same-named street in the wrong part of the right county ("Main Street, Ringaskiddy" was matched near the Limerick border). So a Photon result must also lie within 5 km of a town or townland the address names. If it doesn't, the site is placed at that town instead and marked `town` precision. If Nominatim can't be reached for the check, the site keeps its result and is checked again on the next run.
 
 Results are cached in `data/cache/` so re-runs are fast and free. Photon-derived pins are honestly capped at street/town precision. Anything still unplaced is held for review rather than guessed.
 
@@ -100,7 +101,7 @@ The downloadable CSV / GeoJSON carries: `id, council, address, register_ref, eir
 pipeline/
   adapters/     one file per council -> Site[]
   manual/       one-off converters that scrape a PDF/XLSX/HTML into a committed CSV
-  geocode.ts    Nominatim -> Photon -> county-box guard
+  geocode.ts    Nominatim -> Photon -> county-box guard -> town check
   run.ts        runs all adapters, splits multi-unit entries, writes outputs
   check-updates.ts  asks every council whether its register has moved
   schema.ts     the Site type and helpers

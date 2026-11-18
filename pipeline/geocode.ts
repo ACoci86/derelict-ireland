@@ -87,6 +87,7 @@ interface NominatimHit {
   lat: string;
   lon: string;
   type: string;
+  class?: string;
 }
 
 // The cache maps a query string to a hit (or null = "we looked, found nothing").
@@ -176,6 +177,141 @@ async function geocodeQuery(
   return { hit, fromPhoton };
 }
 
+// ---------------------------------------------------------------------------
+// Town check for Photon hits. Photon is fuzzy: given "Main Street, Ringaskiddy"
+// it returned a Main Street near the Limerick border, which is still inside the
+// Cork county box. So a Photon hit must also lie near a town or townland that
+// the address names. If it doesn't, the site goes to that place instead,
+// marked as placed to the town only. (Run over the November 2026 data, it
+// moved 57 of the 371 Photon-placed sites, some by 60 to 100 km.)
+// ---------------------------------------------------------------------------
+const NEAR_KM = 5;        // a hit this close to a named place is accepted
+const SAME_AREA_KM = 25;  // a named place this close to the postal town is the same area
+
+// The county a council is in, for place lookups ("Kinnegad, County Westmeath").
+const COUNTY_OF: Record<string, string> = {
+  "Cork City": "Cork",
+  "Cork County": "Cork",
+  "Dublin City": "Dublin",
+  "South Dublin": "Dublin",
+  "Fingal": "Dublin",
+  "Dún Laoghaire-Rathdown": "Dublin",
+  "Limerick City and County": "Limerick",
+  "Galway City": "Galway",
+};
+const countyOf = (council: string) => COUNTY_OF[council] ?? council;
+
+// Address parts that are streets, buildings or directions, not places.
+const STREETY =
+  /\b(street|st\.?|road|rd\.?|terrace|tce\.?|lane|avenue|ave|place|row|hill|park|square|sq|close|court|drive|crescent|grove|lawn|view|cottage|house|apartments?|estate|mill|bungalow|convent|dispensary|quay|mall|walk|way|green|heights|centre|site|church|school|hall|adjacent|rear|end|west|east|north|south|upper|lower|main)\b/i;
+
+/**
+ * The places an address names, most specific first: "Steelaun, Rathfran,
+ * Carrowmore Lacken, Ballina, Co Mayo" -> Steelaun, Rathfran, Carrowmore
+ * Lacken, Ballina. Streets, house names, Eircodes and the county are dropped,
+ * and so is a part that is just the county's name ("Tullylannon Td., Leitrim"
+ * could mean Leitrim village or County Leitrim).
+ */
+export function namedPlaces(address: string, council: string): string[] {
+  const county = countyOf(council).toLowerCase();
+  return address
+    .split(",")
+    .map((p) =>
+      p
+        .trim()
+        .replace(/\s+(co\.?|county)\s+\w+.*$/i, "")
+        .replace(/\s+[A-Z]\d{2}(\s?[A-Z0-9]{4})?$/i, "")
+        .replace(/\s+(td\.?|village)$/i, "")
+        .replace(/^"|"$/g, "")
+        .trim(),
+    )
+    .filter(
+      (p) =>
+        p &&
+        !/^(co\.?|county)\s/i.test(p) &&
+        !/^[A-Z]\d{2}/i.test(p) &&
+        !/\d/.test(p) &&
+        !STREETY.test(p) &&
+        p.toLowerCase() !== county,
+    );
+}
+
+const PLACE_TYPES = new Set([
+  "city", "town", "village", "hamlet", "townland", "locality", "suburb", "neighbourhood",
+  "isolated_dwelling", "administrative", "island",
+]);
+const isPlace = (h: NominatimHit | null) => !!h && (h.class === "place" || h.class === "boundary" || PLACE_TYPES.has(h.type));
+
+// Look a place up by name. A plain search can return a shop or a bus stop of
+// that name ("Kilbeggan" -> the distillery), so if it isn't a place, ask again
+// for settlements only. Both lookups are cached. Returns undefined if
+// Nominatim couldn't be reached (busy or down), so the caller can leave the
+// site alone this run and try again next time.
+async function lookupPlace(
+  name: string,
+  council: string,
+  cache: Cache,
+  counters: { live: number },
+): Promise<NominatimHit | null | undefined> {
+  const q = `${name}, County ${countyOf(council)}, Ireland`;
+  for (const [key, extra] of [[`place:${q}`, ""], [`settlement:${q}`, "&featureType=settlement"]] as const) {
+    if (!(key in cache)) {
+      const url = `${NOMINATIM_URL}?q=${encodeURIComponent(q)}&format=json&countrycodes=ie&limit=1${extra}`;
+      let results: NominatimHit[] | null = null;
+      for (const wait of [1100, 10_000]) {
+        await sleep(wait);
+        try {
+          const resp = await fetch(url, { headers: { "User-Agent": USER_AGENT } });
+          if (resp.ok) {
+            results = (await resp.json()) as NominatimHit[];
+            break;
+          }
+        } catch {
+          // network error: retry once, then give up for this run
+        }
+      }
+      counters.live++;
+      if (!results) return undefined;
+      const r = results[0];
+      cache[key] = r ? { lat: r.lat, lon: r.lon, type: r.type, class: r.class } : null;
+      saveCache(cache);
+    }
+    if (isPlace(cache[key])) return cache[key];
+  }
+  return null;
+}
+
+function km(a: NominatimHit, b: NominatimHit): number {
+  const t = Math.PI / 180;
+  const [la1, lo1, la2, lo2] = [a.lat, a.lon, b.lat, b.lon].map(parseFloat);
+  const h = Math.sin(((la2 - la1) * t) / 2) ** 2 + Math.cos(la1 * t) * Math.cos(la2 * t) * Math.sin(((lo2 - lo1) * t) / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.sqrt(h));
+}
+
+/**
+ * Check a Photon hit against the places its address names. Returns the hit
+ * if it is near one of them (or if none of them can be found), otherwise the
+ * most specific named place that agrees with the postal town.
+ */
+export async function townCheck(
+  address: string,
+  council: string,
+  hit: NominatimHit,
+  cache: Cache,
+  counters: { live: number },
+): Promise<{ hit: NominatimHit; moved: string | null }> {
+  const found: { name: string; place: NominatimHit; d: number }[] = [];
+  for (const name of namedPlaces(address, council)) {
+    const place = await lookupPlace(name, council, cache, counters);
+    if (place === undefined) return { hit, moved: null }; // can't check now; next run will
+    if (place) found.push({ name, place, d: km(hit, place) });
+  }
+  if (!found.length || found.some((f) => f.d <= NEAR_KM)) return { hit, moved: null };
+  const town = found[found.length - 1];
+  const pick = found.find((f) => km(f.place, town.place) <= SAME_AREA_KM) ?? town;
+  return { hit: { ...pick.place, type: "town" }, moved: pick.name };
+}
+
 // Is a hit inside the council's own county box? (True when there's no box.)
 function inCounty(hit: NominatimHit, box?: [number, number, number, number]): boolean {
   if (!box) return true;
@@ -191,6 +327,7 @@ export async function geocodeAll(sites: Site[]): Promise<void> {
   const cache = loadCache();
   const counters = { live: 0 };
   let photonHits = 0;
+  let movedToTown = 0;
 
   for (const site of sites) {
     if (site.lat !== null) continue;            // tier 0: already has coordinates
@@ -204,16 +341,24 @@ export async function geocodeAll(sites: Site[]): Promise<void> {
     // Nominatim, then Photon as a fallback, on the raw address.
     let { hit, fromPhoton } = await geocodeQuery(query, cache, counters);
     if (hit && !inCounty(hit, box)) { hit = null; fromPhoton = false; }
-    if (hit && fromPhoton) photonHits++;
+    let moved: string | null = null;
+    if (hit && fromPhoton) {
+      photonHits++;
+      ({ hit, moved } = await townCheck(site.address, site.council, hit, cache, counters));
+      if (moved) movedToTown++;
+    }
 
     if (hit) {
       site.lon = Math.round(parseFloat(hit.lon) * 1e6) / 1e6;
       site.lat = Math.round(parseFloat(hit.lat) * 1e6) / 1e6;
-      site.geocode_confidence = fromPhoton ? photonConfidence(hit.type) : (CONFIDENCE[hit.type] ?? "town");
+      site.geocode_confidence = moved ? "town" : fromPhoton ? photonConfidence(hit.type) : (CONFIDENCE[hit.type] ?? "town");
     } else {
       site.geocode_confidence = "none";
     }
   }
 
-  console.log(`geocoded: ${counters.live} new lookups (${photonHits} Photon), ${sites.length} sites checked`);
+  console.log(
+    `geocoded: ${counters.live} new lookups (${photonHits} Photon, ${movedToTown} of them moved to the town ` +
+      `their address names), ${sites.length} sites checked`,
+  );
 }
