@@ -26,13 +26,14 @@ import { load as loadMonaghan } from "./adapters/monaghan";
 import { load as loadSligo } from "./adapters/sligo";
 import { load as loadLeitrim } from "./adapters/leitrim";
 import { load as loadDonegal } from "./adapters/donegal";
+import { load as loadCavan } from "./adapters/cavan";
 import { geocodeAll } from "./geocode";
 
 // Rough bounding box around the island of Ireland.
 const LAT_MIN = 51.3, LAT_MAX = 55.5;
 const LON_MIN = -10.7, LON_MAX = -5.3;
 
-const ADAPTERS = [loadDlr, loadSouthDublin, loadFingal, loadDublinCity, loadCorkCity, loadCorkCounty, loadGalway, loadLimerick, loadWicklow, loadRoscommon, loadMeath, loadKilkenny, loadOffaly, loadWaterford, loadKildare, loadMayo, loadTipperary, loadWexford, loadLouth, loadLaois, loadWestmeath, loadCarlow, loadMonaghan, loadSligo, loadLeitrim, loadDonegal];   // every new council adds one entry here
+const ADAPTERS = [loadDlr, loadSouthDublin, loadFingal, loadDublinCity, loadCorkCity, loadCorkCounty, loadGalway, loadLimerick, loadWicklow, loadRoscommon, loadMeath, loadKilkenny, loadOffaly, loadWaterford, loadKildare, loadMayo, loadTipperary, loadWexford, loadLouth, loadLaois, loadWestmeath, loadCarlow, loadMonaghan, loadSligo, loadLeitrim, loadDonegal, loadCavan];   // every new council adds one entry here
 
 function inIreland(s: Site): boolean {
   return (
@@ -169,6 +170,7 @@ async function main() {
     "Wexford": "2026-03-04",
     "Louth": "2026-07-01",
     "Laois": "2026-07-01",
+    "Cavan": "2026-09-01",          // first published online, dated September 2026
     "Westmeath": "2026-06-11",
     "Carlow": "2026-06-01",
     "Monaghan": "2026-07-01",
@@ -192,7 +194,6 @@ async function main() {
   const unavailable = [
     { council: "Kerry", source: "https://www.kerrycoco.ie/" },
     { council: "Longford", source: "https://www.longfordcoco.ie/services/housing/vacant-homes-office/derelict-sites/" },
-    { council: "Cavan", source: "https://www.cavancoco.ie/services/planning-building/derelict-sites/" },
     { council: "Clare", source: "https://www.clarecoco.ie/services/planning/vacant-derelict-sites/derelict-sites/" },
     { council: "Galway County", source: "https://www.galway.ie/en/environment/derelict-sites" },
   ];

@@ -4,7 +4,7 @@ An interactive map of derelict sites across Ireland, built from the registers th
 
 ![Screenshot of the Derelict Ireland site](docs/screenshot.png)
 
-> Work in progress. **26 of Ireland's 31 local authorities** are covered so far: **2,227 sites mapped**, with a further ~261 held for review. Numbers and features may change.
+> Work in progress. **27 of Ireland's 31 local authorities** are covered so far: **2,364 sites mapped**, with a further ~261 held for review. Numbers and features may change.
 
 Under the Derelict Sites Act, every Irish local authority must maintain a public register of derelict sites. Those registers are scattered across dozens of PDFs, spreadsheets, and open-data portals in wildly different formats. This project pulls them into one place, puts every site on a map, and lets you explore, search, and download the data.
 
@@ -23,9 +23,9 @@ Click any pin for the address, council, and register reference. The registers va
 
 ## Coverage
 
-**26 councils published and mapped:** Carlow, Cork City, Cork County, Donegal, Dublin City, Dún Laoghaire-Rathdown, Fingal, Galway City, Kildare, Kilkenny, Laois, Leitrim, Limerick City and County, Louth, Mayo, Meath, Monaghan, Offaly, Roscommon, Sligo, South Dublin, Tipperary, Waterford, Westmeath, Wexford, Wicklow.
+**27 councils published and mapped:** Carlow, Cavan, Cork City, Cork County, Donegal, Dublin City, Dún Laoghaire-Rathdown, Fingal, Galway City, Kildare, Kilkenny, Laois, Leitrim, Limerick City and County, Louth, Mayo, Meath, Monaghan, Offaly, Roscommon, Sligo, South Dublin, Tipperary, Waterford, Westmeath, Wexford, Wicklow.
 
-**5 councils that keep a register but don't publish it online** (inspection in-office / on request only), shown in the table as "not available online": Kerry, Longford, Cavan, Clare, Galway County.
+**4 councils that keep a register but don't publish it online** (inspection in-office / on request only), shown in the table as "not available online": Kerry, Longford, Clare, Galway County. (Cavan published its register online in September 2026.)
 
 That accounts for all 31 local authorities.
 
